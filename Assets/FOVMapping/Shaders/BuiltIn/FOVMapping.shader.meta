@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 64b2dd5a6890e0542aaf8f20be5c10d6
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269976
+  packageName: Fog of War & Field of View
+  packageVersion: 2.0.2
+  assetPath: Assets/FOVMapping/Shaders/BuiltIn/FOVMapping.shader
+  uploadId: 738767

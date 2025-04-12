@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 80bed3bcfa2a8e34abbdd3a88860b44c
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269976
+  packageName: Fog of War & Field of View
+  packageVersion: 2.0.2
+  assetPath: Assets/FOVMapping/Shaders/BuiltIn/GaussianBlur.cginc
+  uploadId: 738767
