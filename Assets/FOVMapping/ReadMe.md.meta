@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 47c46125ca2bee34d9f47a40f967dbbc
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269976
+  packageName: Fog of War & Field of View
+  packageVersion: 2.0.2
+  assetPath: Assets/FOVMapping/ReadMe.md
+  uploadId: 738767

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 83af9ca698329f4498fb77b0a480c8de
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269976
+  packageName: Fog of War & Field of View
+  packageVersion: 2.0.2
+  assetPath: Assets/FOVMapping/Shaders/BuiltIn/Projector.shader
+  uploadId: 738767
