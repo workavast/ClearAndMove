@@ -67,7 +67,7 @@ namespace App.Weapons.Shooting
         }
         
         private void SpawnHitEffect(Vector3 hitPoint, Vector3 normal) 
-            => _netParticlesFactory.SpawnParticleEffect(ParticleType.BulletCollision, hitPoint, normal);
+            => _netParticlesFactory.Create(ParticleType.BulletCollision, hitPoint, normal);
 
         private static Vector3 GetSpreadDirection(Vector3 forward, float maxSpreadAngle, int tick)
         {

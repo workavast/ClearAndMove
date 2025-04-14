@@ -17,14 +17,10 @@ namespace App.Particles
             {ParticleType.BulletCollision, 1}
         };
         
-        public void SpawnParticleEffect(ParticleType particleType, Vector3 point, Vector3 normal) 
-            => Rpc_SpawnParticleEffect(_particleBytes[particleType], point, normal);
+        public void Create(ParticleType particleType, Vector3 point, Vector3 normal) 
+            => Create(_particleBytes[particleType], point, normal);
 
-        private void Spawn(byte particleByte, Vector3 point, Vector3 normal)
+        private void Create(byte particleByte, Vector3 point, Vector3 normal)
             => particleFactory.Create(_particleTypes[particleByte], point, Quaternion.LookRotation(normal));
-
-        // [Rpc(sources: RpcSources.All, targets: RpcTargets.All)]
-        private void Rpc_SpawnParticleEffect(byte particleByte, Vector3 point, Vector3 normal) 
-            => Spawn(particleByte, point, normal);
     }
 }
