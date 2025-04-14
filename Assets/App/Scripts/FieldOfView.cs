@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace FieldOfView.Scripts
 {
+    [RequireComponent(typeof(MeshFilter))]
     public class FieldOfView : MonoBehaviour
     {
         [SerializeField] private LayerMask layerMask;
