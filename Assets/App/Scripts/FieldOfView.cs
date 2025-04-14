@@ -1,4 +1,4 @@
-﻿using CodeMonkey.Utils;
+﻿using DCFApixels;
 using UnityEngine;
 
 namespace App
@@ -7,46 +7,60 @@ namespace App
     public class FieldOfView : MonoBehaviour
     {
         [SerializeField] private LayerMask layerMask;
-        [SerializeField, Min(0)] private int raysCount = 50;
-        [SerializeField, Min(0)] private float  fov = 90f;
-        [SerializeField, Min(0)] private float  viewDistance = 50f;
+        [SerializeField, Min(0)] private int raysPerAngle = 4;
+        [SerializeField, Range(0, 360)] private float fov = 90f;
+        [SerializeField, Min(0)] private float viewDistance = 50f;
+        [SerializeField] private bool debug;
 
+        private Vector3 Origin => transform.position;
         private float _startingAngle;
-        private Vector3 _origin;
         private Mesh _mesh;
 
-        private void Start()
+        private void Awake()
         {
             _mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = _mesh;
-            _origin = Vector3.zero;
-            _startingAngle = fov / 2 - 45;
+            _startingAngle = fov / 2;
         }
 
         private void LateUpdate()
         {
-            var angle = _startingAngle;
-            var angleIncrease = fov / raysCount;
+            var angle = 0f;
+            if (transform.forward.x >= 0)
+                angle = -_startingAngle + Vector3.Angle(Vector3.forward, transform.forward);
+            else
+                angle = -_startingAngle - Vector3.Angle(Vector3.forward, transform.forward);
+
+            var raysCount =  raysPerAngle * (int)fov;
+            var angleStep = fov / raysCount;
 
             var vertices = new Vector3[raysCount + 1 + 1];
             var uv = new Vector2[vertices.Length];
             var triangles = new int[raysCount * 3];
 
-            vertices[0] = _origin;
+            vertices[0] = Vector3.zero;
 
             var vertexIndex = 1;
             var triangleIndex = 0;
             for (var i = 0; i <= raysCount; i++)
             {
                 Vector3 vertex;
-                var raycastHit2D = Physics2D.Raycast(_origin, 
-                    UtilsClass.GetVectorFromAngle(angle), viewDistance, layerMask);
-                if (raycastHit2D.collider == null) // No hit
-                    vertex = _origin + UtilsClass.GetVectorFromAngle(angle) * viewDistance;
-                else // Hit object
-                    vertex = raycastHit2D.point;
 
-                vertices[vertexIndex] = vertex;
+                var direction = GetVectorFromAngleAroundY(angle);
+                if (Physics.Raycast(Origin, direction, out var hit, viewDistance, layerMask))
+                    vertex = hit.point - Origin;
+                else
+                    vertex = direction * viewDistance;
+
+                if (debug)
+                {
+                    if (i == 0)
+                        DebugX.Draw(Color.magenta).Line(Origin, (Origin + vertex));
+                    else
+                        DebugX.Draw(Color.magenta).Line(Origin, (Origin + vertex));
+                }
+
+                vertices[vertexIndex] =  transform.InverseTransformPoint(Origin + vertex);
 
                 if (i > 0)
                 {
@@ -58,25 +72,26 @@ namespace App
                 }
 
                 vertexIndex++;
-                angle -= angleIncrease;
+                angle += angleStep;
             }
             
             _mesh.vertices = vertices;
             _mesh.uv = uv;
             _mesh.triangles = triangles;
-            _mesh.bounds = new Bounds(_origin, Vector3.one * 1000f);
+            _mesh.bounds = new Bounds(Vector3.zero, Vector3.one * 1000f);
         }
-
-        public void SetOrigin(Vector3 origin) 
-            => _origin = origin;
-
-        public void SetAimDirection(Vector3 aimDirection) 
-            => _startingAngle = UtilsClass.GetAngleFromVectorFloat(aimDirection) + fov / 2f;
 
         public void SetFoV(float newFov) 
             => fov = newFov;
 
         public void SetViewDistance(float newViewDistance) 
             => viewDistance = newViewDistance;
+
+        private static Vector3 GetVectorFromAngleAroundY(float angle)
+        {
+            // angle = 0 -> 360
+            var angleRad = angle * (Mathf.PI / 180f);
+            return new Vector3(Mathf.Sin(angleRad), 0, Mathf.Cos(angleRad));
+        }
     }
 }
