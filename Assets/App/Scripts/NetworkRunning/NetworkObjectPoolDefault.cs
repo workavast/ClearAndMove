@@ -69,8 +69,7 @@ namespace App.NetworkRunning
 
         private NetworkObject GetNewInstance(NetworkObject prefab)
         {
-            var instance = Instantiate(prefab);
-            _diProvider.DiContainer.InjectGameObject(instance.gameObject);
+            var instance = _diProvider.DiContainer.InstantiatePrefab(prefab).GetComponent<NetworkObject>();
 
             if (!_free.TryGetValue(prefab.NetworkTypeId, out var stack))
             {
