@@ -1,7 +1,7 @@
 ﻿using CodeMonkey.Utils;
 using UnityEngine;
 
-namespace FieldOfView.Scripts
+namespace App
 {
     [RequireComponent(typeof(MeshFilter))]
     public class FieldOfView : MonoBehaviour
