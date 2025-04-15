@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace App
+namespace App.WarFog
 {
     public class WarFogResizer : MonoBehaviour
     {

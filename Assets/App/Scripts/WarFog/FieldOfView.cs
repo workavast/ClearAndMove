@@ -1,17 +1,18 @@
 ﻿using DCFApixels;
 using UnityEngine;
 
-namespace App
+namespace App.WarFog
 {
     [RequireComponent(typeof(MeshFilter))]
     public class FieldOfView : MonoBehaviour
     {
-        [SerializeField] private LayerMask layerMask;
-        [SerializeField, Min(0)] private int raysPerAngle = 4;
-        [SerializeField, Range(0, 360)] private float fov = 90f;
-        [SerializeField, Min(0)] private float viewDistance = 50f;
-        [SerializeField] private bool debug;
+        [SerializeField] private bool drawDebug;
 
+        private LayerMask _layerMask;
+        private float _fov;
+        private float _viewDistance;
+        private int _raysPerAngle;
+        
         private Vector3 Origin => transform.position;
         private float _startingAngle;
         private Mesh _mesh;
@@ -20,20 +21,20 @@ namespace App
         {
             _mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = _mesh;
-            _startingAngle = fov / 2;
         }
 
         private void LateUpdate()
         {
             var angle = 0f;
-            if (transform.forward.x >= 0)
+            if (transform.forward.x >= 0) //TODO swap it to the Vector3.SignedAngle(...)
                 angle = -_startingAngle + Vector3.Angle(Vector3.forward, transform.forward);
             else
                 angle = -_startingAngle - Vector3.Angle(Vector3.forward, transform.forward);
 
-            var raysCount =  raysPerAngle * (int)fov;
-            var angleStep = fov / raysCount;
+            var raysCount =  _raysPerAngle * (int)_fov;
+            var angleStep = _fov / raysCount;
 
+            //TODO hashed it
             var vertices = new Vector3[raysCount + 1 + 1];
             var uv = new Vector2[vertices.Length];
             var triangles = new int[raysCount * 3];
@@ -47,12 +48,12 @@ namespace App
                 Vector3 vertex;
 
                 var direction = GetVectorFromAngleAroundY(angle);
-                if (Physics.Raycast(Origin, direction, out var hit, viewDistance, layerMask))
+                if (Physics.Raycast(Origin, direction, out var hit, _viewDistance, _layerMask))
                     vertex = hit.point - Origin;
                 else
-                    vertex = direction * viewDistance;
+                    vertex = direction * _viewDistance;
 
-                if (debug)
+                if (drawDebug)
                 {
                     if (i == 0)
                         DebugX.Draw(Color.magenta).Line(Origin, (Origin + vertex));
@@ -81,11 +82,31 @@ namespace App
             _mesh.bounds = new Bounds(Vector3.zero, Vector3.one * 1000f);
         }
 
-        public void SetFoV(float newFov) 
-            => fov = newFov;
+        public void SetData(FieldOfViewConfig config) 
+            => SetData(config.LayerMask, config.FOV, config.ViewDistance, config.RaysPerAngle);
 
-        public void SetViewDistance(float newViewDistance) 
-            => viewDistance = newViewDistance;
+        public void SetData(LayerMask layerMask, float fov, float viewDistance, int raysPerAngle)
+        {
+            SetLayers(layerMask);
+            SetFoV(fov);
+            SetViewDistance(viewDistance);
+            SetRaysPerAngle(raysPerAngle);
+        }
+        
+        public void SetLayers(LayerMask layerMask) 
+            => _layerMask = layerMask;
+
+        public void SetRaysPerAngle(int raysPerAngle) 
+            => _raysPerAngle = raysPerAngle;
+
+        public void SetFoV(float fov)
+        {
+            _fov = fov;
+            _startingAngle = _fov / 2;
+        }
+
+        public void SetViewDistance(float viewDistance) 
+            => _viewDistance = viewDistance;
 
         private static Vector3 GetVectorFromAngleAroundY(float angle)
         {

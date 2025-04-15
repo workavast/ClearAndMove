@@ -9,6 +9,9 @@ namespace App.Entities.Enemy
         
         public override void Spawned()
         {
+            if (!HasStateAuthority)
+                return;
+
             var spawnPoints = GetComponentsInChildren<EnemySpawnPoint>();
             foreach (var spawnPoint in spawnPoints)
                 Runner.Spawn(netEnemyPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
