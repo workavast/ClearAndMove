@@ -9,8 +9,8 @@ namespace App.App
     
     public class MissionInfrastructure
     {
-        public DamageApplicatorConfig PlayerDamageConfig { get; private set; }
-        public DamageApplicatorConfig EnemyDamageConfig { get; private set; }
+        public DamageApplicatorConfig PlayerDamageConfig { get; private set; } = new(true, 1);
+        public DamageApplicatorConfig EnemyDamageConfig { get; private set; } = new(true, 1);
 
         public void SetPlayerFriendlyFire(bool hasFriendlyFire)
         {
