@@ -10,11 +10,10 @@ namespace App.Damage
         public bool FriendlyFire { get; }
         public float DamageScale { get; }
 
-        protected DamageApplicator(bool hasFriendlyFire)
+        protected DamageApplicator(bool hasFriendlyFire, float damageScale)
         {
             FriendlyFire = hasFriendlyFire;
-            
-            DamageScale = 1;
+            DamageScale = damageScale;
         }
 
         public void TryApplyDamage(float damage, GameObject receiver, IEntity shooter)

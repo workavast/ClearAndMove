@@ -1,5 +1,4 @@
 using System;
-using App.Armor;
 using App.Entities;
 
 namespace App.Damage
@@ -26,10 +25,10 @@ namespace App.Damage
         }
 
         private IDamageApplicator CreatePlayerDamageApplicator() 
-            => new PlayerDamageApplicator(_playersConfig.HasFriendlyFire);
+            => new PlayerDamageApplicator(_playersConfig.HasFriendlyFire, _playersConfig.DamageScale);
 
         private IDamageApplicator CreateEnemyDamageApplicator() 
-            => new EnemyDamageApplicator(_enemiesConfig.HasFriendlyFire);
+            => new EnemyDamageApplicator(_enemiesConfig.HasFriendlyFire, _enemiesConfig.DamageScale);
     }
 
     public struct DamageApplicatorConfig

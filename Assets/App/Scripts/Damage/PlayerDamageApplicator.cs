@@ -4,7 +4,8 @@ namespace App.Damage
 {
     public class PlayerDamageApplicator : DamageApplicator
     {
-        public PlayerDamageApplicator(bool hasFriendlyFire) : base(hasFriendlyFire) { }
+        public PlayerDamageApplicator(bool hasFriendlyFire, float damageScale) 
+            : base(hasFriendlyFire, damageScale) { }
         
         protected override void DamagePlayer(float damage, IDamageable receiver, IEntity shooter)
         {
