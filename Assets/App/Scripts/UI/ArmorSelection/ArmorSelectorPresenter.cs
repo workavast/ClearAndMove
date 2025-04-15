@@ -6,7 +6,7 @@ using Zenject;
 
 namespace App.UI.ArmorSelection
 {
-    public class WeaponSelectorPresenter : Selector<int>
+    public class ArmorSelectorPresenter : Selector<int>
     {
         [Inject] private readonly ArmorsConfig _armorsConfig;
 

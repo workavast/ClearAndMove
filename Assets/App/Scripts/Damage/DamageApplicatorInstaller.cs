@@ -1,16 +1,16 @@
-using UnityEngine;
+using App.App;
 using Zenject;
 
 namespace App.Damage
 {
     public class DamageApplicatorInstaller : MonoInstaller
     {
-        [SerializeField] private bool hasPlayersFriendlyFire;
-        [SerializeField] private bool hasEnemiesFriendlyFire;
-        
         public override void InstallBindings()
         {
-            Container.Bind<DamageApplicatorFactory>().FromNew().AsSingle().WithArguments(hasPlayersFriendlyFire, hasEnemiesFriendlyFire);
+            var playersConfig = AppInfrastructure.MissionInfrastructure.PlayerDamageConfig;
+            var enemiesConfig = AppInfrastructure.MissionInfrastructure.EnemyDamageConfig;
+            
+            Container.Bind<DamageApplicatorFactory>().FromNew().AsSingle().WithArguments(playersConfig, enemiesConfig);
         }
     }
 }
