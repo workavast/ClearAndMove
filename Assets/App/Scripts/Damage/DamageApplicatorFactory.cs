@@ -6,13 +6,13 @@ namespace App.Damage
 {
     public class DamageApplicatorFactory
     {
-        private readonly bool _hasPlayersFriendlyFire;
-        private readonly bool _hasEnemiesFriendlyFire;
+        private readonly DamageApplicatorConfig _playersConfig;
+        private readonly DamageApplicatorConfig _enemiesConfig;
         
-        public DamageApplicatorFactory(bool hasPlayersFriendlyFire, bool hasEnemiesFriendlyFire)
+        public DamageApplicatorFactory(DamageApplicatorConfig playersConfig, DamageApplicatorConfig enemiesConfig)
         {
-            _hasPlayersFriendlyFire = hasPlayersFriendlyFire;
-            _hasEnemiesFriendlyFire = hasEnemiesFriendlyFire;
+            _playersConfig = playersConfig;
+            _enemiesConfig = enemiesConfig;
         }
 
         public IDamageApplicator CreateDamageApplicator(EntityType owner)
@@ -26,9 +26,21 @@ namespace App.Damage
         }
 
         private IDamageApplicator CreatePlayerDamageApplicator() 
-            => new PlayerDamageApplicator(_hasPlayersFriendlyFire);
+            => new PlayerDamageApplicator(_playersConfig.HasFriendlyFire);
 
         private IDamageApplicator CreateEnemyDamageApplicator() 
-            => new EnemyDamageApplicator(_hasEnemiesFriendlyFire);
+            => new EnemyDamageApplicator(_enemiesConfig.HasFriendlyFire);
+    }
+
+    public struct DamageApplicatorConfig
+    {
+        public bool HasFriendlyFire;
+        public float DamageScale;
+
+        public DamageApplicatorConfig(bool hasFriendlyFire, float damageScale)
+        {
+            HasFriendlyFire = hasFriendlyFire;
+            DamageScale = damageScale;
+        }
     }
 }
