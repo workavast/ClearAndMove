@@ -11,7 +11,7 @@ namespace App.WarFog
 
         private void Awake()
         {
-#if UNITY_EDITOR
+#if !UNITY_EDITOR
             editorView.TrySetActive(false);
 #endif
         }
