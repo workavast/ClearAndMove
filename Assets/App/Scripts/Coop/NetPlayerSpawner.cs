@@ -11,7 +11,7 @@ namespace App.Coop
     public class NetPlayerSpawner : NetworkBehaviour
     {
         [SerializeField] private PlayerSpawnPointsProvider playerSpawnPointsProvider;
-        [SerializeField] private PlayerSpawner playerSpawner;
+        [SerializeField] private PlayerFactory playerFactory;
         [SerializeField] private NetPlayersReady playersReady;
 
         [Inject] private readonly IReadOnlyPlayersRepository _playersRepository;
@@ -56,7 +56,7 @@ namespace App.Coop
         {
             var weaponId = _coopSessionDataRepository.GetData(playerRef).SelectedWeapon;
             var armorLevel = _coopSessionDataRepository.GetData(playerRef).EquippedArmorLevel;
-            playerSpawner.Spawn(playerRef, playerSpawnPointsProvider.SpawnPoints[playerRef.PlayerId - 1], armorLevel, weaponId);
+            playerFactory.Spawn(playerRef, playerSpawnPointsProvider.SpawnPoints[playerRef.PlayerId - 1], armorLevel, weaponId);
         }
     }
 }

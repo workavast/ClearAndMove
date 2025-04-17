@@ -2085,8 +2085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e1d6189bb42a1a44feed430ff7fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPlayersFriendlyFire: 1
-  hasEnemiesFriendlyFire: 0
 --- !u!1001 &52731888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10851,7 +10849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24da6ca6bafe4bc096ed606b28e2d9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawner: {fileID: 47313656}
+  playerFactory: {fileID: 47313656}
   playerReSpawnerPrefab: {fileID: 9088138905731836833, guid: 10d4705b1b92c694a8523408181015e3, type: 3}
   playerSpawnPointsProvider: {fileID: 536566524}
   playersReady: {fileID: 338389317}
@@ -26441,6 +26439,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4646407613516282, guid: f996731b12085f44883c30318a77c3c8, type: 3}
   m_PrefabInstance: {fileID: 1026547047}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1028537279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028537281}
+  - component: {fileID: 1028537280}
+  m_Layer: 0
+  m_Name: WarFogResizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1028537280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028537279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a378d82825849eca8c61489663b0470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warFogCamera: {fileID: 1487737727453949828}
+  renderTexture: {fileID: 8400000, guid: 365a731257182b644bd45a735135c2c8, type: 2}
+--- !u!4 &1028537281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028537279}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1030482294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56973,6 +57017,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 488af57a673044347918cda551e0c294, type: 3}
+--- !u!20 &1487737727453949828 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3039449821108078508, guid: 488af57a673044347918cda551e0c294, type: 3}
+  m_PrefabInstance: {fileID: 1487737727453949827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7998952003962438856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57245,3 +57294,4 @@ SceneRoots:
   - {fileID: 338389318}
   - {fileID: 309439370}
   - {fileID: 1185629414}
+  - {fileID: 1028537281}
