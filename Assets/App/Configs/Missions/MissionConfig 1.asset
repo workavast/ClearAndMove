@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96fa326185b4c2f930e33f68c73b3df, type: 3}
-  m_Name: MissionsConfig
+  m_Script: {fileID: 11500000, guid: b76db158d42b4fb3b5901fe1cc45baf1, type: 3}
+  m_Name: MissionConfig 1
   m_EditorClassIdentifier: 
-  missions:
-  - {fileID: 11400000, guid: 75466abcb6aa1464da14607fc71b5fa2, type: 2}
-  - {fileID: 11400000, guid: a5379e1e899cc374c8ce03a8a12e65d8, type: 2}
+  <MissionName>k__BackingField: Mission 1
+  <Scene>k__BackingField: {fileID: 102900000, guid: 5be4337ed1b1dea42847ef6c0ef8d57b, type: 3}
+  <SceneName>k__BackingField: Mission_1

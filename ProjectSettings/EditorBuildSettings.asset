@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/App/Scenes/Train.unity
     guid: 45878dc8abeaf304f8ef11f9be42fbb4
+  - enabled: 1
+    path: Assets/App/Scenes/Mission_1.unity
+    guid: 5be4337ed1b1dea42847ef6c0ef8d57b
   - enabled: 0
     path: Assets/Photon/FusionDemos/IntroSample/Sample/Scenes/FusionDemoMenu.unity
     guid: c3ffe7353c670464cbfd03781bc51365
