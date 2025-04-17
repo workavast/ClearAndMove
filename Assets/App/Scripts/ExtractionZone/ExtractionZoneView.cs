@@ -1,3 +1,4 @@
+using App.Core.Timer;
 using UnityEngine;
 
 namespace App.ExtractionZone

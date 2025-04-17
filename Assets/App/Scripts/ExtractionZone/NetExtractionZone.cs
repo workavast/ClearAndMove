@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using App.Core.Timer;
 using App.Entities.Player;
 using App.ExtractionZone.FSM;
 using App.ExtractionZone.FSM.SpecificStates;
@@ -11,7 +12,7 @@ using Zenject;
 
 namespace App.ExtractionZone
 {
-    public class NetExtractionZone : NetworkBehaviour, IStateMachineOwner
+    public class NetExtractionZone : NetworkBehaviour, IStateMachineOwner, ITimer
     {
         [SerializeField] private NetGameState netGameState;
         [SerializeField] private ExtractionZoneConfig config;
