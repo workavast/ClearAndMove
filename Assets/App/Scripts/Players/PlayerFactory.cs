@@ -7,7 +7,7 @@ using Zenject;
 
 namespace App.Players
 {
-    public class PlayerSpawner : MonoBehaviour
+    public class PlayerFactory : MonoBehaviour
     {
         [SerializeField] private NetPlayerEntity netPlayerEntityPrefab;
 

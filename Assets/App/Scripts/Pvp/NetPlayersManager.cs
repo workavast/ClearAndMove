@@ -10,7 +10,7 @@ namespace App.Pvp
 {
     public class NetPlayersManager : NetworkBehaviour
     {
-        [SerializeField] private PlayerSpawner playerSpawner;
+        [SerializeField] private PlayerFactory playerFactory;
         [SerializeField] private NetPlayerReSpawner playerReSpawnerPrefab;
         [SerializeField] private PlayerSpawnPointsProvider playerSpawnPointsProvider;
         [SerializeField] private NetPlayersReady playersReady;
@@ -64,7 +64,7 @@ namespace App.Pvp
             }
 
             var netPlayerSessionData = Runner.Spawn(playerReSpawnerPrefab, Vector3.zero, Quaternion.identity, playerRef);
-            netPlayerSessionData.Initialize(playerSpawnPointsProvider, playerSpawner);
+            netPlayerSessionData.Initialize(playerSpawnPointsProvider, playerFactory);
             _playerReSpawners.Add(playerRef, netPlayerSessionData);
         }
 

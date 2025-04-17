@@ -21,18 +21,18 @@ namespace App.Pvp
         
         private PlayerSpawnPointsProvider _playerSpawnPointsProvider;
         private NetPlayerEntity _netPlayerEntity;
-        private PlayerSpawner _playerSpawner;
+        private PlayerFactory _playerFactory;
         private bool _isInitialized;
         
         public event Action<NetPlayerEntity> OnPlayerSpawned;
         
-        public void Initialize(PlayerSpawnPointsProvider playerSpawnPointsProvider, PlayerSpawner playerSpawner)
+        public void Initialize(PlayerSpawnPointsProvider playerSpawnPointsProvider, PlayerFactory playerFactory)
         {
             if (_isInitialized)
                 return;
 
             _playerSpawnPointsProvider = playerSpawnPointsProvider;
-            _playerSpawner = playerSpawner;
+            _playerFactory = playerFactory;
             _isInitialized = true;
          
             if (HasStateAuthority) 
@@ -79,7 +79,7 @@ namespace App.Pvp
             var weaponId = _gameplaySessionDataRepository.GetData(PlayerRef).SelectedWeapon;
             var armorLevel = _gameplaySessionDataRepository.GetData(PlayerRef).EquippedArmorLevel;
             
-            _netPlayerEntity = _playerSpawner.Spawn(Object.InputAuthority, 
+            _netPlayerEntity = _playerFactory.Spawn(Object.InputAuthority, 
                 _playerSpawnPointsProvider.GetRandomFreeSpawnPoint(), armorLevel, weaponId);
             _netPlayerEntity.OnDeath += OnPlayerDeath;
             PlayerIsAlive = true;
