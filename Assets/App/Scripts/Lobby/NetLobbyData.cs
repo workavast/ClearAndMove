@@ -26,8 +26,11 @@ namespace App.Lobby
 
             missionSelectorPresenter.OnMissionClicked += SetMissionIndex;
 
-            if (ActiveMissionIndex >= 0) 
+            if (ActiveMissionIndex >= 0)
+            {
                 selectedMissionView.SetData(missionsConfig.Missions[ActiveMissionIndex]);
+                missionSelectorPresenter.SetActiveMarker(missionsConfig.Missions[ActiveMissionIndex]);
+            }
         }
 
         public override void Despawned(NetworkRunner runner, bool hasState)
@@ -38,7 +41,7 @@ namespace App.Lobby
         public MissionConfig GetMission(int activeMissionIndex) 
             => missionsConfig.Missions[activeMissionIndex];
 
-        private void SetMissionIndex(int index)
+        private void SetMissionIndex(MissionConfig missionConfig)
         {
             if (!HasStateAuthority)
             {
@@ -46,18 +49,22 @@ namespace App.Lobby
                 return;
             }
 
-            if (index == ActiveMissionIndex)
+            var missionIndex = missionsConfig.GetIndex(missionConfig);
+            if (missionIndex == ActiveMissionIndex)
             {
                 Debug.LogWarning("You try set mission index that already active");
                 return;
             }
             
-            ActiveMissionIndex = index;
+            ActiveMissionIndex = missionIndex;
         }
 
         private void ActiveMissionIndexChanged()
         {
             selectedMissionView.SetData(missionsConfig.Missions[ActiveMissionIndex]);
+            if (!HasStateAuthority)
+                missionSelectorPresenter.SetActiveMarker(missionsConfig.Missions[ActiveMissionIndex]);
+
             OnActiveMissionIndexChanged?.Invoke(ActiveMissionIndex);
         }
     }
