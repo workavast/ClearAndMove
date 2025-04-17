@@ -1,10 +1,10 @@
 using App.Core.Timer;
 using UnityEngine;
 
-namespace App.ExtractionZone
+namespace App.StairsZone
 {
     [RequireComponent(typeof(RectTransform))]
-    public class ExtractionZoneView : MonoBehaviour
+    public class StairsZoneView : MonoBehaviour
     {
         [SerializeField] private CountdownView countdownView;
         

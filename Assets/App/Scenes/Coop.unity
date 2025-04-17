@@ -1783,7 +1783,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 47313660}
-  - component: {fileID: 47313659}
   - component: {fileID: 47313656}
   - component: {fileID: 47313658}
   - component: {fileID: 47313662}
@@ -1821,27 +1820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleFactory: {fileID: 830009532}
---- !u!114 &47313659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47313655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 1539220386
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 47313658}
-  - {fileID: 47313662}
-  - {fileID: 47313661}
-  ForceRemoteRenderTimeframe: 0
 --- !u!4 &47313660
 Transform:
   m_ObjectHideFlags: 0
@@ -1850,12 +1828,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47313655}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &47313661
 MonoBehaviour:
@@ -2111,8 +2089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e1d6189bb42a1a44feed430ff7fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPlayersFriendlyFire: 1
-  hasEnemiesFriendlyFire: 0
 --- !u!1001 &52731888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6661,6 +6637,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4526156451493706, guid: 84a99c98a26b5db42a6ae70961fcf1f0, type: 3}
   m_PrefabInstance: {fileID: 235466516}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &235989683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235989685}
+  - component: {fileID: 235989684}
+  m_Layer: 0
+  m_Name: Net
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235989684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235989683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3814594030
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 2114773791}
+  - {fileID: 47313658}
+  - {fileID: 47313662}
+  - {fileID: 47313661}
+  - {fileID: 313321672}
+  - {fileID: 1024533215}
+  - {fileID: 997368054}
+  - {fileID: 674891977}
+  - {fileID: 429827358}
+  - {fileID: 873674367}
+  - {fileID: 873674370}
+  ForceRemoteRenderTimeframe: 0
+--- !u!4 &235989685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235989683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2114773792}
+  - {fileID: 47313660}
+  - {fileID: 313321671}
+  - {fileID: 1024533217}
+  - {fileID: 997368055}
+  - {fileID: 674891978}
+  - {fileID: 429827359}
+  - {fileID: 873674369}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &240124562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8746,7 +8791,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 313321671}
-  - component: {fileID: 313321670}
   - component: {fileID: 313321672}
   m_Layer: 0
   m_Name: NetCoopSessionDataRegistrator
@@ -8755,25 +8799,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &313321670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313321668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 1763430914
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 313321672}
-  ForceRemoteRenderTimeframe: 0
 --- !u!4 &313321671
 Transform:
   m_ObjectHideFlags: 0
@@ -8782,12 +8807,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313321668}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &313321672
 MonoBehaviour:
@@ -11791,7 +11816,6 @@ GameObject:
   m_Component:
   - component: {fileID: 429827359}
   - component: {fileID: 429827358}
-  - component: {fileID: 429827357}
   - component: {fileID: 429827356}
   m_Layer: 0
   m_Name: NetGameState
@@ -11813,25 +11837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   netGameState: {fileID: 429827358}
---- !u!114 &429827357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429827355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 651669917
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 429827358}
-  ForceRemoteRenderTimeframe: 0
 --- !u!114 &429827358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11853,12 +11858,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429827355}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &430861971
 PrefabInstance:
@@ -18236,7 +18241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 674891978}
   - component: {fileID: 674891977}
-  - component: {fileID: 674891976}
   m_Layer: 0
   m_Name: NetDisconnecter
   m_TagString: Untagged
@@ -18244,25 +18248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &674891976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674891975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 1992383272
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 674891977}
-  ForceRemoteRenderTimeframe: 0
 --- !u!114 &674891977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18283,12 +18268,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674891975}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &688401379
 PrefabInstance:
@@ -22941,7 +22926,6 @@ GameObject:
   - component: {fileID: 873674369}
   - component: {fileID: 873674367}
   - component: {fileID: 873674370}
-  - component: {fileID: 873674368}
   m_Layer: 0
   m_Name: NetExtractionZone
   m_TagString: Untagged
@@ -22964,26 +22948,6 @@ MonoBehaviour:
   netGameState: {fileID: 429827358}
   config: {fileID: 11400000, guid: f691394ecd441ab4cbead8c95af85451, type: 2}
   extractionZoneView: {fileID: 80036788}
---- !u!114 &873674368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873674366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 4035093233
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 873674367}
-  - {fileID: 873674370}
-  ForceRemoteRenderTimeframe: 0
 --- !u!4 &873674369
 Transform:
   m_ObjectHideFlags: 0
@@ -22992,13 +22956,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873674366}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.29, y: 0.1, z: 21.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 80036785}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &873674370
 MonoBehaviour:
@@ -26356,7 +26320,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 997368055}
-  - component: {fileID: 997368053}
   - component: {fileID: 997368054}
   m_Layer: 0
   m_Name: NetPlayersJoinLeftProvider
@@ -26365,25 +26328,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &997368053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997368052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 2481588302
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 997368054}
-  ForceRemoteRenderTimeframe: 0
 --- !u!114 &997368054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26404,12 +26348,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997368052}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1013237687
 PrefabInstance:
@@ -26854,7 +26798,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024533217}
-  - component: {fileID: 1024533216}
   - component: {fileID: 1024533215}
   m_Layer: 0
   m_Name: NetGlobalSessionDataRegistrator
@@ -26876,25 +26819,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalSessionDataPrefab: {fileID: 5396462447737921147, guid: 5b8d51a56ca059944a0d486bf3deed91, type: 3}
---- !u!114 &1024533216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024533214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 552677576
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 1024533215}
-  ForceRemoteRenderTimeframe: 0
 --- !u!4 &1024533217
 Transform:
   m_ObjectHideFlags: 0
@@ -26903,12 +26827,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024533214}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1026547047
 PrefabInstance:
@@ -55735,7 +55659,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2114773792}
   - component: {fileID: 2114773791}
-  - component: {fileID: 2114773790}
   m_Layer: 0
   m_Name: NetEnemySpawner
   m_TagString: Untagged
@@ -55743,25 +55666,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2114773790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114773789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 348249969
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 2114773791}
-  ForceRemoteRenderTimeframe: 0
 --- !u!114 &2114773791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55783,12 +55687,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114773789}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.25, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2119724952
 PrefabInstance:
@@ -57675,13 +57579,6 @@ SceneRoots:
   - {fileID: 1301617276}
   - {fileID: 830009533}
   - {fileID: 1274894291}
-  - {fileID: 2114773792}
-  - {fileID: 47313660}
-  - {fileID: 313321671}
-  - {fileID: 1024533217}
-  - {fileID: 997368055}
-  - {fileID: 674891978}
-  - {fileID: 429827359}
-  - {fileID: 873674369}
+  - {fileID: 235989685}
   - {fileID: 2105650897}
   - {fileID: 146851036}

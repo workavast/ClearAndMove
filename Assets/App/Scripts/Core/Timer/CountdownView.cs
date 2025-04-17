@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
 
-namespace App.ExtractionZone
+namespace App.Core.Timer
 {
     public class CountdownView : MonoBehaviour
     {
-        [SerializeField] private NetExtractionZone netExtractionZone;
+        [SerializeField] private InterfaceReference<ITimer> timer;
         [SerializeField] private TMP_Text tmpText;
 
         private void LateUpdate() 
@@ -16,7 +16,7 @@ namespace App.ExtractionZone
         
         private string GetTime()
         {
-            var time = netExtractionZone.GetTime();
+            var time = timer.Value.GetTime();
             return $"{time.Minutes:00}:{time.Seconds:00}";
         }
     }
