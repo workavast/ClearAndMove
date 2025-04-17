@@ -9,5 +9,8 @@ namespace App.Missions
         [SerializeField] private List<MissionConfig> missions;
 
         public IReadOnlyList<MissionConfig> Missions => missions;
+
+        public int GetIndex(MissionConfig config) 
+            => missions.IndexOf(config);
     }
 }

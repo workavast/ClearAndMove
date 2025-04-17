@@ -38,5 +38,8 @@ namespace App.Missions
             }
         }
 #endif
+
+        public override string ToString() 
+            => $"[{MissionName}] [{SceneName}] [{Scene}]";
     }
 }
