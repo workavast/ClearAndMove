@@ -1,5 +1,4 @@
 using App.Entities.Player;
-using App.NewDirectory1;
 using Fusion;
 using Fusion.Addons.FSM;
 using UnityEngine;
@@ -10,20 +9,19 @@ namespace App.StairsZone.FSM
     {
         protected readonly NetStairsZone NetStairsZone;
         protected readonly StairsZoneConfig Config;
-        protected readonly NetGameState NetGameState;
         protected readonly PlayersEntitiesRepository PlayersEntitiesRepository;
         protected readonly StairsZoneView StairsZoneView;
-        
+
+        protected Transform MovePoint => NetStairsZone.MovePoint;
         protected NetworkRunner Runner => NetStairsZone.Runner;
         protected Transform transform => NetStairsZone.transform;
         protected float ExtractionRadius => Config.ExtractionRadius;
         protected float ExtractionTime => Config.ExtractionTime;
         
         protected StairsZoneState(NetStairsZone netStairsZone, StairsZoneConfig config, 
-            NetGameState netGameState, PlayersEntitiesRepository playersEntitiesRepository, StairsZoneView stairsZoneView)
+            PlayersEntitiesRepository playersEntitiesRepository, StairsZoneView stairsZoneView)
         {
             NetStairsZone = netStairsZone;
-            NetGameState = netGameState;
             PlayersEntitiesRepository = playersEntitiesRepository;
             StairsZoneView = stairsZoneView;
             Config = config;

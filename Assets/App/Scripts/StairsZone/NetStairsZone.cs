@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using App.Core.Timer;
 using App.Entities.Player;
-using App.NewDirectory1;
+using App.Missions;
 using App.StairsZone.FSM;
 using App.StairsZone.FSM.SpecificStates;
 using DCFApixels;
@@ -15,7 +15,6 @@ namespace App.StairsZone
 {
     public class NetStairsZone : NetworkBehaviour, IStateMachineOwner, ITimer
     {
-        [SerializeField] private NetGameState netGameState;
         [SerializeField] private StairsZoneConfig config;
         [SerializeField] private StairsZoneView stairsZoneView;
         [SerializeField] private Transform movePoint;
@@ -24,7 +23,9 @@ namespace App.StairsZone
 
         [Inject] private PlayersEntitiesRepository _playersEntitiesRepository;
 
+        public Transform MovePoint => movePoint;
         public bool IsSpawned { get; private set; }
+        public Mission Mission { get; private set; }
 
         private int _lastRemainingTime;
         private TimeSpan _lastTimeSPan;
@@ -36,11 +37,11 @@ namespace App.StairsZone
 
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
-            _idle = new Idle(this, config, netGameState, _playersEntitiesRepository, stairsZoneView);
-            _countdown = new Countdown(this, config, netGameState, _playersEntitiesRepository, stairsZoneView);
-            _movePlayers = new MovePlayers(this, config, netGameState, _playersEntitiesRepository, stairsZoneView, movePoint);
+            _idle = new Idle(this, config, _playersEntitiesRepository, stairsZoneView);
+            _countdown = new Countdown(this, config, _playersEntitiesRepository, stairsZoneView);
+            _movePlayers = new MovePlayers(this, config, _playersEntitiesRepository, stairsZoneView);
 
-            _fsm = new StairsZoneStateMachine("ExtractionZone", _idle, _countdown, _movePlayers);
+            _fsm = new StairsZoneStateMachine("Stairs Zone", _idle, _countdown, _movePlayers);
 
             stateMachines.Add(_fsm);
         }
@@ -54,6 +55,21 @@ namespace App.StairsZone
         public override void Despawned(NetworkRunner runner, bool hasState)
             => IsSpawned = false;
 
+        public void SetMission(Mission mission)
+        {
+            Mission = mission;
+        }
+        
+        public void SetActivityState(bool isActive)
+        {
+            gameObject.SetActive(isActive);
+        }
+
+        public void SetMovePoint(Transform newMovePoint)
+        {
+            movePoint = newMovePoint;
+        }
+        
         public TimeSpan GetTime()
         {
             if (!IsSpawned || ExtractionTimer.ExpiredOrNotRunning(Runner))

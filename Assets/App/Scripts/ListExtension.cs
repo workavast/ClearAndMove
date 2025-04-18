@@ -32,5 +32,8 @@ namespace App
             var randomIndex = list.RandomIndex();
             return list[randomIndex];
         }
+
+        public static bool IsEndIndex<T>(this List<T> list, int index) 
+            => index >= list.Count - 1;
     }
 }

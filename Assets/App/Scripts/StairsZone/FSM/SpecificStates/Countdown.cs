@@ -6,9 +6,9 @@ namespace App.StairsZone.FSM.SpecificStates
 {
     public class Countdown : StairsZoneState
     {
-        public Countdown(NetStairsZone netStairsZone, StairsZoneConfig config, NetGameState netGameState,
+        public Countdown(NetStairsZone netStairsZone, StairsZoneConfig config,
             PlayersEntitiesRepository playersEntitiesRepository, StairsZoneView stairsZoneView) 
-            : base(netStairsZone, config, netGameState, playersEntitiesRepository, stairsZoneView) { }
+            : base(netStairsZone, config, playersEntitiesRepository, stairsZoneView) { }
 
         protected override void OnEnterState() 
             => NetStairsZone.ExtractionTimer = TickTimer.CreateFromSeconds(Runner, ExtractionTime);
@@ -23,9 +23,6 @@ namespace App.StairsZone.FSM.SpecificStates
 
         protected override void OnFixedUpdate()
         {
-            if (!NetGameState.GameIsRunning)
-                return;
-            
             if (!AllPlayersInZone())
             {
                 TryActivateState<Idle>();

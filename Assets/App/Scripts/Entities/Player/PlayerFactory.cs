@@ -1,11 +1,10 @@
-using App.Entities.Player;
 using App.NetworkRunning;
 using App.Weapons;
 using Fusion;
 using UnityEngine;
 using Zenject;
 
-namespace App.Players
+namespace App.Entities.Player
 {
     public class PlayerFactory : MonoBehaviour
     {

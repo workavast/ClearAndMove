@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using App.Coop;
+using App.Entities.Player;
 using App.Players;
 using App.Players.Repository;
 using Fusion;
