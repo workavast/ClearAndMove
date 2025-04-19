@@ -1,5 +1,5 @@
 using App.Entities.Player;
-using App.NewDirectory1;
+using App.GameState;
 using Fusion;
 
 namespace App.ExtractionZone.FSM.SpecificStates
@@ -18,7 +18,7 @@ namespace App.ExtractionZone.FSM.SpecificStates
 
         protected override void OnFixedUpdate()
         {
-            if (!NetGameState.GameIsRunning)
+            if (!NetGameState.IsRunning)
                 return;
 
             if (AllPlayersInZone())

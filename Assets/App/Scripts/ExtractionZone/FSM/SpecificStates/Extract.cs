@@ -1,5 +1,5 @@
 using App.Entities.Player;
-using App.NewDirectory1;
+using App.GameState;
 
 namespace App.ExtractionZone.FSM.SpecificStates
 {
@@ -11,7 +11,7 @@ namespace App.ExtractionZone.FSM.SpecificStates
 
         protected override void OnEnterState()
         {
-            NetGameState.SetGameState(false);
+            NetGameState.FinishGame();
             TryActivateState<IsOver>();
         }
     }

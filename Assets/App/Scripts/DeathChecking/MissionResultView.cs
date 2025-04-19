@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace App.NewDirectory1
+namespace App.DeathChecking
 {
     public class MissionResultView : MonoBehaviour
     {

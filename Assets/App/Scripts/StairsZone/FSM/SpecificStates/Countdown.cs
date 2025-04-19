@@ -1,5 +1,4 @@
 using App.Entities.Player;
-using App.NewDirectory1;
 using Fusion;
 
 namespace App.StairsZone.FSM.SpecificStates

@@ -21,6 +21,8 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
 
         protected override void OnFixedUpdate()
         {
+            _netGenerationModel.missionScheme.Clear();
+            _netGenerationModel.missionScheme.Capacity = _levelsConfig.LevelsConfigs.Count;
             foreach (var levelConfig in _levelsConfig.LevelsConfigs)
             {
                 var levelPrefabsPool = new List<NetLevel>(levelConfig.LevelPrefabs);

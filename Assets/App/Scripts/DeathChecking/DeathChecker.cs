@@ -4,12 +4,10 @@ using Avastrad.EventBusFramework;
 using UnityEngine;
 using Zenject;
 
-namespace App.NewDirectory1
+namespace App.DeathChecking
 {
     public class DeathChecker : MonoBehaviour, IEventReceiver<OnPlayerKnockout>, IEventReceiver<OnPlayerDeath>
     {
-        [SerializeField] private NetGameState netGameState;
-        
         [Inject] private readonly PlayersEntitiesRepository _playersEntitiesRepository;
         [Inject] private readonly IEventBus _eventBus;
         
@@ -31,7 +29,6 @@ namespace App.NewDirectory1
                     return;
 
             AllPlayersUnAlive = true;
-            netGameState.SetGameState(false);
         }
         
         public void OnEvent(OnPlayerDeath e)
@@ -43,7 +40,6 @@ namespace App.NewDirectory1
                     return;
 
             AllPlayersUnAlive = true;
-            netGameState.SetGameState(false);
         }
     }
 }
