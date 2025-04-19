@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a492b9438584a73824858f129ac9bb6, type: 3}
   m_Name: "Levels\u0421onfig"
   m_EditorClassIdentifier: 
-  levelsPrefabs:
-  - {fileID: -2419342906572475108, guid: 73009bfbf67c23546967f8eec0811d78, type: 3}
-  - {fileID: -4612458553025154472, guid: 97255d857d97de44ea9a645d9394c0c6, type: 3}
-  - {fileID: 6656628448556795359, guid: 5e3b6058afc73fd4f93d6593fa3c9aa0, type: 3}
+  levelsConfigs:
+  - {fileID: 11400000, guid: bbf1f1df333ec334c8148fe2265dfd94, type: 2}
+  - {fileID: 11400000, guid: d6fb4fbeb2aa7ee4c98c3d79f07aef5f, type: 2}
+  - {fileID: 11400000, guid: e0e082cf86c98814c9341d1f3c1899fb, type: 2}

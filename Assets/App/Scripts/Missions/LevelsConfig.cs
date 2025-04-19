@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace App.Missions
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = nameof(LevelsConfig), menuName =Consts.AppName + "/Configs/" + nameof(LevelsConfig))]
     public class LevelsConfig : ScriptableObject
     {
-        [SerializeField] private List<NetLevel> levelsPrefabs;
+        [SerializeField] private List<LevelConfig> levelsConfigs;
         
-        public List<NetLevel> LevelsPrefabs => levelsPrefabs;
+        public IReadOnlyList<LevelConfig> LevelsConfigs => levelsConfigs;
     }
 }

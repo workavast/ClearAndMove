@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using App.Entities.Enemy;
-using App.Missions.MissionEnemiesCounter;
 using App.Missions.MissionGeneration.FSM;
 using App.Missions.MissionGeneration.FSM.SpecificStates;
 using Fusion;
@@ -11,6 +10,7 @@ namespace App.Missions.MissionGeneration
 {
     public class NetMissionGenerator : NetworkBehaviour, IStateMachineOwner
     {
+        [SerializeField] private NetGenerationModel model;
         [SerializeField] private Transform levelsParent;
         [SerializeField] private LevelsConfig levelsConfig;
         [SerializeField] private Mission mission;
@@ -22,16 +22,18 @@ namespace App.Missions.MissionGeneration
 
         private Idle _idle;
         private Generation _generation;
+        private PrepareGeneration _prepareGeneration;
         private GenerationIsOver _generationIsOver;
         
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
             _idle = new Idle(this);
-            _generation = new Generation(this, levelsParent, levelsConfig, mission, enemyFactory);
+            _prepareGeneration = new PrepareGeneration(this, levelsConfig, model);
+            _generation = new Generation(this, levelsParent, mission, enemyFactory, model);
             _generationIsOver = new GenerationIsOver(this);
 
-            _fsm = new StateMachine<MissionGenerationState>("Mission Generation", _idle, _generation,
-                _generationIsOver);
+            _fsm = new StateMachine<MissionGenerationState>("Mission Generation", _idle, _prepareGeneration,
+                _generation, _generationIsOver);
             
             stateMachines.Add(_fsm);
         }

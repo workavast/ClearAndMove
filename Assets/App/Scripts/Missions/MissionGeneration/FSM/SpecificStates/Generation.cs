@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using App.Entities.Enemy;
 using App.InstantiateProviding;
-using App.Missions.MissionEnemiesCounter;
 using Fusion;
 using UnityEngine;
 
@@ -11,28 +10,30 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
     {
         private readonly InstantiateProvider _instantiateProvider;
         private readonly Transform _levelsParent;
-        private readonly LevelsConfig _levelsConfig;
         private readonly Mission _mission;
         private readonly EnemyFactory _enemyFactory;
+        private readonly NetGenerationModel _netGenerationModel;
 
-        public Generation(NetworkBehaviour netEntity, Transform levelsParent, LevelsConfig levelsConfig,
-            Mission mission, EnemyFactory enemyFactory)
+        public Generation(NetworkBehaviour netEntity, Transform levelsParent, Mission mission, 
+            EnemyFactory enemyFactory, NetGenerationModel netGenerationModel)
             : base(netEntity)
         {
             _levelsParent = levelsParent;
-            _levelsConfig = levelsConfig;
             _mission = mission;
             _enemyFactory = enemyFactory;
+            _netGenerationModel = netGenerationModel;
         }
 
         protected override void OnFixedUpdate()
         {
+            var missionScheme = _netGenerationModel.missionScheme;
+            
             NetLevel prevLevel = null;
-            var levels = new NetLevel[_levelsConfig.LevelsPrefabs.Count];
-            for (var i = 0; i < _levelsConfig.LevelsPrefabs.Count; i++)
+            var levels = new NetLevel[missionScheme.Count];
+            for (var i = 0; i < missionScheme.Count; i++)
             {
-                var level =  Runner.Spawn(_levelsConfig.LevelsPrefabs[i], _levelsParent.position + Vector3.left * 50 * i, Quaternion.identity);
-                level.SetLevelIndex(i, _levelsConfig.LevelsPrefabs.IsEndIndex(i));
+                var level =  Runner.Spawn(missionScheme[i], _levelsParent.position + Vector3.left * 50 * i, Quaternion.identity);
+                level.SetLevelIndex(i, missionScheme.IsEndIndex(i));
                 level.SetStairsState(false);
                 level.SetMission(_mission);
 

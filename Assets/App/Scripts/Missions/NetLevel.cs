@@ -4,6 +4,7 @@ using App.Entities.Enemy;
 using App.Missions.MissionEnemiesCounter;
 using App.StairsZone;
 using Avastrad.EventBusFramework;
+using DCFApixels;
 using Fusion;
 using UnityEngine;
 using Zenject;
@@ -65,6 +66,12 @@ namespace App.Missions
         {
             LevelIndex = index;
             IsLastLevel = isLastLevel;
+        }
+
+        private void OnDrawGizmos()
+        {
+            var settings = DebugXTextSettings.Default;
+            DebugX.Draw().Text(transform.position, gameObject.name, settings);
         }
     }
 }
