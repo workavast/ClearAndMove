@@ -9,7 +9,7 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
 
         protected override void OnFixedUpdate()
         {
-            TryActivateState<Generation>();
+            TryActivateState<PrepareGeneration>();
         }
     }
 }

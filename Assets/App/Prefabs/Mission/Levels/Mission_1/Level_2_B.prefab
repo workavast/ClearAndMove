@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 6656628448556795359}
   - component: {fileID: 8803966131738494947}
   m_Layer: 0
-  m_Name: Level3
+  m_Name: Level_2_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stairsZone: {fileID: 4458392132521705375}
   <MoveZone>k__BackingField: {fileID: 3579248505718230168}
-  enemySpawnPoints: []
 --- !u!114 &8803966131738494947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 3320760384
+  SortKey: 2651488546
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
