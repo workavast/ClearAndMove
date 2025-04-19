@@ -5705,6 +5705,7 @@ Transform:
   - {fileID: 55249575}
   - {fileID: 2014389998}
   - {fileID: 1313600301}
+  - {fileID: 1918750495}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &202733855
@@ -5737,6 +5738,7 @@ MonoBehaviour:
   - {fileID: 55249574}
   - {fileID: 2014389999}
   - {fileID: 1313600300}
+  - {fileID: 1918750496}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -6504,7 +6506,7 @@ MonoBehaviour:
   - {fileID: 1024533215}
   - {fileID: 997368054}
   - {fileID: 674891977}
-  - {fileID: 429827358}
+  - {fileID: 429827360}
   - {fileID: 2039881789}
   - {fileID: 2039881787}
   ForceRemoteRenderTimeframe: 0
@@ -11565,8 +11567,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 429827359}
-  - component: {fileID: 429827358}
   - component: {fileID: 429827356}
+  - component: {fileID: 429827360}
   m_Layer: 0
   m_Name: NetGameState
   m_TagString: Untagged
@@ -11586,20 +11588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2679ee2633d41e7a8f9b7b81bf8c24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  netGameState: {fileID: 429827358}
---- !u!114 &429827358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429827355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc3ce8c7f1ad4bc1b5e484abbe78996f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _GameIsRunning: 1
 --- !u!4 &429827359
 Transform:
   m_ObjectHideFlags: 0
@@ -11615,6 +11603,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 235989685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &429827360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429827355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bca9b27c8ae47f399809764ceef9975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathChecker: {fileID: 429827356}
 --- !u!1001 &430861971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50614,6 +50615,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4713333779746000, guid: 0d64cf1bb9d6db5458fc4331eed07b15, type: 3}
   m_PrefabInstance: {fileID: 1915745658}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1918750494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1918750495}
+  - component: {fileID: 1918750496}
+  m_Layer: 0
+  m_Name: GameState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1918750495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918750494}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 202733854}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1918750496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918750494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4cd389de1145478cadbec81fc3750b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: {fileID: 429827360}
 --- !u!1001 &1927122572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53441,7 +53487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4bae2a7a97b430ab4c41726b68b1949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  netGameState: {fileID: 429827358}
   config: {fileID: 11400000, guid: f691394ecd441ab4cbead8c95af85451, type: 2}
   extractionZoneView: {fileID: 1592591443}
 --- !u!1001 &2040059667

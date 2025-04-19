@@ -1,5 +1,5 @@
 using App.Entities.Player;
-using App.NewDirectory1;
+using App.GameState;
 using Fusion;
 using Fusion.Addons.FSM;
 using UnityEngine;

@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using App.Entities.Player;
 using App.EventBus;
-using App.NewDirectory1;
 using Avastrad.EventBusFramework;
 using UnityEngine;
 using Zenject;
@@ -11,8 +8,6 @@ namespace App.Missions
 {
     public class Mission : MonoBehaviour
     {
-        [SerializeField] private NetGameState netGameState;
-
         [Inject] private PlayersEntitiesRepository _playersEntitiesRepository;
         [Inject] private readonly IEventBus _eventBus;
         
@@ -20,6 +15,7 @@ namespace App.Missions
         private int _activeLevelIndex;
 
         public bool IsLastLevel => ActiveLevel().IsLastLevel;
+        public bool AllEnemiesIsDead { get; private set; }
 
         public void SetLevels(NetLevel[] levels)
             => _levels = levels;
@@ -41,7 +37,7 @@ namespace App.Missions
 
         private void OnLastLevelCleared()
         {
-            netGameState.SetGameState(false);
+            AllEnemiesIsDead = true;
         }
     }
 }

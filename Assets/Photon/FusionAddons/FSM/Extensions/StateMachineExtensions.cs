@@ -2,6 +2,12 @@
 {
 	public static class StateMachineExtensions
 	{
+		public static bool IsActiveStateOrNull(this IStateMachine stateMachine, IState state) 
+			=> stateMachine?.ActiveState == null || stateMachine.ActiveState == state;
+		
+		public static bool IsActiveState(this IStateMachine stateMachine, IState state) 
+			=> stateMachine != null && stateMachine.ActiveState != null && stateMachine.ActiveState == state;
+
 		public static bool TryActivateState(this IStateMachine stateMachine, IState state, bool allowReset = false)
 		{
 			Assert.Check(stateMachine.HasState(state), $"State {state.Name} not present in the state machine {stateMachine.Name}");

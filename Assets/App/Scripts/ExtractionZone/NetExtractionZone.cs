@@ -4,7 +4,7 @@ using App.Core.Timer;
 using App.Entities.Player;
 using App.ExtractionZone.FSM;
 using App.ExtractionZone.FSM.SpecificStates;
-using App.NewDirectory1;
+using App.GameState;
 using Fusion;
 using Fusion.Addons.FSM;
 using UnityEngine;
@@ -14,13 +14,13 @@ namespace App.ExtractionZone
 {
     public class NetExtractionZone : NetworkBehaviour, IStateMachineOwner, ITimer
     {
-        [SerializeField] private NetGameState netGameState;
         [SerializeField] private ExtractionZoneConfig config;
         [SerializeField] private ExtractionZoneView extractionZoneView;
 
         [Networked] public TickTimer ExtractionTimer { get; set; }
 
-        [Inject] private PlayersEntitiesRepository _playersEntitiesRepository;
+        [Inject] private readonly PlayersEntitiesRepository _playersEntitiesRepository;
+        [Inject] private readonly NetGameState _netGameState;
 
         public bool IsSpawned { get; private set; }
 
@@ -35,10 +35,10 @@ namespace App.ExtractionZone
         
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
-            _idle = new Idle(this, config, netGameState, _playersEntitiesRepository, extractionZoneView);
-            _countdown = new Countdown(this, config, netGameState, _playersEntitiesRepository, extractionZoneView);
-            _extract = new Extract(this, config, netGameState, _playersEntitiesRepository, extractionZoneView);
-            _isOver = new IsOver(this, config, netGameState, _playersEntitiesRepository, extractionZoneView);
+            _idle = new Idle(this, config, _netGameState, _playersEntitiesRepository, extractionZoneView);
+            _countdown = new Countdown(this, config, _netGameState, _playersEntitiesRepository, extractionZoneView);
+            _extract = new Extract(this, config, _netGameState, _playersEntitiesRepository, extractionZoneView);
+            _isOver = new IsOver(this, config, _netGameState, _playersEntitiesRepository, extractionZoneView);
 
             _fsm = new ExtractionZoneStateMachine("ExtractionZone", _idle, _countdown, _extract, _isOver);
             

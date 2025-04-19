@@ -10,7 +10,6 @@ namespace App.Missions.MissionGeneration
 {
     public class NetMissionGenerator : NetworkBehaviour, IStateMachineOwner
     {
-        [SerializeField] private NetGenerationModel model;
         [SerializeField] private Transform levelsParent;
         [SerializeField] private LevelsConfig levelsConfig;
         [SerializeField] private Mission mission;
@@ -18,8 +17,9 @@ namespace App.Missions.MissionGeneration
         
         public bool MissionGenerated => _fsm.ActiveState == _generationIsOver;
         
-        private StateMachine<MissionGenerationState> _fsm;
+        private readonly NetGenerationModel _model = new();
 
+        private StateMachine<MissionGenerationState> _fsm;
         private Idle _idle;
         private Generation _generation;
         private PrepareGeneration _prepareGeneration;
@@ -28,8 +28,8 @@ namespace App.Missions.MissionGeneration
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
             _idle = new Idle(this);
-            _prepareGeneration = new PrepareGeneration(this, levelsConfig, model);
-            _generation = new Generation(this, levelsParent, mission, enemyFactory, model);
+            _prepareGeneration = new PrepareGeneration(this, levelsConfig, _model);
+            _generation = new Generation(this, levelsParent, mission, enemyFactory, _model);
             _generationIsOver = new GenerationIsOver(this);
 
             _fsm = new StateMachine<MissionGenerationState>("Mission Generation", _idle, _prepareGeneration,

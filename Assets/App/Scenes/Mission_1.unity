@@ -736,7 +736,6 @@ GameObject:
   - component: {fileID: 17680924}
   - component: {fileID: 17680923}
   - component: {fileID: 17680926}
-  - component: {fileID: 17680927}
   m_Layer: 0
   m_Name: NetMissionGeneration
   m_TagString: Untagged
@@ -756,7 +755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a13e36f0c14720870b51502c4a43db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 17680927}
   levelsParent: {fileID: 17680924}
   levelsConfig: {fileID: 11400000, guid: 3f33467dd44120d4ca79e6229dfdd7d8, type: 2}
   mission: {fileID: 751463729}
@@ -789,19 +787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableLogging: 0
---- !u!114 &17680927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17680922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111afab3a4164a6fa6ae11e89c7f341e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionScheme: []
 --- !u!1001 &17932134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2623,6 +2608,7 @@ MonoBehaviour:
   - {fileID: 1276681197}
   - {fileID: 245191924}
   - {fileID: 1634241971}
+  - {fileID: 1193089603}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -2669,6 +2655,7 @@ Transform:
   - {fileID: 1276681198}
   - {fileID: 245191925}
   - {fileID: 1634241972}
+  - {fileID: 1193089604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &108923450
@@ -7590,9 +7577,9 @@ MonoBehaviour:
   - {fileID: 261922112}
   - {fileID: 331753572}
   - {fileID: 1244785480}
+  - {fileID: 1244785483}
   - {fileID: 17680923}
   - {fileID: 17680926}
-  - {fileID: 17680927}
   ForceRemoteRenderTimeframe: 0
 --- !u!4 &272165411
 Transform:
@@ -20138,7 +20125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176a34ba2b054680baaaaca7c05bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  netGameState: {fileID: 1244785480}
 --- !u!1001 &751935688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34256,6 +34242,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4457217087277678, guid: 1b02492fc66581741a9c5fd08841f769, type: 3}
   m_PrefabInstance: {fileID: 1184734459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1193089602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193089604}
+  - component: {fileID: 1193089603}
+  m_Layer: 0
+  m_Name: GameState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1193089603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193089602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4cd389de1145478cadbec81fc3750b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: {fileID: 1244785480}
+--- !u!4 &1193089604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193089602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 107536224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194566137
 GameObject:
   m_ObjectHideFlags: 0
@@ -36098,6 +36129,7 @@ GameObject:
   - component: {fileID: 1244785482}
   - component: {fileID: 1244785480}
   - component: {fileID: 1244785481}
+  - component: {fileID: 1244785483}
   m_Layer: 0
   m_Name: NetGameState
   m_TagString: Untagged
@@ -36114,10 +36146,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1244785479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc3ce8c7f1ad4bc1b5e484abbe78996f, type: 3}
+  m_Script: {fileID: 11500000, guid: 145ff19a729e495cb011bddebcff6a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _GameIsRunning: 1
+  deathChecker: {fileID: 1244785481}
+  mission: {fileID: 751463729}
+  netMissionGenerator: {fileID: 17680923}
 --- !u!114 &1244785481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36130,7 +36164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2679ee2633d41e7a8f9b7b81bf8c24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  netGameState: {fileID: 1244785480}
 --- !u!4 &1244785482
 Transform:
   m_ObjectHideFlags: 0
@@ -36146,6 +36179,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 272165411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1244785483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244785479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2615d364a70f4817830b874e07a6cc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enableLogging: 0
 --- !u!1001 &1245678403
 PrefabInstance:
   m_ObjectHideFlags: 0
