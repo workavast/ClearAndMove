@@ -7,11 +7,13 @@ namespace App.Ai.FSMs.Movement
 {
     public class MovementState : State<MovementState>
     {
+        protected readonly AiModel AiModel;
         protected readonly NetEntity Entity;
 
-        protected MovementState(NetEntity entity)
+        protected MovementState(NetEntity entity, AiModel aiModel)
         {
             Entity = entity;
+            AiModel = aiModel;
         }
         
         protected bool ArrivePosition(Vector3 targetPosition, float tolerance) 
