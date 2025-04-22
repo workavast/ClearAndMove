@@ -9,8 +9,8 @@ namespace App.Ai.FSMs.Movement
         private readonly float _maxDuration;
         private float _targetDuration;
         
-        public Stay(NetEntity entity, float minDuration, float maxDuration) 
-            : base(entity)
+        public Stay(NetEntity entity, AiModel aiModel, float minDuration, float maxDuration) 
+            : base(entity, aiModel)
         {
             _minDuration = minDuration;
             _maxDuration = maxDuration;

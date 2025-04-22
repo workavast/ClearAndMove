@@ -19,8 +19,8 @@ namespace App.Ai.FSMs.Ai
 
         protected override void CollectChildStateMachines(List<IStateMachine> stateMachines)
         {
-            var stay = new Stay(NetEntity, Config.StayMinDuration, Config.StayMaxDuration);
-            var randomMove = new RandomMove(NetEntity, Config.MoveMinDistance, Config.MoveMaxDistance, AiConfig.MoveTolerance);
+            var stay = new Stay(NetEntity, AiModel, Config.StayMinDuration, Config.StayMaxDuration);
+            var randomMove = new RandomMove(NetEntity, AiModel, Config.MoveMinDistance, Config.MoveMaxDistance, AiConfig.MoveTolerance);
             
             _movementFsm = new StateMachine<MovementState>("HoldPosition-Movement", stay, randomMove);
             stateMachines.Add(_movementFsm);
