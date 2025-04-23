@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsConfig: {fileID: 11400000, guid: f6a7fc4c7ae2b1842a8ee048398d3a4c, type: 2}
   screenModeConfig: {fileID: 11400000, guid: 600512915456d1041af4adb79ee5ad68, type: 2}
+  resolutionConfig: {fileID: 11400000, guid: c67c2ac0098efaf439a7f37df8506b0f, type: 2}
 --- !u!1 &1957965332485814001
 GameObject:
   m_ObjectHideFlags: 0

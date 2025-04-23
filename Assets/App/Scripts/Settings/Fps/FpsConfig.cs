@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace App.Settings.Fps
 {
-    [CreateAssetMenu(fileName = nameof(FpsConfig), menuName = Consts.AppName +"/Configs/Settings/" + nameof(FpsConfig))]
+    [CreateAssetMenu(fileName = nameof(FpsConfig), menuName = Consts.ConfigsPath + "/Settings/" + nameof(FpsConfig))]
     public class FpsConfig : ScriptableObject
     {
         [SerializeField] private List<int> fpsOptions = new(){ 30, 60, 90, 120, 144, 240, 360 };
