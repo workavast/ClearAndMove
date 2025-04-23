@@ -6,8 +6,6 @@ namespace App.Settings
 {
     public class SettingsPresenter : MonoBehaviour
     {
-        [SerializeField] private ResolutionSettingsController resolutionSettingsController;
-
         [Inject] private readonly SettingsModel _settingsModel;
         [Inject] private readonly AudioVolumeChanger _audioVolumeChanger;
 
@@ -29,7 +27,6 @@ namespace App.Settings
         public void ApplySettings()
         {
             _audioVolumeChanger.Apply();
-            resolutionSettingsController.Apply();
 
             foreach (var viewModel in _settingsViewModels)
                 viewModel.ApplySettings();
@@ -43,7 +40,6 @@ namespace App.Settings
                 viewModel.ResetSettings();
 
             _audioVolumeChanger.ResetToDefault();
-            resolutionSettingsController.ResetToDefault();
 
             _settingsModel.Save();
         }
