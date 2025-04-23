@@ -1,11 +1,24 @@
+using System;
 using System.IO;
+using ModestTree;
 using UnityEngine;
 
 namespace Avastrad.SavingAndLoading
 {
     public class JsonSaveAndLoader : ISaveAndLoader
     {
-        private readonly string _savePath = Application.persistentDataPath + "/Save.json";
+        private readonly string _savePath;
+
+        public JsonSaveAndLoader(string savePath = "/Save.json")
+        {
+            if (savePath.IsEmpty() || savePath.Length <= 0)
+                throw new NullReferenceException("Save path can't be empty");
+
+            if (savePath[0] != '/')
+                Debug.LogWarning("Save path started not from /");
+            
+            _savePath = Application.persistentDataPath + savePath;
+        }
         
         public void Save(object data)
         {
@@ -14,10 +27,10 @@ namespace Avastrad.SavingAndLoading
                 writer.Write(save);
         }
 
-        public T Load<T>()
+        public T TryLoad<T>()
             where T : new()
         {
-            if (!SaveExist())
+            if (!Exist())
                 return new T();
                 
             var save = "";
@@ -30,7 +43,22 @@ namespace Avastrad.SavingAndLoading
             return JsonUtility.FromJson<T>(save);
         }
         
-        public bool SaveExist() 
+        public T Load<T>()
+        {
+            if (!Exist())
+                throw new ArgumentException("Save doesnt exist");
+                
+            var save = "";
+            using (var reader = new StreamReader(_savePath)) 
+                save += reader.ReadLine();
+        
+            if (string.IsNullOrEmpty(save))
+                throw new ArgumentException("Save is empty");
+        
+            return JsonUtility.FromJson<T>(save);
+        }
+        
+        public bool Exist() 
             => File.Exists(_savePath);
 
         public void DeleteSave()

@@ -45,6 +45,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armorsConfig: {fileID: 11400000, guid: 0d2eb2ae446271e4698aebdc08217944, type: 2}
+--- !u!1 &1616499837071995947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5708840545452863707}
+  - component: {fileID: 6210400728231978508}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5708840545452863707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616499837071995947}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4878349267077142881}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6210400728231978508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616499837071995947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2207a55940643718db663b923b4ca7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsConfig: {fileID: 11400000, guid: f6a7fc4c7ae2b1842a8ee048398d3a4c, type: 2}
+  screenModeConfig: {fileID: 11400000, guid: 600512915456d1041af4adb79ee5ad68, type: 2}
 --- !u!1 &1957965332485814001
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +489,7 @@ Transform:
   - {fileID: 8898976541843835045}
   - {fileID: 157061133161545809}
   - {fileID: 8582973051563719165}
+  - {fileID: 5708840545452863707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7415664030999650130
@@ -470,6 +517,7 @@ MonoBehaviour:
   - {fileID: 2023672719738286432}
   - {fileID: 5071786305908680124}
   - {fileID: 4512959907586808005}
+  - {fileID: 6210400728231978508}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0

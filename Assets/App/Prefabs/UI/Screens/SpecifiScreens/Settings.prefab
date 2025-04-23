@@ -1457,7 +1457,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3665535832238534247}
-  - component: {fileID: 2224369955054943059}
+  - component: {fileID: 3230976230277347239}
+  - component: {fileID: 718320274509882290}
   m_Layer: 5
   m_Name: FpsLimit
   m_TagString: Untagged
@@ -1486,7 +1487,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2224369955054943059
+--- !u!114 &3230976230277347239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3225514197623220569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d9d4d5572e4ad7911498d95ef499d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsDropdown: {fileID: 287576148446492278}
+  viewModel: {fileID: 718320274509882290}
+--- !u!114 &718320274509882290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1498,7 +1513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e452b300774b36bf9e36d4555979aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsDropdown: {fileID: 287576148446492278}
 --- !u!1 &3528033737290814952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,8 +1844,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionSettingsController: {fileID: 4961265125145844156}
-  fpsSettingsController: {fileID: 2224369955054943059}
-  screenModeSettingsController: {fileID: 6312263625305054061}
 --- !u!223 &4339966878429876373
 Canvas:
   m_ObjectHideFlags: 0
@@ -1849,7 +1861,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -2318,7 +2330,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124206021987284653}
-  - component: {fileID: 6312263625305054061}
+  - component: {fileID: 2335901679288931701}
+  - component: {fileID: 1171286160493010927}
   m_Layer: 5
   m_Name: ScreenMode
   m_TagString: Untagged
@@ -2347,7 +2360,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6312263625305054061
+--- !u!114 &2335901679288931701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071972730283221726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a333bd07e900424b982d3629e469e109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenModeDropdown: {fileID: 3280969920764494076}
+  viewModel: {fileID: 1171286160493010927}
+--- !u!114 &1171286160493010927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2359,7 +2386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190d781985cf4566824af1f58453b090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenModeDropdown: {fileID: 3280969920764494076}
 --- !u!1 &5119442883338571486
 GameObject:
   m_ObjectHideFlags: 0

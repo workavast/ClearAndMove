@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -6,9 +7,14 @@ namespace Avastrad.SavingAndLoading
 {
     public class BinarySaveAndLoader : ISaveAndLoader
     {
-        private const string SaveFileName = "Save";
-        private static string SavePath => Path.Combine(Application.dataPath, SaveFileName);
+        private readonly string _saveFileName;
+        private string SavePath => Path.Combine(Application.dataPath, _saveFileName);
 
+        public BinarySaveAndLoader(string saveFileName = "Save")
+        {
+            _saveFileName = saveFileName;
+        }
+        
         public void Save(object data)
         {
             using (FileStream stream = new FileStream(SavePath, FileMode.OpenOrCreate))
@@ -18,10 +24,19 @@ namespace Avastrad.SavingAndLoading
             }
         }
 
-        public T Load<T>() where T : new()
+        public T TryLoad<T>() 
+            where T : new()
         {
-            if (!SaveExist())
+            if (!Exist())
                 return new T();
+            
+            return Load<T>();
+        }
+
+        public T Load<T>()
+        {
+            if (!Exist())
+                throw new ArgumentException("Save doesnt exist");
 
             T loadedData;
             using (FileStream stream = new FileStream(SavePath, FileMode.Open))
@@ -33,7 +48,7 @@ namespace Avastrad.SavingAndLoading
             return loadedData;
         }
 
-        public bool SaveExist() 
+        public bool Exist() 
             => File.Exists(SavePath);
 
         public void DeleteSave() 

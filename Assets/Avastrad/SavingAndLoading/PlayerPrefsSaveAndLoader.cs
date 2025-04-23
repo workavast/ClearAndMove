@@ -1,36 +1,55 @@
+using System;
 using UnityEngine;
 
 namespace Avastrad.SavingAndLoading
 {
     public class PlayerPrefsSaveAndLoader : ISaveAndLoader
     {
-        private const string SaveKey = "Save";
+        private readonly string _saveKey;
 
+        public PlayerPrefsSaveAndLoader(string saveKey = "Save")
+        {
+            _saveKey = saveKey;
+        }
+        
         public void Save(object data)
         {
             var save = JsonUtility.ToJson(data);
-            PlayerPrefs.SetString(SaveKey, save);
+            PlayerPrefs.SetString(_saveKey, save);
             PlayerPrefs.Save();
         }
 
-        public T Load<T>() 
+        public T TryLoad<T>() 
             where T : new()
         {
-            if (!SaveExist())
+            if (!Exist())
                 return new T();
 
-            var save = PlayerPrefs.GetString(SaveKey);
+            var save = PlayerPrefs.GetString(_saveKey);
             
             if (string.IsNullOrEmpty(save))
                 return new T();
 
             return JsonUtility.FromJson<T>(save);
         }
+        
+        public T Load<T>() 
+        {
+            if (!Exist())
+                throw new ArgumentException("Save doesnt exist");
 
-        public bool SaveExist() 
-            => PlayerPrefs.HasKey(SaveKey);
+            var save = PlayerPrefs.GetString(_saveKey);
+            
+            if (string.IsNullOrEmpty(save))
+                throw new ArgumentException("Save is empty");
+
+            return JsonUtility.FromJson<T>(save);
+        }
+
+        public bool Exist() 
+            => PlayerPrefs.HasKey(_saveKey);
 
         public void DeleteSave()
-            => PlayerPrefs.DeleteKey(SaveKey);
+            => PlayerPrefs.DeleteKey(_saveKey);
     }
 }
