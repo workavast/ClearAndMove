@@ -20,5 +20,7 @@ namespace App.Settings.Resolution
 
         public static bool operator !=(InspectorResolution left, InspectorResolution right) 
             => !(left == right);
+
+        public override string ToString() => $"{Width}x{Height}";
     }
 }
