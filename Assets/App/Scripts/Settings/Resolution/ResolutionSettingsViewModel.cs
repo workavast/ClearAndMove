@@ -48,8 +48,10 @@ namespace App.Settings.Resolution
 
         public void ResetToDefault()
         {
-            Set(DefaultResolutionIndex, true);
+            Set(DefaultResolutionIndex, false);
             ApplySettings();
+            
+            OnChanged?.Invoke();
         }
     }
 }

@@ -37,6 +37,8 @@ namespace App.Settings.Volume
             EffectsVolume = Model.EffectsVolume;
             MusicVolume = Model.MusicVolume;
             ApplySettings();
+            
+            OnChanged?.Invoke();
         }
 
         public void ResetToDefault()
@@ -45,6 +47,8 @@ namespace App.Settings.Volume
             EffectsVolume = Model.DefaultEffectsVolume;
             MusicVolume = Model.DefaultMusicVolume;
             ApplySettings();
+            
+            OnChanged?.Invoke();
         }
 
         public void Set(VolumeType volumeType, float value, bool notify)
