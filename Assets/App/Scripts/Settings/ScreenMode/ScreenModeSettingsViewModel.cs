@@ -38,6 +38,7 @@ namespace App.Settings.ScreenMode
         {
             Model.ResetToDefault();
             IsFullScreen = Model.IsFullScreen;
+            
             OnChanged?.Invoke();
         }
 
