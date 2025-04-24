@@ -20,7 +20,7 @@ namespace App.Settings.Resolution
             for (var i = 0; i < Resolutions.Count; i++)
             {
                 var resolution = Resolutions[i];
-                resolutionDropdown.options.Add(new TMP_Dropdown.OptionData(resolution.Width + " x " + resolution.Height));
+                resolutionDropdown.options.Add(new TMP_Dropdown.OptionData($"{resolution.Width} x {resolution.Height}"));
 
                 if (resolution.Width == Screen.currentResolution.width && resolution.Height == Screen.currentResolution.height)
                     currentResolutionIndex = i;

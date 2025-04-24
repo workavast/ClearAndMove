@@ -24,14 +24,16 @@ namespace App.Settings.Resolution
             _resolutions = new List<InspectorResolution>(_config.Resolutions);
             
             MonitorResolution = GetMonitorResolution();
+            
             DefaultResolutionIndex = _resolutions.IndexOf(MonitorResolution);
-
             if (DefaultResolutionIndex <= -1)
             {
                 SpecialResolution = true;
                 _resolutions.Insert(0, MonitorResolution);
                 DefaultResolutionIndex = 0;
             }
+
+            SelectedResolutionIndex = DefaultResolutionIndex;
         }
 
         public void Apply()
