@@ -92,6 +92,7 @@ MonoBehaviour:
   fpsConfig: {fileID: 11400000, guid: f6a7fc4c7ae2b1842a8ee048398d3a4c, type: 2}
   screenModeConfig: {fileID: 11400000, guid: 600512915456d1041af4adb79ee5ad68, type: 2}
   resolutionConfig: {fileID: 11400000, guid: c67c2ac0098efaf439a7f37df8506b0f, type: 2}
+  volumeConfig: {fileID: 11400000, guid: bde5611f41e2d4046bc33140a1c5976f, type: 2}
 --- !u!1 &1957965332485814001
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f3229723d44b81b1e8667adfc477a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: ee94b9b3484eac7448fa129bf85393cc, type: 2}
   ambienceConfig: {fileID: 11400000, guid: f0bb069d95ed36148be52bfeef240013, type: 2}
 --- !u!1001 &1932357459691140568
 PrefabInstance:

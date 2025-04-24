@@ -1,25 +1,16 @@
 ﻿using App.Audio.Ambience;
 using UnityEngine;
-using UnityEngine.Audio;
 using Zenject;
 
 namespace App.Audio
 {
     public class AudioProjectInstaller : MonoInstaller
     {
-        [SerializeField] private AudioMixer audioMixer;
         [SerializeField] private AmbienceConfig ambienceConfig;
         
         public override void InstallBindings()
         {
-            BindAudioVolumeChanger();
             BindAmbience();
-        }
-        
-        private void BindAudioVolumeChanger()
-        {
-            Container.Bind<AudioVolumeChanger>().FromNew().AsSingle()
-                .WithArguments(audioMixer, new VolumeSettings()).NonLazy();
         }
 
         private void BindAmbience()

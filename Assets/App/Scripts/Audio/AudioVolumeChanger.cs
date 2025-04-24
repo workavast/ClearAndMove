@@ -6,43 +6,19 @@ namespace App.Audio
 {
     public class AudioVolumeChanger
     {
-        private const string MasterParam = "MasterVolume";
-        private const string EffectsParam = "EffectsVolume";
-        private const string MusicParam = "MusicVolume";
-        
         private readonly AudioMixer _mixer;
-        private readonly VolumeSettings _volumeSettings;
+        private readonly string _masterParam;
+        private readonly string _effectsParam;
+        private readonly string _musicParam;
 
-        public float MasterVolume => _volumeSettings.Master;
-        public float EffectsVolume => _volumeSettings.EffectsVolume;
-        public float MusicVolume => _volumeSettings.MusicVolume;
-        
-        public Action OnResetToDefault;
-
-        public AudioVolumeChanger(AudioMixer mixer, VolumeSettings volumeSettings)
+        public AudioVolumeChanger(AudioMixer mixer, string masterParam, string effectsParam, string musicParam)
         {
             _mixer = mixer;
-            _volumeSettings = volumeSettings;
+            _masterParam = masterParam;
+            _effectsParam = effectsParam;
+            _musicParam = musicParam;
         }
 
-        public void StartInit()
-        {         
-            SetVolume(MasterParam, MasterVolume);
-            SetVolume(EffectsParam, EffectsVolume);
-            SetVolume(MusicParam, MusicVolume);
-        }
-
-        public float GetVolume(VolumeType volumeType)
-        {
-            return volumeType switch
-            {
-                VolumeType.Master => MasterVolume,
-                VolumeType.Effects => EffectsVolume,
-                VolumeType.Music => MusicVolume,
-                _ => throw new ArgumentOutOfRangeException(nameof(volumeType), volumeType, null)
-            };
-        }
-        
         /// <summary>
         /// Dont forgot apply changes by <see cref="Apply"/>
         /// </summary>
@@ -51,70 +27,17 @@ namespace App.Audio
             switch (volumeType)
             {
                 case VolumeType.Master:
-                    SetMasterVolume(newVolume);
+                    SetVolume(_masterParam, newVolume);
                     break;
                 case VolumeType.Effects:
-                    SetEffectsVolume(newVolume);
+                    SetVolume(_effectsParam, newVolume);
                     break;
                 case VolumeType.Music:
-                    SetMusicVolume(newVolume);
+                    SetVolume(_musicParam, newVolume);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(volumeType), volumeType, null);
             }
-        }
-        
-        /// <summary>
-        /// Dont forgot apply changes by <see cref="Apply"/>
-        /// </summary>
-        public void SetMasterVolume(float newVolume)
-        {
-            _volumeSettings.ChangeMasterVolume(newVolume);
-            SetVolume(MasterParam, MasterVolume);
-        }
-        
-        /// <summary>
-        /// Dont forgot apply changes by <see cref="Apply"/>
-        /// </summary>
-        public void SetEffectsVolume(float newVolume)
-        {
-            _volumeSettings.ChangeEffectsVolume(newVolume);
-            SetVolume(EffectsParam, EffectsVolume);
-        }
-
-        /// <summary>
-        /// Dont forgot apply changes by <see cref="Apply"/>
-        /// </summary>
-        public void SetMusicVolume(float newVolume)
-        {
-            _volumeSettings.ChangeMusicVolume(newVolume);
-            SetVolume(MusicParam, MusicVolume);
-        }
-
-        /// <summary>
-        /// used to save changes, but we dont have saves
-        /// </summary>
-        public void Apply() 
-            => _volumeSettings.Apply();
-
-        public void ResetToDefault()
-        {
-            _volumeSettings.ResetToDefault();
-            
-            SetVolume(MasterParam, MasterVolume);
-            SetVolume(EffectsParam, EffectsVolume);
-            SetVolume(MusicParam, MusicVolume);
-            
-            OnResetToDefault?.Invoke();
-        }
-        
-        public void Revert()
-        {
-            _volumeSettings.Revert();
-            
-            SetVolume(MasterParam, MasterVolume);
-            SetVolume(EffectsParam, EffectsVolume);
-            SetVolume(MusicParam, MusicVolume);
         }
 
         private void SetVolume(string paramName, float newVolume)
