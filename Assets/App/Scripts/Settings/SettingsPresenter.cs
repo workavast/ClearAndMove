@@ -1,4 +1,3 @@
-using App.Audio;
 using UnityEngine;
 using Zenject;
 
@@ -7,7 +6,6 @@ namespace App.Settings
     public class SettingsPresenter : MonoBehaviour
     {
         [Inject] private readonly SettingsModel _settingsModel;
-        [Inject] private readonly AudioVolumeChanger _audioVolumeChanger;
 
         private ISettingsViewModel[] _settingsViewModels;
         private ISettingsView[] _settingsViews;
@@ -26,8 +24,6 @@ namespace App.Settings
 
         public void ApplySettings()
         {
-            _audioVolumeChanger.Apply();
-
             foreach (var viewModel in _settingsViewModels)
                 viewModel.ApplySettings();
 
@@ -38,8 +34,6 @@ namespace App.Settings
         {
             foreach (var viewModel in _settingsViewModels)
                 viewModel.ResetSettings();
-
-            _audioVolumeChanger.ResetToDefault();
 
             _settingsModel.Save();
         }

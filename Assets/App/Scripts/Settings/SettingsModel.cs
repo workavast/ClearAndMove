@@ -2,6 +2,7 @@ using System;
 using App.Settings.Fps;
 using App.Settings.Resolution;
 using App.Settings.ScreenMode;
+using App.Settings.Volume;
 using UnityEngine;
 using Zenject;
 
@@ -13,21 +14,25 @@ namespace App.Settings
         [field: SerializeField] public FpsSettingsModel FpsSettingsModel { get; private set; }
         [field: SerializeField] public ScreenModeSettingsModel ScreenModeSettingsModel { get; private set; }
         [field: SerializeField] public ResolutionSettingsModel ResolutionSettingsModel { get; private set; }
+        [field: SerializeField] public VolumeSettingsModel VolumeSettingsModel { get; private set; }
 
         private readonly ISettingsModel[] _allSettings;
 
         [Inject]
-        public SettingsModel(FpsConfig fpsConfig, ScreenModeConfig screenModeConfig, ResolutionSettingsConfig resolutionConfig)
+        public SettingsModel(FpsConfig fpsConfig, ScreenModeConfig screenModeConfig, 
+            ResolutionSettingsConfig resolutionConfig, VolumeSettingsConfig volumeConfig)
         {
             FpsSettingsModel = new FpsSettingsModel(fpsConfig);
             ScreenModeSettingsModel = new ScreenModeSettingsModel(screenModeConfig);
             ResolutionSettingsModel = new ResolutionSettingsModel(resolutionConfig);
+            VolumeSettingsModel = new VolumeSettingsModel(volumeConfig);
 
             _allSettings = new ISettingsModel[]
             {
                 FpsSettingsModel,
                 ScreenModeSettingsModel,
-                ResolutionSettingsModel
+                ResolutionSettingsModel,
+                VolumeSettingsModel
             };
         }
 
@@ -36,6 +41,7 @@ namespace App.Settings
             FpsSettingsModel.Load(model.FpsSettingsModel);
             ScreenModeSettingsModel.Load(model.ScreenModeSettingsModel);
             ResolutionSettingsModel.Load(model.ResolutionSettingsModel);
+            VolumeSettingsModel.Load(model.VolumeSettingsModel);
         }
 
         public void Save()
