@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LevelConfig 0
   m_EditorClassIdentifier: 
   levelPrefabs:
-  - {fileID: -2419342906572475108, guid: 73009bfbf67c23546967f8eec0811d78, type: 3}
-  - {fileID: -2419342906572475108, guid: 4063270502935c143b211602ff7ce327, type: 3}
-  - {fileID: -2419342906572475108, guid: 747932a4e02a16b40888401622da18c3, type: 3}
+  - {fileID: 8233683145024925600, guid: 16ed3b34f61f06544990f58794a23cda, type: 3}
+  - {fileID: 8233683145024925600, guid: 0b712349551694948b00a9ac04d07788, type: 3}
+  - {fileID: 8233683145024925600, guid: 01f8286a44badeb4eb60b4ba75792da1, type: 3}

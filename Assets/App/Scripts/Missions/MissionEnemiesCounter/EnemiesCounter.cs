@@ -5,6 +5,7 @@ using App.Entities;
 using App.Entities.Enemy;
 using App.EventBus;
 using Avastrad.EventBusFramework;
+using UnityEngine;
 
 namespace App.Missions.MissionEnemiesCounter
 {
@@ -31,8 +32,11 @@ namespace App.Missions.MissionEnemiesCounter
         public void Dispose() 
             => _eventBus.UnSubscribe(this);
 
-        public void SetEnemies(IReadOnlyList<NetEnemy> enemies) 
-            => _enemies = enemies;
+        public void SetEnemies(IReadOnlyList<NetEnemy> enemies)
+        {
+            Debug.Log($"SetEnemies {enemies == null}");
+            _enemies = enemies;
+        }
 
         public void OnEvent(OnKill e)
         {
@@ -55,6 +59,8 @@ namespace App.Missions.MissionEnemiesCounter
         /// <returns>(Dead Enemies Count, Full Enemies Count)</returns>
         public (int, int) GetEnemiesCount()
         {
+            Debug.Log($"SetEnemies {_enemies == null}");
+
             var deadEnemiesCount = 0;
             foreach (var enemy in _enemies)
                 if (enemy.IsDead())

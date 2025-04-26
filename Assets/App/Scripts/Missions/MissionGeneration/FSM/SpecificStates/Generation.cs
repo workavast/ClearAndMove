@@ -32,7 +32,7 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
             var levels = new NetLevel[missionScheme.Count];
             for (var i = 0; i < missionScheme.Count; i++)
             {
-                var level =  Runner.Spawn(missionScheme[i], _levelsParent.position + Vector3.left * 50 * i, Quaternion.identity);
+                var level =  Runner.Spawn(missionScheme[i], _levelsParent.position + Vector3.up * 2.5f * i, Quaternion.identity);
                 level.SetLevelIndex(i, missionScheme.IsEndIndex(i));
                 level.SetStairsState(false);
                 level.SetMission(_mission);
