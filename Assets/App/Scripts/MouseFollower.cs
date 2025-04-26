@@ -1,4 +1,5 @@
 using App.PlayerInput.InputProviding;
+using App.Players;
 using Avastrad.Vector2Extension;
 using UnityEngine;
 using Zenject;
@@ -7,7 +8,10 @@ namespace App
 {
     public class MouseFollower : MonoBehaviour
     {
+        [Inject] private readonly LocalPlayerProvider _localPlayerProvider;
         [Inject] private readonly RawInputProvider _rawInputProvider;
+
+        private Vector3 _lastPlayerPosition;
         
         private void Update()
         {
@@ -18,6 +22,10 @@ namespace App
             var screenPoint = _rawInputProvider.MousePosition.XY0(depthOffset);
             var lookPoint = Camera.main.ScreenToWorldPoint(screenPoint);
 
+            if (_localPlayerProvider.HasEntity)
+                _lastPlayerPosition = _localPlayerProvider.Position;
+
+            lookPoint.y = _lastPlayerPosition.y;
             transform.position = lookPoint;
         }
     }
