@@ -2,12 +2,15 @@ using System;
 using App.Entities.Player;
 using App.NetworkRunning;
 using Fusion;
+using UnityEngine;
 
 namespace App.Players
 {
     public class LocalPlayerProvider
     {
         public bool HasEntity { get; private set; }
+        public Vector3 Position => _netPlayerEntity.transform.position;
+        
         public float MaxHealthPoints => _netPlayerEntity.MaxHealthPoints;
         public float CurrentHealthPoints => _netPlayerEntity.NetHealthPoints;
 

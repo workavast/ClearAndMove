@@ -1,5 +1,4 @@
-using App.NetworkRunning;
-using Avastrad.Vector2Extension;
+using App.Players;
 using UnityEngine;
 using Zenject;
 
@@ -7,14 +6,12 @@ namespace App.Entities.Player
 {
     public class PlayerFollower : MonoBehaviour
     {
-        [Inject] private readonly NetworkRunnerProvider _networkRunnerProvider;
-        [Inject] private readonly PlayersEntitiesRepository _playersEntitiesRepository;
+        [Inject] private readonly LocalPlayerProvider _localPlayerProvider;
 
         private void Update()
         {
-            if (_playersEntitiesRepository.TryGet(_networkRunnerProvider.GetNetworkRunner().LocalPlayer,
-                    out var player))
-                transform.position = player.transform.position.X0Z(transform.position.y);
+            if (_localPlayerProvider.HasEntity) 
+                transform.position = _localPlayerProvider.Position;
         }
     }
 }
