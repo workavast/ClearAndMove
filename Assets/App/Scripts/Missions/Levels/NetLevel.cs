@@ -9,7 +9,7 @@ using Fusion;
 using UnityEngine;
 using Zenject;
 
-namespace App.Missions
+namespace App.Missions.Levels
 {
     public class NetLevel : NetworkBehaviour
     {

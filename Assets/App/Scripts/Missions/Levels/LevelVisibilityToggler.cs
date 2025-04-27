@@ -1,10 +1,9 @@
-using System;
 using App.Dissolving;
 using App.Players;
 using UnityEngine;
 using Zenject;
 
-namespace App.Missions
+namespace App.Missions.Levels
 {
     public class LevelVisibilityToggler : MonoBehaviour
     {
@@ -12,7 +11,12 @@ namespace App.Missions
         [SerializeField] private BoxCollider boxCollider;
 
         [Inject] private readonly LocalPlayerProvider _localPlayerProvider;
-        
+
+        private void Start()
+        {
+            dissolvesUpdater.SetValue(1);
+        }
+
         private void LateUpdate()
         {
             if (_localPlayerProvider.HasEntity)
