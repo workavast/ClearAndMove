@@ -33,7 +33,7 @@ namespace App.Settings.ScreenMode
 
         private void UpdateView()
         {
-            screenModeDropdown.SetValueWithoutNotify(viewModel.IsFullScreen ? 1 : 0);
+            screenModeDropdown.SetValueWithoutNotify(viewModel.IsFullScreen ? 0 : 1);
             screenModeDropdown.RefreshShownValue();
         }
     }
