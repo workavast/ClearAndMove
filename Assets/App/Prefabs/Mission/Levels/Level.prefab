@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dissolvesOwner: {fileID: 7933259661303617363}
-  duration: 1
+  config: {fileID: 11400000, guid: 0a585a76d7e9c374384066b983968f2c, type: 2}
 --- !u!114 &7933259661303617363
 MonoBehaviour:
   m_ObjectHideFlags: 0

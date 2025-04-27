@@ -5,30 +5,36 @@ namespace App.Dissolving
     public class DissolvesUpdater : MonoBehaviour
     {
         [SerializeField] private DissolvesOwner dissolvesOwner;
-        [SerializeField] private float duration;
+        [SerializeField] private DissolveConfig config;
 
-        public bool Dissolve { get; private set; }
-        public float Timer { get; private set; }
-
+        private float Duration => config.Duration;
+        private bool _dissolve;
+        private float _timer;
+        
         private void LateUpdate()
         {
-            if (Dissolve && Timer > duration)
+            if (_dissolve && _timer > Duration)
                 return;
 
-            if (!Dissolve && Timer < 0)
+            if (!_dissolve && _timer < 0)
                 return;
 
-            if (Dissolve)
-                Timer += Time.deltaTime;
+            if (_dissolve)
+                _timer += Time.deltaTime;
             else
-                Timer -= Time.deltaTime;
+                _timer -= Time.deltaTime;
 
-            dissolvesOwner.ManualUpdate(Timer / duration);
+            dissolvesOwner.ManualUpdate(_timer / Duration);
         }
 
         public void SetVisibilityState(bool isVisible)
         {
-            Dissolve = !isVisible;
+            _dissolve = !isVisible;
+        }
+
+        public void SetValue(float visibilityValue)
+        {
+            _timer = visibilityValue * Duration;
         }
     }
 }
