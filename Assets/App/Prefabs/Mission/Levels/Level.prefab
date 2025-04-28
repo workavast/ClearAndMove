@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &368771800111678989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4727550321885404389}
+  - component: {fileID: 3257947483416858812}
+  m_Layer: 2
+  m_Name: EnemiesDissolveZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4727550321885404389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368771800111678989}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2820253121839711535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3257947483416858812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368771800111678989}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6585879506998108634
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +95,7 @@ GameObject:
   - component: {fileID: 2935780924275969231}
   - component: {fileID: 8718170819604265969}
   m_Layer: 2
-  m_Name: DissolveZone
+  m_Name: PlayerDissolveZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +238,7 @@ Transform:
   m_Children:
   - {fileID: 4895538462846721831}
   - {fileID: 2935780924275969231}
+  - {fileID: 4727550321885404389}
   - {fileID: 9096344993940170558}
   - {fileID: 3821682427793090029}
   m_Father: {fileID: 0}
@@ -216,7 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dissolvesUpdater: {fileID: 2838286864803892130}
-  boxCollider: {fileID: 8718170819604265969}
+  levelAndAboveCollider: {fileID: 8718170819604265969}
+  levelCollider: {fileID: 3257947483416858812}
 --- !u!114 &2838286864803892130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolvesOwner: {fileID: 7933259661303617363}
   config: {fileID: 11400000, guid: 0a585a76d7e9c374384066b983968f2c, type: 2}
+  <IsVisible>k__BackingField: 1
 --- !u!114 &7933259661303617363
 MonoBehaviour:
   m_ObjectHideFlags: 0

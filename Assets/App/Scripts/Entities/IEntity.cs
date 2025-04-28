@@ -1,6 +1,7 @@
 using System;
 using App.Armor;
 using App.Damage;
+using App.Dissolving;
 using Fusion;
 using UnityEngine;
 
@@ -17,7 +18,8 @@ namespace App.Entities
         NetworkObject Object { get; }
         float NetHealthPoints { get; }
         int NetArmorLevel { get; }
-
+        public DissolvesUpdater DissolvesUpdater { get; }
+        
         public event Action<IEntity> OnDeathEntity;
 
         bool IsAlive();
