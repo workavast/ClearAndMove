@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level M_1 1_C
       objectReference: {fileID: 0}
+    - target: {fileID: 5265460763089174417, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: eea6b04657e8d2848bedc6481525a70f, type: 2}
     - target: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
