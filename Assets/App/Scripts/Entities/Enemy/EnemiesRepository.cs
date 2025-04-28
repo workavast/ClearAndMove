@@ -9,6 +9,8 @@ namespace App.Entities.Enemy
         private readonly Dictionary<int, NetEnemy> _enemiesById = new();
         private readonly List<NetEnemy> _enemies = new();
 
+        public IReadOnlyList<NetEnemy> Enemies => _enemies;
+        
         public event Action<NetEnemy> OnAdd;
         public event Action<NetEnemy> OnRemove;
 

@@ -1,6 +1,6 @@
 using System;
 using App.Armor;
-using App.Health;
+using App.Dissolving;
 using Fusion;
 using UnityEngine;
 
@@ -8,9 +8,9 @@ namespace App.Entities
 {
     public class EntityBody : NetworkBehaviour, IEntity
     {
-        [SerializeField] private NetHealth netHealth;
         [SerializeField] private NetEntity netEntity;
-        
+
+        public DissolvesUpdater DissolvesUpdater => netEntity.DissolvesUpdater;
         public bool IsActive => netEntity.IsActive;
         public EntityIdentifier Identifier => netEntity.Identifier;
         public EntityType EntityType => netEntity.EntityType;

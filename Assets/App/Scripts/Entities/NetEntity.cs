@@ -1,5 +1,6 @@
 using System;
 using App.Armor;
+using App.Dissolving;
 using App.Health;
 using App.Weapons;
 using Avastrad.EventBusFramework;
@@ -17,6 +18,7 @@ namespace App.Entities
         [SerializeField] private Hitbox hitbox;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private NetworkCharacterController netCharacterController;
+        [field: SerializeField] public DissolvesUpdater DissolvesUpdater { get; private set; }
 
         [Networked] [field: ReadOnly, SerializeField] public Vector3 NetVelocity { get; private set; }
         [Networked] [OnChangedRender(nameof(ChangeArmor))] [field: ReadOnly] public int NetArmorLevel { get; private set; }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace App.Dissolving
@@ -6,35 +7,45 @@ namespace App.Dissolving
     {
         [SerializeField] private DissolvesOwner dissolvesOwner;
         [SerializeField] private DissolveConfig config;
-
-        private float Duration => config.Duration;
-        private bool _dissolve;
-        private float _timer;
+        [field: SerializeField] public bool IsVisible { get; private set; } = true;
         
+        private float Duration => config.Duration;
+        private float _dissolveTimer;
+
+        private void Start()
+        {
+            if (IsVisible)
+                SetValue(Duration);
+            else
+                SetValue(0);
+        }
+
         private void LateUpdate()
         {
-            if (_dissolve && _timer > Duration)
+            if (!IsVisible && _dissolveTimer > Duration)
                 return;
 
-            if (!_dissolve && _timer < 0)
+            if (IsVisible && _dissolveTimer < 0)
                 return;
 
-            if (_dissolve)
-                _timer += Time.deltaTime;
+            if (IsVisible)
+                _dissolveTimer -= Time.deltaTime;
             else
-                _timer -= Time.deltaTime;
+                _dissolveTimer += Time.deltaTime;
 
-            dissolvesOwner.ManualUpdate(_timer / Duration);
+            dissolvesOwner.ManualUpdate(_dissolveTimer / Duration);
         }
 
         public void SetVisibilityState(bool isVisible)
         {
-            _dissolve = !isVisible;
+            IsVisible = isVisible;
         }
 
+        /// <param name="visibilityValue">[0,1] where 0 is invisible</param>
         public void SetValue(float visibilityValue)
         {
-            _timer = visibilityValue * Duration;
+            _dissolveTimer = visibilityValue * Duration;
+            dissolvesOwner.ManualUpdate(_dissolveTimer / Duration);
         }
     }
 }
