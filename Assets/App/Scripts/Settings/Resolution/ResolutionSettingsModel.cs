@@ -10,6 +10,7 @@ namespace App.Settings.Resolution
         [field: SerializeField] public int SelectedResolutionIndex { get; private set; }
         [field: SerializeField] public bool SpecialResolution { get; private set; }
         
+        public int Priority => _config.Priority;
         public InspectorResolution MonitorResolution { get; private set; }
         public int DefaultResolutionIndex { get; private set; }
         public IReadOnlyList<InspectorResolution> Resolutions => _resolutions;
@@ -41,13 +42,10 @@ namespace App.Settings.Resolution
             var selectedResolution = Resolutions[SelectedResolutionIndex];
             Screen.SetResolution(selectedResolution.Width, selectedResolution.Height, Screen.fullScreen);
         }
-
-        public void Set(int resolutionIndex)
-        {
-            SelectedResolutionIndex = resolutionIndex;
-            Apply();
-        }
         
+        public void Set(int resolutionIndex) 
+            => SelectedResolutionIndex = resolutionIndex;
+
         public void Load(ResolutionSettingsModel model)
         {
             if (SpecialResolution == model.SpecialResolution)
@@ -59,7 +57,7 @@ namespace App.Settings.Resolution
         private static InspectorResolution GetMonitorResolution()
         {
             var firstDisplay = Display.displays[0];
-            return new InspectorResolution(firstDisplay.renderingWidth, firstDisplay.renderingHeight);
+            return new InspectorResolution(firstDisplay.systemWidth, firstDisplay.systemHeight);
         }
     }
 }

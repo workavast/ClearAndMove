@@ -11,6 +11,7 @@ namespace App.Settings.Volume
         [field: SerializeField] public float MusicVolume { get; private set; }
         [field: SerializeField] public float EffectsVolume { get; private set; }
 
+        public int Priority => _config.Priority;
         public float DefaultMasterVolume => _config.DefaultMasterVolume;
         public float DefaultMusicVolume => _config.DefaultMusicVolume;
         public float DefaultEffectsVolume => _config.DefaultEffectsVolume;
@@ -45,8 +46,6 @@ namespace App.Settings.Volume
                 default:
                     throw new ArgumentOutOfRangeException(nameof(volumeType), volumeType, null);
             }
-            
-            Apply();
         }
         
         public void SetVolumeTemporary(VolumeType volumeType, float value) 
@@ -64,7 +63,6 @@ namespace App.Settings.Volume
             MasterVolume = DefaultMasterVolume;
             MusicVolume = DefaultMusicVolume;
             EffectsVolume = DefaultEffectsVolume;
-            Apply();
         }
 
         public void Load(VolumeSettingsModel model)

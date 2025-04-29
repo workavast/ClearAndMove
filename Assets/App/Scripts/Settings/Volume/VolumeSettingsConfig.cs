@@ -5,8 +5,9 @@ namespace App.Settings.Volume
 {
     [CreateAssetMenu(fileName = nameof(VolumeSettingsConfig),
         menuName = Consts.ConfigsPath + "Settings/" + nameof(VolumeSettingsConfig))]
-    public class VolumeSettingsConfig : ScriptableObject
+    public class VolumeSettingsConfig : SettingsConfig
     {
+        [Space]
         [SerializeField] private AudioMixer audioMixer;
         [Space]
         [SerializeField] private string masterParam = "MasterVolume";

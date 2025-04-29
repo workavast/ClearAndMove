@@ -20,14 +20,14 @@ namespace App.Settings.Fps
             UpdateView();
         }
 
-        private void OnEnable()
+        public void OnEnabledManual()
         {
             viewModel.OnChanged += UpdateView;
             fpsDropdown.onValueChanged.AddListener(SetValue);
             UpdateView();
         }
 
-        private void OnDisable()
+        public void OnDisabledManual()
         {
             viewModel.OnChanged -= UpdateView;
             fpsDropdown.onValueChanged.RemoveListener(SetValue);

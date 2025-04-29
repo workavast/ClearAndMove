@@ -22,11 +22,24 @@ namespace App.Settings
                 view.Initialize();
         }
 
+        private void OnEnable()
+        {
+            foreach (var view in _settingsViews)
+                view.OnEnabledManual();
+        }
+
+        private void OnDisable()
+        {
+            foreach (var view in _settingsViews)
+                view.OnDisabledManual();
+        }
+
         public void ApplySettings()
         {
             foreach (var viewModel in _settingsViewModels)
                 viewModel.ApplySettings();
 
+            _settingsModel.Apply();
             _settingsModel.Save();
         }
 
@@ -43,6 +56,7 @@ namespace App.Settings
             foreach (var viewModel in _settingsViewModels)
                 viewModel.ResetToDefault();
 
+            _settingsModel.Apply();
             _settingsModel.Save();
         }
     }
