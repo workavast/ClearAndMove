@@ -18,14 +18,14 @@ namespace App.Settings.Volume
             UpdateView();
         }
 
-        private void OnEnable()
+        public void OnEnabledManual()
         {
             viewModel.OnChanged += UpdateView;
             _slider.onValueChanged.AddListener(SetVolume);
             UpdateView();
         }
 
-        private void OnDisable()
+        public void OnDisabledManual()
         {
             viewModel.OnChanged -= UpdateView;
             _slider.onValueChanged.RemoveListener(SetVolume);

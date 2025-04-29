@@ -8,7 +8,8 @@ namespace App.Settings.Fps
     public class FpsSettingsModel : ISettingsModel
     {
         [field: SerializeField] public int SelectedOptionIndex { get; private set; }
-        
+
+        public int Priority => _config.Priority;
         public IReadOnlyList<int> FpsOptions => _config.FpsOptions;
         public int DefaultOptionIndex => _config.DefaultOptionIndex;
         public int SelectedOption => _config.FpsOptions[SelectedOptionIndex];
@@ -21,20 +22,13 @@ namespace App.Settings.Fps
             SelectedOptionIndex = DefaultOptionIndex;
         }
         
-        public void Load(FpsSettingsModel model)
-        {
-            SelectedOptionIndex = model.SelectedOptionIndex;
-        }
-        
-        public void Set(int optionIndex)
-        {
-            SelectedOptionIndex = optionIndex;
-            Apply();
-        }
+        public void Load(FpsSettingsModel model) 
+            => SelectedOptionIndex = model.SelectedOptionIndex;
 
-        public void Apply()
-        {
-            Application.targetFrameRate = SelectedOption;
-        }
+        public void Set(int optionIndex) 
+            => SelectedOptionIndex = optionIndex;
+
+        public void Apply() 
+            => Application.targetFrameRate = SelectedOption;
     }
 }

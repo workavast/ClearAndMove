@@ -41,10 +41,8 @@ namespace App.Settings.Resolution
                 OnChanged?.Invoke();
         }
         
-        public void ResetSettings()
-        {
-            Set(Model.SelectedResolutionIndex, true);
-        }
+        public void ResetSettings() 
+            => Set(Model.SelectedResolutionIndex, true);
 
         public void ResetToDefault()
         {

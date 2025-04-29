@@ -4,9 +4,10 @@ using UnityEngine;
 namespace App.Settings.Fps
 {
     [CreateAssetMenu(fileName = nameof(FpsConfig), menuName = Consts.ConfigsPath + "Settings/" + nameof(FpsConfig))]
-    public class FpsConfig : ScriptableObject
+    public class FpsConfig : SettingsConfig
     {
-        [SerializeField] private List<int> fpsOptions = new(){ 30, 60, 90, 120, 144, 240, 360 };
+        [Space]
+        [SerializeField] private List<int> fpsOptions = new() { 30, 60, 90, 120, 144, 240, 360 };
         [SerializeField, Min(0)] private int defaultOptionIndex;
 
         public IReadOnlyList<int> FpsOptions => fpsOptions;
@@ -18,12 +19,12 @@ namespace App.Settings.Fps
         public int IndexOf(int fps)
         {
             var optionIndex = fpsOptions.IndexOf(fps);
-            if (optionIndex < 0) 
+            if (optionIndex < 0)
             {
                 Debug.LogError($"Cant find option: [{fps}]");
                 optionIndex = DefaultOptionIndex;
             }
-            
+
             return optionIndex;
         }
     }

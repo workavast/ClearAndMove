@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ba9e1bc1cd4f698dffebfe7d3e5042, type: 3}
   m_Name: ResolutionSettingsConfig
   m_EditorClassIdentifier: 
+  <Priority>k__BackingField: 0
   resolutions:
   - <Width>k__BackingField: 1280
     <Height>k__BackingField: 720

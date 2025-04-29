@@ -4,8 +4,9 @@ using UnityEngine;
 namespace App.Settings.Resolution
 {
     [CreateAssetMenu(fileName = nameof(ResolutionSettingsConfig), menuName = Consts.ConfigsPath + "Settings/" + nameof(ResolutionSettingsConfig))]
-    public class ResolutionSettingsConfig : ScriptableObject
+    public class ResolutionSettingsConfig : SettingsConfig
     {
+        [Space]
         [SerializeField] private List<InspectorResolution> resolutions;
         
         public IReadOnlyList<InspectorResolution> Resolutions => resolutions;

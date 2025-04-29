@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a69fcafe5640178afec82dcd90ead0, type: 3}
   m_Name: ScreenModeConfig
   m_EditorClassIdentifier: 
+  <Priority>k__BackingField: -1
   defaultIsFullScreen: 1

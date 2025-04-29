@@ -8,6 +8,7 @@ namespace App.Settings.ScreenMode
     {
         [field: SerializeField] public bool IsFullScreen { get; private set; }
 
+        public int Priority => _config.Priority;
         public bool DefaultIsFullScreen => _config.DefaultIsFullScreen;
 
         private readonly ScreenModeConfig _config;
@@ -18,21 +19,14 @@ namespace App.Settings.ScreenMode
             IsFullScreen = DefaultIsFullScreen;
         }
 
-        public void Load(ScreenModeSettingsModel model)
-        {
-            IsFullScreen = model.IsFullScreen;
-        }
+        public void Load(ScreenModeSettingsModel model) 
+            => IsFullScreen = model.IsFullScreen;
 
-        public void Set(bool isFullScreen)
-        {
-            IsFullScreen = isFullScreen;
-            Apply();
-        }
+        public void Set(bool isFullScreen) 
+            => IsFullScreen = isFullScreen;
 
-        public void Apply()
-        {
-            Screen.fullScreen = IsFullScreen;
-        }
+        public void Apply() 
+            => Screen.fullScreen = IsFullScreen;
 
         public void ResetToDefault()
             => Set(DefaultIsFullScreen);

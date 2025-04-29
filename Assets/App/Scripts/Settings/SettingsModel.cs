@@ -34,6 +34,7 @@ namespace App.Settings
                 ResolutionSettingsModel,
                 VolumeSettingsModel
             };
+            Array.Sort(_allSettings, (x, y) => -x.Priority.CompareTo(y.Priority));
         }
 
         public void Load(SettingsModel model)

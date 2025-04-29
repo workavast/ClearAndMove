@@ -13,14 +13,14 @@ namespace App.Settings.ScreenMode
             UpdateView();
         }
 
-        private void OnEnable()
+        public void OnEnabledManual()
         {
             viewModel.OnChanged += UpdateView;
             screenModeDropdown.onValueChanged.AddListener(Set);
             UpdateView();
         }
 
-        private void OnDisable()
+        public void OnDisabledManual()
         {
             viewModel.OnChanged -= UpdateView;
             screenModeDropdown.onValueChanged.RemoveListener(Set);
@@ -28,7 +28,7 @@ namespace App.Settings.ScreenMode
 
         private void Set(int value)
         {
-            viewModel.Set(screenModeDropdown.value == 1, false);
+            viewModel.Set(screenModeDropdown.value == 0, false);
         }
 
         private void UpdateView()

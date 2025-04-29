@@ -32,14 +32,14 @@ namespace App.Settings.Resolution
             UpdateView();
         }
 
-        private void OnEnable()
+        public void OnEnabledManual()
         {
             viewModel.OnChanged += UpdateView;
             resolutionDropdown.onValueChanged.AddListener(Set);
             UpdateView();
         }
 
-        private void OnDisable()
+        public void OnDisabledManual()
         {
             viewModel.OnChanged -= UpdateView;
             resolutionDropdown.onValueChanged.RemoveListener(Set);
