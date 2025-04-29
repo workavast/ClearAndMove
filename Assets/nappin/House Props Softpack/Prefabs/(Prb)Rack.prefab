@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8875320444826610042}
   - component: {fileID: 1815520463501090058}
   - component: {fileID: 1784732440804664610}
-  - component: {fileID: 1939865054886136363}
   m_Layer: 0
   m_Name: rack_toiletpaper1
   m_TagString: Untagged
@@ -50,7 +49,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3316680120908623798}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 1
@@ -88,27 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1939865054886136363
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3316680120908623798}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.120000005, y: 0.1, z: 0.120000005}
-  m_Center: {x: 0.00049609505, y: 0.049999636, z: 0.0011692476}
 --- !u!1 &3366100577445217019
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +133,6 @@ GameObject:
   - component: {fileID: 269532925756708719}
   - component: {fileID: 5773751355097519077}
   - component: {fileID: 7897994023631821554}
-  - component: {fileID: 2606846236115763587}
   m_Layer: 0
   m_Name: rack_toiletpaper2
   m_TagString: Untagged
@@ -194,7 +171,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4922396614812838519}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 1
@@ -232,27 +209,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2606846236115763587
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4922396614812838519}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.120000005, y: 0.1, z: 0.120000005}
-  m_Center: {x: 0.00049609505, y: 0.049999636, z: 0.0011692476}
 --- !u!1 &5254098264285411287
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +252,6 @@ GameObject:
   - component: {fileID: 7367081921014515310}
   - component: {fileID: 513728596126501306}
   - component: {fileID: 6323947195746250154}
-  - component: {fileID: 5428540322634868794}
   m_Layer: 0
   m_Name: rack_toiletpaper3
   m_TagString: Untagged
@@ -335,7 +290,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8836144287388910935}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 1
@@ -373,27 +328,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5428540322634868794
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8836144287388910935}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.120000005, y: 0.1, z: 0.120000005}
-  m_Center: {x: 0.00049609505, y: 0.049999636, z: 0.001169248}
 --- !u!1 &9214864743227945096
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +378,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9214864743227945096}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 1
