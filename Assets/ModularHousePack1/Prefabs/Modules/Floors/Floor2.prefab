@@ -24,6 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648174050330171953}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,7 +33,6 @@ Transform:
   - {fileID: 726167451972835360}
   - {fileID: 5752888215958772302}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3787222391451969822
 BoxCollider:
@@ -42,9 +42,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648174050330171953}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 2.5, y: 0.2, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4862802949798001680
@@ -52,6 +60,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2131518998595109003}
     m_Modifications:
     - target: {fileID: 5291721831171286064, guid: fe09c155ffafe1c4d91d6ebd42d1f5aa, type: 3}
@@ -103,6 +112,9 @@ PrefabInstance:
       value: Interior_Floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe09c155ffafe1c4d91d6ebd42d1f5aa, type: 3}
 --- !u!4 &726167451972835360 stripped
 Transform:
@@ -114,6 +126,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2131518998595109003}
     m_Modifications:
     - target: {fileID: 276168820980430564, guid: 989a9b55bc3f4ec428b6f8a1b6783c8d, type: 3}
@@ -161,7 +174,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4468024241389840877, guid: 989a9b55bc3f4ec428b6f8a1b6783c8d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 30bd9052fa457754583f61a054c78a87, type: 2}
     - target: {fileID: 6496272766960958306, guid: 989a9b55bc3f4ec428b6f8a1b6783c8d, type: 3}
@@ -169,6 +182,9 @@ PrefabInstance:
       value: Interior_Floor_Up
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 989a9b55bc3f4ec428b6f8a1b6783c8d, type: 3}
 --- !u!4 &5752888215958772302 stripped
 Transform:
