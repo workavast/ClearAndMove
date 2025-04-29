@@ -565,6 +565,9 @@
                 "m_Id": "688d47b2e45149f6945bfb3104ec080d"
             },
             {
+                "m_Id": "78d678d1c5fd44038e249ad450ddfd25"
+            },
+            {
                 "m_Id": "5d2edac730394c89b1ccca4350ef4ca1"
             },
             {
@@ -575,9 +578,6 @@
             },
             {
                 "m_Id": "1367ead1ee8d44e3834b3709b015c9fb"
-            },
-            {
-                "m_Id": "78d678d1c5fd44038e249ad450ddfd25"
             }
         ]
     },
@@ -639,7 +639,7 @@
 }
 
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "02816270fff54d8d8d79d1d690c8c1bd",
     "m_Guid": {
@@ -1332,7 +1332,7 @@
     "m_Title": "Dissolve Output",
     "m_Position": {
         "x": -1374.400146484375,
-        "y": 292.0
+        "y": 291.99993896484377
     }
 }
 
@@ -3269,7 +3269,7 @@
 }
 
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "de43d538ef39dc8e80eb84dc5de3b2d6",
     "m_Guid": {
@@ -3353,8 +3353,8 @@
     "m_ObjectId": "e73a3d0c9eb54fc8afa90628c4a54d02",
     "m_Title": "PBR Output",
     "m_Position": {
-        "x": -1051.2000732421875,
-        "y": -291.1999816894531
+        "x": -1051.199951171875,
+        "y": -291.199951171875
     }
 }
 
