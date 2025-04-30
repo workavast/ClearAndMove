@@ -1086,7 +1086,7 @@ PrefabInstance:
     - target: {fileID: 5265460763089174417, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 232323f10d9e3b64599bdf87e41333df, type: 2}
+      objectReference: {fileID: 23800000, guid: aecdde5b80ebe7249b9faf66cd0cbbe2, type: 2}
     - target: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
