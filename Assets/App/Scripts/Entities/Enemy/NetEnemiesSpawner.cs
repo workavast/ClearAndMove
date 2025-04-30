@@ -1,3 +1,4 @@
+using App.Weapons;
 using Fusion;
 using UnityEngine;
 
@@ -14,7 +15,10 @@ namespace App.Entities.Enemy
 
             var spawnPoints = GetComponentsInChildren<EnemySpawnPoint>();
             foreach (var spawnPoint in spawnPoints)
-                Runner.Spawn(netEnemyPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+            {
+                var enemy = Runner.Spawn(netEnemyPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                enemy.SetWeapon(WeaponId.ScarEnemy);
+            }
         }
     }
 }

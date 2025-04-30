@@ -49,8 +49,9 @@ namespace App.Weapons
         public override void Spawned()
         {
             netWeaponModel.Shooter = _shooterFactory.CreateShoot(GetComponent<IEntity>());
+
+            SetWeapon(NetEquippedWeapon, true);
             
-            SetWeapon(netWeaponModel.NetEquippedWeapon, true);
             netWeaponModel.OnEquippedWeaponChanged += SetWeapon;
 
             _visibleFireCount = netWeaponModel.NetFireCount;
@@ -97,6 +98,9 @@ namespace App.Weapons
             netWeaponModel.NetFireRatePause = TickTimer.CreateFromSeconds(Runner, 0);
             netWeaponModel.NetReloadTimer = TickTimer.CreateFromSeconds(Runner, 0);
             netWeaponModel.NetMagazine = WeaponConfig.MagazineSize;
+            
+            weaponViewHolder.SetWeaponView(weaponId);
+            
             Debug.Log($"SetWeapon: {Object.InputAuthority} | {weaponId} | {netWeaponModel.NetEquippedWeapon}");
         }
 

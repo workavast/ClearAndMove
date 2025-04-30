@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using App.Entities.Enemy;
 using App.InstantiateProviding;
 using App.Missions.Levels;
+using App.Weapons;
 using Fusion;
 using UnityEngine;
 
@@ -40,7 +41,7 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
 
                 var enemies = new List<NetEnemy>();
                 foreach (var enemySpawnPoint in level.EnemySpawnPoints)
-                    enemies.Add(_enemyFactory.Create(enemySpawnPoint.transform, 1));
+                    enemies.Add(_enemyFactory.Create(enemySpawnPoint.transform, 1, WeaponId.ScarEnemy));
                 level.SetEnemies(enemies);
 
                 if (prevLevel != null) 

@@ -3757,6 +3757,7 @@ MonoBehaviour:
   <Id>k__BackingField: Weapon
   weaponSelectBtnPrefab: {fileID: -7490630125886373366, guid: 71dbdf1fd91ab5e408f5c6d82d7a4e80, type: 3}
   holder: {fileID: 8975086989810659175}
+  weaponsConfigs: {fileID: 11400000, guid: cd678194435b0064d94f6ece203a27cc, type: 2}
 --- !u!1 &6181705140622734507
 GameObject:
   m_ObjectHideFlags: 0

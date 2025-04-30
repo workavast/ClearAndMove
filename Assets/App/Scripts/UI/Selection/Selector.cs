@@ -13,7 +13,7 @@ namespace App.UI.Selection
         private void Awake() 
             => Initialize();
 
-        private void Initialize()
+        protected virtual void Initialize()
         {
             var allIds = GetIds();
             foreach (var id in allIds)

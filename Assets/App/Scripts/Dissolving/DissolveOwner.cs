@@ -14,8 +14,22 @@ namespace App.Dissolving
             var renders = GetComponentsInChildren<Renderer>(true);
             _materials = new List<Material>(renders.Length);
             
-            foreach (var renderer in renders)
-                _materials.AddRange(renderer.materials);
+            foreach (var renderer1 in renders)
+                _materials.AddRange(renderer1.materials);
+        }
+
+        private void Start()
+        {
+            var dissolvesUpdater = GetComponentInParent<DissolvesUpdater>();
+            if (dissolvesUpdater != null) 
+                dissolvesUpdater.AddDissolveOwner(this);
+        }
+
+        private void OnDestroy()
+        {
+            var dissolvesUpdater = GetComponentInParent<DissolvesUpdater>();
+            if (dissolvesUpdater != null) 
+                dissolvesUpdater.RemoveDissolveOwner(this);
         }
 
         public void ManualUpdate(float percentageValue)

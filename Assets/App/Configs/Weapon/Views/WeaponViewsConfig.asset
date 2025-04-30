@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b4029c8bf343f9a68e6fc1cff5d5b8, type: 3}
+  m_Name: WeaponViewsConfig
+  m_EditorClassIdentifier: 
+  views:
+    cells:
+    - key: 210
+      value: {fileID: 3930404731918758516, guid: 8a9991f8abf033940aee5f78a4446fc7, type: 3}
+    - key: 211
+      value: {fileID: 3930404731918758516, guid: 8a9991f8abf033940aee5f78a4446fc7, type: 3}
+    - key: 220
+      value: {fileID: 3403419408561428251, guid: db2ab73b17cc67945a68631e865b1c03, type: 3}

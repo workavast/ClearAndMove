@@ -27,7 +27,7 @@ namespace App.Entities.Enemy
         public NetEnemy Spawn(Vector3 position, Quaternion rotation)
         {
             var netEnemy = Runner.Spawn(netEnemyPrefab, position, rotation);
-            netEnemy.SetWeapon(WeaponId.Pistol);
+            netEnemy.SetWeapon(WeaponId.ScarEnemy);
             netEnemy.SetArmor(0);
 
             netEnemy.OnDeathEntity += OnEnemyDeath;

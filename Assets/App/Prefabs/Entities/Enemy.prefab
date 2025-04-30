@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: -658295760547561401}
   - component: {fileID: 1625900555111658174}
   - component: {fileID: 2781807751171042710}
-  - component: {fileID: 4932877869189218257}
   - component: {fileID: 2934141518229042294}
   m_Layer: 3
   m_Name: Enemy
@@ -231,7 +230,7 @@ MonoBehaviour:
   <HitLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 115
-  _NetEquippedWeapon: 0
+  _NetEquippedWeapon: 210
   _NetMagazine: 0
   _NetFireCount: 0
   <WeaponConfig>k__BackingField: {fileID: 0}
@@ -390,21 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b88cc611dc400f955a7554a60f9ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolvesOwner: {fileID: 4932877869189218257}
   config: {fileID: 11400000, guid: 0a585a76d7e9c374384066b983968f2c, type: 2}
   <IsVisible>k__BackingField: 1
---- !u!114 &4932877869189218257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072648177644592389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74be1cf814c4139a920a9623ae74496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2934141518229042294
 MonoBehaviour:
   m_ObjectHideFlags: 0
