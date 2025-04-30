@@ -116,14 +116,14 @@ Material:
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _EdgeColorIntensity: 1
-    - _EdgeWidth: 0.01
+    - _EdgeWidth: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.246
     - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 3
-    - _NoiseScale: 50
+    - _NoiseScale: 25
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
