@@ -40,21 +40,20 @@ namespace App.Players
 
             PlayerEntityRemove(playerRef);
 
-            HasEntity = true;
             _netPlayerEntity = netPlayerEntity;
             _netPlayerEntity.OnWeaponShot += WeaponShot;
+            HasEntity = true;
         }
         
         private void PlayerEntityRemove(PlayerRef playerRef)
         {
-            HasEntity = false;
             if (_networkRunnerProvider.GetNetworkRunner().LocalPlayer != playerRef)
                 return;
             if (_netPlayerEntity == null)
                 return;
 
+            HasEntity = false;
             _netPlayerEntity.OnWeaponShot -= WeaponShot;
-
             _netPlayerEntity = null;
         }
 

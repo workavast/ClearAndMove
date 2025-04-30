@@ -51,19 +51,22 @@ namespace App.Missions.Levels
 
         private void InitEnemyDissolving(NetEnemy enemy)
         {
-            var enemyOnTheLevel = InZone(levelCollider, enemy.transform.position);
-            if (enemyOnTheLevel)
+            if (_localPlayerProvider.HasEntity)
             {
-                var playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _localPlayerProvider.Position);
-                if (playerOnTheLevelOrAbove)
+                var enemyOnTheLevel = InZone(levelCollider, enemy.transform.position);
+                if (enemyOnTheLevel)
                 {
-                    dissolvesUpdater.SetValue(1);
-                    enemy.DissolvesUpdater.SetVisibilityState(true);                
-                }
-                else
-                {
-                    dissolvesUpdater.SetValue(0);
-                    enemy.DissolvesUpdater.SetVisibilityState(false);
+                    var playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _localPlayerProvider.Position);
+                    if (playerOnTheLevelOrAbove)
+                    {
+                        dissolvesUpdater.SetValue(1);
+                        enemy.DissolvesUpdater.SetVisibilityState(true);                
+                    }
+                    else
+                    {
+                        dissolvesUpdater.SetValue(0);
+                        enemy.DissolvesUpdater.SetVisibilityState(false);
+                    }
                 }
             }
         }
