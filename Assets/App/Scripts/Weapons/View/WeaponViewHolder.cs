@@ -1,18 +1,26 @@
+using System;
 using System.Collections;
 using App.Audio.Sources;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using Zenject;
 
 namespace App.Weapons.View
 {
     public class WeaponViewHolder : MonoBehaviour
     {
-        [SerializeField] private WeaponView weaponView;
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSourceHolderPoolable reloadStartSfxPrefab;
         [SerializeField] private AudioSourceHolderPoolable reloadEndSfxPrefab;
-
+        [SerializeField] private HandsConstraint handsConstraint;
+        
         [Inject] private readonly AudioFactory _audioFactory;
+        [Inject] private DiContainer _container;
+
+        [SerializeField] private WeaponViewsConfig weaponViewsConfig;
+        [SerializeField] private Transform weaponsParent;
+        
+        private WeaponView _weaponView;
         
         public void Default()
         {
@@ -20,6 +28,23 @@ namespace App.Weapons.View
             animator.Play("Default");
         }
 
+        public void SetWeaponView(WeaponId weaponId)
+        {
+            var prefab = weaponViewsConfig.Views[weaponId];
+            
+            if (_weaponView != null)
+            {
+                if (_weaponView.name == prefab.name)
+                    return;
+                Destroy(_weaponView.gameObject);
+            }
+
+            _weaponView = _container.InstantiatePrefab(prefab, weaponsParent).GetComponent<WeaponView>();
+            _weaponView.name = prefab.name;
+            animator.runtimeAnimatorController = _weaponView.AnimatorController;
+            handsConstraint.SetWeapon(_weaponView);
+        }
+        
         /// <param name="initialTime">Value between 0 and 1</param>
         public void Reloading(float duration, float initialTime)
         {
@@ -44,9 +69,24 @@ namespace App.Weapons.View
             => _audioFactory.Create(reloadEndSfxPrefab, transform.position);
 
         public void ShotVfx() 
-            => weaponView.ShotVfx();
+            => _weaponView.ShotVfx();
 
         public void ShotSfx()
-            => weaponView.ShotSfx();
+            => _weaponView.ShotSfx();
+        
+        [Serializable]
+        private struct HandsConstraint
+        {
+            [SerializeField] private TwoBoneIKConstraint rightHandConstraint;
+            [SerializeField] private TwoBoneIKConstraint leftHandConstraint;
+            [SerializeField] private RigBuilder rigBuilder;
+
+            public void SetWeapon(WeaponView weaponView)
+            {
+                rightHandConstraint.data.target = weaponView.RightHandPoint;
+                leftHandConstraint.data.target = weaponView.LeftHandPoint;
+                rigBuilder.Build();
+            }
+        }
     }
 }

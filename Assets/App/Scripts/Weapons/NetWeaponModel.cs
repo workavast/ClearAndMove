@@ -10,7 +10,7 @@ namespace App.Weapons
         [field: SerializeField] public LayerMask HitLayers { get; set; }
 
         [OnChangedRender(nameof(OnNetEquippedWeaponChanged))]
-        [Networked] [field: SerializeField, ReadOnly] public WeaponId NetEquippedWeapon { get; set; }
+        [Networked] [field: SerializeField, ReadOnly] public WeaponId NetEquippedWeapon { get; set; } = WeaponId.Scar;
         [Networked] [field: SerializeField, ReadOnly] public int NetMagazine { get; set; }
         [Networked] [field: SerializeField, ReadOnly] public int NetFireCount { get; set; }
 

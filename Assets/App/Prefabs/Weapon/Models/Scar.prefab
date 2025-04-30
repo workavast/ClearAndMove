@@ -101,9 +101,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1015484411789910, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125325233297616, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251045507701362, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1296539039355890, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
       propertyPath: m_Name
       value: Scar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296539039355890, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764537760694094, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768102757672894, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1861190031479234, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975833668071546, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4645375280533522, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -157,33 +189,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4645375280533522, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2987720448896346634}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1296539039355890, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5795675131054733295}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
 --- !u!4 &8674066552601658084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4645375280533522, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
   m_PrefabInstance: {fileID: 8678710686590341878}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8679670482862752004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1296539039355890, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
-  m_PrefabInstance: {fileID: 8678710686590341878}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5795675131054733295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8679670482862752004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1d36c1fb1f4f32ad8c8cfa2808ebc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: cacb7f893f14714498727a1454624098, type: 2}
-  barrelPoint: {fileID: 3318807449900238124}
-  shotSfxPrefab: {fileID: 4236612034539855752, guid: 829fef1f09eba144fa4d40dd9e5f684e, type: 3}

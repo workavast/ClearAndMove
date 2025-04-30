@@ -3,11 +3,14 @@ namespace App.Weapons
     public enum WeaponId
     {
         Pistol = 0,
+        None = 1,
         
-        PP = 100,
+        PDW = 100,
         
         Avtomat = 200,
         Scar = 210,
+        ScarEnemy = 211,
+        AK_12 = 220,
         
         MachineGun = 300,
         

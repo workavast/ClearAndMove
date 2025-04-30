@@ -1,16 +1,23 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace App.Dissolving
 {
     public class DissolvesUpdater : MonoBehaviour
     {
-        [SerializeField] private DissolvesOwner dissolvesOwner;
         [SerializeField] private DissolveConfig config;
         [field: SerializeField] public bool IsVisible { get; private set; } = true;
         
+        private readonly List<DissolveOwner> _dissolveOwners = new();
+        
         private float Duration => config.Duration;
         private float _dissolveTimer;
+
+        private void Awake()
+        {
+            var dissolveOwners = GetComponentsInChildren<DissolveOwner>(true);
+            _dissolveOwners.AddRange(dissolveOwners);
+        }
 
         private void Start()
         {
@@ -33,7 +40,7 @@ namespace App.Dissolving
             else
                 _dissolveTimer += Time.deltaTime;
 
-            dissolvesOwner.ManualUpdate(_dissolveTimer / Duration);
+            UpdateDissolves(_dissolveTimer / Duration);
         }
 
         public void SetVisibilityState(bool isVisible)
@@ -45,7 +52,22 @@ namespace App.Dissolving
         public void SetValue(float visibilityValue)
         {
             _dissolveTimer = visibilityValue * Duration;
-            dissolvesOwner.ManualUpdate(_dissolveTimer / Duration);
+            UpdateDissolves(_dissolveTimer / Duration);
+        }
+
+        public void AddDissolveOwner(DissolveOwner dissolveOwner)
+        {
+            _dissolveOwners.Add(dissolveOwner);
+            dissolveOwner.ManualUpdate(_dissolveTimer / Duration);
+        }
+
+        public void RemoveDissolveOwner(DissolveOwner dissolveOwner) 
+            => _dissolveOwners.Remove(dissolveOwner);
+
+        private void UpdateDissolves(float percentageValue)
+        {
+            foreach (var dissolveOwner in _dissolveOwners) 
+                dissolveOwner.ManualUpdate(percentageValue);
         }
     }
 }

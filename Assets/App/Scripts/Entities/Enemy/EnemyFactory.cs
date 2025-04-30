@@ -11,13 +11,13 @@ namespace App.Entities.Enemy
 
         [Inject] private readonly NetworkRunnerProvider _runnerProvider;
 
-        public NetEnemy Create(Transform spawnPoint, int armorLevel, WeaponId initialWeapon = WeaponId.Pistol)
+        public NetEnemy Create(Transform spawnPoint, int armorLevel, WeaponId initialWeapon)
             => Create(spawnPoint.position, spawnPoint.rotation, armorLevel, initialWeapon);
         
-        public NetEnemy Create(Vector3 position, int armorLevel, WeaponId initialWeapon = WeaponId.Pistol)
+        public NetEnemy Create(Vector3 position, int armorLevel, WeaponId initialWeapon)
             => Create(position, Quaternion.identity, armorLevel, initialWeapon);
 
-        public NetEnemy Create(Vector3 position, Quaternion rotation, int armorLevel, WeaponId initialWeapon = WeaponId.Pistol)
+        public NetEnemy Create(Vector3 position, Quaternion rotation, int armorLevel, WeaponId initialWeapon)
         {
             var runner = _runnerProvider.GetNetworkRunner();
             var netPlayerController = runner.Spawn(netEnemyPrefab, position, rotation);
