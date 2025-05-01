@@ -42,6 +42,7 @@ namespace App.Weapons.View
             _weaponView = _container.InstantiatePrefab(prefab, weaponsParent).GetComponent<WeaponView>();
             _weaponView.name = prefab.name;
             animator.runtimeAnimatorController = _weaponView.AnimatorController;
+            animator.Rebind();
             handsConstraint.SetWeapon(_weaponView);
         }
         
