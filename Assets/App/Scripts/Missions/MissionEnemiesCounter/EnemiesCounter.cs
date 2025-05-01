@@ -60,8 +60,6 @@ namespace App.Missions.MissionEnemiesCounter
         /// <returns>(Dead Enemies Count, Full Enemies Count)</returns>
         public (int, int) GetEnemiesCount()
         {
-            Debug.Log($"SetEnemies {_enemies == null}");
-
             var deadEnemiesCount = 0;
             foreach (var enemy in _enemies)
                 if (enemy.IsDead())

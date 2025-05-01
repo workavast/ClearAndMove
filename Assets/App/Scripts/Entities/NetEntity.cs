@@ -67,7 +67,6 @@ namespace App.Entities
             hitbox.HitboxActive = 
                 characterController.enabled = 
                 netCharacterController.enabled = true;
-            Debug.Log($"Spawned: [{Object.InputAuthority}]: [{NetWeapon.NetEquippedWeapon}]");
         }
 
         public override void Despawned(NetworkRunner runner, bool hasState)

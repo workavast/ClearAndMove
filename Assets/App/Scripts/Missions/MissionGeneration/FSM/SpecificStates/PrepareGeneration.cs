@@ -32,7 +32,6 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
                 {
                     var index = Random.Range(0, levelPrefabsPool.Count);
                     var levelPrefabVariant = levelPrefabsPool[index];
-                    Debug.Log($"[{i}]: {levelPrefabVariant.name}");
                     if (!_netGenerationModel.missionScheme.Exists(l => l.name == levelPrefabVariant.name))
                     {
                         selectedLevelPrefab = levelPrefabsPool[index];

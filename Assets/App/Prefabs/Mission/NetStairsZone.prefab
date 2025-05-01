@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1170832841557879692}
   - component: {fileID: 6344955429501498747}
   m_Layer: 0
-  m_Name: ExtractionZoneView
+  m_Name: ZoneView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,8 +363,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279474432
-  m_fontColor: {r: 0, g: 0.6, b: 0.07268057, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 1087448576665822131}
   - component: {fileID: 7059144956856647693}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

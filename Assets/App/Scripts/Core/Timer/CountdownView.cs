@@ -13,7 +13,7 @@ namespace App.Core.Timer
 
         public void ToggleVisibility(bool isVisible) 
             => gameObject.SetActive(isVisible);
-        
+
         private string GetTime()
         {
             var time = timer.Value.GetTime();
