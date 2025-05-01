@@ -40,6 +40,7 @@ namespace App.Missions.Levels
 
         public Transform GetMovePoint() 
             => stairsZone.MovePoint;
+        
         public void SetMovePoint(Transform movePoint) 
             => stairsZone.SetMovePoint(movePoint);
 

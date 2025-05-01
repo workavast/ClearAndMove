@@ -100,8 +100,6 @@ namespace App.Weapons
             netWeaponModel.NetMagazine = WeaponConfig.MagazineSize;
             
             weaponViewHolder.SetWeaponView(weaponId);
-            
-            Debug.Log($"SetWeapon: {Object.InputAuthority} | {weaponId} | {netWeaponModel.NetEquippedWeapon}");
         }
 
         public bool TryShoot() 

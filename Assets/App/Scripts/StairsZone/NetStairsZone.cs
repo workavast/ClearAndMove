@@ -30,6 +30,7 @@ namespace App.StairsZone
         private int _lastRemainingTime;
         private TimeSpan _lastTimeSPan;
 
+        private UnActive _unActive;
         private Idle _idle;
         private Countdown _countdown;
         private MovePlayers _movePlayers;
@@ -37,11 +38,12 @@ namespace App.StairsZone
 
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
+            _unActive = new UnActive(this, config, _playersEntitiesRepository, stairsZoneView);
             _idle = new Idle(this, config, _playersEntitiesRepository, stairsZoneView);
             _countdown = new Countdown(this, config, _playersEntitiesRepository, stairsZoneView);
             _movePlayers = new MovePlayers(this, config, _playersEntitiesRepository, stairsZoneView);
 
-            _fsm = new StairsZoneStateMachine("Stairs Zone", _idle, _countdown, _movePlayers);
+            _fsm = new StairsZoneStateMachine("Stairs Zone", _unActive, _idle, _countdown, _movePlayers);
 
             stateMachines.Add(_fsm);
         }
@@ -62,7 +64,10 @@ namespace App.StairsZone
         
         public void SetActivityState(bool isActive)
         {
-            gameObject.SetActive(isActive);
+            if (isActive) 
+                _fsm.TryActivateState(_idle);
+            else
+                _fsm.TryActivateState(_unActive);
         }
 
         public void SetMovePoint(Transform newMovePoint)

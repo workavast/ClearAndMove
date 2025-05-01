@@ -12,8 +12,11 @@ namespace App.StairsZone.FSM.SpecificStates
         protected override void OnEnterState() 
             => NetStairsZone.ExtractionTimer = TickTimer.None;
 
-        protected override void OnEnterStateRender() 
-            => StairsZoneView.ToggleCountdownVisibility(false);
+        protected override void OnEnterStateRender()
+        {
+            StairsZoneView.ToggleVisibility(true);
+            StairsZoneView.ToggleCountdownVisibility(false);
+        }
 
         protected override void OnFixedUpdate()
         {
