@@ -1,5 +1,4 @@
 using App.ScenesLoading;
-using App.Session;
 using App.Session.Creation;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +20,6 @@ namespace App.UI.SessionCreation
         }
 
         private void QuickStart() 
-            => _sessionCreator.QuickStart(ScenesConfig.LobbySceneIndex);
+            => _sessionCreator.QuickStart(ScenesConfig.LobbySceneIndex, true);
     }
 }

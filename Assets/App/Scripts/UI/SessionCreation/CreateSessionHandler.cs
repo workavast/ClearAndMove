@@ -1,5 +1,4 @@
 using App.ScenesLoading;
-using App.Session;
 using App.Session.Creation;
 using TMPro;
 using UnityEngine;
@@ -20,6 +19,6 @@ namespace App.UI.SessionCreation
             => button.onClick.AddListener(CreateSession);
 
         private void CreateSession() 
-            => _sessionCreator.CreateSession(serverNameInput.text, ScenesConfig.LobbySceneIndex);
+            => _sessionCreator.CreateSession(serverNameInput.text, ScenesConfig.LobbySceneIndex, true);
     }
 }

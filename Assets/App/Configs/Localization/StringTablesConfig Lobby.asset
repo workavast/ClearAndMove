@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a11d202d91d48c181ddc3426109e890, type: 3}
+  m_Name: StringTablesConfig Lobby
+  m_EditorClassIdentifier: 
+  tableReferences:
+  - m_TableCollectionName: Lobby
+  - m_TableCollectionName: ConnectionScreen
+  tables:
+  - {fileID: 11400000, guid: 04d67d3a956f8524aba05c226f437384, type: 2}
+  - {fileID: 11400000, guid: ef271743f341ea44c8413bd3208847e6, type: 2}

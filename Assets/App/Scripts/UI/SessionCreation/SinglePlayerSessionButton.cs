@@ -19,6 +19,6 @@ namespace App.UI.SessionCreation
         }
 
         private void StartSinglePlayerSession() 
-            => _sessionCreator.CreateSinglePlayer(scene.GetIndex());
+            => _sessionCreator.CreateSinglePlayer(scene.GetIndex(), false);
     }
 }

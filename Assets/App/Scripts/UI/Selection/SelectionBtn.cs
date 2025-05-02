@@ -9,20 +9,21 @@ namespace App.UI.Selection
     {
         [SerializeField] private TMP_Text tmpText;
         
+        public TId ID { get; private set; }
+
         private Button _button;
-        private TId _id;
         
         public event Action<TId> OnClick;
 
         private void Awake()
         {
             _button = GetComponent<Button>();
-            _button.onClick.AddListener(() => OnClick?.Invoke(_id));
+            _button.onClick.AddListener(() => OnClick?.Invoke(ID));
         }
 
         public void SetData(TId id, string textField)
         {
-            _id = id;
+            ID = id;
             tmpText.text = textField;
         }
     }

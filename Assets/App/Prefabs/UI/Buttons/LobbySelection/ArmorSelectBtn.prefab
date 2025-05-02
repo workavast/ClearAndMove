@@ -88,9 +88,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4882817487839384567, guid: 508e05478e0869245861a662b7849af5, type: 3}
+      propertyPath: m_text
+      value: Level {0}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882817487839384567, guid: 508e05478e0869245861a662b7849af5, type: 3}
+      propertyPath: m_fontSize
+      value: 50.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5685485200251895919, guid: 508e05478e0869245861a662b7849af5, type: 3}
       propertyPath: m_Name
-      value: ArmorSelectBtn Variant
+      value: ArmorSelectBtn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

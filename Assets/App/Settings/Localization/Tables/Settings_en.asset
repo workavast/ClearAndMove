@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Settings_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 544a90dbac92e5a44b883471160a9b64, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 7329742848
+    m_Localized: To Default
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99646373888
+    m_Localized: Apply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 115303710720
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127278448640
+    m_Localized: Screen Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144072441856
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 164423204864
+    m_Localized: Fps Limit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185361170432
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206747926528
+    m_Localized: Effects Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 270446821376
+    m_Localized: Full Sceen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277589721088
+    m_Localized: Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 252167771381760
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

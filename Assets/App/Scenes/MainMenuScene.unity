@@ -780,6 +780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 224962e7841747fb80336624f7ab7f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizationPreloader:
+    config: {fileID: 11400000, guid: b5c298775ca3dc349ad4612bea2af2ad, type: 2}
 --- !u!4 &2117484636
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076655508373342127, guid: f041331bc0ced4b41bd949ee8e08688d, type: 3}
       propertyPath: m_fontSize
-      value: 51.95
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 7406783223530981287, guid: f041331bc0ced4b41bd949ee8e08688d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1266,7 +1268,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f041331bc0ced4b41bd949ee8e08688d, type: 3}
 --- !u!114 &2218734230272022525 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 914615304470049290, guid: f041331bc0ced4b41bd949ee8e08688d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8635398561274716766, guid: f041331bc0ced4b41bd949ee8e08688d, type: 3}
   m_PrefabInstance: {fileID: 2218734230272022524}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
