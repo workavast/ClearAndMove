@@ -55872,6 +55872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   netPlayersReady: {fileID: 338389317}
+  localizationPreloader:
+    config: {fileID: 11400000, guid: a1f6edb92833e294db8fdc9e7175c68b, type: 2}
 --- !u!4 &2125640828
 Transform:
   m_ObjectHideFlags: 0

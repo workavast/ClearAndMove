@@ -28,10 +28,10 @@ namespace App.Session.Creation
             _sceneLoader = sceneLoader;
         }
         
-        public async Task CreateSinglePlayer(int sceneIndex, Action successCallback = null, Action<ShutdownReason> failCallback = null)
-            => await StartGame(GameMode.Single, GenerateUid(), sceneIndex, successCallback, failCallback);
+        public async Task CreateSinglePlayer(int sceneIndex, bool forceLoading, Action successCallback = null, Action<ShutdownReason> failCallback = null)
+            => await StartGame(GameMode.Single, GenerateUid(), sceneIndex, forceLoading, successCallback, failCallback);
         
-        public void QuickStart(int sceneIndex, Action successCallback = null, Action<ShutdownReason> failCallback = null) 
+        public void QuickStart(int sceneIndex, bool forceLoading, Action successCallback = null, Action<ShutdownReason> failCallback = null) 
         {
             var startGameArgs = new StartGameArgs()
             {
@@ -46,16 +46,16 @@ namespace App.Session.Creation
                 ObjectProvider = NetworkRunner.GetComponent<NetworkObjectPoolDefault>(),
             };
 
-            StartGame(startGameArgs, sceneIndex, successCallback, failCallback);
+            StartGame(startGameArgs, sceneIndex, forceLoading, successCallback, failCallback);
         }
         
-        public void ConnectToSession(string sessionName, int sceneIndex, Action successCallback = null, Action<ShutdownReason> failCallback = null) 
-            => StartGame(GameMode.Client, sessionName, sceneIndex, successCallback, failCallback);
+        public void ConnectToSession(string sessionName, int sceneIndex, bool forceLoading, Action successCallback = null, Action<ShutdownReason> failCallback = null) 
+            => StartGame(GameMode.Client, sessionName, sceneIndex, forceLoading, successCallback, failCallback);
         
-        public void CreateSession(string sessionName, int sceneIndex, Action successCallback = null, Action<ShutdownReason> failCallback = null)
-            => StartGame(GameMode.Host, sessionName, sceneIndex, successCallback, failCallback);
+        public void CreateSession(string sessionName, int sceneIndex, bool forceLoading, Action successCallback = null, Action<ShutdownReason> failCallback = null)
+            => StartGame(GameMode.Host, sessionName, sceneIndex, forceLoading, successCallback, failCallback);
         
-        private async Task StartGame(GameMode gameMode, string sessionName, int sceneIndex, Action successCallback = null,
+        private async Task StartGame(GameMode gameMode, string sessionName, int sceneIndex, bool forceLoading, Action successCallback = null,
             Action<ShutdownReason> failCallback = null)
         {
             if (sessionName.IsNullOrEmpty()) 
@@ -73,10 +73,10 @@ namespace App.Session.Creation
                 ObjectProvider = NetworkRunner.GetComponent<NetworkObjectPoolDefault>()
             };
 
-            await StartGame(startGameArgs, sceneIndex, successCallback, failCallback);
+            await StartGame(startGameArgs, sceneIndex, forceLoading, successCallback, failCallback);
         }
         
-        private async Task StartGame(StartGameArgs startGameArgs, int sceneIndex, Action successCallback = null,
+        private async Task StartGame(StartGameArgs startGameArgs, int sceneIndex, bool forceLoading, Action successCallback = null,
             Action<ShutdownReason> failCallback = null)
         {
             // Let the Fusion Runner know that we will be providing user input
@@ -95,7 +95,7 @@ namespace App.Session.Creation
                     if (sceneIndex == SceneManager.GetActiveScene().buildIndex)
                         Debug.LogWarning("You try load scene, that already loaded");
                     
-                    _sceneLoader.LoadScene(sceneIndex, true, true);
+                    _sceneLoader.LoadScene(sceneIndex, true, forceLoading);
                 }
                 successCallback?.Invoke();
             }

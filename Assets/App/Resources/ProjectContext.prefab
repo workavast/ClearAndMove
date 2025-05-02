@@ -93,6 +93,7 @@ MonoBehaviour:
   screenModeConfig: {fileID: 11400000, guid: 600512915456d1041af4adb79ee5ad68, type: 2}
   resolutionConfig: {fileID: 11400000, guid: c67c2ac0098efaf439a7f37df8506b0f, type: 2}
   volumeConfig: {fileID: 11400000, guid: bde5611f41e2d4046bc33140a1c5976f, type: 2}
+  localizationConfig: {fileID: 11400000, guid: a2fc44ca6346f93458849a0b45d654ab, type: 2}
 --- !u!1 &1957965332485814001
 GameObject:
   m_ObjectHideFlags: 0

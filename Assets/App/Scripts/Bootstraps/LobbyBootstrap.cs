@@ -1,10 +1,10 @@
 using App.Lobby;
 using App.Lobby.SelectedMission;
 using App.Lobby.StartGameTimer;
+using App.Localization;
 using App.NetworkRunning;
 using App.NetworkRunning.Shutdowners;
 using App.NetworkRunning.Shutdowners.LocalShutdowners;
-using App.Session;
 using App.Session.Creation;
 using App.Session.Visibility;
 using Avastrad.ScenesLoading;
@@ -16,6 +16,8 @@ namespace App.Bootstraps
 {
     public class LobbyBootstrap : MonoBehaviour
     {
+        [SerializeField] private StringTablesPreloader localizationPreloader;
+
         [Inject] private readonly ISceneLoader _sceneLoader;
         [Inject] private readonly NetworkRunnerProvider _runnerProvider;
         [Inject] private readonly SessionCreator _sessionCreator;
@@ -29,15 +31,20 @@ namespace App.Bootstraps
         private async void Start()
         {
             if (!_runnerProvider.TryGetNetworkRunner(out _))
-                await _sessionCreator.CreateSinglePlayer(SceneManager.GetActiveScene().buildIndex);
+                await _sessionCreator.CreateSinglePlayer(SceneManager.GetActiveScene().buildIndex, true);
 
             _shutdownerProvider.SetLocalShutdownProvider(new LobbyShutdowner(_sceneLoader));
             _sessionVisibilityManager.SetHardVisibility(true);
             
-            _sceneLoader.HideLoadScreen(true);
-
             if (_runnerProvider.TryGetNetworkRunner(out var runner) && runner.IsServer)
                 _gameStarter = new GameStarter(_gameStartTimer, _sceneLoader, _selectedMissionProvider, _sessionVisibilityManager);
+
+            await localizationPreloader.Preload();
+
+            _sceneLoader.HideLoadScreen(true);
         }
+        
+        private void OnDestroy() 
+            => localizationPreloader.Release();
     }
 }

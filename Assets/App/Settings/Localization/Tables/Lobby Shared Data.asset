@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Lobby Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Lobby
+  m_TableCollectionNameGuidString: 8b663a99a0a1261419d0d806b905333c
+  m_Entries:
+  - m_Id: 7401046016
+    m_Key: Ready
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131548250112
+    m_Key: MissionName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189995876352
+    m_Key: WeaponName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 227052552192
+    m_Key: SelectedArmorLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253816406016
+    m_Key: Leave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350407032832
+    m_Key: SessionName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 403519504384
+    m_Key: Missions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419688546304
+    m_Key: Weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495387344896
+    m_Key: ArmorLevels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 544703971328
+    m_Key: MissionModifiers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 585258696704
+    m_Key: Players
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628501970944
+    m_Key: FriendlyFire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 654275969024
+    m_Key: DamageScale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 692884537344
+    m_Key: Enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31364755947520
+    m_Key: ArmorLevel
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5660324371734724970
+  references:
+    version: 2
+    RefIds:
+    - rid: 5660324371734724970
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1746115911508

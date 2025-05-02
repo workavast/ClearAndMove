@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace App.Settings.ScreenMode
 {
@@ -8,9 +10,15 @@ namespace App.Settings.ScreenMode
         [SerializeField] private TMP_Dropdown screenModeDropdown;
         [SerializeField] private ScreenModeSettingsViewModel viewModel;
 
+        [SerializeField] private LocalizedString fullScreenLocalizedString;
+        [SerializeField] private LocalizedString windowLocalizedString;
+        
         public void Initialize()
         {
             UpdateView();
+
+            LocalizationSettings.SelectedLocaleChanged += UpdateLocale;
+            UpdateLocale(LocalizationSettings.SelectedLocale);
         }
 
         public void OnEnabledManual()
@@ -34,6 +42,13 @@ namespace App.Settings.ScreenMode
         private void UpdateView()
         {
             screenModeDropdown.SetValueWithoutNotify(viewModel.IsFullScreen ? 0 : 1);
+            screenModeDropdown.RefreshShownValue();
+        }
+        
+        private void UpdateLocale(Locale selectedLocale)
+        {
+            screenModeDropdown.options[0].text = fullScreenLocalizedString.GetLocalizedString();
+            screenModeDropdown.options[1].text = windowLocalizedString.GetLocalizedString();
             screenModeDropdown.RefreshShownValue();
         }
     }

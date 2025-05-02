@@ -293,13 +293,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690420315385755216, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 6037897216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690420315385755216, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:f4d37c3e98627814c86f9ada1c4d9f7c
+      objectReference: {fileID: 0}
     - target: {fileID: 6280432517677050832, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
       propertyPath: m_text
       value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 6280432517677050832, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 6280432517677050832, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
       propertyPath: m_enableAutoSizing
@@ -457,13 +465,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690420315385755216, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 8147632128
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690420315385755216, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:f4d37c3e98627814c86f9ada1c4d9f7c
+      objectReference: {fileID: 0}
     - target: {fileID: 6280432517677050832, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
       propertyPath: m_text
       value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 6280432517677050832, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 6280432517677050832, guid: 903c9a81af949024a8c02e466ea0b9a1, type: 3}
       propertyPath: m_enableAutoSizing

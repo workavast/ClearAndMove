@@ -1,5 +1,4 @@
 using App.ScenesLoading;
-using App.Session;
 using App.Session.Creation;
 using TMPro;
 using UnityEngine;
@@ -27,7 +26,7 @@ namespace App.UI.SessionCreation
             if (serverNameInput.text.IsNullOrEmpty())
                 return;
             
-            _sessionCreator.ConnectToSession(serverNameInput.text, ScenesConfig.LobbySceneIndex);
+            _sessionCreator.ConnectToSession(serverNameInput.text, ScenesConfig.LobbySceneIndex, true);
         }
     }
 }
