@@ -3,7 +3,7 @@ using App.Missions;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace App.Lobby.Map
+namespace App.Lobby.Missions
 {
     public class MissionMarker : MonoBehaviour
     {

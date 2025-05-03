@@ -1,15 +1,12 @@
 using System.Linq;
-using App.UI;
 using UnityEngine;
 
 namespace Avastrad.UI.UiSystem
 {
     public class ScreenBase : MonoBehaviour
     {
-        public virtual void Initialize()
-        {
-            InitializeChildren();
-        }
+        public virtual void Initialize() 
+            => InitializeChildren();
 
         protected void InitializeChildren()
         {

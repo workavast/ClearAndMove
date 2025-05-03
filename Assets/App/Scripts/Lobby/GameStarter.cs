@@ -1,5 +1,5 @@
 using System;
-using App.Lobby.SelectedMission;
+using App.Lobby.Missions.Map;
 using App.Lobby.StartGameTimer;
 using App.Session.Visibility;
 using Avastrad.ScenesLoading;
@@ -10,15 +10,15 @@ namespace App.Lobby
     {
         private readonly IReadOnlyGameStartTimer _startGameTimer;
         private readonly ISceneLoader _sceneLoader;
-        private readonly ISelectedMissionProvider _selectedMissionProvider;
+        private readonly IMissionsMapModel _missionsMapModel;
         private readonly SessionVisibilityManager _sessionVisibilityManager;
 
         public GameStarter(IReadOnlyGameStartTimer startGameTimer, ISceneLoader sceneLoader, 
-            ISelectedMissionProvider selectedMissionProvider, SessionVisibilityManager sessionVisibilityManager)
+            IMissionsMapModel missionsMapModel, SessionVisibilityManager sessionVisibilityManager)
         {
             _startGameTimer = startGameTimer;
             _sceneLoader = sceneLoader;
-            _selectedMissionProvider = selectedMissionProvider;
+            _missionsMapModel = missionsMapModel;
             _sessionVisibilityManager = sessionVisibilityManager;
 
             _startGameTimer.OnTimerIsOver += StartGame;
@@ -28,7 +28,7 @@ namespace App.Lobby
         {
             _sessionVisibilityManager.SetHardVisibility(false);
 
-            var missionConfig = _selectedMissionProvider.GetMission(_selectedMissionProvider.ActiveMissionIndex);
+            var missionConfig = _missionsMapModel.GetMission(_missionsMapModel.SelectedMissionIndex);
             _sceneLoader.LoadScene(missionConfig.SceneIndex);
         }
 

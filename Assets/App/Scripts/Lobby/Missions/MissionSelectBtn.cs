@@ -1,6 +1,6 @@
 using App.UI.Selection;
 
-namespace App.UI.MissionSelection
+namespace App.Lobby.Missions
 {
     public class MissionSelectBtn : SelectionBtn<int>
     {

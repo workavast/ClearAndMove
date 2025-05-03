@@ -556,7 +556,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 291233574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &612634025
+--- !u!1 &733245592
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,60 +564,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 612634028}
-  - component: {fileID: 612634027}
-  - component: {fileID: 612634026}
+  - component: {fileID: 733245595}
+  - component: {fileID: 733245594}
+  - component: {fileID: 733245593}
   m_Layer: 0
-  m_Name: NetLobbyData
+  m_Name: NetMapViewModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &612634026
+--- !u!114 &733245593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612634025}
+  m_GameObject: {fileID: 733245592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1404ce6e8a4fcbb052b5f5f1107c71, type: 3}
+  m_Script: {fileID: 11500000, guid: 2521dbc7526b40368c51b2b42feffdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionSelectorPresenter: {fileID: 1510088420}
-  selectedMissionView: {fileID: 2130941195}
-  missionsConfig: {fileID: 11400000, guid: f696ba8590c3fdc4eb14a1caa3ca60fd, type: 2}
-  _ActiveMissionIndex: 0
---- !u!114 &612634027
+--- !u!114 &733245594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612634025}
+  m_GameObject: {fileID: 733245592}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 1101786596
+  SortKey: 3858842767
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 612634026}
+  - {fileID: 733245593}
   ForceRemoteRenderTimeframe: 0
---- !u!4 &612634028
+--- !u!4 &733245595
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612634025}
+  m_GameObject: {fileID: 733245592}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1306,17 +1302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d207caf46040430d827cfde0c4d0c7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1510088420 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3276629759491211861, guid: 0f53b2ef675818b4e9f4959215388ada, type: 3}
-  m_PrefabInstance: {fileID: 8510986497660125436}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6817c66c19ff4b0abcf075e2fbee91d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1640150454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,7 +1358,7 @@ GameObject:
   - component: {fileID: 1879197415}
   - component: {fileID: 1879197414}
   m_Layer: 0
-  m_Name: SelectedMission
+  m_Name: MissionsLobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1391,7 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77d13d9bd354709849c2777065fb314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  netLobbyData: {fileID: 612634026}
+  missionsConfig: {fileID: 11400000, guid: f696ba8590c3fdc4eb14a1caa3ca60fd, type: 2}
 --- !u!4 &1879197415
 Transform:
   m_ObjectHideFlags: 0
@@ -1536,17 +1521,6 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 1930676348}
   ForceRemoteRenderTimeframe: 0
---- !u!114 &2130941195 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6107527747869889359, guid: 0f53b2ef675818b4e9f4959215388ada, type: 3}
-  m_PrefabInstance: {fileID: 8510986497660125436}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce446ecdf63247d3ac2a71898fb56df8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8510986497660125436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1595,6 +1569,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1004995019323248887, guid: 0f53b2ef675818b4e9f4959215388ada, type: 3}
+      propertyPath: netMapViewModel
+      value: 
+      objectReference: {fileID: 733245593}
     - target: {fileID: 1260298195027196536, guid: 0f53b2ef675818b4e9f4959215388ada, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1979,6 +1957,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6107527747869889359, guid: 0f53b2ef675818b4e9f4959215388ada, type: 3}
+      propertyPath: mapViewModel.underlyingValue
+      value: 
+      objectReference: {fileID: 733245593}
     - target: {fileID: 6433939333837049852, guid: 0f53b2ef675818b4e9f4959215388ada, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2200,8 +2182,8 @@ SceneRoots:
   - {fileID: 8510986497660125436}
   - {fileID: 1006124268}
   - {fileID: 360363804}
+  - {fileID: 733245595}
   - {fileID: 262636507}
   - {fileID: 1923555248}
   - {fileID: 1930676349}
-  - {fileID: 612634028}
   - {fileID: 127549663}

@@ -78,6 +78,10 @@ MonoBehaviour:
     m_Localized: 'Level: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 571129557352448
+    m_Localized: Can Be Changed Only By Host
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
