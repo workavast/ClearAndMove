@@ -23,8 +23,8 @@ namespace App.Weapons.View
 
         public void ShotSfx()
         {
-            var pitchOffset = Random.Range(-config.MaxPitchOffset, config.MaxPitchOffset);
-            _audioFactory.Create(shotSfxPrefab, barrelPoint.position, 1 + pitchOffset);
+            var pitch = Random.Range(config.MinPitch, config.MaxPitch);
+            _audioFactory.Create(shotSfxPrefab, barrelPoint.position, pitch);
         }
     }
 }
