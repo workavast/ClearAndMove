@@ -13,9 +13,9 @@ namespace App.Lobby.Missions.Map
         
         [SerializeField] private NetMapViewModel netMapViewModel;
         [SerializeField] private ViewBlocker viewBlocker;
-        [SerializeField] private MissionMarker[] missionMarkers;
+        [SerializeField] private MapMissionMarker[] missionMarkers;
 
-        private MissionMarker _lastSelectedMarker;
+        private MapMissionMarker _lastSelectedMarker;
 
         public void Awake()
         {
@@ -58,7 +58,7 @@ namespace App.Lobby.Missions.Map
             _lastSelectedMarker.SetState(true);
         }
 
-        private void Select(MissionMarker marker)
+        private void Select(MapMissionMarker marker)
         {
             if (_lastSelectedMarker == marker)
                 return;
