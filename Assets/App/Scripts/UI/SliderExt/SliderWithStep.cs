@@ -11,7 +11,8 @@ namespace App.UI.SliderExt
         
         public float Value => slider.value * step;
         
-        public event Action<float> OnValueCHanged;
+        public event Action<float> OnValueChanged;
+        public event Action<float> OnValueViewChanged;
         
         private void Awake()
         {
@@ -25,13 +26,17 @@ namespace App.UI.SliderExt
             if (notify)
                 slider.value = value / step;
             else
+            {
                 slider.SetValueWithoutNotify(value / step);
+                OnValueViewChanged?.Invoke(value);
+            }
         }
         
         private void OnSlideValueChanged(float value)
         {
             value *= step;
-            OnValueCHanged?.Invoke(value);
+            OnValueChanged?.Invoke(value);
+            OnValueViewChanged?.Invoke(value);
         }
     }
 }

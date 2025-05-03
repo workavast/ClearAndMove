@@ -11,12 +11,12 @@ namespace App.UI.SliderExt
 
         private void OnEnable()
         {
-            sliderWithStep.OnValueCHanged += UpdateView;
+            sliderWithStep.OnValueViewChanged += UpdateView;
             UpdateView(sliderWithStep.Value);
         }
 
         private void OnDisable() 
-            => sliderWithStep.OnValueCHanged -= UpdateView;
+            => sliderWithStep.OnValueViewChanged -= UpdateView;
 
         private void UpdateView(float value) 
             => valueView.text = value.ToString(CultureInfo.InvariantCulture);

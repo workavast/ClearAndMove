@@ -3,15 +3,15 @@ using App.Missions;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace App.Lobby.Missions
+namespace App.Lobby.Missions.Map
 {
-    public class MissionMarker : MonoBehaviour
+    public class MapMissionMarker : MonoBehaviour
     {
         [field: SerializeField] public MissionConfig MissionConfig { get; private set; }
         [SerializeField] private Button markerButton;
         [SerializeField] private GameObject center;
         
-        public event Action<MissionMarker> OnClicked;
+        public event Action<MapMissionMarker> OnClicked;
 
         private void Awake() 
             => markerButton.onClick.AddListener(() => OnClicked?.Invoke(this));
