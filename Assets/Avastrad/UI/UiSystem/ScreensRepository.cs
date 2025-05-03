@@ -12,7 +12,7 @@ namespace Avastrad.UI.UiSystem
     
         public IEnumerable<ScreenBase> Screens => _screens.Values;
 
-        private void Awake()
+        public void Initialize()
         {
             var screens = GetComponentsInChildren<ScreenBase>(true);
             foreach (var screen in screens) 

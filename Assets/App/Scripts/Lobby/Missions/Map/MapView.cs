@@ -1,24 +1,23 @@
 using System;
 using System.Linq;
-using App.Lobby.Map;
 using App.Missions;
 using App.UI.WindowsSwitching;
-using Avastrad.UI.UiSystem;
 using UnityEngine;
 
-namespace App.UI.MissionSelection
+namespace App.Lobby.Missions.Map
 {
-    public class MissionSelectorPresenter : MonoBehaviour, IWindow, IInitializable
+    public class MapView : MonoBehaviour, IWindow
     {
         [field: SerializeField] public int InitializePriority { get; private set; }
         [field: SerializeField] public string Id { get; private set; }
+        
+        [SerializeField] private NetMapViewModel netMapViewModel;
+        [SerializeField] private ViewBlocker viewBlocker;
         [SerializeField] private MissionMarker[] missionMarkers;
 
         private MissionMarker _lastSelectedMarker;
-        
-        public event Action<MissionConfig> OnMissionClicked;
 
-        public void Initialize()
+        public void Awake()
         {
             foreach (var missionMarker in missionMarkers)
             {
@@ -26,8 +25,23 @@ namespace App.UI.MissionSelection
                 missionMarker.OnClicked += Select;
             }
         }
+
+        private void OnEnable()
+        {
+            netMapViewModel.OnActiveMissionChanged += UpdateActiveMarker;
+            UpdateActiveMarker(netMapViewModel.GetActiveMission());
+            viewBlocker.SetState(!netMapViewModel.HasStateAuthority);
+        }
+
+        private void OnDisable()
+        {
+            netMapViewModel.OnActiveMissionChanged -= UpdateActiveMarker;
+        }
+
+        public void Toggle(bool isVisible) 
+            => gameObject.SetActive(isVisible);
         
-        public void SetActiveMarker(MissionConfig missionConfig)
+        private void UpdateActiveMarker(MissionConfig missionConfig)
         {
             if (_lastSelectedMarker != null)
             {
@@ -54,10 +68,8 @@ namespace App.UI.MissionSelection
             
             _lastSelectedMarker = marker;
             _lastSelectedMarker.SetState(true);
-            OnMissionClicked?.Invoke(_lastSelectedMarker.MissionConfig);
+            
+            netMapViewModel.SetMissionIndex(_lastSelectedMarker.MissionConfig);
         }
-
-        public void Toggle(bool isVisible) 
-            => gameObject.SetActive(isVisible);
     }
 }

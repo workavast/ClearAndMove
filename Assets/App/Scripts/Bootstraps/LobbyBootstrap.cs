@@ -1,5 +1,5 @@
 using App.Lobby;
-using App.Lobby.SelectedMission;
+using App.Lobby.Missions.Map;
 using App.Lobby.StartGameTimer;
 using App.Localization;
 using App.NetworkRunning;
@@ -22,7 +22,7 @@ namespace App.Bootstraps
         [Inject] private readonly NetworkRunnerProvider _runnerProvider;
         [Inject] private readonly SessionCreator _sessionCreator;
         [Inject] private readonly IReadOnlyGameStartTimer _gameStartTimer;
-        [Inject] private readonly ISelectedMissionProvider _selectedMissionProvider;
+        [Inject] private readonly IMissionsMapModel _missionsMapModel;
         [Inject] private readonly SessionVisibilityManager _sessionVisibilityManager;
         [Inject] private readonly ShutdownerProvider _shutdownerProvider;
   
@@ -37,7 +37,7 @@ namespace App.Bootstraps
             _sessionVisibilityManager.SetHardVisibility(true);
             
             if (_runnerProvider.TryGetNetworkRunner(out var runner) && runner.IsServer)
-                _gameStarter = new GameStarter(_gameStartTimer, _sceneLoader, _selectedMissionProvider, _sessionVisibilityManager);
+                _gameStarter = new GameStarter(_gameStartTimer, _sceneLoader, _missionsMapModel, _sessionVisibilityManager);
 
             await localizationPreloader.Preload();
 

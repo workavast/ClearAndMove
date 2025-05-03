@@ -75,6 +75,10 @@ MonoBehaviour:
     m_Key: ArmorLevel
     m_Metadata:
       m_Items: []
+  - m_Id: 571129557352448
+    m_Key: CanBeChangedOnlyByHost
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
