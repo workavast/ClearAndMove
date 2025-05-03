@@ -11,8 +11,10 @@ namespace App.Weapons
         Scar = 210,
         ScarEnemy = 211,
         AK_12 = 220,
+        HK_G36C = 230,
         
         MachineGun = 300,
+        M249 = 310,
         
         Shotgun = 400,
         
