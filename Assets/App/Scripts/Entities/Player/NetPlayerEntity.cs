@@ -28,7 +28,7 @@ namespace App.Entities.Player
             ArmorsConfig = armorsConfig;
             
             OnKnockout += () => EventBus.Invoke(new OnPlayerKnockout());
-            OnDeath += () => EventBus.Invoke(new OnPlayerDeath());
+            OnDeath += () => EventBus.Invoke(new OnPlayerDeath(PlayerRef));
         }
         
         public override void Spawned()

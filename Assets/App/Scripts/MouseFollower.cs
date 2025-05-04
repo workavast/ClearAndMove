@@ -1,5 +1,5 @@
+using App.Entities.Player.SelectionPlayerEntity;
 using App.PlayerInput.InputProviding;
-using App.Players;
 using Avastrad.Vector2Extension;
 using UnityEngine;
 using Zenject;
@@ -8,7 +8,7 @@ namespace App
 {
     public class MouseFollower : MonoBehaviour
     {
-        [Inject] private readonly LocalPlayerProvider _localPlayerProvider;
+        [Inject] private readonly SelectedPlayerEntityProvider _localPlayerProvider;
         [Inject] private readonly RawInputProvider _rawInputProvider;
 
         private Vector3 _lastPlayerPosition;
