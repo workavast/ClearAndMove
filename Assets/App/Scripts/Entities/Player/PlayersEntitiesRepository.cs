@@ -37,7 +37,7 @@ namespace App.Entities.Player
             _playersById.Remove(player.Identifier.Id);
             OnPlayerRemove?.Invoke(player.PlayerRef);
         }
-
+        
         public bool TryGet(int identifier, out NetPlayerEntity player)
         {
             if (_playersById.TryGetValue(identifier, out var value))

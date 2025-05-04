@@ -22,7 +22,7 @@ namespace App.GameState.FSM
         
         protected override void OnEnterState()
         {
-            _eventBus.Invoke(new OnGameStateChanged(GameIsRunning));
+            _eventBus.Invoke(new OnGameStateChanged(GetType()));
         }
     }
 }
