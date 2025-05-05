@@ -14,32 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Localization-String-Tables-Russian (ru)
   m_GUID: a40eea82a16a4d5448b4c64e54d4f1cf
-  m_SerializeEntries:
-  - m_GUID: 49da55de967e7af4ea4fef6fe9c3a9ee
-    m_Address: EndGameScreen_ru
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b6d6b4238dbab3d498ecc48783ad6924
-    m_Address: MainMenu_ru
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c03da9e7ecc3ef84da71ff93fa723356
-    m_Address: GameplayMenu_ru
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dabb7236826afaf45a38901813650eb9
-    m_Address: Settings_ru
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c9b437490a2652d4da39538390294620, type: 2}
   m_SchemaSet:

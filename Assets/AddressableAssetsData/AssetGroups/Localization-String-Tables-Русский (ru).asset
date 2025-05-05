@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49da55de967e7af4ea4fef6fe9c3a9ee
+    m_Address: EndGameScreen_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 76447d5a4c757984cad8930b168adc95
     m_Address: Training_ru
     m_ReadOnly: 1
@@ -31,6 +37,25 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a422ecb5872c4604fb88beebfa27c393
     m_Address: Lobby_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6d6b4238dbab3d498ecc48783ad6924
+    m_Address: MainMenu_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c03da9e7ecc3ef84da71ff93fa723356
+    m_Address: GameplayMenu_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dabb7236826afaf45a38901813650eb9
+    m_Address: Settings_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru

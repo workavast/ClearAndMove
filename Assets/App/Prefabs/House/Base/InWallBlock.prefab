@@ -154,10 +154,6 @@ PrefabInstance:
       value: Interior_WallB
       objectReference: {fileID: 0}
     - target: {fileID: 2613488314068108794, guid: 9c0a9e1a998861d408ca54a9f808af2c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2613488314068108794, guid: 9c0a9e1a998861d408ca54a9f808af2c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}

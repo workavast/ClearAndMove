@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using App.Dissolving;
 using App.Entities.Enemy;
 using App.Entities.Player.SelectionPlayerEntity;
@@ -13,21 +12,13 @@ namespace App.Missions.Levels
         [SerializeField] private DissolvesUpdater externalDissolvesUpdater;
         [SerializeField] private BoxCollider levelAndAboveCollider;
         [SerializeField] private BoxCollider levelCollider;
-        [SerializeField] private bool isStaticDissolve;
 
         [Inject] private readonly EnemiesRepository _enemiesRepository;
         [Inject] private readonly SelectedPlayerEntityProvider _playerProvider;
 
-        private readonly List<RenderersHolder> _renderersHolders = new();
-
-        private bool _playerOnTheLevel = false;
-        private bool _playerOnTheLevelOrAbove = false;
+        private bool _playerOnTheLevel;
+        private bool _playerOnTheLevelOrAbove;
         
-        private void Awake()
-        {
-            _renderersHolders.AddRange(GetComponentsInChildren<RenderersHolder>(true));
-        }
-
         private void Start()
         {
             if (_playerProvider.HasEntity)
@@ -61,35 +52,26 @@ namespace App.Missions.Levels
                     {
                         var enemyOnTheLevel = InZone(levelCollider, enemy.transform.position);
                         if (enemyOnTheLevel) 
-                            TrySetDissolve(enemy.DissolvesUpdater, _playerOnTheLevelOrAbove);
+                            enemy.DissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
                     }
                     
-                    TrySetDissolve(externalDissolvesUpdater, _playerOnTheLevelOrAbove);
+                    Debug.LogError(_playerOnTheLevelOrAbove);
+                    externalDissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
                 }
 
                 if (_playerOnTheLevel != playerOnTheLevel)
                 {
                     _playerOnTheLevel = playerOnTheLevel;
-                    TrySetDissolve(internalDissolvesUpdater, _playerOnTheLevel);
-                    foreach (var renderersHolder in _renderersHolders)
-                        renderersHolder.SetRenderState(_playerOnTheLevel);
+                    internalDissolvesUpdater.SetVisibilityState(_playerOnTheLevel);
                 }
             }
         }
 
-        private void TrySetDissolve(DissolvesUpdater dissolvesUpdater, bool isVisible)
-        {
-            if (isStaticDissolve)
-                return;
-            
-            dissolvesUpdater.SetVisibilityState(isVisible);
-        }
-        
         private void InitEnemyDissolving(NetEnemy enemy)
         {
             var enemyOnTheLevel = InZone(levelCollider, enemy.transform.position);
             if (enemyOnTheLevel) 
-                TrySetDissolve(enemy.DissolvesUpdater, _playerOnTheLevelOrAbove);
+                enemy.DissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
         }
         
         private static bool InZone(Collider checkCollider, Vector3 position) 
