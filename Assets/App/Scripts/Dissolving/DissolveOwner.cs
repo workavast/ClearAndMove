@@ -6,11 +6,10 @@ namespace App.Dissolving
     [RequireComponent(typeof(RenderersHolder))]
     public class DissolveOwner : MonoBehaviour
     {
+        private bool _isRender = true;
         private RenderersHolder _renderersHolder;
         private readonly List<Material> _materials = new();
         private static readonly int Dissolve = Shader.PropertyToID("_Dissolve");
-
-        private bool _isRender = true;
         
         private void Awake()
         {
