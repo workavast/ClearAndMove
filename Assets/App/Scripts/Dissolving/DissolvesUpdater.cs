@@ -41,6 +41,11 @@ namespace App.Dissolving
                 _dissolveTimer += Time.deltaTime;
 
             UpdateDissolves(_dissolveTimer / Duration);
+
+            if (IsVisible && _dissolveTimer < 0)
+            {
+                
+            }
         }
 
         public void SetVisibilityState(bool isVisible)
@@ -68,6 +73,11 @@ namespace App.Dissolving
         {
             foreach (var dissolveOwner in _dissolveOwners) 
                 dissolveOwner.ManualUpdate(percentageValue);
+        }
+        
+        private void SetRenderState(bool isRender)
+        {
+            
         }
     }
 }

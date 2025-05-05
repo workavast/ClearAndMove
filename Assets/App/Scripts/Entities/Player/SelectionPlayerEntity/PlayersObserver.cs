@@ -38,7 +38,6 @@ namespace App.Entities.Player.SelectionPlayerEntity
             if (e.IsOver) 
                 Dispose();
         }
-
         
         public void OnEvent(OnPlayerDeath e)
         {

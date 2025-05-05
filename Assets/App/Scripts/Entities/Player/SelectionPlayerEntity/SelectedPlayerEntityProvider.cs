@@ -19,15 +19,24 @@ namespace App.Entities.Player.SelectionPlayerEntity
         
         private NetPlayerEntity _netTargetEntity;
 
-        public event Action OnWeaponShot; 
+        public event Action OnWeaponShot;
         
         public void SetTargetEntity(NetPlayerEntity netPlayerEntity)
         {
+            if (_netTargetEntity == netPlayerEntity)
+            {
+                Debug.LogWarning($"You try set entity that already setted");
+                return;
+            }
+            
             ClearTargetEntity();
             _netTargetEntity = netPlayerEntity;
-            
-            if (!_netTargetEntity.IsNull()) 
+
+            if (!_netTargetEntity.IsNull())
+            {
                 _netTargetEntity.OnWeaponShot += WeaponShot;
+                _netTargetEntity.SetSelectState(true);
+            }
         }
         
         private void ClearTargetEntity()
@@ -36,6 +45,7 @@ namespace App.Entities.Player.SelectionPlayerEntity
                 return;
 
             _netTargetEntity.OnWeaponShot -= WeaponShot;
+            _netTargetEntity.SetSelectState(false);
             _netTargetEntity = null;
         }
 

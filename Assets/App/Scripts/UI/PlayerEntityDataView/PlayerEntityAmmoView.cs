@@ -1,4 +1,4 @@
-using App.Players;
+using App.Entities.Player.SelectionPlayerEntity;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -9,7 +9,7 @@ namespace App.UI.PlayerEntityDataView
     {
         [SerializeField] private TMP_Text textView;
             
-        [Inject] private readonly LocalPlayerProvider _playerProvider;
+        [Inject] private readonly SelectedPlayerEntityProvider _playerProvider;
 
         private void LateUpdate()
         {

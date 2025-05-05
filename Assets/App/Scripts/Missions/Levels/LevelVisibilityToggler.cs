@@ -1,6 +1,6 @@
 using App.Dissolving;
 using App.Entities.Enemy;
-using App.Players;
+using App.Entities.Player.SelectionPlayerEntity;
 using UnityEngine;
 using Zenject;
 
@@ -13,7 +13,7 @@ namespace App.Missions.Levels
         [SerializeField] private BoxCollider levelCollider;
 
         [Inject] private readonly EnemiesRepository _enemiesRepository;
-        [Inject] private readonly LocalPlayerProvider _localPlayerProvider;
+        [Inject] private readonly SelectedPlayerEntityProvider _playerProvider;
 
         private void Start()
         {
@@ -32,9 +32,9 @@ namespace App.Missions.Levels
 
         private void LateUpdate()
         {
-            if (_localPlayerProvider.HasEntity)
+            if (_playerProvider.HasEntity)
             {
-                var playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _localPlayerProvider.Position);
+                var playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _playerProvider.Position);
                 if (playerOnTheLevelOrAbove != dissolvesUpdater.IsVisible)
                 {
                     foreach (var enemy in _enemiesRepository.Enemies)
@@ -51,12 +51,12 @@ namespace App.Missions.Levels
 
         private void InitEnemyDissolving(NetEnemy enemy)
         {
-            if (_localPlayerProvider.HasEntity)
+            if (_playerProvider.HasEntity)
             {
                 var enemyOnTheLevel = InZone(levelCollider, enemy.transform.position);
                 if (enemyOnTheLevel)
                 {
-                    var playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _localPlayerProvider.Position);
+                    var playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _playerProvider.Position);
                     if (playerOnTheLevelOrAbove)
                     {
                         dissolvesUpdater.SetValue(1);
