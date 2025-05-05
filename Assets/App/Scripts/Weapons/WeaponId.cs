@@ -6,6 +6,8 @@ namespace App.Weapons
         None = 1,
         
         PDW = 100,
+        P90 = 110,
+        MP7 = 120,
         
         Avtomat = 200,
         Scar = 210,
