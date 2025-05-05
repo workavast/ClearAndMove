@@ -1,4 +1,4 @@
-using System;
+using App.PlayerInput.InputProviding;
 using Avastrad.UI.UiSystem;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +12,27 @@ namespace App.Entities.Player.SelectionPlayerEntity
         [SerializeField] private Button prevPlayerBtn;
 
         [Inject] private readonly SelectedPlayerEntityChanger _selectedPlayerEntityChanger;
+        [Inject] private readonly IInputProvider _inputProvider;
 
         private void Awake()
         {
             nextPlayerBtn.onClick.AddListener(_selectedPlayerEntityChanger.NextTarget);
             prevPlayerBtn.onClick.AddListener(_selectedPlayerEntityChanger.PrevTarget);
+        }
+
+        private void Update()
+        {
+            if (_inputProvider.NextPlayer)
+            {
+                _selectedPlayerEntityChanger.NextTarget();
+                return;
+            }
+
+            if (_inputProvider.PrevPlayer)
+            {
+                _selectedPlayerEntityChanger.PrevTarget();
+                return;
+            }
         }
 
         private void OnDestroy()

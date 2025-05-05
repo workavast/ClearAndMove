@@ -15,11 +15,16 @@ namespace App.PlayerInput.InputProviding
         public bool Sprint { get; private set; }
         public bool Menu { get; private set; }
 
+        public bool NextPlayer { get; private set; }
+        public bool PrevPlayer { get; private set; }
+
         public bool IsGamepad { get; private set; }
 
         private void LateUpdate()
         {
             Menu = false;
+            NextPlayer = false;
+            PrevPlayer = false;
         }
 
         public void OnMove(InputAction.CallbackContext context)
@@ -98,6 +103,24 @@ namespace App.PlayerInput.InputProviding
             {
                 InputActionPhase.Started => true,
                 _ => Menu
+            };
+        }
+        
+        public void OnNextPlayer(InputAction.CallbackContext context)
+        {
+            NextPlayer = context.phase switch
+            {
+                InputActionPhase.Started => true,
+                _ => NextPlayer
+            };
+        }
+
+        public void OnPrevPlayer(InputAction.CallbackContext context)
+        {
+            PrevPlayer = context.phase switch
+            {
+                InputActionPhase.Started => true,
+                _ => PrevPlayer
             };
         }
 
