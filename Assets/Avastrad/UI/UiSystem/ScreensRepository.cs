@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using App.Entities.Player.SelectionPlayerEntity;
 using App.UI.Screens;
 using UnityEngine;
 
@@ -38,6 +39,8 @@ namespace Avastrad.UI.UiSystem
                     return GetScreen<GameplayMenuScreen>();
                 case ScreenType.EndGame:
                     return GetScreen<EndGameScreen>();
+                case ScreenType.PlayersObserve:
+                    return GetScreen<PlayersObserveScreen>();
                 case ScreenType.MainMenu:
                     return GetScreen<MainMenuScreen>();
                 case ScreenType.Lobby:

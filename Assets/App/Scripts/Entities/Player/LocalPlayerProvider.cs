@@ -1,14 +1,13 @@
 using System;
-using App.Entities.Player;
 using App.NetworkRunning;
 using Fusion;
 using UnityEngine;
 
-namespace App.Players
+namespace App.Entities.Player
 {
     public class LocalPlayerProvider
     {
-        public bool HasEntity { get; private set; }
+        public bool HasEntity => _netPlayerEntity != null && _netPlayerEntity.IsSpawned;
         public Vector3 Position => _netPlayerEntity.transform.position;
         
         public float MaxHealthPoints => _netPlayerEntity.MaxHealthPoints;
@@ -42,7 +41,6 @@ namespace App.Players
 
             _netPlayerEntity = netPlayerEntity;
             _netPlayerEntity.OnWeaponShot += WeaponShot;
-            HasEntity = true;
         }
         
         private void PlayerEntityRemove(PlayerRef playerRef)
@@ -52,7 +50,6 @@ namespace App.Players
             if (_netPlayerEntity == null)
                 return;
 
-            HasEntity = false;
             _netPlayerEntity.OnWeaponShot -= WeaponShot;
             _netPlayerEntity = null;
         }

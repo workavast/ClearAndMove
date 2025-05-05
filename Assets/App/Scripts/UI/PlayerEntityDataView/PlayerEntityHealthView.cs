@@ -1,4 +1,4 @@
-using App.Players;
+using App.Entities.Player.SelectionPlayerEntity;
 using Avastrad.UI.Elements.BarView;
 using TMPro;
 using UnityEngine;
@@ -11,7 +11,7 @@ namespace App.UI.PlayerEntityDataView
         [SerializeField] private TMP_Text textView;
         [SerializeField] private Bar barView;
             
-        [Inject] private readonly LocalPlayerProvider _playerProvider;
+        [Inject] private readonly SelectedPlayerEntityProvider _playerProvider;
 
         private void LateUpdate()
         {

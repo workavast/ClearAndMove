@@ -1,25 +1,29 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace App.Dissolving
 {
+    [RequireComponent(typeof(RenderersHolder))]
     public class DissolveOwner : MonoBehaviour
     {
-        private List<Material> _materials;
+        private RenderersHolder _renderersHolder;
+        private readonly List<Material> _materials = new();
         private static readonly int Dissolve = Shader.PropertyToID("_Dissolve");
 
+        private bool _isRender = true;
+        
         private void Awake()
         {
-            var renders = GetComponentsInChildren<Renderer>(true);
-            _materials = new List<Material>(renders.Length);
-            
-            foreach (var renderer1 in renders)
-                _materials.AddRange(renderer1.materials);
+            _renderersHolder = GetComponent<RenderersHolder>();
         }
 
         private void Start()
         {
+            var renders = _renderersHolder.Renderers;
+            _materials.Capacity = renders.Count;
+            foreach (var someRenderer in renders) 
+                _materials.AddRange(someRenderer.materials);
+            
             var dissolvesUpdater = GetComponentInParent<DissolvesUpdater>();
             if (dissolvesUpdater != null) 
                 dissolvesUpdater.AddDissolveOwner(this);
@@ -34,8 +38,26 @@ namespace App.Dissolving
 
         public void ManualUpdate(float percentageValue)
         {
+            if (!_isRender && percentageValue >= 1)
+                return;
+
+            if (percentageValue >= 1 && _isRender)
+            {
+                _isRender = false;
+                SetRenderState(false);
+            }
+
+            if (percentageValue < 1 && !_isRender)
+            {
+                _isRender = true;
+                SetRenderState(true);
+            }
+            
             foreach (var material in _materials) 
                 material.SetFloat(Dissolve, percentageValue);
         }
+
+        public void SetRenderState(bool isRender) 
+            => _renderersHolder.SetRenderState(isRender);
     }
 }

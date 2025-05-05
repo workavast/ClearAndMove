@@ -29,5 +29,11 @@ namespace Avastrad.Vector2Extension
             
             return new Vector3(x, y, z);
         }
+
+        public static bool InYRange(this Vector3 vectorA, Vector3 vectorB, float offset)
+        {
+            var yDifference = Mathf.Abs(vectorA.y - vectorB.y);
+            return yDifference <= offset;
+        }
     }
 }

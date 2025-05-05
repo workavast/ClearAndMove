@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace App.WarFog
 {
-    [CreateAssetMenu(fileName = nameof(FieldOfViewConfig),
-        menuName = Consts.AppName + "/Configs/" + nameof(FieldOfViewConfig))]
-    public class FieldOfViewConfig : ScriptableObject
+    [CreateAssetMenu(fileName = nameof(DynamicFieldOfViewConfig),
+        menuName = Consts.AppName + "/Configs/" + nameof(DynamicFieldOfViewConfig))]
+    public class DynamicFieldOfViewConfig : ScriptableObject
     {
         [field: SerializeField] public LayerMask LayerMask { get; private set; }
         [field: SerializeField, Min(0)] public int RaysPerAngle { get; private set; } = 4;

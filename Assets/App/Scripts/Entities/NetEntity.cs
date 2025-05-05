@@ -23,7 +23,7 @@ namespace App.Entities
         [Networked] [field: ReadOnly, SerializeField] public Vector3 NetVelocity { get; private set; }
         [Networked] [OnChangedRender(nameof(ChangeArmor))] [field: ReadOnly] public int NetArmorLevel { get; private set; }
 
-        public bool IsActive { get; private set; }
+        public bool IsSpawned { get; private set; }
         public GameObject GameObject => gameObject;
         public EntityIdentifier Identifier { get; } = new();
         public abstract EntityType EntityType { get; }
@@ -62,7 +62,7 @@ namespace App.Entities
 
         public override void Spawned()
         {
-            IsActive = true;
+            IsSpawned = true;
             _armor = ArmorsConfig.GetArmor(0);
             hitbox.HitboxActive = 
                 characterController.enabled = 
@@ -71,7 +71,7 @@ namespace App.Entities
 
         public override void Despawned(NetworkRunner runner, bool hasState)
         {
-            IsActive = false;
+            IsSpawned = false;
         }
 
         public override void FixedUpdateNetwork()
@@ -99,7 +99,7 @@ namespace App.Entities
             => NetArmorLevel = armorLevel;
 
         public bool IsAlive() 
-            => IsActive && health.IsAlive;
+            => IsSpawned && health.IsAlive;
 
         public ArmorConfig GetArmor()
             => _armor;
