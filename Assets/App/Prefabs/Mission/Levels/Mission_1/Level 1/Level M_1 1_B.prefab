@@ -198,7 +198,7 @@ Transform:
   - {fileID: 9115979896218444720}
   - {fileID: 4758061194666022862}
   - {fileID: 7488228573907506133}
-  m_Father: {fileID: 8107440123551511345}
+  m_Father: {fileID: 7597224562509160334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4288491629204435764
 GameObject:
@@ -266,7 +266,7 @@ Transform:
   - {fileID: 1942631149265945016}
   - {fileID: 6636280822885507401}
   - {fileID: 1849017466706610563}
-  m_Father: {fileID: 8107440123551511345}
+  m_Father: {fileID: 7597224562509160334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6188949954724888846
 GameObject:
@@ -310,7 +310,7 @@ Transform:
   - {fileID: 3051088080769731727}
   - {fileID: 5428174039064752682}
   - {fileID: 4986849550244582005}
-  m_Father: {fileID: 8107440123551511345}
+  m_Father: {fileID: 7597224562509160334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7775459665110092067
 GameObject:
@@ -350,7 +350,7 @@ Transform:
   - {fileID: 950647404484117682}
   - {fileID: 1909384892774582316}
   - {fileID: 3396722888302728889}
-  m_Father: {fileID: 8107440123551511345}
+  m_Father: {fileID: 7597224562509160334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8632494488930251415
 GameObject:
@@ -392,7 +392,7 @@ Transform:
   - {fileID: 7605988997094319803}
   - {fileID: 5365502167393137594}
   - {fileID: 8920750919388577778}
-  m_Father: {fileID: 8107440123551511345}
+  m_Father: {fileID: 7597224562509160334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8851837547811483769
 GameObject:
@@ -863,20 +863,20 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
       insertIndex: 0
       addedObject: {fileID: 529659094200459519}
-    - targetCorrespondingSourceObject: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
-      insertIndex: 1
+    - targetCorrespondingSourceObject: {fileID: 7684100165227214803, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 7107167322579988656}
-    - targetCorrespondingSourceObject: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
-      insertIndex: 2
+    - targetCorrespondingSourceObject: {fileID: 7684100165227214803, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4756349495299897933}
-    - targetCorrespondingSourceObject: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
-      insertIndex: 3
+    - targetCorrespondingSourceObject: {fileID: 7684100165227214803, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 7050876625939568523}
-    - targetCorrespondingSourceObject: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
-      insertIndex: 4
+    - targetCorrespondingSourceObject: {fileID: 7684100165227214803, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5539530389765455704}
-    - targetCorrespondingSourceObject: {fileID: 8308792534777273196, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
-      insertIndex: 5
+    - targetCorrespondingSourceObject: {fileID: 7684100165227214803, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1582186070083323838}
     - targetCorrespondingSourceObject: {fileID: 200169423270457383, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
       insertIndex: -1
@@ -919,6 +919,11 @@ Transform:
 --- !u!4 &5239983185524678890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5437397184753404087, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
+  m_PrefabInstance: {fileID: 274063304150247517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7597224562509160334 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7684100165227214803, guid: e0f2a09597b62e946bf3eb8700e48453, type: 3}
   m_PrefabInstance: {fileID: 274063304150247517}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8107440123551511345 stripped

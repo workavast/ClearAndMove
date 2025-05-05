@@ -9,7 +9,7 @@ namespace App.Entities
 {
     public interface IEntity : IDamageable
     {
-        bool IsActive { get; }
+        bool IsSpawned { get; }
         EntityIdentifier Identifier { get; }
         EntityType EntityType { get; }
         GameObject GameObject { get; }

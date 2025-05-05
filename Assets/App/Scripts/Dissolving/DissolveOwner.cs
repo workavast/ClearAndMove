@@ -3,29 +3,27 @@ using UnityEngine;
 
 namespace App.Dissolving
 {
+    [RequireComponent(typeof(RenderersHolder))]
     public class DissolveOwner : MonoBehaviour
     {
-        private readonly List<Renderer> _renderers = new();
+        private RenderersHolder _renderersHolder;
         private readonly List<Material> _materials = new();
         private static readonly int Dissolve = Shader.PropertyToID("_Dissolve");
 
-        private bool _isRender;
+        private bool _isRender = true;
         
         private void Awake()
         {
-            var renders = GetComponentsInChildren<Renderer>(true);
-            _renderers.Capacity = renders.Length;
-            _materials.Capacity = renders.Length;
-            
-            foreach (var someRenderer in renders)
-            {
-                _renderers.Add(someRenderer);
-                _materials.AddRange(someRenderer.materials);
-            }
+            _renderersHolder = GetComponent<RenderersHolder>();
         }
 
         private void Start()
         {
+            var renders = _renderersHolder.Renderers;
+            _materials.Capacity = renders.Count;
+            foreach (var someRenderer in renders) 
+                _materials.AddRange(someRenderer.materials);
+            
             var dissolvesUpdater = GetComponentInParent<DissolvesUpdater>();
             if (dissolvesUpdater != null) 
                 dissolvesUpdater.AddDissolveOwner(this);
@@ -59,10 +57,7 @@ namespace App.Dissolving
                 material.SetFloat(Dissolve, percentageValue);
         }
 
-        public void SetRenderState(bool isRender)
-        {
-            foreach (var someRenderer in _renderers) 
-                someRenderer.enabled = isRender;
-        }
+        public void SetRenderState(bool isRender) 
+            => _renderersHolder.SetRenderState(isRender);
     }
 }

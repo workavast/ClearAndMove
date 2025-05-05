@@ -1,14 +1,13 @@
 using System;
-using App.Entities.Player;
 using App.NetworkRunning;
 using Fusion;
 using UnityEngine;
 
-namespace App.Players
+namespace App.Entities.Player
 {
     public class LocalPlayerProvider
     {
-        public bool HasEntity => _netPlayerEntity != null;
+        public bool HasEntity => _netPlayerEntity != null && _netPlayerEntity.IsSpawned;
         public Vector3 Position => _netPlayerEntity.transform.position;
         
         public float MaxHealthPoints => _netPlayerEntity.MaxHealthPoints;
