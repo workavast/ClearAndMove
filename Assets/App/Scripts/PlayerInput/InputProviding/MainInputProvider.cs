@@ -11,6 +11,8 @@ namespace App.PlayerInput.InputProviding
         public bool Aim => _inputProviderBase.Aim;
         public bool Sprint => _inputProviderBase.Sprint;
         public bool Menu => _inputProviderBase.Menu;
+        public bool NextPlayer => _inputProviderBase.NextPlayer;
+        public bool PrevPlayer => _inputProviderBase.PrevPlayer;
         public bool IsGamepad => _inputProviderBase.IsGamepad;
 
         private InputProviderBase _inputProviderBase;

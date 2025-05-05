@@ -11,6 +11,8 @@ namespace App.PlayerInput.InputProviding
         public bool Aim { get; }
         public bool Sprint { get; }
         public bool Menu { get; }
+        public bool NextPlayer { get; }
+        public bool PrevPlayer { get; }
         public bool IsGamepad { get; }
 
         Vector2 GetLookDirection(PlayerRef playerRef);

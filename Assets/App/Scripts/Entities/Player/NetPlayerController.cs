@@ -30,7 +30,7 @@ namespace App.Entities.Player
             }
             
 #if UNITY_EDITOR
-            if (HasStateAuthority && Input.GetKeyDown(KeyCode.Q)) 
+            if (HasStateAuthority && Input.GetKeyDown(KeyCode.Z)) 
                 netEntity.TakeDamage(999, netEntity);
 #endif
         }
