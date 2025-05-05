@@ -16,6 +16,10 @@ namespace App.PlayerInput.InputProviding
         public bool Sprint => _rawInputProvider.Sprint;
         public bool Menu => _rawInputProvider.Menu;
 
+        public bool NextPlayer => _rawInputProvider.NextPlayer;
+        public bool PrevPlayer => _rawInputProvider.PrevPlayer;
+
+        
         public bool IsGamepad => _rawInputProvider.IsGamepad;
 
         protected InputProviderBase(RawInputProvider rawInputProvider)

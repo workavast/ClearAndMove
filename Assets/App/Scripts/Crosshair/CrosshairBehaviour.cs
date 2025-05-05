@@ -1,3 +1,4 @@
+using App.Entities.Player;
 using App.Players;
 using DG.Tweening;
 using UnityEngine;

@@ -5,7 +5,7 @@ using Zenject;
 
 namespace App.CameraBehaviour
 {
-    public class CameraScaler : MonoBehaviour
+    public class CameraScope : MonoBehaviour
     {
         [SerializeField] private CinemachineTargetGroup targetGroup;
         [SerializeField] private AimConfig config;

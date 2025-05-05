@@ -20,7 +20,7 @@ namespace App.Health
      
         [Networked] [field: ReadOnly] public float NetHealthPoints { get; private set; }
 
-        [Inject] private IEventBus EventBus { get; set; }
+        [Inject] private readonly IEventBus _eventBus;
 
         public bool IsAlive => _fsm.ActiveState == _alive;
         public bool IsKnockout => _fsm.ActiveState == _knockout;
@@ -90,14 +90,15 @@ namespace App.Health
             if (HasStateAuthority)
             {
                 _fsm.TryActivateState<Dead>();
-                EventBus.Invoke(new OnKill(entity.Identifier.Id, _lastDamager.Identifier.Id));
-                OnDeath?.Invoke();
-                OnDeathEntity?.Invoke(entity);
-                Debug.Log($"{entity.GetName()} is dead");
-
-                // if (entity.EntityType == EntityType.Default)
-                //     Runner.Despawn(Object);
+                _eventBus.Invoke(new OnKill(entity.Identifier.Id, _lastDamager.Identifier.Id));
             }
+        }
+
+        public void PermanentDeathRenderer()
+        {
+            Debug.Log($"{entity.GetName()} is dead");
+            OnDeath?.Invoke();
+            OnDeathEntity?.Invoke(entity);
         }
 
         public void Revive()

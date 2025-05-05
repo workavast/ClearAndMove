@@ -1,14 +1,18 @@
 using App.Armor;
 using App.EventBus;
 using App.Players.Nicknames;
+using App.WarFog;
 using Avastrad.EventBusFramework;
 using Fusion;
+using UnityEngine;
 using Zenject;
 
 namespace App.Entities.Player
 {
     public class NetPlayerEntity : NetEntity
     {
+        [SerializeField] private FieldOfView fieldOfView;
+        
         public PlayerRef PlayerRef => Object.InputAuthority;
         public override EntityType EntityType => EntityType.Player;
         
@@ -28,7 +32,8 @@ namespace App.Entities.Player
             ArmorsConfig = armorsConfig;
             
             OnKnockout += () => EventBus.Invoke(new OnPlayerKnockout());
-            OnDeath += () => EventBus.Invoke(new OnPlayerDeath());
+            OnDeath += () => EventBus.Invoke(new OnPlayerDeath(PlayerRef));
+            OnDeath += () => SetSelectState(true);
         }
         
         public override void Spawned()
@@ -45,6 +50,9 @@ namespace App.Entities.Player
 
         public override string GetName() 
             => _nicknamesProvider.GetNickName(PlayerRef);
+        
+        public void SetSelectState(bool isSelectedEntity) 
+            => fieldOfView.SetDynamicVisibilityState(isSelectedEntity && IsAlive());
     }
 }
 

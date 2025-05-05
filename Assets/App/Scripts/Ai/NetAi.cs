@@ -55,7 +55,7 @@ namespace App.Ai
 
          public void OnEvent(OnGameStateChanged e)
          {
-             if (!e.GameIsRunning && _fsm.ActiveState != null && _fsm.ActiveState != _stop) 
+             if (!e.IsRunning && _fsm.ActiveState != null && _fsm.ActiveState != _stop) 
                  _fsm.TryActivateState<Stop>();
          }
     }
