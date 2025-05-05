@@ -11,7 +11,7 @@ namespace App.Entities
         [SerializeField] private NetEntity netEntity;
 
         public DissolvesUpdater DissolvesUpdater => netEntity.DissolvesUpdater;
-        public bool IsActive => netEntity.IsActive;
+        public bool IsSpawned => netEntity.IsSpawned;
         public EntityIdentifier Identifier => netEntity.Identifier;
         public EntityType EntityType => netEntity.EntityType;
         public GameObject GameObject => netEntity.GameObject;

@@ -6,7 +6,7 @@ namespace App.Entities.Player.SelectionPlayerEntity
 {
     public class SelectedPlayerEntityProvider
     {
-        public bool HasEntity => _netTargetEntity != null;
+        public bool HasEntity => _netTargetEntity != null && _netTargetEntity.IsSpawned;
         public Vector3 Position => _netTargetEntity.transform.position;
         
         public float MaxHealthPoints => _netTargetEntity.MaxHealthPoints;
@@ -28,7 +28,7 @@ namespace App.Entities.Player.SelectionPlayerEntity
                 Debug.LogWarning($"You try set entity that already setted");
                 return;
             }
-            
+
             ClearTargetEntity();
             _netTargetEntity = netPlayerEntity;
 

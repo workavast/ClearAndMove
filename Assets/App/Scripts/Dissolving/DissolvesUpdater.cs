@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace App.Dissolving
     {
         [SerializeField] private DissolveConfig config;
         [field: SerializeField] public bool IsVisible { get; private set; } = true;
-        
+
         private readonly List<DissolveOwner> _dissolveOwners = new();
         
         private float Duration => config.Duration;
@@ -22,7 +23,7 @@ namespace App.Dissolving
         private void Start()
         {
             if (IsVisible)
-                SetValue(Duration);
+                SetValue(1);
             else
                 SetValue(0);
         }
