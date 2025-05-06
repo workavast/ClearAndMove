@@ -56,7 +56,7 @@ namespace App.Entities.Reviving.FSM.PlayerStates
         
         protected override void OnRender()
         {
-            _bleedingView.SetValue(NetReviver.BleedTimer / 10f);
+            _bleedingView.SetValue(NetReviver.BleedTimer / _config.BleedingTime);
         }
     }
 }

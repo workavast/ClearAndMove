@@ -19,10 +19,10 @@ namespace App.Entities
         float NetHealthPoints { get; }
         int NetArmorLevel { get; }
         public DissolvesUpdater DissolvesUpdater { get; }
-        
+        bool IsAlive { get; }
+
         public event Action<IEntity> OnDeathEntity;
 
-        bool IsAlive();
         ArmorConfig GetArmor();
         string GetName();
     }
@@ -39,6 +39,6 @@ namespace App.Entities
             return source.Identifier.Id == other.Identifier.Id;
         }
         
-        public static bool IsDead(this IEntity source) => !source.IsAlive();
+        public static bool IsDeadOrKnockout(this IEntity source) => !source.IsAlive;
     }
 }

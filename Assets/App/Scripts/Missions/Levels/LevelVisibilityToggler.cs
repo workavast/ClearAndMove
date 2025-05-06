@@ -55,7 +55,6 @@ namespace App.Missions.Levels
                             enemy.DissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
                     }
                     
-                    Debug.LogError(_playerOnTheLevelOrAbove);
                     externalDissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
                 }
 

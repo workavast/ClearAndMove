@@ -10,7 +10,7 @@ namespace App.Entities.Player
         
         public override void FixedUpdateNetwork()
         {
-            if (!netEntity.IsAlive())
+            if (!netEntity.IsAlive)
                 return;
 
             var hasInput = GetInput(out PlayerInputData input);

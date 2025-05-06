@@ -53,7 +53,7 @@ namespace App.Ai
             if (entity.IsAnyNull())
                 return false;
 
-            if (entity.IsDead())
+            if (entity.IsDeadOrKnockout())
                 return false;
 
             var viewDistance = Vector3.Distance(entity.Transform.position, ViewPosition);
@@ -83,7 +83,7 @@ namespace App.Ai
 
             foreach (var playerEntity in _playersEntitiesRepository.PlayerEntities)
             {
-                if (playerEntity.IsAlive() && EntityIsVisible(playerEntity))
+                if (playerEntity.IsAlive && EntityIsVisible(playerEntity))
                 {
                     var distance = Vector3.Distance(playerEntity.transform.position, ViewPosition);
                     if (distance < minDistance)

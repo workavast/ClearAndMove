@@ -4,11 +4,16 @@ namespace App.Entities.Reviving.FSM.PlayerStates
 {
     public class StartBleeding : PlayerReviveState
     {
-        public StartBleeding(NetReviver netReviver, NetHealth netHealth, ReviveView reviveView) 
-            : base(netReviver, netHealth, reviveView) { }
+        private readonly ReviveConfig _config;
+
+        public StartBleeding(NetReviver netReviver, NetHealth netHealth, ReviveView reviveView, ReviveConfig config) 
+            : base(netReviver, netHealth, reviveView)
+        {
+            _config = config;
+        }
 
         protected override void OnEnterState() 
-            => NetReviver.BleedTimer = 10f;
+            => NetReviver.BleedTimer = _config.BleedingTime;
 
         protected override void OnEnterStateRender()
         {

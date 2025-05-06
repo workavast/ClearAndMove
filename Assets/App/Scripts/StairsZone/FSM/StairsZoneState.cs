@@ -27,7 +27,7 @@ namespace App.StairsZone.FSM
             Config = config;
         }
         
-        protected bool AllPlayersInZone()
+        protected bool AllAlivePlayersInZone()
         {
             if (PlayersEntitiesRepository.PlayerEntities.Count <= 0)
                 return false;
@@ -35,7 +35,7 @@ namespace App.StairsZone.FSM
             foreach (var playerEntity in PlayersEntitiesRepository.PlayerEntities)
             {
                 var distance = Vector3.Distance(playerEntity.transform.position, transform.position);
-                if (distance > ExtractionRadius) 
+                if (playerEntity.IsAlive && distance > ExtractionRadius) 
                     return false;
             }
 

@@ -25,7 +25,7 @@ namespace App.StairsZone.FSM.SpecificStates
 
         protected override void OnFixedUpdate()
         {
-            if (!AllPlayersInZone())
+            if (!AllAlivePlayersInZone())
             {
                 TryActivateState<Idle>();
                 return;

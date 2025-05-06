@@ -9,8 +9,7 @@ namespace App.Entities
     public class EntityBody : NetworkBehaviour, IEntity
     {
         [SerializeField] private NetEntity netEntity;
-
-        public DissolvesUpdater DissolvesUpdater => netEntity.DissolvesUpdater;
+        
         public bool IsSpawned => netEntity.IsSpawned;
         public EntityIdentifier Identifier => netEntity.Identifier;
         public EntityType EntityType => netEntity.EntityType;
@@ -19,9 +18,10 @@ namespace App.Entities
         public new NetworkObject Object => netEntity.Object;
         public float NetHealthPoints => netEntity.NetHealthPoints;
         public int NetArmorLevel => netEntity.NetArmorLevel;
+        public DissolvesUpdater DissolvesUpdater => netEntity.DissolvesUpdater;
+        bool IEntity.IsAlive => netEntity.IsAlive;
+        
         public event Action<IEntity> OnDeathEntity;
-
-        public bool IsAlive() => netEntity.IsAlive();
 
         public ArmorConfig GetArmor() => netEntity.GetArmor();
         
