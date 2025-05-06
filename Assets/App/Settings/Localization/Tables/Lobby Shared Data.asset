@@ -64,7 +64,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 654275969024
-    m_Key: DamageScale
+    m_Key: DealDamageScale
     m_Metadata:
       m_Items: []
   - m_Id: 692884537344
