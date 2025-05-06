@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace App
+namespace Avastrad.Extensions
 {
     public static class ColliderExt
     {

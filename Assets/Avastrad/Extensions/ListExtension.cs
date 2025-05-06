@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
-namespace App
+namespace Avastrad.Extensions
 {
     public static class ListExtension
     {

@@ -2,7 +2,7 @@ using App.Ai.Config;
 using App.Entities;
 using App.Entities.Player;
 using Avastrad.CheckOnNullLibrary;
-using Avastrad.Vector2Extension;
+using Avastrad.Extensions;
 using Fusion;
 using UnityEngine;
 using Zenject;

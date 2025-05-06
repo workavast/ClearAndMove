@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Avastrad.Vector2Extension
+namespace Avastrad.Extensions
 {
     public static class Vector3Extension
     {

@@ -1,5 +1,5 @@
 using App.Entities;
-using Avastrad.Vector2Extension;
+using Avastrad.Extensions;
 using DCFApixels;
 using UnityEngine;
 using UnityEngine.AI;

@@ -1,6 +1,6 @@
 using App.Entities.Player.SelectionPlayerEntity;
 using App.PlayerInput.InputProviding;
-using Avastrad.Vector2Extension;
+using Avastrad.Extensions;
 using UnityEngine;
 using Zenject;
 

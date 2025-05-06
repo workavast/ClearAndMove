@@ -4,7 +4,7 @@ using App.Dissolving;
 using App.Health;
 using App.Weapons;
 using Avastrad.EventBusFramework;
-using Avastrad.Vector2Extension;
+using Avastrad.Extensions;
 using Fusion;
 using UnityEngine;
 
