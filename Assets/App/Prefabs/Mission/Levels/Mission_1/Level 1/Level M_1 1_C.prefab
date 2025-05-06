@@ -557,7 +557,6 @@ GameObject:
   - component: {fileID: 539413026320303444}
   - component: {fileID: 2847748295771933434}
   - component: {fileID: 4072861894155967506}
-  - component: {fileID: 4600388190555621152}
   m_Layer: 0
   m_Name: PC_monitor
   m_TagString: Untagged
@@ -634,27 +633,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4600388190555621152
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3927547077802140487}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.054816205, y: 0.5513245, z: 0.80530536}
-  m_Center: {x: 0.027407805, y: -0.000000044703484, z: 0.000000059604645}
 --- !u!1 &4048397843000727365
 GameObject:
   m_ObjectHideFlags: 0

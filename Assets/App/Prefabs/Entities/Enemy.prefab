@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 1625900555111658174}
   - component: {fileID: 2781807751171042710}
   - component: {fileID: 2934141518229042294}
+  - component: {fileID: 2944770749630478489}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
@@ -347,7 +348,7 @@ CharacterController:
   m_Height: 1.7
   m_Radius: 0.3
   m_SlopeLimit: 20
-  m_StepOffset: 0.1
+  m_StepOffset: 0.15
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -402,6 +403,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f294d93f0b844a01884d9138df4d1908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2944770749630478489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072648177644592389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c80999e9342427fb8cef0539999ff0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1503522408539233729
