@@ -66,6 +66,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fae0dea63ffa14f478d296c3ab57eae8
+    m_Address: ArmorConfig_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c9b437490a2652d4da39538390294620, type: 2}
   m_SchemaSet:

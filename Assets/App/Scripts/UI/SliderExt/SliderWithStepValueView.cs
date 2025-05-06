@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace App.UI.SliderExt
 {
-    public class SliderWithStepView : MonoBehaviour
+    public class SliderWithStepValueView : MonoBehaviour
     {
         [SerializeField] private TMP_Text valueView;
         [SerializeField] private SliderWithStep sliderWithStep;

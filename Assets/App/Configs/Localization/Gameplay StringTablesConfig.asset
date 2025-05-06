@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a11d202d91d48c181ddc3426109e890, type: 3}
-  m_Name: StringTablesConfig Lobby
+  m_Name: Gameplay StringTablesConfig
   m_EditorClassIdentifier: 
   tableReferences:
-  - m_TableCollectionName: Lobby
-  - m_TableCollectionName: ConnectionScreen
+  - m_TableCollectionName: EndGameScreen
+  - m_TableCollectionName: GameplayMenu
+  - m_TableCollectionName: PlayersObserv
   tables:
-  - {fileID: 11400000, guid: 04d67d3a956f8524aba05c226f437384, type: 2}
-  - {fileID: 11400000, guid: ef271743f341ea44c8413bd3208847e6, type: 2}
+  - {fileID: 11400000, guid: e521806025d014144af7b80c27f9a868, type: 2}
+  - {fileID: 11400000, guid: dcde9b31a0ad78f4d8f708ab9daf4a48, type: 2}
+  - {fileID: 11400000, guid: 33655969a7984eb42bf53054ac5522c0, type: 2}
