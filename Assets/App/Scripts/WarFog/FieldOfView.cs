@@ -1,5 +1,5 @@
 ﻿using App.Entities.Player.SelectionPlayerEntity;
-using Avastrad.Vector2Extension;
+using Avastrad.Extensions;
 using Fusion;
 using UnityEngine;
 using Zenject;

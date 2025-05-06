@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 
-namespace App
+namespace Avastrad.Extensions
 {
     public static class SceneManagerExt
     {

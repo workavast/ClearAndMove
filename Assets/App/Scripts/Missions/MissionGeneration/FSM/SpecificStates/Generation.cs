@@ -3,6 +3,7 @@ using App.Entities.Enemy;
 using App.InstantiateProviding;
 using App.Missions.Levels;
 using App.Weapons;
+using Avastrad.Extensions;
 using Fusion;
 using UnityEngine;
 

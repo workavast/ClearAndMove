@@ -1,5 +1,5 @@
 using System;
-using Avastrad.Vector2Extension;
+using Avastrad.Extensions;
 using UnityEngine;
 
 namespace App.Entities

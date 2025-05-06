@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using ModestTree;
 using UnityEngine;
 
 namespace Avastrad.SavingAndLoading
@@ -11,7 +10,7 @@ namespace Avastrad.SavingAndLoading
 
         public JsonSaveAndLoader(string savePath = "/Save.json")
         {
-            if (savePath.IsEmpty() || savePath.Length <= 0)
+            if (string.IsNullOrEmpty(savePath))
                 throw new NullReferenceException("Save path can't be empty");
 
             if (savePath[0] != '/')

@@ -3,7 +3,7 @@ using App.Ai.Config;
 using App.Ai.FSMs.Movement;
 using App.Ai.FSMs.Weapon;
 using App.Entities;
-using Avastrad.Vector2Extension;
+using Avastrad.Extensions;
 using Fusion.Addons.FSM;
 using UnityEngine;
 
