@@ -47,7 +47,7 @@ namespace App.Ai
 
          public override void FixedUpdateNetwork()
          {
-             if (!netEntity.IsAlive() && _fsm.ActiveState != null && _fsm.ActiveState != _stop)
+             if (!netEntity.IsAlive && _fsm.ActiveState != null && _fsm.ActiveState != _stop)
              {
                  _fsm.TryActivateState<Stop>();
              }

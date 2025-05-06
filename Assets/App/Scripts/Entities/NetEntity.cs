@@ -40,6 +40,8 @@ namespace App.Entities
         protected float SprintSpeed => config.SprintSpeed - _armor.SprintSpeedDecrease;
         protected float MoveAcceleration => config.MoveAcceleration - _armor.MoveAccelerationDecrease;
         
+        public bool IsAlive => IsSpawned && health.IsAlive;
+        
         protected abstract IEventBus EventBus { get; set; }
         protected abstract ArmorsConfig ArmorsConfig { get; set; }
         protected NetWeapon NetWeapon;
@@ -97,9 +99,6 @@ namespace App.Entities
 
         public void SetArmor(int armorLevel) 
             => NetArmorLevel = armorLevel;
-
-        public bool IsAlive() 
-            => IsSpawned && health.IsAlive;
 
         public ArmorConfig GetArmor()
             => _armor;

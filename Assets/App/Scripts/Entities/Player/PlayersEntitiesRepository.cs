@@ -69,7 +69,7 @@ namespace App.Entities.Player
 
             foreach (var playerEntity in PlayerEntities)
             {
-                if (playerEntity.IsAlive())
+                if (playerEntity.IsAlive)
                 {
                     var distance = Vector3.Distance(playerEntity.transform.position, position);
                     if (distance <= minDistance)

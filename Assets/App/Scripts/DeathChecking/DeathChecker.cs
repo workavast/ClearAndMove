@@ -25,7 +25,7 @@ namespace App.DeathChecking
             var playerEntities = _playersEntitiesRepository.PlayerEntities;
 
             foreach (var playerEntity in playerEntities)
-                if (playerEntity.IsAlive())
+                if (playerEntity.IsAlive)
                     return;
 
             AllPlayersUnAlive = true;
@@ -36,7 +36,7 @@ namespace App.DeathChecking
             var playerEntities = _playersEntitiesRepository.PlayerEntities;
 
             foreach (var playerEntity in playerEntities)
-                if (playerEntity.IsAlive())
+                if (playerEntity.IsAlive)
                     return;
 
             AllPlayersUnAlive = true;

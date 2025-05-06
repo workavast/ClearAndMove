@@ -52,7 +52,7 @@ namespace App.Entities.Player
             => _nicknamesProvider.GetNickName(PlayerRef);
         
         public void SetSelectState(bool isSelectedEntity) 
-            => fieldOfView.SetDynamicVisibilityState(isSelectedEntity && IsAlive());
+            => fieldOfView.SetDynamicVisibilityState(isSelectedEntity && IsAlive);
     }
 }
 

@@ -33,7 +33,7 @@ namespace App.Entities.Reviving
         public override void CollectStateMachines(List<IStateMachine> stateMachines)
         {
             _none = new None(this, netHealth, reviveView);
-            _startBleeding = new StartBleeding(this, netHealth, reviveView);
+            _startBleeding = new StartBleeding(this, netHealth, reviveView, config);
             _bleeding = new Bleeding(this, netHealth, reviveView, bleedingView, _playersEntitiesRepository, config);
             _reviveProcess = new ReviveProcess(this, netHealth, reviveView, _playersEntitiesRepository, config);
             
