@@ -27,7 +27,10 @@ namespace App.Missions
         {
             var point = ActiveLevel().GetMovePoint();
             foreach (var player in _playersEntitiesRepository.PlayerEntities)
-                player.transform.position = point.position;
+            {
+                if (player.IsAlive)
+                    player.transform.position = point.position;
+            }
 
             _activeLevelIndex++;
             if (IsLastLevel) 

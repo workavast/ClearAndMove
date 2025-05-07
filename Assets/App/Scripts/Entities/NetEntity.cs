@@ -41,6 +41,9 @@ namespace App.Entities
         protected float MoveAcceleration => config.MoveAcceleration - _armor.MoveAccelerationDecrease;
         
         public bool IsAlive => IsSpawned && health.IsAlive;
+        public bool IsKnockout => IsSpawned && health.IsKnockout;
+        public bool IsDead => IsSpawned && health.IsDead;
+        public bool IsKnockoutOrDead => IsSpawned && (health.IsKnockout || health.IsDead);
         
         protected abstract IEventBus EventBus { get; set; }
         protected abstract ArmorsConfig ArmorsConfig { get; set; }

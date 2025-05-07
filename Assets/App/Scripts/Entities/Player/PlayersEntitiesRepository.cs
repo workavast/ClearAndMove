@@ -82,5 +82,14 @@ namespace App.Entities.Player
 
             return nearestPlayer != null;
         }
+
+        public bool HasKnockoutPlayer()
+        {
+            foreach (var playerEntity in PlayerEntities)
+                if (playerEntity.IsKnockout)
+                    return true;
+
+            return false;
+        }
     }
 }

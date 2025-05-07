@@ -62,7 +62,7 @@ namespace App.Missions.MissionEnemiesCounter
         {
             var deadEnemiesCount = 0;
             foreach (var enemy in _enemies)
-                if (enemy.IsDeadOrKnockout())
+                if (enemy.IsKnockoutOrDead)
                     deadEnemiesCount++;
             
             return (deadEnemiesCount, _enemies.Count());

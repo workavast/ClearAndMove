@@ -20,6 +20,9 @@ namespace App.Entities
         int NetArmorLevel { get; }
         public DissolvesUpdater DissolvesUpdater { get; }
         bool IsAlive { get; }
+        bool IsKnockout { get; }
+        bool IsDead { get; }
+        bool IsKnockoutOrDead { get; }
 
         public event Action<IEntity> OnDeathEntity;
 
