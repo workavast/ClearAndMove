@@ -1,6 +1,6 @@
 using App.UI.Selection;
 
-namespace App.UI.ArmorSelection
+namespace App.Lobby.Armor
 {
     public class ArmorSelectBtn : SelectionBtn<int> { }
 }

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace App.UI.ArmorSelection
+namespace App.Lobby.Armor
 {
     public class EquippedArmorView : MonoBehaviour
     {
