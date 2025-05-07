@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace App.Weapons
 {
-    [CreateAssetMenu(fileName = nameof(WeaponsConfigs), menuName = Consts.AppName + "/Configs/" + nameof(WeaponsConfigs))]
+    [CreateAssetMenu(fileName = nameof(WeaponsConfigs), menuName = Consts.WeaponConfigsPath + nameof(WeaponsConfigs))]
     public class WeaponsConfigs : ScriptableObject
     {
         [SerializeField] private List<WeaponConfig> configs;

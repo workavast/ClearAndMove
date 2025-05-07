@@ -52,6 +52,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd6655f765cbe45498ce55f12d568464
+    m_Address: WeaponParams_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e459b5a8a442948479c1463659b5fbeb
     m_Address: GameplayMenu_en
     m_ReadOnly: 1

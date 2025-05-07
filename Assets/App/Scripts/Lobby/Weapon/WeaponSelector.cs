@@ -6,11 +6,11 @@ using Zenject;
 
 namespace App.UI.WeaponSelection
 {
-    public class WeaponSelectorPresenter : Selector<WeaponId>
+    public class WeaponSelector : Selector<WeaponId>
     {
         [SerializeField] private WeaponsConfigs weaponsConfigs;
         
-        [Inject] private readonly WeaponSelector _weaponSelector;
+        [Inject] private readonly Weapons.WeaponSelector _weaponSelector;
 
         protected override void Initialize()
         {
