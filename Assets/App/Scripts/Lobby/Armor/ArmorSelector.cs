@@ -7,9 +7,9 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using Zenject;
 
-namespace App.UI.ArmorSelection
+namespace App.Lobby.Armor
 {
-    public class ArmorSelectorPresenter : Selector<int>
+    public class ArmorSelector : Selector<int>
     {
         [SerializeField] private LocalizedString localizedString;
         

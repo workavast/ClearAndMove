@@ -4,7 +4,7 @@ using App.Players;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace App.Lobby.ArmorView
+namespace App.Lobby.Armor
 {
     public class ArmorParamsView : MonoBehaviour
     {
