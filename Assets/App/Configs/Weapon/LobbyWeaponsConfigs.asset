@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e3003f69e93405bac429a948e8a79c7, type: 3}
-  m_Name: LobbyWeaponsConfigs 1
+  m_Name: LobbyWeaponsConfigs
   m_EditorClassIdentifier: 
   configs:
   - {fileID: 11400000, guid: 2bf43d9af3875a74daabeb8673470825, type: 2}

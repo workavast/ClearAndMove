@@ -391,6 +391,14 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2120360942015708596, guid: 3efd48619e7c80e44a1a015d81a74d52, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120360942015708596, guid: 3efd48619e7c80e44a1a015d81a74d52, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 5067204589395263304, guid: 3efd48619e7c80e44a1a015d81a74d52, type: 3}
       propertyPath: m_SizeDelta.x
       value: -5
@@ -559,7 +567,7 @@ PrefabInstance:
       addedObject: {fileID: 3670937671410906892}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6553875246358053199, guid: 3efd48619e7c80e44a1a015d81a74d52, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 8757296384449637775}
   m_SourcePrefab: {fileID: 100100000, guid: 3efd48619e7c80e44a1a015d81a74d52, type: 3}
 --- !u!114 &151146378731339615 stripped

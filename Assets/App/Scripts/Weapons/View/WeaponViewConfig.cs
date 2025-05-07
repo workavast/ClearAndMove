@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace App.Weapons.View
 {
-    [CreateAssetMenu(fileName = nameof(WeaponViewConfig), menuName = Consts.AppName + "/Configs/Weapon/" + nameof(WeaponViewConfig))]
+    [CreateAssetMenu(fileName = nameof(WeaponViewConfig), menuName = Consts.WeaponConfigsPath + nameof(WeaponViewConfig))]
     public class WeaponViewConfig : ScriptableObject
     {
         [field: SerializeField] public ParticleSystem ShotSmoke { get; private set; }

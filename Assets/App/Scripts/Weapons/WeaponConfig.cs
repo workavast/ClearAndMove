@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace App.Weapons
 {
-    [CreateAssetMenu(fileName = nameof(WeaponConfig), menuName = Consts.AppName + "/Configs/" + nameof(WeaponConfig))]
+    [CreateAssetMenu(fileName = nameof(WeaponConfig), menuName = Consts.WeaponConfigsPath + nameof(WeaponConfig))]
     public class WeaponConfig : ScriptableObject
     {
         [field: SerializeField] public WeaponId Id { get; private set; }
