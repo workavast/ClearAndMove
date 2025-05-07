@@ -53,7 +53,7 @@ namespace App.Ai
             if (entity.IsAnyNull())
                 return false;
 
-            if (entity.IsDeadOrKnockout())
+            if (entity.IsKnockoutOrDead)
                 return false;
 
             var viewDistance = Vector3.Distance(entity.Transform.position, ViewPosition);

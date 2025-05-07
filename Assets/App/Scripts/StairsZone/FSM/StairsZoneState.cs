@@ -26,7 +26,10 @@ namespace App.StairsZone.FSM
             StairsZoneView = stairsZoneView;
             Config = config;
         }
-        
+
+        protected bool HasKnockoutPlayer() 
+            => PlayersEntitiesRepository.HasKnockoutPlayer();
+
         protected bool AllAlivePlayersInZone()
         {
             if (PlayersEntitiesRepository.PlayerEntities.Count <= 0)
@@ -34,9 +37,12 @@ namespace App.StairsZone.FSM
 
             foreach (var playerEntity in PlayersEntitiesRepository.PlayerEntities)
             {
-                var distance = Vector3.Distance(playerEntity.transform.position, transform.position);
-                if (playerEntity.IsAlive && distance > ExtractionRadius) 
-                    return false;
+                if (playerEntity.IsAlive)
+                {
+                    var distance = Vector3.Distance(playerEntity.transform.position, transform.position);
+                    if (distance > ExtractionRadius) 
+                        return false;   
+                }
             }
 
             return true;

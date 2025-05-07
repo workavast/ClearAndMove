@@ -20,7 +20,10 @@ namespace App.Entities
         public int NetArmorLevel => netEntity.NetArmorLevel;
         public DissolvesUpdater DissolvesUpdater => netEntity.DissolvesUpdater;
         bool IEntity.IsAlive => netEntity.IsAlive;
-        
+        public bool IsKnockout => netEntity.IsKnockout;
+        public bool IsDead => netEntity.IsDead;
+        public bool IsKnockoutOrDead => netEntity.IsKnockoutOrDead;
+
         public event Action<IEntity> OnDeathEntity;
 
         public ArmorConfig GetArmor() => netEntity.GetArmor();

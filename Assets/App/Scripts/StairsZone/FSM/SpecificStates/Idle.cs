@@ -20,7 +20,7 @@ namespace App.StairsZone.FSM.SpecificStates
 
         protected override void OnFixedUpdate()
         {
-            if (AllAlivePlayersInZone())
+            if (!HasKnockoutPlayer() && AllAlivePlayersInZone())
             {
                 TryActivateState<Countdown>();
                 return;
