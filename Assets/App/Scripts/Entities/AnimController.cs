@@ -1,3 +1,5 @@
+using System.Linq;
+using App.Weapons.View;
 using UnityEngine;
 
 namespace App.Entities
@@ -6,9 +8,12 @@ namespace App.Entities
     {
         [SerializeField] private SolderView solderView;
         [SerializeField] private Animator animator;
+        [SerializeField] private WeaponViewHolder weaponViewHolder;
+        [SerializeField] private AnimationClip deathClip;
         
         [Tooltip("Debug")]
         [SerializeField] private bool useDebug;
+        [SerializeField] private bool isAlive = true;
         [SerializeField, Range(-1, 1)] private float velocityX;
         [SerializeField, Range(-1, 1)] private float velocityY;
 
@@ -23,6 +28,7 @@ namespace App.Entities
         {
             if (useDebug)
             {
+                solderView.SetAliveState(isAlive);
                 animator.SetFloat(VelocityX, velocityX);
                 animator.SetFloat(VelocityY, velocityY);   
             }
@@ -36,6 +42,16 @@ namespace App.Entities
         private void SetAliveState(bool isAlive)
         {
             animator.SetBool(IsAlive, solderView.IsAlive);
+                
+            if (isAlive)
+            {
+                weaponViewHolder.Default();
+            }
+            else
+            {
+                var duration = deathClip.length;
+                weaponViewHolder.Death(duration);
+            }
         }
     }
 }

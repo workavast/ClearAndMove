@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solderView: {fileID: 7333342798360998660}
   animator: {fileID: 8382039045626483665}
+  weaponViewHolder: {fileID: 190664987957330581}
+  deathClip: {fileID: 7400000, guid: 33ec14e8e222f664cb4936b2301e3cd0, type: 2}
   useDebug: 0
   velocityX: 0
   velocityY: 0

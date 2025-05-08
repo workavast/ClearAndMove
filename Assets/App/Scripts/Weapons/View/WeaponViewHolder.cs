@@ -19,14 +19,12 @@ namespace App.Weapons.View
 
         [SerializeField] private WeaponViewsConfig weaponViewsConfig;
         [SerializeField] private Transform weaponsParent;
+
+        private string DefaultState = "Default";
+        private string ReloadingState = "Reloading";
+        private string DeathState = "Death";
         
         private WeaponView _weaponView;
-        
-        public void Default()
-        {
-            animator.speed = 1;
-            animator.Play("Default");
-        }
 
         public void SetWeaponView(WeaponId weaponId)
         {
@@ -46,23 +44,36 @@ namespace App.Weapons.View
             handsConstraint.SetWeapon(_weaponView);
         }
         
+        public void Default()
+        {
+            animator.speed = 1;
+            animator.Play(DefaultState);
+        }
+        
         /// <param name="initialTime">Value between 0 and 1</param>
         public void Reloading(float duration, float initialTime)
         {
-            animator.Play("Reloading", -1, initialTime);
+            animator.Play(ReloadingState, -1, initialTime);
             StartCoroutine(AdjustSpeed(duration));
         }
 
+        /// <param name="initialTime">Value between 0 and 1</param>
+        public void Death(float duration)
+        {
+            animator.Play(DeathState, -1, 0);
+            StartCoroutine(AdjustSpeed(duration));
+        }
+        
         private IEnumerator AdjustSpeed(float duration)
         {
             yield return null;
 
             var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            var length = stateInfo.length;
-    
+            var length = stateInfo.length * animator.speed;
+
             animator.speed = length / duration;
         }
-
+        
         public void ReloadStartSfx() 
             => _audioFactory.Create(reloadStartSfxPrefab, transform.position);
         
