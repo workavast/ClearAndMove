@@ -14795,8 +14795,36 @@ PrefabInstance:
       value: P90 View
       objectReference: {fileID: 0}
     - target: {fileID: 3093919668139735684, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093919668139735684, guid: d88aa8755b56004479bf744a961502cc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470609547932329448, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470671616556725432, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470853515056545006, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471033907476358640, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141533969946553832, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277158705046815474, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6031715866221575603, guid: d88aa8755b56004479bf744a961502cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14836,6 +14864,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6031715866221575603, guid: d88aa8755b56004479bf744a961502cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674458012076311158, guid: d88aa8755b56004479bf744a961502cc, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16545,6 +16577,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1813715023}
     m_Modifications:
+    - target: {fileID: 331604727720516706, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_Weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 331604727720516706, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_Data.m_ConstrainedObject
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 694396587166707742, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -16623,12 +16663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4110625864154057207, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Elbow_R'\n\tTransform 'Elbow_L'\n\tTransform
-        'Hand_L'\n\tTransform 'Shoulder_L'\n\tTransform 'Clavicle_R'\n\tTransform
-        'Shoulder_R'\n\tTransform 'Hand_R'\n\tTransform 'Elbow_R'\n\tTransform 'Elbow_L'\n\tTransform
-        'Hand_L'\n\tand more ..."
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5081156725876159652, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_Controller
@@ -16649,6 +16684,14 @@ PrefabInstance:
     - target: {fileID: 5999550460363095796, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630316875766919583, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_Name
+      value: RigLayer_WeaponPoseDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332680078532899764, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_Weight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8468777720349831061, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_Layer
@@ -23501,12 +23544,44 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2128743857}
     m_Modifications:
+    - target: {fileID: 1216505904800431685, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216667691210628971, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216710626274187105, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216917883959734037, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216968456737702237, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217088076405820903, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570396467383043553, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3093919668139735684, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
       propertyPath: m_Name
       value: MP7 View
       objectReference: {fileID: 0}
     - target: {fileID: 3093919668139735684, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008026325244059544, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6031715866221575603, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
@@ -23547,6 +23622,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6031715866221575603, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235433555944229273, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -37854,6 +37933,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4646407613516282, guid: f996731b12085f44883c30318a77c3c8, type: 3}
   m_PrefabInstance: {fileID: 1545304244}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1553293787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5763618650756470963, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+  m_PrefabInstance: {fileID: 702554391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8118b76afd0c4b98b434359f3b69942d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1556970363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45028,7 +45118,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solderView: {fileID: 1813715024}
   animator: {fileID: 702554392}
+  weaponViewHolder: {fileID: 1553293787}
+  deathClip: {fileID: 7400000, guid: 33ec14e8e222f664cb4936b2301e3cd0, type: 2}
   useDebug: 1
+  isAlive: 1
   velocityX: 0
   velocityY: 0
 --- !u!4 &1813715023

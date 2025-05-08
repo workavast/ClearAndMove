@@ -49,7 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solderView: {fileID: 3872098561446610495}
   animator: {fileID: 1955632108003814998}
+  weaponViewHolder: {fileID: 7914040448562380562}
+  deathClip: {fileID: 7400000, guid: 33ec14e8e222f664cb4936b2301e3cd0, type: 2}
   useDebug: 0
+  isAlive: 1
   velocityX: 0
   velocityY: 0
 --- !u!1 &1034940875409483947
@@ -960,12 +963,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultEntityBody
       objectReference: {fileID: 0}
+    - target: {fileID: 4110625864154057207, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4351455687984616589, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5081156725876159652, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492594197720040065, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_RigLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492594197720040065, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_RigLayers.Array.data[2].m_Rig
+      value: 
+      objectReference: {fileID: 5182170743924626453}
+    - target: {fileID: 5492594197720040065, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+      propertyPath: m_RigLayers.Array.data[2].m_Active
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 9035924867683411155, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 5999550460363095796, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
     m_AddedGameObjects: []
@@ -981,6 +1004,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4110625864154057207, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
   m_PrefabInstance: {fileID: 2461267205640546209}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5182170743924626453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7332680078532899764, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
+  m_PrefabInstance: {fileID: 2461267205640546209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7914040448562380562 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5763618650756470963, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
