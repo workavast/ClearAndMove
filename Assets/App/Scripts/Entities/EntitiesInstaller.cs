@@ -1,7 +1,6 @@
 using App.Entities.Enemy;
 using App.Entities.Player;
 using App.Entities.Player.SelectionPlayerEntity;
-using App.Players;
 using Zenject;
 
 namespace App.Entities
@@ -14,7 +13,6 @@ namespace App.Entities
             BindPlayerEntitySelection();
             
             Container.Bind<LocalPlayerProvider>().FromNew().AsSingle();
-            Container.Bind<PlayersObserver>().FromNew().AsSingle().NonLazy();
         }
 
         private void BindRepositories()
