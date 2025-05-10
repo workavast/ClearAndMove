@@ -11,25 +11,24 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
 {
     public class Generation : MissionGenerationState
     {
-        private readonly InstantiateProvider _instantiateProvider;
         private readonly Transform _levelsParent;
         private readonly Mission _mission;
         private readonly EnemyFactory _enemyFactory;
-        private readonly NetGenerationModel _netGenerationModel;
+        private readonly GenerationModel _generationModel;
 
-        public Generation(NetworkBehaviour netEntity, Transform levelsParent, Mission mission, 
-            EnemyFactory enemyFactory, NetGenerationModel netGenerationModel)
-            : base(netEntity)
+        public Generation(NetworkBehaviour netOwner, Transform levelsParent, Mission mission, 
+            EnemyFactory enemyFactory, GenerationModel generationModel)
+            : base(netOwner)
         {
             _levelsParent = levelsParent;
             _mission = mission;
             _enemyFactory = enemyFactory;
-            _netGenerationModel = netGenerationModel;
+            _generationModel = generationModel;
         }
 
         protected override void OnFixedUpdate()
         {
-            var missionScheme = _netGenerationModel.missionScheme;
+            var missionScheme = _generationModel.missionScheme;
             
             NetLevel prevLevel = null;
             var levels = new NetLevel[missionScheme.Count];

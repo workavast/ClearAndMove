@@ -9,9 +9,9 @@ namespace App.Missions.MissionGeneration.FSM
         
         protected NetworkRunner Runner => _owner.Runner;
         
-        protected MissionGenerationState(NetworkBehaviour netHealth)
+        protected MissionGenerationState(NetworkBehaviour netOwner)
         {
-            _owner = netHealth;
+            _owner = netOwner;
         }
     }
 }
