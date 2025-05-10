@@ -3,7 +3,7 @@ using App.Missions.Levels;
 
 namespace App.Missions.MissionGeneration
 {
-    public class NetGenerationModel
+    public class GenerationModel
     {
         public List<NetLevel> missionScheme = new();
     }

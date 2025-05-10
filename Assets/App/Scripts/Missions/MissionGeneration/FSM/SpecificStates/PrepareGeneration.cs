@@ -8,22 +8,21 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
 {
     public class PrepareGeneration : MissionGenerationState
     {
-        private readonly InstantiateProvider _instantiateProvider;
         private readonly LevelsConfig _levelsConfig;
-        private readonly NetGenerationModel _netGenerationModel;
+        private readonly GenerationModel _generationModel;
         
-        public PrepareGeneration(NetworkBehaviour netEntity, LevelsConfig levelsConfig,
-            NetGenerationModel netGenerationModel)
-            : base(netEntity)
+        public PrepareGeneration(NetworkBehaviour netOwner, LevelsConfig levelsConfig,
+            GenerationModel generationModel)
+            : base(netOwner)
         {
             _levelsConfig = levelsConfig;
-            _netGenerationModel = netGenerationModel;
+            _generationModel = generationModel;
         }
 
         protected override void OnFixedUpdate()
         {
-            _netGenerationModel.missionScheme.Clear();
-            _netGenerationModel.missionScheme.Capacity = _levelsConfig.LevelsConfigs.Count;
+            _generationModel.missionScheme.Clear();
+            _generationModel.missionScheme.Capacity = _levelsConfig.LevelsConfigs.Count;
             foreach (var levelConfig in _levelsConfig.LevelsConfigs)
             {
                 var levelPrefabsPool = new List<NetLevel>(levelConfig.LevelPrefabs);
@@ -32,7 +31,7 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
                 {
                     var index = Random.Range(0, levelPrefabsPool.Count);
                     var levelPrefabVariant = levelPrefabsPool[index];
-                    if (!_netGenerationModel.missionScheme.Exists(l => l.name == levelPrefabVariant.name))
+                    if (!_generationModel.missionScheme.Exists(l => l.name == levelPrefabVariant.name))
                     {
                         selectedLevelPrefab = levelPrefabsPool[index];
                         break;
@@ -48,7 +47,7 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
                     selectedLevelPrefab = levelConfig.LevelPrefabs[index];
                 }
                 
-                _netGenerationModel.missionScheme.Add(selectedLevelPrefab);
+                _generationModel.missionScheme.Add(selectedLevelPrefab);
             }
 
             TryActivateState<Generation>();

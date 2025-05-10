@@ -4,8 +4,8 @@ namespace App.Missions.MissionGeneration.FSM.SpecificStates
 {
     public class Idle : MissionGenerationState
     {
-        public Idle(NetworkBehaviour netHealth) 
-            : base(netHealth) { }
+        public Idle(NetworkBehaviour netOwner) 
+            : base(netOwner) { }
 
         protected override void OnFixedUpdate()
         {

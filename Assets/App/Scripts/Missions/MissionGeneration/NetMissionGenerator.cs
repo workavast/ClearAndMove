@@ -18,7 +18,7 @@ namespace App.Missions.MissionGeneration
         
         public bool MissionGenerated => _fsm.ActiveState == _generationIsOver;
         
-        private readonly NetGenerationModel _model = new();
+        private readonly GenerationModel _model = new();
 
         private StateMachine<MissionGenerationState> _fsm;
         private Idle _idle;
