@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: M249
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 310
+  <Name>k__BackingField: M249
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 22.5
   <FireRate>k__BackingField: 800

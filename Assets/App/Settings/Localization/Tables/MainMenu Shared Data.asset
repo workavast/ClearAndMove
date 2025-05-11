@@ -35,10 +35,6 @@ MonoBehaviour:
     m_Key: Create
     m_Metadata:
       m_Items: []
-  - m_Id: 274297192448
-    m_Key: Settings
-    m_Metadata:
-      m_Items: []
   - m_Id: 288117424128
     m_Key: Quit
     m_Metadata:
