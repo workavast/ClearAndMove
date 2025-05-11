@@ -33,7 +33,7 @@ namespace App.Lobby.Missions
 
         private void UpdateData(MissionConfig missionConfig)
         {
-            localizedString.Arguments[0] = missionConfig.MissionName;
+            localizedString.Arguments[0] = missionConfig.MissionName.GetLocalizedString();
             localizedString.RefreshString();
         }
 

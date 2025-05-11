@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76db158d42b4fb3b5901fe1cc45baf1, type: 3}
   m_Name: MissionConfig Development
   m_EditorClassIdentifier: 
-  <MissionName>k__BackingField: Mission Dev
+  <MissionName>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:d62a3a5771762ae40a17eccbbb25f27e
+    m_TableEntryReference:
+      m_KeyId: 70705676288
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <Scene>k__BackingField: {fileID: 102900000, guid: 97d8b72ead7f94142b1f92e842196b15, type: 3}
   <SceneName>k__BackingField: Coop
+  references:
+    version: 2
+    RefIds: []
