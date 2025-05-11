@@ -12,6 +12,7 @@ namespace App.Weapons
         [OnChangedRender(nameof(OnNetEquippedWeaponChanged))]
         [Networked] [field: SerializeField, ReadOnly] public WeaponId NetEquippedWeapon { get; set; } = WeaponId.Scar;
         [Networked] [field: SerializeField, ReadOnly] public int NetMagazine { get; set; }
+        [Networked] [field: SerializeField, ReadOnly] public int NetFullAmmoSize { get; set; }
         [Networked] [field: SerializeField, ReadOnly] public int NetFireCount { get; set; }
 
         [Networked] public TickTimer NetFireRatePause { get; set; }

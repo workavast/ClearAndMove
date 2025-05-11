@@ -21,12 +21,15 @@ namespace App.Weapons
         [Inject] private readonly ShooterFactory _shooterFactory;
         
         public bool CanShot => netWeaponModel.NetMagazine > 0;
-        public bool CanReload => netWeaponModel.NetMagazine < WeaponConfig.MagazineSize && netWeaponModel.NetReloadTimer.ExpiredOrNotRunning(Runner);
+        public bool CanReload => netWeaponModel.NetMagazine < WeaponConfig.MagazineSize 
+                                 && netWeaponModel.NetFullAmmoSize > 0 
+                                 && netWeaponModel.NetReloadTimer.ExpiredOrNotRunning(Runner);
         public bool RequiredReload => netWeaponModel.NetMagazine <= 0 && CanReload;
         public WeaponId NetEquippedWeapon => netWeaponModel.NetEquippedWeapon;
 
-        public int MaxAmmo => WeaponConfig.MagazineSize;
-        public int CurrentAmmo => netWeaponModel.NetMagazine;
+        public int MaxMagazineAmmo => WeaponConfig.MagazineSize;
+        public int CurrentMagazineAmmo => netWeaponModel.NetMagazine;
+        public int FullAmmoSize => netWeaponModel.NetFullAmmoSize;
         
         private WeaponConfig WeaponConfig => netWeaponModel.WeaponConfig;
         private Shooter Shooter => netWeaponModel.Shooter;
@@ -98,6 +101,7 @@ namespace App.Weapons
             netWeaponModel.NetFireRatePause = TickTimer.CreateFromSeconds(Runner, 0);
             netWeaponModel.NetReloadTimer = TickTimer.CreateFromSeconds(Runner, 0);
             netWeaponModel.NetMagazine = WeaponConfig.MagazineSize;
+            netWeaponModel.NetFullAmmoSize = WeaponConfig.NetFullAmmoSize - WeaponConfig.MagazineSize;
             
             weaponViewHolder.SetWeaponView(weaponId);
         }

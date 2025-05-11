@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace App.Entities
 {
-    public class EntityBody : NetworkBehaviour, IEntity
+    public class EntityHitBox : NetworkBehaviour, IEntity
     {
         [SerializeField] private NetEntity netEntity;
         

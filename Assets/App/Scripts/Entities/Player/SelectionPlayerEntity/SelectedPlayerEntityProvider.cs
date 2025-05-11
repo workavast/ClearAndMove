@@ -12,8 +12,9 @@ namespace App.Entities.Player.SelectionPlayerEntity
         public float MaxHealthPoints => _netTargetEntity.MaxHealthPoints;
         public float CurrentHealthPoints => _netTargetEntity.NetHealthPoints;
 
-        public int MaxAmmo => _netTargetEntity.MaxAmmo;
-        public int CurrentAmmo => _netTargetEntity.CurrentAmmo;
+        public int MaxMagazineAmmo => _netTargetEntity.MaxMagazineAmmo;
+        public int CurrentMagazineAmmo => _netTargetEntity.CurrentMagazineAmmo;
+        public int FullAmmoSize => _netTargetEntity.FullAmmoSize;
 
         public PlayerRef ActiveTarget => _netTargetEntity.PlayerRef;
         

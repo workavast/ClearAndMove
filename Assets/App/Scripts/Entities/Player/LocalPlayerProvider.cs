@@ -13,8 +13,9 @@ namespace App.Entities.Player
         public float MaxHealthPoints => _netPlayerEntity.MaxHealthPoints;
         public float CurrentHealthPoints => _netPlayerEntity.NetHealthPoints;
 
-        public int MaxAmmo => _netPlayerEntity.MaxAmmo;
-        public int CurrentAmmo => _netPlayerEntity.CurrentAmmo;
+        public int MaxMagazineAmmo => _netPlayerEntity.MaxMagazineAmmo;
+        public int CurrentMagazineAmmo => _netPlayerEntity.CurrentMagazineAmmo;
+        public int FullAmmoSize => _netPlayerEntity.FullAmmoSize;
 
         private readonly PlayersEntitiesRepository _playersEntitiesRepository;
         private readonly NetworkRunnerProvider _networkRunnerProvider;

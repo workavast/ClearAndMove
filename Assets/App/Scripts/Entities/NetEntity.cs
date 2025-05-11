@@ -21,7 +21,7 @@ namespace App.Entities
         [field: SerializeField] public DissolvesUpdater DissolvesUpdater { get; private set; }
 
         [Networked] [field: ReadOnly, SerializeField] public Vector3 NetVelocity { get; private set; }
-        [Networked] [OnChangedRender(nameof(ChangeArmor))] [field: ReadOnly] public int NetArmorLevel { get; private set; }
+        [Networked] [OnChangedRender(nameof(UpdateArmorConfig))] [field: ReadOnly] public int NetArmorLevel { get; private set; }
 
         public bool IsSpawned { get; private set; }
         public GameObject GameObject => gameObject;
@@ -32,9 +32,10 @@ namespace App.Entities
 
         public bool RequiredReload => NetWeapon.RequiredReload;
         public bool CanReload => NetWeapon.CanReload;
-        public int MaxAmmo => NetWeapon.MaxAmmo;
-        public int CurrentAmmo => NetWeapon.CurrentAmmo;
-        
+        public int MaxMagazineAmmo => NetWeapon.MaxMagazineAmmo;
+        public int CurrentMagazineAmmo => NetWeapon.CurrentMagazineAmmo;
+        public int FullAmmoSize => NetWeapon.FullAmmoSize;
+
         protected float Gravity => config.Gravity;
         protected float WalkSpeed => config.WalkSpeed - _armor.WalkSpeedDecrease;
         protected float SprintSpeed => config.SprintSpeed - _armor.SprintSpeedDecrease;
@@ -89,6 +90,7 @@ namespace App.Entities
         public override void Render()
         {
             solderView.MoveView(NetVelocity, SprintSpeed);
+            solderView.SetAliveState(IsAlive);
         }
 
         public void TakeDamage(float damage, IEntity killer) 
@@ -178,7 +180,7 @@ namespace App.Entities
             return  unscaledGravityVelocity + unscaledVelocity;
         }
         
-        private void ChangeArmor() 
+        private void UpdateArmorConfig() 
             => _armor = ArmorsConfig.GetArmor(NetArmorLevel);
     }
 }
