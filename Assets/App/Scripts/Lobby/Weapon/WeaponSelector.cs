@@ -22,7 +22,7 @@ namespace App.UI.WeaponSelection
             => weaponsConfigs.WeaponIds;
 
         protected override string GetName(WeaponId id) 
-            => id.ToString();
+            => weaponsConfigs.WeaponConfigs[id].Name;
 
         protected override void Select(WeaponId id)
             => _weaponSelector.SelectWeapon(id);

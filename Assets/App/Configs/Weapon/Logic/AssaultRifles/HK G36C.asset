@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HK G36C
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 230
+  <Name>k__BackingField: HK G36C
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 18
   <FireRate>k__BackingField: 750

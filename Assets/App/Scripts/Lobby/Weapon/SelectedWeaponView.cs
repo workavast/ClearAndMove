@@ -1,4 +1,5 @@
 using App.Players;
+using App.Weapons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -9,7 +10,8 @@ namespace App.UI.WeaponSelection
     {
         [SerializeField] private TMP_Text tmpText;
         [SerializeField] private LocalizedString localizedString;
-
+        [SerializeField] private WeaponsConfigs weaponsConfigs;
+        
         private void Awake()
         {
             localizedString.Arguments = new object[ ]{""};
@@ -30,7 +32,7 @@ namespace App.UI.WeaponSelection
 
         private void UpdateData()
         {
-            localizedString.Arguments[0] = PlayerData.SelectedWeapon.ToString();
+            localizedString.Arguments[0] = weaponsConfigs.WeaponConfigs[PlayerData.SelectedWeapon].Name;
             localizedString.RefreshString();
         }
         

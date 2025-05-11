@@ -9878,6 +9878,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  weaponsConfigs: {fileID: 11400000, guid: cd678194435b0064d94f6ece203a27cc, type: 2}
   references:
     version: 2
     RefIds: []

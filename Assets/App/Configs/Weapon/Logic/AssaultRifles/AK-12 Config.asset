@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AK-12 Config
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 220
+  <Name>k__BackingField: AK-12
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 20
   <FireRate>k__BackingField: 700
