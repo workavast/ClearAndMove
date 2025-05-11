@@ -15,7 +15,7 @@ namespace App.UI.Screens
         private void Update()
         {
             if (_inputProvider.Menu) 
-                _screensController.ToggleScreen(screenType);
+                _screensController.SetScreen(screenType);
         }
     }
 }
