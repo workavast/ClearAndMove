@@ -2518,11 +2518,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8439774991783373878, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 274297192448
+      value: 3678285320093696
       objectReference: {fileID: 0}
     - target: {fileID: 8439774991783373878, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
-      value: GUID:55650881e27ef7f4f8f47f0eb28ec22f
+      value: GUID:544a90dbac92e5a44b883471160a9b64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
