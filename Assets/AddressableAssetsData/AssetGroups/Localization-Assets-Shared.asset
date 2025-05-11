@@ -55,6 +55,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d62a3a5771762ae40a17eccbbb25f27e
+    m_Address: Assets/App/Settings/Localization/Tables/Missions Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edfeb5d90e82d2a428479a2d085c41ac
     m_Address: Assets/App/Settings/Localization/Tables/WeaponParams Shared Data.asset
     m_ReadOnly: 1

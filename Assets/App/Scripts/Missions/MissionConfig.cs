@@ -1,6 +1,7 @@
 using Avastrad.Extensions;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.Localization;
 
 #if UNITY_EDITOR
     using UnityEditor;
@@ -11,7 +12,7 @@ namespace App.Missions
     [CreateAssetMenu(fileName = nameof(MissionConfig), menuName = Consts.AppName + "/Configs/Missions/" + nameof(MissionConfig))]
     public class MissionConfig : ScriptableObject
     {
-        [field: SerializeField] public string MissionName { get; private set; } = "None";
+        [field: SerializeField] public LocalizedString MissionName { get; private set; }
 #if UNITY_EDITOR
         [field: SerializeField] public SceneAsset Scene { get; private set; }
 #endif  
@@ -41,6 +42,6 @@ namespace App.Missions
 #endif
 
         public override string ToString() 
-            => $"[{MissionName}] [{SceneName}]";
+            => $"[{MissionName.GetLocalizedString()}] [{SceneName}]";
     }
 }
