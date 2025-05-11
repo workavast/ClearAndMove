@@ -18,4 +18,5 @@ MonoBehaviour:
   <FireRate>k__BackingField: 750
   <SpreadAngle>k__BackingField: 5.5
   <MagazineSize>k__BackingField: 30
+  <NetFullAmmoSize>k__BackingField: 450
   <ReloadTime>k__BackingField: 3.5

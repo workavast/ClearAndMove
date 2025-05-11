@@ -21,19 +21,17 @@ namespace App.Missions.MissionGeneration
         private readonly GenerationModel _model = new();
 
         private StateMachine<MissionGenerationState> _fsm;
-        private Idle _idle;
         private Generation _generation;
         private PrepareGeneration _prepareGeneration;
         private GenerationIsOver _generationIsOver;
         
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
-            _idle = new Idle(this);
             _prepareGeneration = new PrepareGeneration(this, levelsConfig, _model);
             _generation = new Generation(this, levelsParent, mission, enemyFactory, _model);
             _generationIsOver = new GenerationIsOver(this);
 
-            _fsm = new StateMachine<MissionGenerationState>("Mission Generation", _idle, _prepareGeneration,
+            _fsm = new StateMachine<MissionGenerationState>("Mission Generation", _prepareGeneration,
                 _generation, _generationIsOver);
             
             stateMachines.Add(_fsm);

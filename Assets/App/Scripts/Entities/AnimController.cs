@@ -1,4 +1,3 @@
-using System.Linq;
 using App.Weapons.View;
 using UnityEngine;
 
@@ -13,9 +12,9 @@ namespace App.Entities
         
         [Tooltip("Debug")]
         [SerializeField] private bool useDebug;
-        [SerializeField] private bool isAlive = true;
-        [SerializeField, Range(-1, 1)] private float velocityX;
-        [SerializeField, Range(-1, 1)] private float velocityY;
+        [SerializeField] private bool debugIsAlive = true;
+        [SerializeField, Range(-1, 1)] private float debugVelocityX;
+        [SerializeField, Range(-1, 1)] private float debugVelocityY;
 
         private static readonly int VelocityX = Animator.StringToHash("VelocityX");
         private static readonly int VelocityY = Animator.StringToHash("VelocityY");
@@ -28,9 +27,9 @@ namespace App.Entities
         {
             if (useDebug)
             {
-                solderView.SetAliveState(isAlive);
-                animator.SetFloat(VelocityX, velocityX);
-                animator.SetFloat(VelocityY, velocityY);   
+                solderView.SetAliveState(debugIsAlive);
+                animator.SetFloat(VelocityX, debugVelocityX);
+                animator.SetFloat(VelocityY, debugVelocityY);   
             }
             else
             {

@@ -20,7 +20,7 @@ namespace App.Ai.FSMs.Weapon
 
         protected override void OnEnterState()
         {
-            _initialShotsCount = Entity.CurrentAmmo;
+            _initialShotsCount = Entity.CurrentMagazineAmmo;
             _targetShotsCount = Random.Range(_minShotsCount, _maxShotsCount + 1);
         }
 
@@ -34,7 +34,7 @@ namespace App.Ai.FSMs.Weapon
                 return;
             }
             
-            if (_initialShotsCount - Entity.CurrentAmmo >= _targetShotsCount)
+            if (_initialShotsCount - Entity.CurrentMagazineAmmo >= _targetShotsCount)
             {
                 TryActivateState<Pause>();
                 return;

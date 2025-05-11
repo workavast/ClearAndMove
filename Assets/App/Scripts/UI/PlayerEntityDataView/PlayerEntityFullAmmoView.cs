@@ -5,19 +5,18 @@ using Zenject;
 
 namespace App.UI.PlayerEntityDataView
 {
-    public class PlayerEntityAmmoView : MonoBehaviour
+    public class PlayerEntityFullAmmoView : MonoBehaviour
     {
-        [SerializeField] private TMP_Text magazineView;
+        [SerializeField] private TMP_Text fullAmmoView;
             
         [Inject] private readonly SelectedPlayerEntityProvider _playerProvider;
 
         private void LateUpdate()
         {
-
             if (_playerProvider.HasEntity)
-                magazineView.text = $"{_playerProvider.CurrentMagazineAmmo:#0}/{_playerProvider.MaxMagazineAmmo:#0}";
+                fullAmmoView.text = $"{_playerProvider.FullAmmoSize}";
             else
-                magazineView.text = $"";
+                fullAmmoView.text = $"";
         }
     }
 }

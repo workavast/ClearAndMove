@@ -16,7 +16,6 @@ namespace App.Health
     {
         [SerializeField] private EntityConfig config;
         [SerializeField] private NetEntity entity;
-        [SerializeField] private SolderView solderView;
      
         [Networked] [field: ReadOnly] public float NetHealthPoints { get; private set; }
 
@@ -55,12 +54,6 @@ namespace App.Health
         public override void Spawned()
         {
             NetHealthPoints = config.MaxHealthPoints;
-            solderView.SetAliveState(IsAlive);
-        }
-
-        public override void Render()
-        {
-            solderView.SetAliveState(IsAlive);
         }
 
         public void SetHealth(int value)

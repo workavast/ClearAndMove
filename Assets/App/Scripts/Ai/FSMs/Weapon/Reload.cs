@@ -15,7 +15,7 @@ namespace App.Ai.FSMs.Weapon
 
         protected override void OnFixedUpdate()
         {
-            if (Entity.CurrentAmmo == Entity.MaxAmmo)
+            if (Entity.CurrentMagazineAmmo == Entity.MaxMagazineAmmo)
             {
                 TryActivateState<Pause>();
                 return;
