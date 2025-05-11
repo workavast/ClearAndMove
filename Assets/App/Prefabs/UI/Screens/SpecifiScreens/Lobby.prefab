@@ -2904,7 +2904,7 @@ MonoBehaviour:
   m_fontSizeMax: 52
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 4096
+  m_VerticalAlignment: 8192
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -11580,6 +11580,10 @@ PrefabInstance:
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 8192
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
