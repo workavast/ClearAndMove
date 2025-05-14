@@ -388,7 +388,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 863204331924224384}
-  - component: {fileID: 5508747248299454090}
   m_Layer: 0
   m_Name: PlayerEntityDataView
   m_TagString: Untagged
@@ -418,18 +417,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5508747248299454090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547761325165953075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca2a6e308a845f5922480077c2863bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4804072835371410051
 GameObject:
   m_ObjectHideFlags: 0
