@@ -18,7 +18,8 @@ namespace App.UI.PlayerEntityDataView
             if (_playerProvider.HasEntity)
             {
                 barView.SetValue(_playerProvider.CurrentHealthPoints / _playerProvider.MaxHealthPoints);
-                textView.text = $"{_playerProvider.CurrentHealthPoints:#0}/{_playerProvider.MaxHealthPoints:#0}";
+                var currentHealthRounded = Mathf.CeilToInt(_playerProvider.CurrentHealthPoints);
+                textView.text = $"{currentHealthRounded:#0}/{_playerProvider.MaxHealthPoints:#0}";
             }
             else
             {
