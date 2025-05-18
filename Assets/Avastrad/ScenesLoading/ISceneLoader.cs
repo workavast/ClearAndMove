@@ -9,7 +9,7 @@ namespace Avastrad.ScenesLoading
 
         public void ShowLoadScreen(bool showInstantly, Action onShowedCallback = null);
         public void HideLoadScreen(bool hideLoadScreenInstantly);
-        public void LoadScene(int index, bool showLoadScreenInstantly = false, bool skipLoadingScreen = false);
+        public void LoadScene(int index, bool showLoadScreenInstantly = false, bool skipLoadingScene = false);
         public void LoadTargetScene();
     }
 }
