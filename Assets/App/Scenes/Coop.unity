@@ -23868,6 +23868,10 @@ PrefabInstance:
       propertyPath: deathChecker
       value: 
       objectReference: {fileID: 429827356}
+    - target: {fileID: 6600379860562344818, guid: 59903c9e856e53e4281a9668a93039e0, type: 3}
+      propertyPath: missionState
+      value: 
+      objectReference: {fileID: 429827360}
     - target: {fileID: 8266856552946934864, guid: 59903c9e856e53e4281a9668a93039e0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
