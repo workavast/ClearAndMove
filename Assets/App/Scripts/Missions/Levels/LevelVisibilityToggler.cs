@@ -25,7 +25,7 @@ namespace App.Missions.Levels
             if (_playerProvider.HasEntity)
             {
                 _playerOnTheLevel = InZone(levelCollider, _playerProvider.Position);
-                _playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _playerProvider.Position);
+                _playerOnTheLevelOrAbove = _playerOnTheLevel || InZone(levelAndAboveCollider, _playerProvider.Position);
             }
 
             foreach (var enemy in _enemiesRepository.Enemies) 
@@ -43,8 +43,10 @@ namespace App.Missions.Levels
         {
             if (_playerProvider.HasEntity)
             {
+                var prevPlayerOnTheLevelOrAbove = _playerOnTheLevelOrAbove;
+                
                 var playerOnTheLevel = InZone(levelCollider, _playerProvider.Position);
-                var playerOnTheLevelOrAbove = InZone(levelAndAboveCollider, _playerProvider.Position);
+                var playerOnTheLevelOrAbove = playerOnTheLevel || InZone(levelAndAboveCollider, _playerProvider.Position);
                 
                 if (_playerOnTheLevelOrAbove != playerOnTheLevelOrAbove)
                 {
@@ -53,16 +55,17 @@ namespace App.Missions.Levels
                     {
                         var enemyOnTheLevel = InZone(levelCollider, enemy.transform.position);
                         if (enemyOnTheLevel) 
-                            enemy.DissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
+                            enemy.DissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove, false);
                     }
                     
-                    externalDissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
+                    externalDissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove, false);
                 }
 
                 if (_playerOnTheLevel != playerOnTheLevel)
                 {
+                    var moveToTheNExtLevelOrDownToTheThisLevel = _playerOnTheLevelOrAbove == prevPlayerOnTheLevelOrAbove;
                     _playerOnTheLevel = playerOnTheLevel;
-                    internalDissolvesUpdater.SetVisibilityState(_playerOnTheLevel);
+                    internalDissolvesUpdater.SetVisibilityState(_playerOnTheLevel, moveToTheNExtLevelOrDownToTheThisLevel);
                 }
             }
         }
@@ -71,7 +74,7 @@ namespace App.Missions.Levels
         {
             var enemyOnTheLevel = InZone(levelCollider, enemy.transform.position);
             if (enemyOnTheLevel) 
-                enemy.DissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove);
+                enemy.DissolvesUpdater.SetVisibilityState(_playerOnTheLevelOrAbove, false);
         }
         
         private static bool InZone(Collider checkCollider, Vector3 position) 
