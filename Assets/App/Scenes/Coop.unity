@@ -11153,6 +11153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathChecker: {fileID: 429827356}
+  mission: {fileID: 1347942679}
 --- !u!114 &429827361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22722,7 +22723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905403627}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23174,7 +23175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67238f0c9937498893658a08ce8377f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screensController: {fileID: 0}
+  screensController: {fileID: 939910445}
 --- !u!1001 &927208589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23952,6 +23953,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59903c9e856e53e4281a9668a93039e0, type: 3}
+--- !u!114 &939910445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2067875480420473912, guid: 59903c9e856e53e4281a9668a93039e0, type: 3}
+  m_PrefabInstance: {fileID: 939910444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758683eacf0f5dd48856d7dd94b1ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &941062540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34050,6 +34062,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4331701180326020, guid: 911e43b19125da6409d89497f56f7103, type: 3}
   m_PrefabInstance: {fileID: 1347791763}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1347942678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347942680}
+  - component: {fileID: 1347942679}
+  m_Layer: 0
+  m_Name: Mission
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1347942679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347942678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176a34ba2b054680baaaaca7c05bcc55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionConfig: {fileID: 11400000, guid: 75466abcb6aa1464da14607fc71b5fa2, type: 2}
+  missionsConfig: {fileID: 11400000, guid: f696ba8590c3fdc4eb14a1caa3ca60fd, type: 2}
+--- !u!4 &1347942680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347942678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15, y: 29.999996, z: 1.2000039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1351315347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46745,7 +46803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833706216}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49159,7 +49217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918750494}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49178,7 +49236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4cd389de1145478cadbec81fc3750b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: {fileID: 429827360}
+  missionState: {fileID: 429827360}
 --- !u!1001 &1927122572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55367,3 +55425,4 @@ SceneRoots:
   - {fileID: 235989685}
   - {fileID: 2105650897}
   - {fileID: 146851036}
+  - {fileID: 1347942680}

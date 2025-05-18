@@ -1,6 +1,6 @@
 using System;
 using App.EventBus;
-using App.GameState;
+using App.Missions.MissionState;
 using App.NetworkRunning;
 using Avastrad.EventBusFramework;
 using Avastrad.UI.UiSystem;
@@ -16,7 +16,7 @@ namespace App.Entities.Player.SelectionPlayerEntity
         private readonly NetworkRunnerProvider _networkRunnerProvider;
         private readonly PlayersEntitiesRepository _playersEntitiesRepository;
 
-        public PlayersObserver(IEventBus eventBus, ScreensController screensController, NetworkRunnerProvider networkRunnerProvider, PlayersEntitiesRepository playersEntitiesRepository, NetGameState netGameState)
+        public PlayersObserver(IEventBus eventBus, ScreensController screensController, NetworkRunnerProvider networkRunnerProvider, PlayersEntitiesRepository playersEntitiesRepository, NetMissionState netMissionState)
         {
             _eventBus = eventBus;
             _screensController = screensController;

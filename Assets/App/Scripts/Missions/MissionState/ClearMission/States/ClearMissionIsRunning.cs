@@ -1,16 +1,16 @@
 using App.DeathChecking;
-using App.Missions;
+using App.Missions.MissionState.FSM;
 using Avastrad.EventBusFramework;
 using Fusion;
 
-namespace App.GameState.FSM.MissionStates
+namespace App.Missions.MissionState.ClearMission.States
 {
-    public class MissionIsRunning : IsRunning
+    public class ClearMissionIsRunning : IsRunning
     {
         private readonly DeathChecker _deathChecker;
         private readonly Mission _mission;
         
-        public MissionIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, DeathChecker deathChecker, Mission mission)
+        public ClearMissionIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, DeathChecker deathChecker, Mission mission)
             : base(networkBehaviour, eventBus)
         {
             _deathChecker = deathChecker;
@@ -23,13 +23,13 @@ namespace App.GameState.FSM.MissionStates
 
             if (_deathChecker.AllPlayersUnAlive)
             {
-                TryActivateState<IsOver>();
+                TryActivateState<IsFail>();
                 return;
             }
 
             if (_mission.AllEnemiesIsDead)
             {
-                TryActivateState<IsOver>();
+                TryActivateState<IsCompleted>();
                 return;
             }
         }

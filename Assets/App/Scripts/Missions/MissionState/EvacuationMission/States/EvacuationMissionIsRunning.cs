@@ -1,14 +1,15 @@
 using App.DeathChecking;
+using App.Missions.MissionState.FSM;
 using Avastrad.EventBusFramework;
 using Fusion;
 
-namespace App.GameState.FSM.DevStates
+namespace App.Missions.MissionState.EvacuationMission.States
 {
-    public class DevIsRunning : IsRunning
+    public class EvacuationMissionIsRunning : IsRunning
     {
         private readonly DeathChecker _deathChecker;
 
-        public DevIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, DeathChecker deathChecker) 
+        public EvacuationMissionIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, DeathChecker deathChecker) 
             : base(networkBehaviour, eventBus)
         {
             _deathChecker = deathChecker;
@@ -19,7 +20,7 @@ namespace App.GameState.FSM.DevStates
             base.OnFixedUpdate();
 
             if (_deathChecker.AllPlayersUnAlive)
-                TryActivateState<IsOver>();
+                TryActivateState<IsFail>();
         }
     }
 }

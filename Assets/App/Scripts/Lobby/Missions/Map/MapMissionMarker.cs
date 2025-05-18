@@ -18,5 +18,8 @@ namespace App.Lobby.Missions.Map
 
         public void SetState(bool isSelected) 
             => center.SetActive(isSelected);
+
+        public void SetInteractableState(bool isInteractable) 
+            => markerButton.interactable = isInteractable;
     }
 }

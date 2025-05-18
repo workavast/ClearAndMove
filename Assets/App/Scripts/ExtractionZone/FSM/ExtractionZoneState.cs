@@ -1,5 +1,5 @@
 using App.Entities.Player;
-using App.GameState;
+using App.Missions.MissionState;
 using Fusion;
 using Fusion.Addons.FSM;
 using UnityEngine;
@@ -10,7 +10,7 @@ namespace App.ExtractionZone.FSM
     {
         protected readonly NetExtractionZone NetExtractionZone;
         protected readonly ExtractionZoneConfig Config;
-        protected readonly NetGameState NetGameState;
+        protected readonly NetMissionState NetMissionState;
         protected readonly PlayersEntitiesRepository PlayersEntitiesRepository;
         protected readonly ExtractionZoneView ExtractionZoneView;
         
@@ -20,10 +20,10 @@ namespace App.ExtractionZone.FSM
         protected float ExtractionTime => Config.ExtractionTime;
         
         protected ExtractionZoneState(NetExtractionZone netExtractionZone, ExtractionZoneConfig config, 
-            NetGameState netGameState, PlayersEntitiesRepository playersEntitiesRepository, ExtractionZoneView extractionZoneView)
+            NetMissionState netMissionState, PlayersEntitiesRepository playersEntitiesRepository, ExtractionZoneView extractionZoneView)
         {
             NetExtractionZone = netExtractionZone;
-            NetGameState = netGameState;
+            NetMissionState = netMissionState;
             PlayersEntitiesRepository = playersEntitiesRepository;
             ExtractionZoneView = extractionZoneView;
             Config = config;

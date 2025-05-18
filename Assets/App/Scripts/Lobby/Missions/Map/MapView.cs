@@ -1,8 +1,10 @@
 using System;
 using System.Linq;
 using App.Missions;
+using App.Missions.MissionsProgress;
 using App.UI.WindowsSwitching;
 using UnityEngine;
+using Zenject;
 
 namespace App.Lobby.Missions.Map
 {
@@ -15,14 +17,18 @@ namespace App.Lobby.Missions.Map
         [SerializeField] private ViewBlocker viewBlocker;
         [SerializeField] private MapMissionMarker[] missionMarkers;
 
+        [Inject] private readonly CompletedMissionsModel _completedMissionsModel;
+        
         private MapMissionMarker _lastSelectedMarker;
 
         public void Awake()
         {
-            foreach (var missionMarker in missionMarkers)
+            for (int i = 0; i < missionMarkers.Length; i++)
             {
-                missionMarker.SetState(false);
-                missionMarker.OnClicked += Select;
+                missionMarkers[i].SetState(false);
+                var missionIsAvailable = _completedMissionsModel.IsAvailable(i);
+                missionMarkers[i].SetInteractableState(missionIsAvailable);
+                missionMarkers[i].OnClicked += Select;
             }
         }
 
