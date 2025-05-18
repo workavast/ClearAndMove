@@ -1,18 +1,19 @@
+using App.Missions.MissionState;
 using UnityEngine;
 
-namespace App.DeathChecking
+namespace App.Missions
 {
     public class MissionResultView : MonoBehaviour
     {
-        [SerializeField] private DeathChecker deathChecker;
+        [SerializeField] private NetMissionState missionState;
         [Space] 
         [SerializeField] private GameObject winScreen;
         [SerializeField] private GameObject looseScreen;
         
         private void OnEnable()
         {
-            winScreen.SetActive(!deathChecker.AllPlayersUnAlive);
-            looseScreen.SetActive(deathChecker.AllPlayersUnAlive);
+            winScreen.SetActive(missionState.IsCompleted);
+            looseScreen.SetActive(missionState.IsFail);
         }
     }
 }

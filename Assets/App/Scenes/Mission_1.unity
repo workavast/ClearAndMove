@@ -38354,6 +38354,10 @@ PrefabInstance:
       propertyPath: deathChecker
       value: 
       objectReference: {fileID: 1244785481}
+    - target: {fileID: 6600379860562344818, guid: 59903c9e856e53e4281a9668a93039e0, type: 3}
+      propertyPath: missionState
+      value: 
+      objectReference: {fileID: 1244785480}
     - target: {fileID: 7307539700534532568, guid: 59903c9e856e53e4281a9668a93039e0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
