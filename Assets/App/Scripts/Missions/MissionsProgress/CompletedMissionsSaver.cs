@@ -5,7 +5,11 @@ namespace App.Missions.MissionsProgress
 {
     public static class CompletedMissionsSaver
     {
+#if UNITY_EDITOR
+        private static readonly JsonSaveAndLoader JsonSaveAndLoader = new JsonSaveAndLoader("/CompletedMissions_Editor.json");
+#else
         private static readonly JsonSaveAndLoader JsonSaveAndLoader = new JsonSaveAndLoader("/CompletedMissions.json");
+#endif
         
         public static bool Exist() 
             => JsonSaveAndLoader.Exist();
