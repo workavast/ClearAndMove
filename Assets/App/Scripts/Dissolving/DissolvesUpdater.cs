@@ -7,6 +7,7 @@ namespace App.Dissolving
     {
         [SerializeField] private DissolveConfig config;
         [field: SerializeField] public bool IsVisible { get; private set; } = true;
+        [field: SerializeField] public bool ChangeInstantly { get; private set; } = true;
 
         private readonly List<DissolveOwner> _dissolveOwners = new();
         
@@ -22,9 +23,9 @@ namespace App.Dissolving
         private void Start()
         {
             if (IsVisible)
-                SetValue(1);
-            else
                 SetValue(0);
+            else
+                SetValue(1);
         }
 
         private void LateUpdate()
@@ -40,14 +41,28 @@ namespace App.Dissolving
             else
                 _dissolveTimer += Time.deltaTime;
 
-            UpdateDissolves(_dissolveTimer / Duration);
+            if (ChangeInstantly)
+            {
+                if (!IsVisible && _dissolveTimer / Duration >= 1) 
+                    UpdateDissolves(_dissolveTimer / Duration);
+                else if (IsVisible && _dissolveTimer / Duration > 0)
+                {
+                    _dissolveTimer = 0;
+                    UpdateDissolves(0);
+                }
+            }
+            else
+            {
+                UpdateDissolves(_dissolveTimer / Duration);
+            }
         }
 
-        public void SetVisibilityState(bool isVisible)
+        public void SetVisibilityState(bool isVisible, bool dissolveInstantly)
         {
             IsVisible = isVisible;
+            ChangeInstantly = dissolveInstantly;
         }
-
+        
         /// <param name="visibilityValue">[0,1] where 0 is invisible</param>
         public void SetValue(float visibilityValue)
         {
