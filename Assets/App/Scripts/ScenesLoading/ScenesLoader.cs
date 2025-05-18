@@ -35,8 +35,8 @@ namespace App.ScenesLoading
         public void HideLoadScreen(bool hideLoadScreenInstantly) 
             => _loadingScreen.Hide(hideLoadScreenInstantly);
 
-        /// <param name="skipLoadingScreen"> skip loading scene </param>
-        public void LoadScene(int index, bool showLoadScreenInstantly = false, bool skipLoadingScreen = false)
+        /// <param name="skipLoadingScene"> skip loading scene </param>
+        public void LoadScene(int index, bool showLoadScreenInstantly = false, bool skipLoadingScene = false)
         {
             var hasNetRunner = false;
             if (_networkRunnerProvider.TryGetNetworkRunner(out var netRunner) &&
@@ -51,7 +51,7 @@ namespace App.ScenesLoading
             
             OnLoadingStarted?.Invoke();
             
-            if (skipLoadingScreen)
+            if (skipLoadingScene)
             {
                 if (hasNetRunner)
                     netRunner.LoadScene(SceneRef.FromIndex(_targetSceneIndex));
