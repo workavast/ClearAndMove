@@ -1,14 +1,15 @@
 using App.Missions.MissionGeneration;
+using App.Missions.MissionState.FSM;
 using Avastrad.EventBusFramework;
 using Fusion;
 
-namespace App.GameState.FSM.MissionStates
+namespace App.Missions.MissionState.ClearMission.States
 {
-    public class MissionIsPreparing : IsPreparing
+    public class ClearMissionIsPreparing : IsPreparing
     {
         private readonly NetMissionGenerator _netMissionGenerator;
 
-        public MissionIsPreparing(NetworkBehaviour networkBehaviour, IEventBus eventBus, NetMissionGenerator netMissionGenerator) 
+        public ClearMissionIsPreparing(NetworkBehaviour networkBehaviour, IEventBus eventBus, NetMissionGenerator netMissionGenerator) 
             : base(networkBehaviour, eventBus)
         {
             _netMissionGenerator = netMissionGenerator;
@@ -17,7 +18,7 @@ namespace App.GameState.FSM.MissionStates
         protected override void OnFixedUpdate()
         {
             if (_netMissionGenerator.MissionGenerated) 
-                TryActivateState<MissionIsRunning>();
+                TryActivateState<ClearMissionIsRunning>();
         }
     }
 }

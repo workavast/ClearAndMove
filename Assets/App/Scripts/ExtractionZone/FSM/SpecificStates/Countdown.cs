@@ -1,14 +1,14 @@
 using App.Entities.Player;
-using App.GameState;
+using App.Missions.MissionState;
 using Fusion;
 
 namespace App.ExtractionZone.FSM.SpecificStates
 {
     public class Countdown : ExtractionZoneState
     {
-        public Countdown(NetExtractionZone netExtractionZone, ExtractionZoneConfig config, NetGameState netGameState,
+        public Countdown(NetExtractionZone netExtractionZone, ExtractionZoneConfig config, NetMissionState netMissionState,
             PlayersEntitiesRepository playersEntitiesRepository, ExtractionZoneView extractionZoneView) 
-            : base(netExtractionZone, config, netGameState, playersEntitiesRepository, extractionZoneView) { }
+            : base(netExtractionZone, config, netMissionState, playersEntitiesRepository, extractionZoneView) { }
 
         protected override void OnEnterState() 
             => NetExtractionZone.ExtractionTimer = TickTimer.CreateFromSeconds(Runner, ExtractionTime);
@@ -23,7 +23,7 @@ namespace App.ExtractionZone.FSM.SpecificStates
 
         protected override void OnFixedUpdate()
         {
-            if (!NetGameState.IsRunning)
+            if (!NetMissionState.IsRunning)
                 return;
             
             if (!AllPlayersInZone())

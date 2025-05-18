@@ -1,12 +1,10 @@
 using Avastrad.EventBusFramework;
 using Fusion;
 
-namespace App.GameState.FSM
+namespace App.Missions.MissionState.FSM
 {
-    public abstract class IsPreparing : GameStateBase
+    public abstract class IsPreparing : MissionStateBase
     {
-        protected override bool GameIsRunning => false;
-
         protected IsPreparing(NetworkBehaviour networkBehaviour, IEventBus eventBus) 
             : base(networkBehaviour, eventBus) { }
     }

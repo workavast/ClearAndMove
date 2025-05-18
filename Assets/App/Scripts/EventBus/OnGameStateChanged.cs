@@ -1,5 +1,5 @@
 using System;
-using App.GameState.FSM;
+using App.Missions.MissionState.FSM;
 using Avastrad.EventBusFramework;
 
 namespace App.EventBus
@@ -8,13 +8,16 @@ namespace App.EventBus
     {
         public readonly bool IsPreparing;
         public readonly bool IsRunning;
-        public readonly bool IsOver;
-
+        public readonly bool IsCompleted;
+        public readonly bool IsFail;
+        public readonly bool IsOver => IsCompleted || IsFail;
+        
         public OnGameStateChanged(Type gameState)
         {
             IsPreparing = typeof(IsPreparing).IsAssignableFrom(gameState);
             IsRunning = typeof(IsRunning).IsAssignableFrom(gameState);
-            IsOver = typeof(IsOver).IsAssignableFrom(gameState);
+            IsCompleted = typeof(IsCompleted).IsAssignableFrom(gameState);
+            IsFail = typeof(IsFail).IsAssignableFrom(gameState);
         }
     }
 }

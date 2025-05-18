@@ -5,6 +5,8 @@
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cai_005Cfsm_005Cspecificstates/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cgamestate_005Cfsm_005Cbasicstates/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cgamestate_005Cfsm_005Cspecificstates/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cmissions_005Cgamestate_005Cfsm_005Cbasicstates/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cmissions_005Cmissionstate_005Cfsm_005Cbasicstates/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cnetworkrunning_005Cshutdowners_005Clocalshutdowners_005Cspecificshutdowners/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cnewdirectory1_005Cgamestatebase_005Cfsm_005Cspecificstates/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=assets_005Capp_005Cscripts_005Cnewdirectory1_005Cgamestate_005Cfsm_005Cspecificstates/@EntryIndexedValue">True</s:Boolean>

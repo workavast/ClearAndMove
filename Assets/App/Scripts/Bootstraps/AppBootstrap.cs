@@ -1,4 +1,6 @@
 using App.CursorBehaviour;
+using App.Missions;
+using App.Missions.MissionsProgress;
 using App.NetworkRunning.Shutdowners;
 using App.NetworkRunning.Shutdowners.LocalShutdowners;
 using App.Settings;
@@ -17,6 +19,7 @@ namespace App.Bootstraps
         [Inject] private readonly CursorVisibilityBehaviour _cursorVisibilityBehaviour;
         [Inject] private readonly ShutdownerProvider _shutdownerProvider;
         [Inject] private readonly SettingsModel _settingsModel;
+        [Inject] private readonly CompletedMissionsModel _completedMissionsModel;
         
         private async void Start()
         {
@@ -28,6 +31,9 @@ namespace App.Bootstraps
             if (SettingsSaver.Exist()) 
                 _settingsModel.Load(SettingsSaver.Load());
             _settingsModel.Apply();
+            
+            if (CompletedMissionsSaver.Exist()) 
+                _completedMissionsModel.Load(CompletedMissionsSaver.Load());
             
             _sceneLoader.LoadScene(sceneIndexForLoadingAfterInitializations, true); 
         }

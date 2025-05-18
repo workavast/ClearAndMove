@@ -9,7 +9,10 @@ namespace App.Missions
 {
     public class Mission : MonoBehaviour
     {
-        [Inject] private PlayersEntitiesRepository _playersEntitiesRepository;
+        [SerializeField] private MissionConfig missionConfig;
+        [SerializeField] private MissionsConfig missionsConfig;
+
+        [Inject] private readonly PlayersEntitiesRepository _playersEntitiesRepository;
         [Inject] private readonly IEventBus _eventBus;
         
         private NetLevel[] _levels;
@@ -39,6 +42,9 @@ namespace App.Missions
             _eventBus.Invoke(new OnLevelChanged(_activeLevelIndex));
         }
 
+        public int GetMissionIndex() 
+            => missionsConfig.GetIndex(missionConfig);
+        
         private void OnLastLevelCleared()
         {
             AllEnemiesIsDead = true;

@@ -51,7 +51,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   perlin: {fileID: 7214943081538560944}
   shotConfig: {fileID: 11400000, guid: f0963fbf349a133438bf32a8160d51b2, type: 2}
-  localPlayerProvider: {fileID: 0}
 --- !u!1 &181641290644086481
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +445,7 @@ Transform:
   m_Children:
   - {fileID: 929114496544279111}
   - {fileID: 8974939512137947755}
+  - {fileID: 4813213475858538948}
   m_Father: {fileID: 4060534239856140319}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!20 &5978985543551366057
@@ -628,7 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9a4aadc5a543858c4a47792fdd2b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localPlayerProvider: {fileID: 0}
 --- !u!1 &6548368531796588864
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +770,52 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1 &7645338286544882852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4813213475858538948}
+  - component: {fileID: 540603039644344673}
+  m_Layer: 0
+  m_Name: WarFogResizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4813213475858538948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645338286544882852}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000008940697, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8374389249528653670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &540603039644344673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645338286544882852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a378d82825849eca8c61489663b0470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warFogCamera: {fileID: 3039449821108078508}
+  renderTexture: {fileID: 8400000, guid: 365a731257182b644bd45a735135c2c8, type: 2}
 --- !u!1 &7979818841622375886
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,4 +1033,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0203cf5cfd434ceba71d63b9e245d0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localPlayerProvider: {fileID: 0}

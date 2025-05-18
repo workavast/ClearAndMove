@@ -670,8 +670,8 @@ MonoBehaviour:
   netMapViewModel: {fileID: 0}
   viewBlocker: {fileID: 2270834532995156956}
   missionMarkers:
-  - {fileID: 3302696687519038136}
   - {fileID: 1172610274693350034}
+  - {fileID: 3302696687519038136}
 --- !u!1 &1022827615777883769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,8 +2271,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8677275013186883061}
   - {fileID: 5042804875371279839}
+  - {fileID: 8677275013186883061}
   - {fileID: 7542045347520346020}
   m_Father: {fileID: 3603471628027900031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
