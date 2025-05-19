@@ -52,8 +52,9 @@ MonoBehaviour:
   weaponViewHolder: {fileID: 190664987957330581}
   deathClip: {fileID: 7400000, guid: 33ec14e8e222f664cb4936b2301e3cd0, type: 2}
   useDebug: 0
-  velocityX: 0
-  velocityY: 0
+  debugIsAlive: 1
+  debugVelocityX: 0
+  debugVelocityY: 0
 --- !u!1 &1034940875409483947
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: ecdd91516da6a7f49871630af16c313b, type: 2}
   entity: {fileID: 4582882483414412412}
-  solderView: {fileID: 7333342798360998660}
   _NetHealthPoints: 0
 --- !u!114 &7390297459476550957
 MonoBehaviour:
@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d49ad24abe45699d19540d4aadce87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner:
+    underlyingValue: {fileID: 4582882483414412412}
   netWeaponModel: {fileID: 7699165246983407009}
   shootPoint: {fileID: 8074423664287962504}
   weaponViewHolder: {fileID: 190664987957330581}
@@ -236,6 +238,7 @@ MonoBehaviour:
     m_Bits: 115
   _NetEquippedWeapon: 210
   _NetMagazine: 0
+  _NetFullAmmoSize: 0
   _NetFireCount: 0
   <WeaponConfig>k__BackingField: {fileID: 0}
 --- !u!114 &7333342798360998660
@@ -395,6 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 0a585a76d7e9c374384066b983968f2c, type: 2}
   <IsVisible>k__BackingField: 1
+  <ChangeInstantly>k__BackingField: 1
 --- !u!114 &2934141518229042294
 MonoBehaviour:
   m_ObjectHideFlags: 0

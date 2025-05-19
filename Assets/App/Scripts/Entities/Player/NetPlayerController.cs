@@ -1,3 +1,4 @@
+using App.App;
 using App.PlayerInput;
 using Fusion;
 using UnityEngine;
@@ -7,7 +8,14 @@ namespace App.Entities.Player
     public class NetPlayerController : NetworkBehaviour
     {
         [SerializeField] private NetEntity netEntity;
+
+        private IReadOnlyMissionModifiers _missionModifiers;
         
+        private void Awake()
+        {
+            _missionModifiers = AppInfrastructure.PlayerMissionModifiers;
+        }
+
         public override void FixedUpdateNetwork()
         {
             if (!netEntity.IsAlive)
@@ -24,7 +32,7 @@ namespace App.Entities.Player
                 if ((HasStateAuthority || HasInputAuthority) && input.Buttons.IsSet(PlayerButtons.Fire))
                     netEntity.TryShoot();
 
-                var reloadRequest = input.Buttons.IsSet(PlayerButtons.Reload) || netEntity.RequiredReload;
+                var reloadRequest = input.Buttons.IsSet(PlayerButtons.Reload) || (netEntity.RequiredReload && _missionModifiers.AutoReloading);
                 if ((HasStateAuthority || HasInputAuthority) && reloadRequest) 
                     netEntity.TryReload();
             }

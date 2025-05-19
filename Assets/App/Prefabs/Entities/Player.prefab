@@ -52,9 +52,9 @@ MonoBehaviour:
   weaponViewHolder: {fileID: 7914040448562380562}
   deathClip: {fileID: 7400000, guid: 33ec14e8e222f664cb4936b2301e3cd0, type: 2}
   useDebug: 0
-  isAlive: 1
-  velocityX: 0
-  velocityY: 0
+  debugIsAlive: 1
+  debugVelocityX: 0
+  debugVelocityY: 0
 --- !u!1 &1034940875409483947
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +187,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 2e235d0bd95dfe34f95a57e634acc985, type: 2}
   entity: {fileID: 5137442269118526432}
-  solderView: {fileID: 3872098561446610495}
   _NetHealthPoints: 0
 --- !u!114 &-6147803082460343636
 MonoBehaviour:
@@ -218,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d49ad24abe45699d19540d4aadce87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner:
+    underlyingValue: {fileID: 5137442269118526432}
   netWeaponModel: {fileID: 1058040539379439012}
   shootPoint: {fileID: 8074423664287962504}
   weaponViewHolder: {fileID: 7914040448562380562}
@@ -238,6 +239,7 @@ MonoBehaviour:
     m_Bits: 115
   _NetEquippedWeapon: 210
   _NetMagazine: 0
+  _NetFullAmmoSize: 0
   _NetFireCount: 0
   <WeaponConfig>k__BackingField: {fileID: 0}
 --- !u!114 &3872098561446610495
@@ -397,6 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 0a585a76d7e9c374384066b983968f2c, type: 2}
   <IsVisible>k__BackingField: 1
+  <ChangeInstantly>k__BackingField: 1
 --- !u!114 &9198387104385681027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,7 +985,7 @@ PrefabInstance:
     - target: {fileID: 5492594197720040065, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_RigLayers.Array.data[2].m_Rig
       value: 
-      objectReference: {fileID: 5182170743924626453}
+      objectReference: {fileID: 0}
     - target: {fileID: 5492594197720040065, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
       propertyPath: m_RigLayers.Array.data[2].m_Active
       value: 1
@@ -1004,17 +1007,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4110625864154057207, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
   m_PrefabInstance: {fileID: 2461267205640546209}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5182170743924626453 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7332680078532899764, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}
-  m_PrefabInstance: {fileID: 2461267205640546209}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7914040448562380562 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5763618650756470963, guid: 9bea2735c3bbc9e499cf6dc0eec727cc, type: 3}

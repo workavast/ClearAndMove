@@ -5,21 +5,29 @@ namespace App.Lobby.Missions.MissionModifiers
 {
     public class MissionModifiersModel : MonoBehaviour
     {
-        public bool PlayersFriendlyFire => AppInfrastructure.MissionInfrastructure.PlayerDamageConfig.HasFriendlyFire;
-        public float PlayersDamageScale => AppInfrastructure.MissionInfrastructure.PlayerDamageConfig.DamageScale;
-        public bool EnemiesFriendlyFire => AppInfrastructure.MissionInfrastructure.EnemyDamageConfig.HasFriendlyFire;
-        public float EnemiesDamageScale => AppInfrastructure.MissionInfrastructure.EnemyDamageConfig.DamageScale;
+        public bool PlayersFriendlyFire => AppInfrastructure.PlayerMissionModifiers.HasFriendlyFire;
+        public float PlayersDamageScale => AppInfrastructure.PlayerMissionModifiers.DamageScale;
+        public bool PlayersAutoReloading => AppInfrastructure.PlayerMissionModifiers.AutoReloading;
+        public bool PlayersDropMagazine => AppInfrastructure.PlayerMissionModifiers.DropMagazineOnReloading;
+        public bool EnemiesFriendlyFire => AppInfrastructure.EnemyMissionModifiers.HasFriendlyFire;
+        public float EnemiesDamageScale => AppInfrastructure.EnemyMissionModifiers.DamageScale;
         
         public void SetPlayerFriendlyFire(bool hasFriendlyFire) 
-            => AppInfrastructure.MissionInfrastructure.SetPlayerFriendlyFire(hasFriendlyFire);
+            => AppInfrastructure.PlayerMissionModifiers.HasFriendlyFire = hasFriendlyFire;
 
         public void SetPlayerDamageScale(float damageScale) 
-            => AppInfrastructure.MissionInfrastructure.SetPlayerDamageScale(damageScale);
+            => AppInfrastructure.PlayerMissionModifiers.DamageScale = damageScale;
+        
+        public void SetPlayerAutoReloading(bool autoReloading) 
+            => AppInfrastructure.PlayerMissionModifiers.AutoReloading = autoReloading;
+        
+        public void SetPlayerDropMagazine(bool dropMagazine) 
+            => AppInfrastructure.PlayerMissionModifiers.DropMagazineOnReloading = dropMagazine;
         
         public void SetEnemyFriendlyFire(bool hasFriendlyFire) 
-            => AppInfrastructure.MissionInfrastructure.SetEnemyFriendlyFire(hasFriendlyFire);
+            => AppInfrastructure.EnemyMissionModifiers.HasFriendlyFire = hasFriendlyFire;
         
         public void SetEnemyDamageScale(float damageScale) 
-            => AppInfrastructure.MissionInfrastructure.SetEnemyDamageScale(damageScale);
+            => AppInfrastructure.EnemyMissionModifiers.DamageScale = damageScale;
     }
 }

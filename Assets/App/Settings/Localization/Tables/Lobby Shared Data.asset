@@ -79,6 +79,14 @@ MonoBehaviour:
     m_Key: CanBeChangedOnlyByHost
     m_Metadata:
       m_Items: []
+  - m_Id: 6414503887699968
+    m_Key: AutoReloading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6414572686868480
+    m_Key: DropMagazine
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -1,3 +1,4 @@
+using App.App;
 using App.Weapons.View;
 using Fusion;
 using Fusion.Addons.FSM;
@@ -10,13 +11,16 @@ namespace App.Weapons.FSM
         public bool CanReload => NetWeaponModel.NetMagazine < WeaponConfig.MagazineSize 
                                  && NetWeaponModel.NetFullAmmoSize > 0
                                  && NetWeaponModel.NetReloadTimer.ExpiredOrNotRunning(Runner);
-        
-        private readonly WeaponViewHolder _weaponViewHolder;
 
-        public ReloadingState(NetWeaponModel netWeaponModel, WeaponViewHolder weaponViewHolder) 
+        private readonly WeaponViewHolder _weaponViewHolder;
+        private readonly IReadOnlyMissionModifiers _missionModifiers;
+
+        public ReloadingState(NetWeaponModel netWeaponModel, WeaponViewHolder weaponViewHolder, 
+            IReadOnlyMissionModifiers missionModifiers) 
             : base(netWeaponModel)
         {
             _weaponViewHolder = weaponViewHolder;
+            _missionModifiers = missionModifiers;
         }
         
         protected override bool CanEnterState() 
@@ -27,9 +31,17 @@ namespace App.Weapons.FSM
 
         protected override void OnEnterState()
         {
-            NetWeaponModel.NetFullAmmoSize += NetWeaponModel.NetMagazine;
-            NetWeaponModel.NetMagazine = 0;
-            NetWeaponModel.NetReloadTimer = TickTimer.CreateFromSeconds(Runner, WeaponConfig.ReloadTime);
+            if (_missionModifiers.DropMagazineOnReloading)
+            {
+                NetWeaponModel.NetMagazine = 0;
+                NetWeaponModel.NetReloadTimer = TickTimer.CreateFromSeconds(Runner, WeaponConfig.ReloadTime);
+            }
+            else
+            {
+                NetWeaponModel.NetFullAmmoSize += NetWeaponModel.NetMagazine;
+                NetWeaponModel.NetMagazine = 0;
+                NetWeaponModel.NetReloadTimer = TickTimer.CreateFromSeconds(Runner, WeaponConfig.ReloadTime);    
+            }
         }
         
         protected override void OnExitState()

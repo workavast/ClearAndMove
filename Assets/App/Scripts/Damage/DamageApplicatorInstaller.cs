@@ -7,10 +7,10 @@ namespace App.Damage
     {
         public override void InstallBindings()
         {
-            var playersConfig = AppInfrastructure.MissionInfrastructure.PlayerDamageConfig;
-            var enemiesConfig = AppInfrastructure.MissionInfrastructure.EnemyDamageConfig;
+            var playerMissionModifiers = AppInfrastructure.PlayerMissionModifiers;
+            var enemyMissionModifiers = AppInfrastructure.EnemyMissionModifiers;
             
-            Container.Bind<DamageApplicatorFactory>().FromNew().AsSingle().WithArguments(playersConfig, enemiesConfig);
+            Container.Bind<DamageApplicatorFactory>().FromNew().AsSingle().WithArguments(playerMissionModifiers, enemyMissionModifiers);
         }
     }
 }
