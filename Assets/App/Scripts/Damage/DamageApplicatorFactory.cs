@@ -1,17 +1,19 @@
 using System;
+using App.App;
 using App.Entities;
 
 namespace App.Damage
 {
     public class DamageApplicatorFactory
     {
-        private readonly DamageApplicatorConfig _playersConfig;
-        private readonly DamageApplicatorConfig _enemiesConfig;
+        private readonly IReadOnlyMissionModifiers _playersMissionModifiers;
+        private readonly IReadOnlyMissionModifiers _enemiesMissionModifiers;
         
-        public DamageApplicatorFactory(DamageApplicatorConfig playersConfig, DamageApplicatorConfig enemiesConfig)
+        public DamageApplicatorFactory(IReadOnlyMissionModifiers playersMissionModifiers, 
+            IReadOnlyMissionModifiers enemiesMissionModifiers)
         {
-            _playersConfig = playersConfig;
-            _enemiesConfig = enemiesConfig;
+            _playersMissionModifiers = playersMissionModifiers;
+            _enemiesMissionModifiers = enemiesMissionModifiers;
         }
 
         public IDamageApplicator CreateDamageApplicator(EntityType owner)
@@ -25,21 +27,9 @@ namespace App.Damage
         }
 
         private IDamageApplicator CreatePlayerDamageApplicator() 
-            => new PlayerDamageApplicator(_playersConfig.HasFriendlyFire, _playersConfig.DamageScale);
+            => new PlayerDamageApplicator(_playersMissionModifiers.HasFriendlyFire, _playersMissionModifiers.DamageScale);
 
         private IDamageApplicator CreateEnemyDamageApplicator() 
-            => new EnemyDamageApplicator(_enemiesConfig.HasFriendlyFire, _enemiesConfig.DamageScale);
-    }
-
-    public struct DamageApplicatorConfig
-    {
-        public bool HasFriendlyFire;
-        public float DamageScale;
-
-        public DamageApplicatorConfig(bool hasFriendlyFire, float damageScale)
-        {
-            HasFriendlyFire = hasFriendlyFire;
-            DamageScale = damageScale;
-        }
+            => new EnemyDamageApplicator(_enemiesMissionModifiers.HasFriendlyFire, _enemiesMissionModifiers.DamageScale);
     }
 }

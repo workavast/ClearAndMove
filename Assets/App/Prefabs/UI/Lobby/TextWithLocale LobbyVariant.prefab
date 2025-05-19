@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 278994055151229223, guid: f827b4faf0690d043813d307c6c2e326, type: 3}
       propertyPath: m_Name
-      value: TextWithLocale Variant
+      value: TextWithLocale LobbyVariant
       objectReference: {fileID: 0}
     - target: {fileID: 1484905631341402329, guid: f827b4faf0690d043813d307c6c2e326, type: 3}
       propertyPath: m_Pivot.x
@@ -91,6 +91,10 @@ PrefabInstance:
     - target: {fileID: 1484905631341402329, guid: f827b4faf0690d043813d307c6c2e326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448573978711695400, guid: f827b4faf0690d043813d307c6c2e326, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 8192
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

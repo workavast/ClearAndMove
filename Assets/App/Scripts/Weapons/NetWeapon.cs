@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using App.App;
 using App.Entities;
 using App.Weapons.FSM;
 using App.Weapons.Shooting;
@@ -13,6 +14,7 @@ namespace App.Weapons
     [RequireComponent(typeof(StateMachineController))]
     public class NetWeapon : NetworkBehaviour, IStateMachineOwner
     {
+        [SerializeField] private InterfaceReference<IEntity> owner;
         [SerializeField] private NetWeaponModel netWeaponModel;
         [SerializeField] private Transform shootPoint;
         [SerializeField] private WeaponViewHolder weaponViewHolder;
@@ -21,9 +23,7 @@ namespace App.Weapons
         [Inject] private readonly ShooterFactory _shooterFactory;
         
         public bool CanShot => netWeaponModel.NetMagazine > 0;
-        public bool CanReload => netWeaponModel.NetMagazine < WeaponConfig.MagazineSize 
-                                 && netWeaponModel.NetFullAmmoSize > 0 
-                                 && netWeaponModel.NetReloadTimer.ExpiredOrNotRunning(Runner);
+        public bool CanReload => _reloadingState.CanReload;
         public bool RequiredReload => netWeaponModel.NetMagazine <= 0 && CanReload;
         public WeaponId NetEquippedWeapon => netWeaponModel.NetEquippedWeapon;
 
@@ -41,7 +41,11 @@ namespace App.Weapons
 
         void IStateMachineOwner.CollectStateMachines(List<IStateMachine> stateMachines)
         {
-            _reloadingState = new ReloadingState(netWeaponModel, weaponViewHolder);
+            if (owner.Value.EntityType == EntityType.Player)
+                _reloadingState = new ReloadingState(netWeaponModel, weaponViewHolder, AppInfrastructure.PlayerMissionModifiers);
+            else
+                _reloadingState = new ReloadingState(netWeaponModel, weaponViewHolder, AppInfrastructure.EnemyMissionModifiers);
+
             _shotReadyState = new ShotReadyState(netWeaponModel, weaponViewHolder);
             
             _fsm = new WeaponStateMachine("Weapon", _shotReadyState, _reloadingState);

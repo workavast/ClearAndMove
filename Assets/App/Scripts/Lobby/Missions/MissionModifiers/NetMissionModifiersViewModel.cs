@@ -8,6 +8,8 @@ namespace App.Lobby.Missions.MissionModifiers
     {
         [Networked] [OnChangedRender(nameof(DataChanged))] private bool NetPlayersFriendlyFire { get; set; }
         [Networked] [OnChangedRender(nameof(DataChanged))] private float NetPlayersDamageScale { get; set; }
+        [Networked] [OnChangedRender(nameof(DataChanged))] private bool NetPlayerAutoReloading { get; set; }
+        [Networked] [OnChangedRender(nameof(DataChanged))] private bool NetPlayerDropMagazine { get; set; }
         [Networked] [OnChangedRender(nameof(DataChanged))] private bool NetEnemiesFriendlyFire { get; set; }
         [Networked] [OnChangedRender(nameof(DataChanged))] private float NetEnemiesDamageScale { get; set; }
         
@@ -15,6 +17,9 @@ namespace App.Lobby.Missions.MissionModifiers
         
         public bool PlayersFriendlyFire => model.PlayersFriendlyFire;
         public float PlayersDamageScale => model.PlayersDamageScale;
+        public bool PlayersAutoReloading => model.PlayersAutoReloading;
+        public bool PlayersDropMagazine => model.PlayersDropMagazine;
+        
         public bool EnemiesFriendlyFire => model.EnemiesFriendlyFire;
         public float EnemiesDamageScale => model.EnemiesDamageScale;
         
@@ -26,6 +31,9 @@ namespace App.Lobby.Missions.MissionModifiers
             {
                 NetPlayersFriendlyFire = PlayersFriendlyFire;
                 NetPlayersDamageScale = PlayersDamageScale;
+                NetPlayerAutoReloading = PlayersAutoReloading;
+                NetPlayerDropMagazine = PlayersDropMagazine;
+                
                 NetEnemiesFriendlyFire = EnemiesFriendlyFire;
                 NetEnemiesDamageScale = EnemiesDamageScale;
             }
@@ -54,6 +62,28 @@ namespace App.Lobby.Missions.MissionModifiers
             
             NetPlayersDamageScale = damageScale;
         }
+        
+        public void SetPlayerAutoReloading(bool autoReloading)
+        {
+            if (!HasStateAuthority)
+            {
+                Debug.LogWarning("You try modifiers when you are not host");
+                return;
+            }
+            
+            NetPlayerAutoReloading = autoReloading;
+        }
+        
+        public void SetPlayerDropMagazine(bool dropMagazine)
+        {
+            if (!HasStateAuthority)
+            {
+                Debug.LogWarning("You try modifiers when you are not host");
+                return;
+            }
+            
+            NetPlayerDropMagazine = dropMagazine;
+        }
 
         public void SetEnemyFriendlyFire(bool hasFriendlyFire)
         {
@@ -81,9 +111,12 @@ namespace App.Lobby.Missions.MissionModifiers
         {
             model.SetPlayerFriendlyFire(NetPlayersFriendlyFire);
             model.SetPlayerDamageScale(NetPlayersDamageScale);
+            model.SetPlayerAutoReloading(NetPlayerAutoReloading);
+            model.SetPlayerDropMagazine(NetPlayerDropMagazine);
+            
             model.SetEnemyFriendlyFire(NetEnemiesFriendlyFire);
             model.SetEnemyDamageScale(NetEnemiesDamageScale);
-
+            
             OnDataChanged?.Invoke();
         }
     }

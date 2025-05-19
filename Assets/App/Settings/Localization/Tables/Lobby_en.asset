@@ -82,6 +82,14 @@ MonoBehaviour:
     m_Localized: Can Be Changed Only By Host
     m_Metadata:
       m_Items: []
+  - m_Id: 6414503887699968
+    m_Localized: Auto Reloading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6414572686868480
+    m_Localized: Drop Magazine On Reloading
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

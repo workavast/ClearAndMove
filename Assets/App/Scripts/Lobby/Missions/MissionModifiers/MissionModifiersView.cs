@@ -15,6 +15,9 @@ namespace App.Lobby.Missions.MissionModifiers
         [Space]
         [SerializeField] private Toggle playerFriendlyFireToggle;
         [SerializeField] private SliderWithStep playerDamageScaleSlider;
+        [SerializeField] private Toggle playerAutoReloadingToggle;
+        [SerializeField] private Toggle playerDropMagazineFireToggle;
+        [Space]
         [SerializeField] private Toggle enemyFriendlyFireToggle;
         [SerializeField] private SliderWithStep enemyDamageScaleSlider;
         
@@ -28,9 +31,11 @@ namespace App.Lobby.Missions.MissionModifiers
         private void Start()
         {
             playerFriendlyFireToggle.onValueChanged.AddListener(TogglePlayerFriendlyFire);
-            enemyFriendlyFireToggle.onValueChanged.AddListener(ToggleEnemyFriendlyFire);
-         
             playerDamageScaleSlider.OnValueChanged += SetPlayerDamageScale;
+            playerAutoReloadingToggle.onValueChanged.AddListener(SetPlayerAutoReloading);
+            playerDropMagazineFireToggle.onValueChanged.AddListener(SetPlayerDropMagazine);
+         
+            enemyFriendlyFireToggle.onValueChanged.AddListener(ToggleEnemyFriendlyFire);
             enemyDamageScaleSlider.OnValueChanged += SetEnemyDamageScale;
         }
 
@@ -42,25 +47,33 @@ namespace App.Lobby.Missions.MissionModifiers
         private void UpdateView()
         {
             playerFriendlyFireToggle.SetIsOnWithoutNotify(viewModel.PlayersFriendlyFire);
-            enemyFriendlyFireToggle.SetIsOnWithoutNotify(viewModel.EnemiesFriendlyFire);
-            
             playerDamageScaleSlider.SetValue(viewModel.PlayersDamageScale, false);
+            playerAutoReloadingToggle.SetIsOnWithoutNotify(viewModel.PlayersAutoReloading);
+            playerDropMagazineFireToggle.SetIsOnWithoutNotify(viewModel.PlayersDropMagazine);
+            
+            enemyFriendlyFireToggle.SetIsOnWithoutNotify(viewModel.EnemiesFriendlyFire);
             enemyDamageScaleSlider.SetValue(viewModel.EnemiesDamageScale, false);
         }
 
         public void Toggle(bool isVisible) 
             => gameObject.SetActive(isVisible);
 
-        public void TogglePlayerFriendlyFire(bool hasFriendlyFire) 
+        private void TogglePlayerFriendlyFire(bool hasFriendlyFire) 
             => viewModel.SetPlayerFriendlyFire(hasFriendlyFire);
 
-        public void SetPlayerDamageScale(float damageScale) 
+        private void SetPlayerDamageScale(float damageScale) 
             => viewModel.SetPlayerDamageScale(damageScale);
-        
-        public void ToggleEnemyFriendlyFire(bool hasFriendlyFire) 
+
+        private void SetPlayerAutoReloading(bool autoReloading) 
+            => viewModel.SetPlayerAutoReloading(autoReloading);
+
+        private void SetPlayerDropMagazine(bool dropMagazine) 
+            => viewModel.SetPlayerDropMagazine(dropMagazine);
+
+        private void ToggleEnemyFriendlyFire(bool hasFriendlyFire) 
             => viewModel.SetEnemyFriendlyFire(hasFriendlyFire);
-        
-        public void SetEnemyDamageScale(float damageScale) 
+
+        private void SetEnemyDamageScale(float damageScale) 
             => viewModel.SetEnemyDamageScale(damageScale);
     }
 }
