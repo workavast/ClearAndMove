@@ -8,11 +8,11 @@ namespace App.WarFog
     {
         [SerializeField] private bool drawDebug;
 
-        private LayerMask _layerMask;
-        private float _fov;
-        private float _viewDistance;
-        private int _raysPerAngle;
-        
+        public LayerMask LayerMask { get; private set; }
+        public float FOV { get; private set; }
+        public float ViewDistance { get; private set; }
+        public int RaysPerAngle { get; private set; }
+
         private Vector3 Origin => transform.position;
         private float _startingAngle;
         private Mesh _mesh;
@@ -31,8 +31,8 @@ namespace App.WarFog
             else
                 angle = -_startingAngle - Vector3.Angle(Vector3.forward, transform.forward);
 
-            var raysCount =  _raysPerAngle * (int)_fov;
-            var angleStep = _fov / raysCount;
+            var raysCount =  RaysPerAngle * (int)FOV;
+            var angleStep = FOV / raysCount;
 
             //TODO hashed it
             var vertices = new Vector3[raysCount + 1 + 1];
@@ -48,10 +48,10 @@ namespace App.WarFog
                 Vector3 vertex;
 
                 var direction = GetVectorFromAngleAroundY(angle);
-                if (Physics.Raycast(Origin, direction, out var hit, _viewDistance, _layerMask))
+                if (Physics.Raycast(Origin, direction, out var hit, ViewDistance, LayerMask))
                     vertex = hit.point - Origin;
                 else
-                    vertex = direction * _viewDistance;
+                    vertex = direction * ViewDistance;
 
                 if (drawDebug)
                 {
@@ -76,13 +76,14 @@ namespace App.WarFog
                 angle += angleStep;
             }
             
-            _mesh.vertices = vertices;
+            _mesh.Clear();
+            _mesh.SetVertices(vertices);
             _mesh.uv = uv;
-            _mesh.triangles = triangles;
-            _mesh.bounds = new Bounds(Vector3.zero, Vector3.one * 1000f);
+            _mesh.SetTriangles(triangles, 0);
+            _mesh.bounds = new Bounds(Vector3.zero, Vector3.one * 100f);
         }
 
-        public void SetData(DynamicFieldOfViewConfig config) 
+        public void SetData(DynamicFieldOfViewConfig config)
             => SetData(config.LayerMask, config.FOV, config.ViewDistance, config.RaysPerAngle);
 
         public void SetData(LayerMask layerMask, float fov, float viewDistance, int raysPerAngle)
@@ -94,19 +95,19 @@ namespace App.WarFog
         }
         
         public void SetLayers(LayerMask layerMask) 
-            => _layerMask = layerMask;
+            => LayerMask = layerMask;
 
         public void SetRaysPerAngle(int raysPerAngle) 
-            => _raysPerAngle = raysPerAngle;
+            => RaysPerAngle = raysPerAngle;
 
         public void SetFoV(float fov)
         {
-            _fov = fov;
-            _startingAngle = _fov / 2;
+            FOV = fov;
+            _startingAngle = FOV / 2;
         }
 
         public void SetViewDistance(float viewDistance) 
-            => _viewDistance = viewDistance;
+            => ViewDistance = viewDistance;
 
         private static Vector3 GetVectorFromAngleAroundY(float angle)
         {

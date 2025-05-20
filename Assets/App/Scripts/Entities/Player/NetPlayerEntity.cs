@@ -12,6 +12,8 @@ namespace App.Entities.Player
     public class NetPlayerEntity : NetEntity
     {
         [SerializeField] private FieldOfView fieldOfView;
+
+        [Networked, SerializeField][field: ReadOnly] private bool IsScope { get; set; }
         
         public PlayerRef PlayerRef => Object.InputAuthority;
         public override EntityType EntityType => EntityType.Player;
@@ -48,9 +50,22 @@ namespace App.Entities.Player
             _playersEntitiesRepository.Remove(this);
         }
 
+        public override void Render()
+        {
+            base.Render();
+            
+            fieldOfView.SetScopeState(IsScope);
+        }
+
         public override string GetName() 
             => _nicknamesProvider.GetNickName(PlayerRef);
-        
+
+        public void SetScopeState(bool isScope)
+        {
+            if ((HasStateAuthority || HasInputAuthority) && IsScope != isScope)
+                IsScope = isScope;
+        }
+
         public void SetSelectState(bool isSelectedEntity) 
             => fieldOfView.SetDynamicVisibilityState(isSelectedEntity && IsAlive);
     }

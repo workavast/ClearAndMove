@@ -661,6 +661,8 @@ MonoBehaviour:
   staticFieldOfView: {fileID: 5828404947097383118}
   dynamicFieldOfView: {fileID: 2616887869243178950}
   defaultDynamicConfig: {fileID: 11400000, guid: 0a75fe91629ad4241a9f684afb54a13e, type: 2}
+  scopeDynamicConfig: {fileID: 11400000, guid: 46fd750b5be5a4c4f88d0a067f5b327a, type: 2}
+  scopeTime: 0.25
   editorView: {fileID: 1358140770076538396}
 --- !u!1 &4501977235263500298
 GameObject:
