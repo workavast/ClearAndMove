@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace App.NetworkRunning
+namespace App.NetworkRunning.Error
 {
     public class NetworkErrorInstaller : MonoInstaller
     {

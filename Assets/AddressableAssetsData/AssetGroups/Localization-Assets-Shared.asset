@@ -35,6 +35,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89e687e61e84e3f488477b610955052f
+    m_Address: Assets/App/Settings/Localization/Tables/NetworkErrorScreen Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8b663a99a0a1261419d0d806b905333c
     m_Address: Assets/App/Settings/Localization/Tables/Lobby Shared Data.asset
     m_ReadOnly: 1

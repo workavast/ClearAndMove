@@ -1,7 +1,9 @@
 using App.CursorBehaviour;
+using Fusion;
+using Fusion.Sockets;
 using UnityEngine;
 
-namespace App.NetworkRunning
+namespace App.NetworkRunning.Error
 {
     public class NetworkErrorScreenProvider
     {
@@ -14,7 +16,13 @@ namespace App.NetworkRunning
             _errorScreen.Initialize(cursorVisibilityBehaviour);
         }
 
-        public void ShowError(string error) 
-            => _errorScreen.ShowError(error);
+        public void Show(ShutdownReason error) 
+            => _errorScreen.Show(error);
+
+        public void Show(NetDisconnectReason error)
+            => _errorScreen.Show(error);
+        
+        public void Show(NetConnectFailedReason error)
+            => _errorScreen.Show(error);
     }
 }

@@ -5,7 +5,7 @@ using Fusion.Sockets;
 using UnityEngine;
 using Zenject;
 
-namespace App.NetworkRunning
+namespace App.NetworkRunning.Error
 {
     public class NetworkErrorsProvider : MonoBehaviour, INetworkRunnerCallbacks
     {
@@ -18,19 +18,19 @@ namespace App.NetworkRunning
                 case ShutdownReason.Ok:
                     break;
                 default:
-                    _errorScreenProvider.ShowError($"Shutdown Reason: {shutdownReason.ToString()}");
+                    _errorScreenProvider.Show(shutdownReason);
                     break;
             }
         }
 
         public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
         {
-            _errorScreenProvider.ShowError($"Net Disconnect Reason: {reason.ToString()}");
+            _errorScreenProvider.Show(reason);
         }
 
         public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason)
         {
-            _errorScreenProvider.ShowError($"Net Connect Failed Reason: {reason.ToString()}");
+            _errorScreenProvider.Show(reason);
         }
 
         #region unused
