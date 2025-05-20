@@ -72,6 +72,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f18f04ad34288684da3e2ef0a85d8f01
+    m_Address: NetworkErrorScreen_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f291a5f6d70307843bb7405a245221b3
     m_Address: ConnectionScreen_ru
     m_ReadOnly: 1
