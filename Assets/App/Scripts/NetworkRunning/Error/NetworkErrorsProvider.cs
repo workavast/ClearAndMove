@@ -25,7 +25,15 @@ namespace App.NetworkRunning.Error
 
         public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
         {
-            _errorScreenProvider.Show(reason);
+            switch (reason)
+            {
+                case NetDisconnectReason.Requested:
+                    break;
+                default:
+                    _errorScreenProvider.Show(reason);
+                    break;
+            }
+            
         }
 
         public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason)
