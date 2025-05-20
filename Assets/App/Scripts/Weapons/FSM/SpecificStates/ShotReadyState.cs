@@ -25,11 +25,13 @@ namespace App.Weapons.FSM
             NetWeaponModel.NetFireRatePause = TickTimer.CreateFromSeconds(Runner, fireRatePause);
             NetWeaponModel.NetMagazine--;
             
-            var isHit = NetWeaponModel.Shooter.Shoot(NetWeaponModel.HasStateAuthority, out var data, NetWeaponModel.HitLayers);
+            var isHit = NetWeaponModel.Shooter.Shoot(NetWeaponModel.HasStateAuthority, out var data, NetWeaponModel.CurrentSpreadRatio,
+                NetWeaponModel.HitLayers);
             if (isHit)
             {
                 NetWeaponModel.NetProjectileData.Set(NetWeaponModel.NetFireCount % NetWeaponModel.NetProjectileData.Length, data);
                 NetWeaponModel.NetFireCount++;
+                NetWeaponModel.CurrentSpreadRatio += WeaponConfig.SpreadRatePerShot;
             }
 
             return true;

@@ -9,13 +9,15 @@ namespace App.Entities.Player
     {
         public bool HasEntity => _netPlayerEntity != null && _netPlayerEntity.IsSpawned;
         public Vector3 Position => _netPlayerEntity.transform.position;
-        
+
+        public bool IsAlive => _netPlayerEntity.IsAlive;
         public float MaxHealthPoints => _netPlayerEntity.MaxHealthPoints;
         public float CurrentHealthPoints => _netPlayerEntity.NetHealthPoints;
 
         public int MaxMagazineAmmo => _netPlayerEntity.MaxMagazineAmmo;
         public int CurrentMagazineAmmo => _netPlayerEntity.CurrentMagazineAmmo;
         public int FullAmmoSize => _netPlayerEntity.FullAmmoSize;
+        public float SpreadAngle => _netPlayerEntity.SpreadAngle;
 
         private readonly PlayersEntitiesRepository _playersEntitiesRepository;
         private readonly NetworkRunnerProvider _networkRunnerProvider;

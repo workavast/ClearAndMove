@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Scar Enemy Config
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 211
+  <Name>k__BackingField: 
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 2.5
   <FireRate>k__BackingField: 600
-  <SpreadAngle>k__BackingField: 5
   <MagazineSize>k__BackingField: 15
   <NetFullAmmoSize>k__BackingField: 2147483647
   <ReloadTime>k__BackingField: 3
+  <MinSpreadAngle>k__BackingField: 5
+  <MaxSpreadAngle>k__BackingField: 7.5
+  <SpreadRatePerShot>k__BackingField: 0.1
+  <SpreadRateDecreasePerSecond>k__BackingField: 0.1

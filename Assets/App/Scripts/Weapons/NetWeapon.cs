@@ -30,6 +30,7 @@ namespace App.Weapons
         public int MaxMagazineAmmo => WeaponConfig.MagazineSize;
         public int CurrentMagazineAmmo => netWeaponModel.NetMagazine;
         public int FullAmmoSize => netWeaponModel.NetFullAmmoSize;
+        public float SpreadAngle => WeaponConfig.MinSpreadAngle + (WeaponConfig.MaxSpreadAngle - WeaponConfig.MinSpreadAngle) * netWeaponModel.CurrentSpreadRatio;
         
         private WeaponConfig WeaponConfig => netWeaponModel.WeaponConfig;
         private Shooter Shooter => netWeaponModel.Shooter;

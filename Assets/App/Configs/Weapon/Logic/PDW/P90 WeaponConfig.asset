@@ -17,7 +17,10 @@ MonoBehaviour:
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 15
   <FireRate>k__BackingField: 1000
-  <SpreadAngle>k__BackingField: 7
   <MagazineSize>k__BackingField: 50
   <NetFullAmmoSize>k__BackingField: 550
   <ReloadTime>k__BackingField: 4
+  <MinSpreadAngle>k__BackingField: 6
+  <MaxSpreadAngle>k__BackingField: 10.5
+  <SpreadRatePerShot>k__BackingField: 0.4
+  <SpreadRateDecreasePerSecond>k__BackingField: 3

@@ -49,7 +49,7 @@ namespace App.Lobby.Weapon
             damageView.value = weaponConfig.DamagePerBullet;
             fireRateView.value = weaponConfig.FireRate;
             reloadTimeView.value = weaponConfig.ReloadTime;
-            spreadAngleView.value = weaponConfig.SpreadAngle;
+            spreadAngleView.value = weaponConfig.MinSpreadAngle;
             magazineSizeView.value = weaponConfig.MagazineSize;
         }
     }

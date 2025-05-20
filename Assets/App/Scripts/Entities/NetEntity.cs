@@ -35,6 +35,7 @@ namespace App.Entities
         public int MaxMagazineAmmo => NetWeapon.MaxMagazineAmmo;
         public int CurrentMagazineAmmo => NetWeapon.CurrentMagazineAmmo;
         public int FullAmmoSize => NetWeapon.FullAmmoSize;
+        public float SpreadAngle => NetWeapon.SpreadAngle;
 
         protected float Gravity => config.Gravity;
         protected float WalkSpeed => config.WalkSpeed - _armor.WalkSpeedDecrease;
