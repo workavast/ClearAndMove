@@ -19,7 +19,7 @@ namespace App.Bootstraps
 
             if (_runnerProvider.TryGetNetworkRunner(out var runner))
             {
-                if (runner.IsServer) 
+                if (runner.IsServer || runner.IsShutdown) 
                     _sceneLoader.LoadTargetScene();
             }
             else
