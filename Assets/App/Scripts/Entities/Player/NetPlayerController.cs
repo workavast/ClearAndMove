@@ -7,7 +7,7 @@ namespace App.Entities.Player
 {
     public class NetPlayerController : NetworkBehaviour
     {
-        [SerializeField] private NetEntity netEntity;
+        [SerializeField] private NetPlayerEntity netEntity;
 
         private IReadOnlyMissionModifiers _missionModifiers;
         
@@ -28,10 +28,15 @@ namespace App.Entities.Player
 
                 var isSprint = input.Buttons.IsSet(PlayerButtons.Sprint);
                 netEntity.CalculateVelocity(input.HorizontalInput, input.VerticalInput, isSprint);
-                
-                if ((HasStateAuthority || HasInputAuthority) && input.Buttons.IsSet(PlayerButtons.Fire))
+
+                var isFire = input.Buttons.IsSet(PlayerButtons.Fire);
+                if ((HasStateAuthority || HasInputAuthority) && isFire)
                     netEntity.TryShoot();
 
+                var isScope = input.Buttons.IsSet(PlayerButtons.Scope);
+                if (HasStateAuthority || HasInputAuthority)
+                    netEntity.SetScopeState(isScope);
+                
                 var reloadRequest = input.Buttons.IsSet(PlayerButtons.Reload) || (netEntity.RequiredReload && _missionModifiers.AutoReloading);
                 if ((HasStateAuthority || HasInputAuthority) && reloadRequest) 
                     netEntity.TryReload();

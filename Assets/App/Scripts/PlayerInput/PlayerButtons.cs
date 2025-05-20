@@ -4,6 +4,7 @@ namespace App.PlayerInput
     {
         Fire = 0,
         Reload = 5,
-        Sprint = 10
+        Sprint = 10,
+        Scope = 15
     }
 }
