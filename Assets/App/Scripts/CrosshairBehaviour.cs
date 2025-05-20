@@ -29,8 +29,6 @@ namespace App
             
             var spreadAngle = _localPlayerProvider.SpreadAngle;
             var distance = Vector3.Distance(_localPlayerProvider.Position, lookPoint);
-            Debug.Log(spreadAngle);
-            Debug.Log(distance);
             crosshair.sizeDelta = new Vector2(spreadAngle * distance * scale, spreadAngle * distance * scale);
         }
     }
