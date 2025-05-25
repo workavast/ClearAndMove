@@ -18,6 +18,7 @@ namespace App.StairsZone
         [SerializeField] private StairsZoneConfig config;
         [SerializeField] private StairsZoneView stairsZoneView;
         [SerializeField] private Transform movePoint;
+        [SerializeField] private Collider zoneCollider;
 
         [Networked] public TickTimer ExtractionTimer { get; set; }
 
@@ -38,10 +39,10 @@ namespace App.StairsZone
 
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
-            _unActive = new UnActive(this, config, _playersEntitiesRepository, stairsZoneView);
-            _idle = new Idle(this, config, _playersEntitiesRepository, stairsZoneView);
-            _countdown = new Countdown(this, config, _playersEntitiesRepository, stairsZoneView);
-            _movePlayers = new MovePlayers(this, config, _playersEntitiesRepository, stairsZoneView);
+            _unActive = new UnActive(this, config, _playersEntitiesRepository, stairsZoneView, zoneCollider);
+            _idle = new Idle(this, config, _playersEntitiesRepository, stairsZoneView, zoneCollider);
+            _countdown = new Countdown(this, config, _playersEntitiesRepository, stairsZoneView, zoneCollider);
+            _movePlayers = new MovePlayers(this, config, _playersEntitiesRepository, stairsZoneView, zoneCollider);
 
             _fsm = new StairsZoneStateMachine("Stairs Zone", _unActive, _idle, _countdown, _movePlayers);
 
@@ -50,7 +51,6 @@ namespace App.StairsZone
 
         public override void Spawned()
         {
-            stairsZoneView.SetSize(config.ExtractionRadius);
             IsSpawned = true;
         }
 
@@ -95,9 +95,6 @@ namespace App.StairsZone
 
         private void OnDrawGizmos()
         {
-            if (config != null)
-                DebugX.Draw().WireSphere(transform.position, config.ExtractionRadius);
-
             if (movePoint != null)
             {
                 DebugX.Draw().Line(transform.position, movePoint.position);
