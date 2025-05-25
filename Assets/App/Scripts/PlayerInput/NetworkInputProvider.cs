@@ -33,6 +33,7 @@ namespace App.PlayerInput
             };
             
             playerInputData.Buttons.Set(PlayerButtons.Fire, _inputProvider.Fire && !_inputProvider.MouseOverUI());
+            playerInputData.Buttons.Set(PlayerButtons.Interact, _inputProvider.Interact);
             playerInputData.Buttons.Set(PlayerButtons.Reload, _inputProvider.Reload && !_inputProvider.MouseOverUI());
             playerInputData.Buttons.Set(PlayerButtons.Sprint, _inputProvider.Sprint);
             playerInputData.Buttons.Set(PlayerButtons.Scope, _inputProvider.Aim);

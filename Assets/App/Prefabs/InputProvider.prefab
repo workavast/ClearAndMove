@@ -220,6 +220,23 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9c303967-11c4-4618-9900-5fc1f275f5c7
     m_ActionName: 'GameplayMap/PrevPlayer[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4637433144532937981}
+        m_TargetAssemblyTypeName: App.PlayerInput.InputProviding.RawInputProvider,
+          Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 439bf8fd-51e3-46c8-a3b6-d1bd836471e2
+    m_ActionName: 'GameplayMap/Interact[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GameplayMap

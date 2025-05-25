@@ -55,6 +55,54 @@ MonoBehaviour:
   debugIsAlive: 1
   debugVelocityX: 0
   debugVelocityY: 0
+--- !u!1 &345615179598254383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4518671842528219112}
+  - component: {fileID: 6060951973190698672}
+  m_Layer: 0
+  m_Name: InteractorZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4518671842528219112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345615179598254383}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2284970520156573983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6060951973190698672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345615179598254383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b57ff1cd4fd4b309aa0b1e1c447ed34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1034940875409483947
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +184,7 @@ Transform:
   - {fileID: 8074423664287962504}
   - {fileID: 4281209818051930418}
   - {fileID: 2514349089827380685}
+  - {fileID: 4518671842528219112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8871018729791473402
@@ -169,10 +218,12 @@ MonoBehaviour:
   hitbox: {fileID: 8539265002466645279}
   characterController: {fileID: -658295760547561401}
   netCharacterController: {fileID: 8581854729729584098}
+  netInteractorZone: {fileID: 6060951973190698672}
   <DissolvesUpdater>k__BackingField: {fileID: 5068335513092852602}
   _NetVelocity: {x: 0, y: 0, z: 0}
   _NetArmorLevel: 0
   fieldOfView: {fileID: 7124185874679050175}
+  _IsScope: 0
 --- !u!114 &-5481621240499054862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +292,7 @@ MonoBehaviour:
   _NetMagazine: 0
   _NetFullAmmoSize: 0
   _NetFireCount: 0
+  _CurrentSpreadRatio: 0
   <WeaponConfig>k__BackingField: {fileID: 0}
 --- !u!114 &3872098561446610495
 MonoBehaviour:
@@ -313,6 +365,7 @@ MonoBehaviour:
   - {fileID: 7942052991263362750}
   - {fileID: 8581854729729584098}
   - {fileID: 8141534847528856466}
+  - {fileID: 6060951973190698672}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &8581854729729584098
 MonoBehaviour:

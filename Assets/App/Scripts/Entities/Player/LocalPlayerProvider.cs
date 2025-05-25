@@ -13,12 +13,14 @@ namespace App.Entities.Player
         public bool IsAlive => _netPlayerEntity.IsAlive;
         public float MaxHealthPoints => _netPlayerEntity.MaxHealthPoints;
         public float CurrentHealthPoints => _netPlayerEntity.NetHealthPoints;
-
+        
         public int MaxMagazineAmmo => _netPlayerEntity.MaxMagazineAmmo;
         public int CurrentMagazineAmmo => _netPlayerEntity.CurrentMagazineAmmo;
         public int FullAmmoSize => _netPlayerEntity.FullAmmoSize;
         public float SpreadAngle => _netPlayerEntity.SpreadAngle;
 
+        public NetPlayerEntity NetPlayerEntity => _netPlayerEntity;
+        
         private readonly PlayersEntitiesRepository _playersEntitiesRepository;
         private readonly NetworkRunnerProvider _networkRunnerProvider;
 

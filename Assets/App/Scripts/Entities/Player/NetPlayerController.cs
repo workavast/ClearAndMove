@@ -1,4 +1,5 @@
 using App.App;
+using App.Doors;
 using App.PlayerInput;
 using Fusion;
 using UnityEngine;
@@ -36,7 +37,13 @@ namespace App.Entities.Player
                 var isScope = input.Buttons.IsSet(PlayerButtons.Scope);
                 if (HasStateAuthority || HasInputAuthority)
                     netEntity.SetScopeState(isScope);
-                
+
+                var canInteract = netEntity.IsAlive;
+                if (canInteract && input.Buttons.IsSet(PlayerButtons.Interact))
+                    netEntity.TryInteract(true);
+                else
+                    netEntity.TryInteract(false);
+
                 var reloadRequest = input.Buttons.IsSet(PlayerButtons.Reload) || (netEntity.RequiredReload && _missionModifiers.AutoReloading);
                 if ((HasStateAuthority || HasInputAuthority) && reloadRequest) 
                     netEntity.TryReload();

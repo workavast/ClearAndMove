@@ -17,7 +17,7 @@ namespace App.Entities.Player
         
         public PlayerRef PlayerRef => Object.InputAuthority;
         public override EntityType EntityType => EntityType.Player;
-        
+
         protected override IEventBus EventBus { get; set; }
         protected override ArmorsConfig ArmorsConfig { get; set; }
 
