@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: WarFog
-    Event: 500
+    Event: 450
     filterSettings:
       RenderQueueType: 1
       LayerMask:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: WarFogHidden
-    Event: 500
+    Event: 450
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -161,14 +161,14 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 49279
+    m_Bits: 49407
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 1663
+    m_Bits: 1791
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
-    stencilCompareFunction: 5
+    stencilCompareFunction: 3
     passOperation: 0
     failOperation: 0
     zFailOperation: 0
