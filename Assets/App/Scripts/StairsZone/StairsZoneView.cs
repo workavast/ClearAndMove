@@ -18,10 +18,5 @@ namespace App.StairsZone
 
         public void ToggleCountdownVisibility(bool isVisible) 
             => countdownView.ToggleVisibility(isVisible);
-
-        public void SetSize(float radius)
-        {
-            _rectTransform.sizeDelta = new Vector2(radius * 2, radius * 2);
-        }
     }
 }

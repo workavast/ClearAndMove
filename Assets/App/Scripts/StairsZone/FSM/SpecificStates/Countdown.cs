@@ -1,13 +1,14 @@
 using App.Entities.Player;
 using Fusion;
+using UnityEngine;
 
 namespace App.StairsZone.FSM.SpecificStates
 {
     public class Countdown : StairsZoneState
     {
-        public Countdown(NetStairsZone netStairsZone, StairsZoneConfig config,
-            PlayersEntitiesRepository playersEntitiesRepository, StairsZoneView stairsZoneView) 
-            : base(netStairsZone, config, playersEntitiesRepository, stairsZoneView) { }
+        public Countdown(NetStairsZone netStairsZone, StairsZoneConfig config, 
+            PlayersEntitiesRepository playersEntitiesRepository, StairsZoneView stairsZoneView, Collider zoneCollider) 
+            : base(netStairsZone, config, playersEntitiesRepository, stairsZoneView, zoneCollider) { }
 
         protected override void OnEnterState() 
             => NetStairsZone.ExtractionTimer = TickTimer.CreateFromSeconds(Runner, ExtractionTime);
