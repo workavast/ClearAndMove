@@ -84,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885543622889856511, guid: ff81f69f25e8db0418c3eba33ba7b395, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4999998
+      value: 2.3999999
       objectReference: {fileID: 0}
     - target: {fileID: 2885543622889856511, guid: ff81f69f25e8db0418c3eba33ba7b395, type: 3}
       propertyPath: m_LocalPosition.z
@@ -118,6 +118,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3846532439063571294, guid: ff81f69f25e8db0418c3eba33ba7b395, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e9675e16de9c6341993091a96845618, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -212,10 +216,6 @@ PrefabInstance:
       propertyPath: 'NetworkedBehaviours.Array.data[3]'
       value: 
       objectReference: {fileID: 8866968992648968946}
-    - target: {fileID: 6139458349791405922, guid: 13e7d388169b5cc4ba597c156b046eb8, type: 3}
-      propertyPath: 'NetworkedBehaviours.Array.data[4]'
-      value: 
-      objectReference: {fileID: 6655625901935975823}
     - target: {fileID: 6139458349791405922, guid: 13e7d388169b5cc4ba597c156b046eb8, type: 3}
       propertyPath: 'NetworkedBehaviours.Array.data[5]'
       value: 
@@ -391,17 +391,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6655625901935975823 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3343334856439994603, guid: 4926d1c720aabe444bccdae40b23bab6, type: 3}
-  m_PrefabInstance: {fileID: 8230435144410973540}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7376528844124078190 stripped
