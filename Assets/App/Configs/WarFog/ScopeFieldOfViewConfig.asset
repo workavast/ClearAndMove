@@ -16,5 +16,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   <RaysPerAngle>k__BackingField: 4
-  <FOV>k__BackingField: 40
+  <FOV>k__BackingField: 35
   <ViewDistance>k__BackingField: 30
