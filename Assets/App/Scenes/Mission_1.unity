@@ -2831,6 +2831,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4007004430113634, guid: 312a42f91d97ca54eb449bcc02002ed3, type: 3}
   m_PrefabInstance: {fileID: 161871733}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &161914001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6003754738136386500, guid: f6be0c5648c6c3746ad017a4be697de8, type: 3}
+  m_PrefabInstance: {fileID: 1979384479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &168842309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13036,6 +13047,7 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects:
   - {fileID: 1979384481}
+  - {fileID: 161914001}
   NetworkedBehaviours: []
   ForceRemoteRenderTimeframe: 0
 --- !u!4 &751463728
@@ -35059,6 +35071,10 @@ PrefabInstance:
       propertyPath: SortKey
       value: 559501516
       objectReference: {fileID: 0}
+    - target: {fileID: 2150577027545814564, guid: f6be0c5648c6c3746ad017a4be697de8, type: 3}
+      propertyPath: SortKey
+      value: 393404327
+      objectReference: {fileID: 0}
     - target: {fileID: 3357988282533759615, guid: f6be0c5648c6c3746ad017a4be697de8, type: 3}
       propertyPath: m_Name
       value: Level M_1 0_0
@@ -35071,13 +35087,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1219792595}
+    - target: {fileID: 6003754738136386500, guid: f6be0c5648c6c3746ad017a4be697de8, type: 3}
+      propertyPath: SortKey
+      value: 2889100579
+      objectReference: {fileID: 0}
     - target: {fileID: 6634917366514263100, guid: f6be0c5648c6c3746ad017a4be697de8, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1219792595}
     - target: {fileID: 6634917366514263100, guid: f6be0c5648c6c3746ad017a4be697de8, type: 3}
       propertyPath: m_VersionIndex
-      value: 1308
+      value: 1389
       objectReference: {fileID: 0}
     - target: {fileID: 8308792534777273196, guid: f6be0c5648c6c3746ad017a4be697de8, type: 3}
       propertyPath: m_LocalPosition.x

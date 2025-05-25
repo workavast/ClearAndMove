@@ -1,7 +1,9 @@
 using System;
 using App.Armor;
 using App.Dissolving;
+using App.Doors;
 using App.Health;
+using App.Interaction;
 using App.Weapons;
 using Avastrad.EventBusFramework;
 using Avastrad.Extensions;
@@ -10,7 +12,7 @@ using UnityEngine;
 
 namespace App.Entities
 {
-    public abstract class NetEntity : NetworkBehaviour, IEntity
+    public abstract class NetEntity : NetworkBehaviour, IEntity, IInteractor
     {
         [SerializeField] private EntityConfig config;
         [SerializeField] private SolderView solderView;
@@ -18,6 +20,7 @@ namespace App.Entities
         [SerializeField] private Hitbox hitbox;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private NetworkCharacterController netCharacterController;
+        [SerializeField] private NetInteractorZone netInteractorZone;
         [field: SerializeField] public DissolvesUpdater DissolvesUpdater { get; private set; }
 
         [Networked] [field: ReadOnly, SerializeField] public Vector3 NetVelocity { get; private set; }
@@ -29,6 +32,7 @@ namespace App.Entities
         public abstract EntityType EntityType { get; }
         public float MaxHealthPoints => health.MaxHealthPoints;
         public float NetHealthPoints => health.NetHealthPoints;
+        public Vector3 Position => transform.position;
 
         public bool RequiredReload => NetWeapon.RequiredReload;
         public bool CanReload => NetWeapon.CanReload;
@@ -74,6 +78,8 @@ namespace App.Entities
             hitbox.HitboxActive = 
                 characterController.enabled = 
                 netCharacterController.enabled = true;
+            
+            netInteractorZone.SetVisibility(HasInputAuthority);
         }
 
         public override void Despawned(NetworkRunner runner, bool hasState)
@@ -102,6 +108,9 @@ namespace App.Entities
             NetWeapon = GetComponent<NetWeapon>();
             NetWeapon.SetWeapon(weaponId);
         }
+
+        public void TryInteract(bool isInteract) 
+            => netInteractorZone.TtyInteract(this, isInteract);
 
         public void SetArmor(int armorLevel) 
             => NetArmorLevel = armorLevel;

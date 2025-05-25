@@ -19,6 +19,7 @@ namespace App.PlayerInput.InputProviding
         public bool PrevPlayer { get; private set; }
 
         public bool IsGamepad { get; private set; }
+        public bool Interact { get; private set; }
 
         private void LateUpdate()
         {
@@ -76,6 +77,16 @@ namespace App.PlayerInput.InputProviding
                 InputActionPhase.Started => true,
                 InputActionPhase.Canceled => false,
                 _ => Aim
+            };
+        }
+        
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            Interact = context.phase switch
+            {
+                InputActionPhase.Started => true,
+                InputActionPhase.Canceled => false,
+                _ => Interact
             };
         }
         
