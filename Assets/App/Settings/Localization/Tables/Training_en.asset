@@ -38,6 +38,22 @@ MonoBehaviour:
     m_Localized: Esc To Open Menu
     m_Metadata:
       m_Items: []
+  - m_Id: 8764439426752512
+    m_Localized: Hold E To Interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8764546905792512
+    m_Localized: Stay In Zone To Activate It
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8766175860219904
+    m_Localized: Enemies Are Not Visible Out Of The Field Of View
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8770561818746880
+    m_Localized: Press R To Reload
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

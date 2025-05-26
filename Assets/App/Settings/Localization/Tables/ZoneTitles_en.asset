@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: Extraction Zone
     m_Metadata:
       m_Items: []
+  - m_Id: 84381107478528
+    m_Localized: Complete The Training
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
