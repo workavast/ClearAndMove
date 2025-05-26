@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84393e6862c54a6aa1c573d35327e2f3, type: 3}
   m_Name: ExtractionZoneConfig
   m_EditorClassIdentifier: 
-  <ExtractionRadius>k__BackingField: 3
-  <ExtractionTime>k__BackingField: 30
+  <ExtractionTime>k__BackingField: 20
