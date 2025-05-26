@@ -5,7 +5,11 @@ namespace App.Settings
 {
     public static class SettingsSaver
     {
+#if UNITY_EDITOR
+        private static readonly JsonSaveAndLoader JsonSaveAndLoader = new("/Editor/Settings.json");
+#else
         private static readonly JsonSaveAndLoader JsonSaveAndLoader = new("/Settings.json");
+#endif
 
         public static bool Exist() 
             => JsonSaveAndLoader.Exist();

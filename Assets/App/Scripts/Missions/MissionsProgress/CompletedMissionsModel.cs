@@ -27,12 +27,12 @@ namespace App.Missions.MissionsProgress
             if (index <= 0)
                 return true;
 
+            if (completedMissions.Contains(index))
+                return true;
+            
             if (completedMissions.Contains(index - 1))
                 return true;
             
-            if (completedMissions.Contains(index))
-                return true;
-
             return false;
         }
 
