@@ -14,6 +14,7 @@ namespace App.ExtractionZone
 {
     public class NetExtractionZone : NetworkBehaviour, IStateMachineOwner, ITimer
     {
+        [SerializeField] private Collider zoneCollider;
         [SerializeField] private ExtractionZoneConfig config;
         [SerializeField] private ExtractionZoneView extractionZoneView;
 
@@ -35,10 +36,10 @@ namespace App.ExtractionZone
         
         public void CollectStateMachines(List<IStateMachine> stateMachines)
         {
-            _idle = new Idle(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView);
-            _countdown = new Countdown(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView);
-            _extract = new Extract(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView);
-            _isOver = new IsOver(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView);
+            _idle = new Idle(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView, zoneCollider);
+            _countdown = new Countdown(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView, zoneCollider);
+            _extract = new Extract(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView, zoneCollider);
+            _isOver = new IsOver(this, config, _netMissionState, _playersEntitiesRepository, extractionZoneView, zoneCollider);
 
             _fsm = new ExtractionZoneStateMachine("ExtractionZone", _idle, _countdown, _extract, _isOver);
             
@@ -47,7 +48,6 @@ namespace App.ExtractionZone
 
         public override void Spawned()
         {
-            extractionZoneView.SetSize(config.ExtractionRadius);
             IsSpawned = true;
         }
 
@@ -70,14 +70,6 @@ namespace App.ExtractionZone
             _lastTimeSPan = new TimeSpan(0,0, minutes, seconds);
             
             return _lastTimeSPan;
-        }
-        
-        private void OnDrawGizmos()
-        {
-            if (config == null)
-                return;
-
-            Gizmos.DrawWireSphere(transform.position, config.ExtractionRadius);
         }
     }
 }

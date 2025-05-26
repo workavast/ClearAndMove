@@ -1,5 +1,6 @@
 using App.Entities.Player;
 using App.Missions.MissionState;
+using Avastrad.Extensions;
 using Fusion;
 using Fusion.Addons.FSM;
 using UnityEngine;
@@ -13,19 +14,22 @@ namespace App.ExtractionZone.FSM
         protected readonly NetMissionState NetMissionState;
         protected readonly PlayersEntitiesRepository PlayersEntitiesRepository;
         protected readonly ExtractionZoneView ExtractionZoneView;
+
+        private readonly Collider _zoneCollider;
         
         protected NetworkRunner Runner => NetExtractionZone.Runner;
         protected Transform transform => NetExtractionZone.transform;
-        protected float ExtractionRadius => Config.ExtractionRadius;
         protected float ExtractionTime => Config.ExtractionTime;
         
-        protected ExtractionZoneState(NetExtractionZone netExtractionZone, ExtractionZoneConfig config, 
-            NetMissionState netMissionState, PlayersEntitiesRepository playersEntitiesRepository, ExtractionZoneView extractionZoneView)
+        protected ExtractionZoneState(NetExtractionZone netExtractionZone, ExtractionZoneConfig config,
+            NetMissionState netMissionState, PlayersEntitiesRepository playersEntitiesRepository,
+            ExtractionZoneView extractionZoneView, Collider zoneCollider)
         {
             NetExtractionZone = netExtractionZone;
             NetMissionState = netMissionState;
             PlayersEntitiesRepository = playersEntitiesRepository;
             ExtractionZoneView = extractionZoneView;
+            _zoneCollider = zoneCollider;
             Config = config;
         }
         
@@ -36,9 +40,9 @@ namespace App.ExtractionZone.FSM
 
             foreach (var playerEntity in PlayersEntitiesRepository.PlayerEntities)
             {
-                var distance = Vector3.Distance(playerEntity.transform.position, transform.position);
-                if (distance > ExtractionRadius) 
-                    return false;
+                if (playerEntity.IsAlive)
+                    if (!_zoneCollider.Contains(playerEntity.Position))
+                        return false;
             }
 
             return true;

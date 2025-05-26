@@ -17,6 +17,12 @@ MonoBehaviour:
     (ru)"
   m_GUID: 6cef16eaa73d24b4e8cc5b161c9107be
   m_SerializeEntries:
+  - m_GUID: 3547535e734bb8a4e8d5df94ba17bb23
+    m_Address: ZoneTitles_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 39d69a9209f10104888bef24c35001fb
     m_Address: PlayersObserv_ru
     m_ReadOnly: 1

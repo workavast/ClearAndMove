@@ -46,6 +46,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2bd47c52625c334683e3312810f06f5
+    m_Address: Assets/App/Settings/Localization/Tables/ZoneTitles Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb9efc3323d17aa45990b9d818c316d6
     m_Address: Assets/App/Settings/Localization/Tables/EndGameScreen Shared Data.asset
     m_ReadOnly: 1
