@@ -35,6 +35,22 @@ MonoBehaviour:
     m_Key: OpenMenu
     m_Metadata:
       m_Items: []
+  - m_Id: 8764439426752512
+    m_Key: Interaction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8764546905792512
+    m_Key: Zones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8766175860219904
+    m_Key: WarFog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8770561818746880
+    m_Key: Reloading
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

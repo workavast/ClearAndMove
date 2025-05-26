@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: StairsZone
     m_Metadata:
       m_Items: []
+  - m_Id: 84381107478528
+    m_Key: CompleteTrainZone
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
