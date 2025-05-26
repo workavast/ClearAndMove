@@ -10,6 +10,7 @@ namespace App.UI.SessionCreation
     public class SinglePlayerSessionButton : MonoBehaviour
     {
         [SerializeField] private SceneType scene;
+        [SerializeField] private bool skipLoadingScene;
         
         [Inject] private SessionCreator _sessionCreator;
         
@@ -19,6 +20,6 @@ namespace App.UI.SessionCreation
         }
 
         private void StartSinglePlayerSession() 
-            => _sessionCreator.CreateSinglePlayer(scene.GetIndex(), false);
+            => _sessionCreator.CreateSinglePlayer(scene.GetIndex(), skipLoadingScene);
     }
 }

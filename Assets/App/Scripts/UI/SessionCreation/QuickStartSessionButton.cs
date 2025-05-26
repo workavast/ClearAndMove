@@ -10,7 +10,7 @@ namespace App.UI.SessionCreation
     public class QuickStartSessionButton : MonoBehaviour
     {
         [Inject] private SessionCreator _sessionCreator;
-        
+
         private Button _button;
         
         private void Awake()

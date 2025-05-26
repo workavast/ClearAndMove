@@ -95,7 +95,7 @@ namespace App.Session.Creation
                     if (sceneIndex == SceneManager.GetActiveScene().buildIndex)
                         Debug.LogWarning("You try load scene, that already loaded");
                     
-                    _sceneLoader.LoadScene(sceneIndex, true, forceLoading);
+                    _sceneLoader.LoadScene(sceneIndex, false, forceLoading);
                 }
                 successCallback?.Invoke();
             }

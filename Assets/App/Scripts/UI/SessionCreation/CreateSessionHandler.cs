@@ -12,13 +12,14 @@ namespace App.UI.SessionCreation
     {
         [SerializeField] private Button button;
         [SerializeField] private TMP_InputField serverNameInput;
-        
+        [SerializeField] private bool skipLoadingScene;
+
         [Inject] private SessionCreator _sessionCreator;
         
         private void Awake() 
             => button.onClick.AddListener(CreateSession);
 
         private void CreateSession() 
-            => _sessionCreator.CreateSession(serverNameInput.text, ScenesConfig.LobbySceneIndex, true);
+            => _sessionCreator.CreateSession(serverNameInput.text, ScenesConfig.LobbySceneIndex, skipLoadingScene);
     }
 }

@@ -832,6 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 8083085590303067737}
   serverNameInput: {fileID: 4877826719049255870}
+  skipLoadingScene: 1
 --- !u!114 &4420591642483267847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2510,7 +2511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142487831806292406, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7942820180443734574, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_Name
@@ -2641,7 +2642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142487831806292406, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7942820180443734574, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_Name
@@ -2762,7 +2763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142487831806292406, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7942820180443734574, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_Name
@@ -2883,7 +2884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142487831806292406, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7942820180443734574, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_Name
@@ -2928,6 +2929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 6
+  skipLoadingScene: 0
 --- !u!1001 &3875015533544234229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3014,7 +3016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142487831806292406, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7942820180443734574, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_Name
@@ -3246,7 +3248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142487831806292406, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7942820180443734574, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_Name
@@ -3376,7 +3378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142487831806292406, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_fontSize
-      value: 52
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7942820180443734574, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}
       propertyPath: m_Name
@@ -3416,6 +3418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 4
+  skipLoadingScene: 1
 --- !u!224 &5957373643350000445 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3825028119770394636, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}

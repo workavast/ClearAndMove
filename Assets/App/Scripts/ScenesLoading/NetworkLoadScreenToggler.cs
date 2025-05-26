@@ -4,6 +4,7 @@ using Avastrad.ScenesLoading;
 using Fusion;
 using Fusion.Sockets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace App.ScenesLoading
@@ -16,8 +17,11 @@ namespace App.ScenesLoading
         {
             if (runner.IsServer)
                 return;
-    
-            _sceneLoader.ShowLoadScreen(true);
+
+            var currentScene = SceneManager.GetActiveScene().buildIndex;
+
+            if (currentScene != ScenesConfig.MainMenuSceneIndex) 
+                _sceneLoader.ShowLoadScreen(true);
         }
 
         #region Un used

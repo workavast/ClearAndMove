@@ -15,8 +15,12 @@ MonoBehaviour:
   tableReferences:
   - m_TableCollectionName: EndGameScreen
   - m_TableCollectionName: GameplayMenu
+  - m_TableCollectionName: Settings
   - m_TableCollectionName: PlayersObserv
+  - m_TableCollectionName: ZoneTitles
   tables:
   - {fileID: 11400000, guid: e521806025d014144af7b80c27f9a868, type: 2}
   - {fileID: 11400000, guid: dcde9b31a0ad78f4d8f708ab9daf4a48, type: 2}
+  - {fileID: 11400000, guid: a188667a5aca57d44baa50f221545fce, type: 2}
   - {fileID: 11400000, guid: 33655969a7984eb42bf53054ac5522c0, type: 2}
+  - {fileID: 11400000, guid: 7894a3a20bdf98148a39885980fa8e8f, type: 2}

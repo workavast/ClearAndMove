@@ -1,5 +1,4 @@
 using App.CursorBehaviour;
-using App.Missions;
 using App.Missions.MissionsProgress;
 using App.NetworkRunning.Shutdowners;
 using App.NetworkRunning.Shutdowners.LocalShutdowners;
@@ -31,10 +30,10 @@ namespace App.Bootstraps
             if (SettingsSaver.Exist()) 
                 _settingsModel.Load(SettingsSaver.Load());
             _settingsModel.Apply();
-            
+
             if (CompletedMissionsSaver.Exist()) 
                 _completedMissionsModel.Load(CompletedMissionsSaver.Load());
-            
+
             _sceneLoader.LoadScene(sceneIndexForLoadingAfterInitializations, true); 
         }
     }

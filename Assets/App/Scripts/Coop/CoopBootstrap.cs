@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using App.Localization;
 using App.NetworkRunning;
 using App.NetworkRunning.Shutdowners;
@@ -41,10 +42,12 @@ namespace App.Coop
         private void OnDestroy() 
             => stringTablesPreloader.Release();
 
-        private void OnAllPlayersReady()
+        private async void OnAllPlayersReady()
         {
             netPlayersReady.OnAllPlayersIsReady -= OnAllPlayersReady;
-            _sceneLoader.HideLoadScreen(true);
+        
+            await Task.Delay(250);
+            _sceneLoader.HideLoadScreen(false);
         }
     }
 }
