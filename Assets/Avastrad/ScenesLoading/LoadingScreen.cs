@@ -7,6 +7,7 @@ namespace Avastrad.ScenesLoading
     public class LoadingScreen : MonoBehaviour, ILoadingScreen
     {
         [SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] private CanvasGroup titleCanvasGroup;
         [SerializeField] private float hideFadeTime = 1;
         [SerializeField] private float showFadeTime = 1;
         
@@ -39,6 +40,7 @@ namespace Avastrad.ScenesLoading
         {
             StopAllCoroutines();
             canvasGroup.alpha = 1;
+            titleCanvasGroup.alpha = 1;
             gameObject.SetActive(true);
             IsVisible = true;
             onShowedCallback?.Invoke();
@@ -78,10 +80,12 @@ namespace Avastrad.ScenesLoading
             {
                 yield return new WaitForEndOfFrame();
                 canvasGroup.alpha = timer/showFadeTime;
+                titleCanvasGroup.alpha = timer / hideFadeTime * 1.2f;
                 timer += Time.unscaledDeltaTime;
             }
             
             canvasGroup.alpha = 1;
+            titleCanvasGroup.alpha = 1;
             onShowedCallback?.Invoke();
         }
 
@@ -93,11 +97,13 @@ namespace Avastrad.ScenesLoading
             {
                 yield return new WaitForEndOfFrame();
                 canvasGroup.alpha = 1 - timer/hideFadeTime;
+                titleCanvasGroup.alpha = 1 - timer / hideFadeTime * 1.2f;
                 timer += Time.unscaledDeltaTime;
             }
             
             IsVisible = false;
             canvasGroup.alpha = 0;
+            titleCanvasGroup.alpha = 0;
             gameObject.SetActive(false);
             OnHided?.Invoke();
         }
