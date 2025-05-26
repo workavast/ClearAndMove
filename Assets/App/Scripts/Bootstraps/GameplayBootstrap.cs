@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using App.Coop;
 using App.Localization;
 using App.NetworkRunning;
@@ -42,10 +43,12 @@ namespace App.Bootstraps
         private void OnDestroy() 
             => localizationPreloader.Release();
 
-        private void OnAllPlayersReady()
+        private async void OnAllPlayersReady()
         {
             netPlayersReady.OnAllPlayersIsReady -= OnAllPlayersReady;
-            _sceneLoader.HideLoadScreen(true);
+
+            await Task.Delay(250);
+            _sceneLoader.HideLoadScreen(false);
         }
     }
 }

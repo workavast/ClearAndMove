@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using App.Localization;
 using App.NetworkRunning.Shutdowners;
 using App.NetworkRunning.Shutdowners.LocalShutdowners;
@@ -18,7 +19,8 @@ namespace App.Bootstraps
         {
             _shutdownerProvider.SetLocalShutdownProvider(new DefaultShutdowner(_sceneLoader));
             await localizationPreloader.Preload();
-
+            
+            await Task.Delay(250);
             _sceneLoader.HideLoadScreen(false);
         }
 

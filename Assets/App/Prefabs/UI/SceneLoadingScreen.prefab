@@ -61,9 +61,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 5239305786213406406}
   backgroundHolder: {fileID: 6299689975189764914}
   backgrounds:
-  - {fileID: 21300000, guid: d39cf582cb986a445a616aa773f60476, type: 3}
-  - {fileID: 21300000, guid: a037f0e75475be24da139f958cc9db31, type: 3}
-  - {fileID: 21300000, guid: 040d9f35218436f4eb44e627d861b4b0, type: 3}
+  - {fileID: 21300000, guid: a2295c6ab95194f49bd759e754078f3f, type: 3}
 --- !u!114 &6299689975189764914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +82,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a037f0e75475be24da139f958cc9db31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2295c6ab95194f49bd759e754078f3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
