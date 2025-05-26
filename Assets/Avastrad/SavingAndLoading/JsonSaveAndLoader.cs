@@ -15,7 +15,7 @@ namespace Avastrad.SavingAndLoading
 
             if (savePath[0] != '/')
                 Debug.LogWarning("Save path started not from /");
-            
+
             _savePath = Application.persistentDataPath + savePath;
         }
         
