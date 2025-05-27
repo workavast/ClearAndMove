@@ -4,7 +4,7 @@ using Avastrad.Extensions;
 using UnityEngine;
 using Zenject;
 
-namespace App
+namespace App.CameraBehaviour
 {
     public class MouseFollower : MonoBehaviour
     {
