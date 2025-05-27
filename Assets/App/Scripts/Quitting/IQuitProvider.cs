@@ -7,5 +7,7 @@ namespace App.Quitting
         public bool IsQuitting { get; }
         
         public event Action OnQuit;
+
+        public void Quit();
     }
 }

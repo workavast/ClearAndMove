@@ -24,7 +24,7 @@ namespace App.ScenesLoading
                 _sceneLoader.ShowLoadScreen(true);
         }
 
-        #region Un used
+        #region Unused
         public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
         {
             

@@ -1,9 +1,8 @@
-using App.Settings;
 using UnityEditor;
 
-namespace App.Scripts.Settings.Editor
+namespace App.Settings.Editor
 {
-    public static class SettingsEditor
+    public static class EditorGameSettingsSaveDeleter
     {
         [MenuItem(Consts.AppName +"/Delete settings Save")]
         public static void Delete() => SettingsSaver.Delete();
