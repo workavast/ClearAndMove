@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 350407032832
-    m_Localized: Session Name
+    m_Localized: 'Session Name:'
     m_Metadata:
       m_Items: []
   - m_Id: 403519504384
