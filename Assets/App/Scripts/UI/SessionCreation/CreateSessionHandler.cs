@@ -20,6 +20,6 @@ namespace App.UI.SessionCreation
             => button.onClick.AddListener(CreateSession);
 
         private void CreateSession() 
-            => _sessionCreator.CreateSession(serverNameInput.text, ScenesConfig.LobbySceneIndex, skipLoadingScene);
+            => _sessionCreator.CreateSession(serverNameInput.text, ScenesConfig.Lobby, skipLoadingScene);
     }
 }

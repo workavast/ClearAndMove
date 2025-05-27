@@ -20,7 +20,7 @@ namespace App.ScenesLoading
 
             var currentScene = SceneManager.GetActiveScene().buildIndex;
 
-            if (currentScene != ScenesConfig.MainMenuSceneIndex) 
+            if (currentScene != ScenesConfig.MainMenu) 
                 _sceneLoader.ShowLoadScreen(true);
         }
 

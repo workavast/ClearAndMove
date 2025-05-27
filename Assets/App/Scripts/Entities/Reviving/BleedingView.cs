@@ -10,7 +10,6 @@ namespace App.Entities.Reviving
         
         public void ToggleVisibility(bool isVisible)
         {
-            Debug.Log($"ToggleVisibility {isVisible}");
             canvas.enabled = isVisible;
         }
 

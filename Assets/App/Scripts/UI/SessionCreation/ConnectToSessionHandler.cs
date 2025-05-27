@@ -26,7 +26,7 @@ namespace App.UI.SessionCreation
             if (serverNameInput.text.IsNullOrEmpty())
                 return;
             
-            _sessionCreator.ConnectToSession(serverNameInput.text, ScenesConfig.LobbySceneIndex, true);
+            _sessionCreator.ConnectToSession(serverNameInput.text, ScenesConfig.Lobby, true);
         }
     }
 }

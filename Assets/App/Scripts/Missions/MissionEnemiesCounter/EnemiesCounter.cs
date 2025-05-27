@@ -34,7 +34,6 @@ namespace App.Missions.MissionEnemiesCounter
 
         public void SetEnemies(IReadOnlyList<NetEnemy> enemies)
         {
-            Debug.Log($"SetEnemies {enemies == null}");
             _enemies = enemies;
         }
 
