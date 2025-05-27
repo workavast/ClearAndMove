@@ -33,6 +33,9 @@ namespace App.Particles
             }
         }
 
+        public ParticleHolder Create(ParticleType particleType, Vector3 point, Vector3 normal) 
+            => Create(particleType, point, Quaternion.LookRotation(normal));
+
         public ParticleHolder Create(ParticleType particleType, Vector3 position, Quaternion rotation)
         {
             _pool.ExtractElement(particleType, out var particleHolder);

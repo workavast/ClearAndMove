@@ -7,18 +7,18 @@ namespace App.Weapons.Shooting
     public class ShooterFactory
     {
         private readonly DamageApplicatorFactory _damageApplicatorFactory;
-        private readonly NetParticlesFactory _netParticlesFactory;
+        private readonly ParticleFactory _particlesFactory;
 
-        public ShooterFactory(DamageApplicatorFactory damageApplicatorFactory, NetParticlesFactory netParticlesFactory)
+        public ShooterFactory(DamageApplicatorFactory damageApplicatorFactory, ParticleFactory particlesFactory)
         {
             _damageApplicatorFactory = damageApplicatorFactory;
-            _netParticlesFactory = netParticlesFactory;
+            _particlesFactory = particlesFactory;
         }
         
         public Shooter CreateShoot(IEntity entity)
         {
             var damageApplicator = _damageApplicatorFactory.CreateDamageApplicator(entity.EntityType);
-            return new Shooter(entity, damageApplicator, _netParticlesFactory);
+            return new Shooter(entity, damageApplicator, _particlesFactory);
         }
     }
 }
