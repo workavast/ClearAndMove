@@ -1,4 +1,4 @@
-using App.Health;
+using App.Entities.Health;
 using Fusion;
 using Fusion.Addons.FSM;
 

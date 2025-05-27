@@ -59763,7 +59763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125640828}
-  - component: {fileID: 2125640827}
+  - component: {fileID: 2125640829}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -59771,21 +59771,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2125640827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125640826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ff59675a5540ee8255de0de65bc8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  netPlayersReady: {fileID: 148468180}
-  localizationPreloader:
-    config: {fileID: 11400000, guid: a1f6edb92833e294db8fdc9e7175c68b, type: 2}
 --- !u!4 &2125640828
 Transform:
   m_ObjectHideFlags: 0
@@ -59801,6 +59786,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2125640829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125640826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f3e2d18a5841b6a41c073c69492b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  netPlayersReady: {fileID: 148468180}
+  stringTablesPreloader:
+    config: {fileID: 11400000, guid: a1f6edb92833e294db8fdc9e7175c68b, type: 2}
 --- !u!1001 &2126099166
 PrefabInstance:
   m_ObjectHideFlags: 0

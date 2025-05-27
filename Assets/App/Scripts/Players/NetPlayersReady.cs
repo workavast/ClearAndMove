@@ -3,11 +3,12 @@ using System.Linq;
 using Fusion;
 using UnityEngine;
 
-namespace App.Coop
+namespace App.Players
 {
     public class NetPlayersReady : NetworkBehaviour
     {
-        [Networked][OnChangedRender(nameof(AllPlayersBecameReady))][field: SerializeField, ReadOnly] private bool allPlayersIsReady { get; set; }
+        [Networked][OnChangedRender(nameof(AllPlayersBecameReady))][field: SerializeField, ReadOnly] 
+        private bool allPlayersIsReady { get; set; }
         
         public bool AllPlayersIsReady => _isInitialized && allPlayersIsReady;
         

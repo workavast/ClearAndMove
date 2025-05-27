@@ -1,7 +1,7 @@
 using Fusion;
 using Fusion.Addons.FSM;
 
-namespace App.Health.FSM
+namespace App.Entities.Health.FSM
 {
     public abstract class HealthState : State<HealthState>
     {

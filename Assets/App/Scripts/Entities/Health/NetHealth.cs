@@ -1,16 +1,15 @@
 using System;
 using System.Collections.Generic;
-using App.Entities;
+using App.Entities.Health.FSM;
+using App.Entities.Health.FSM.SpecificStates;
 using App.EventBus;
-using App.Health.FSM;
-using App.Health.FSM.SpecificStates;
 using Avastrad.EventBusFramework;
 using Fusion;
 using Fusion.Addons.FSM;
 using UnityEngine;
 using Zenject;
 
-namespace App.Health
+namespace App.Entities.Health
 {
     public class NetHealth : NetworkBehaviour, IStateMachineOwner
     {

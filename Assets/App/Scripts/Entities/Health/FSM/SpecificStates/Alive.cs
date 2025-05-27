@@ -1,6 +1,6 @@
 using Fusion.Addons.FSM;
 
-namespace App.Health.FSM.SpecificStates
+namespace App.Entities.Health.FSM.SpecificStates
 {
     public class Alive : HealthState
     {

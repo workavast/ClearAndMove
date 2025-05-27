@@ -1,4 +1,4 @@
-using App.Health;
+using App.Entities.Health;
 
 namespace App.Entities.Reviving.FSM
 {
