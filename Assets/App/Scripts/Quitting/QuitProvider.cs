@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace App.Quitting
 {
-    public class QuitProvider : IQuitProvider, IQuitInvoker
+    public class QuitProvider : IQuitProvider
     {
         public bool IsQuitting { get; private set; }
         

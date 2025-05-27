@@ -9,7 +9,7 @@ namespace App.UI
     [RequireComponent(typeof(Button))]
     public class QuitButton : MonoBehaviour
     {
-        [Inject] private IQuitInvoker _quitInvoker;
+        [Inject] private readonly IQuitProvider _quitInvoker;
 
         private void Awake()
         {
