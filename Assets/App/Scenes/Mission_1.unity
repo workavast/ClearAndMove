@@ -2155,7 +2155,6 @@ MonoBehaviour:
   - {fileID: 287603036}
   - {fileID: 188854033}
   - {fileID: 1614265258}
-  - {fileID: 403998198}
   - {fileID: 1174139020}
   - {fileID: 1303692587}
   - {fileID: 703215145}
@@ -2165,6 +2164,7 @@ MonoBehaviour:
   - {fileID: 1634241971}
   - {fileID: 1193089603}
   - {fileID: 736463347}
+  - {fileID: 1982761250}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -2202,7 +2202,6 @@ Transform:
   - {fileID: 757296553}
   - {fileID: 188854034}
   - {fileID: 1614265259}
-  - {fileID: 403998199}
   - {fileID: 1174139021}
   - {fileID: 1303692588}
   - {fileID: 287603037}
@@ -2213,6 +2212,7 @@ Transform:
   - {fileID: 1634241972}
   - {fileID: 1193089604}
   - {fileID: 736463348}
+  - {fileID: 1982761249}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &109020917
@@ -4905,7 +4905,6 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 824951239}
   - {fileID: 824951238}
   - {fileID: 824951235}
   - {fileID: 319583985}
@@ -5965,7 +5964,7 @@ GameObject:
   - component: {fileID: 319583986}
   - component: {fileID: 319583985}
   m_Layer: 0
-  m_Name: NetCoopSessionDataRegistrator
+  m_Name: NetMissionSessionDataRegistrator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7156,50 +7155,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfdd11ee13f872c40bb87aacd702d126, type: 3}
---- !u!1 &403998197
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 403998199}
-  - component: {fileID: 403998198}
-  m_Layer: 0
-  m_Name: NetParticleFactory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &403998198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403998197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5420e0a36d4c0e9a5348e1e6f21b79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &403998199
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403998197}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 107536224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &405602868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15061,7 +15016,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824951237}
-  - component: {fileID: 824951239}
   - component: {fileID: 824951238}
   - component: {fileID: 824951235}
   m_Layer: 0
@@ -15114,19 +15068,6 @@ MonoBehaviour:
   playerSpawnPointsProvider: {fileID: 385583918}
   playerFactory: {fileID: 375207551}
   playersReady: {fileID: 824951235}
---- !u!114 &824951239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824951234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e96fd90505d49e9aa82953ec0f47e7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleFactory: {fileID: 202354436}
 --- !u!1001 &828139011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35267,6 +35208,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1982761248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982761249}
+  - component: {fileID: 1982761250}
+  m_Layer: 0
+  m_Name: Particles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1982761249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982761248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 107536224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982761250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982761248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83214cea125242c29de45cbc93f8a528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1983632972
