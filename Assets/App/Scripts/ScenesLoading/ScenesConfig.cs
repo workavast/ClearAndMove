@@ -7,7 +7,6 @@ namespace App.ScenesLoading
         public const int BootstrapSceneIndex = 0;
         public const int ScenesLoadingSceneIndex = 1;
         public const int MainMenuSceneIndex = 2;
-        public const int GameplaySceneIndex = 3;
         public const int LobbySceneIndex = 4;
         public const int CoopSceneIndex = 5;
         public const int TrainSceneIndex = 6;
@@ -18,7 +17,6 @@ namespace App.ScenesLoading
             { BootstrapSceneIndex, "BootstrapScene" },
             { ScenesLoadingSceneIndex, "ScenesLoadingScene" },
             { MainMenuSceneIndex, "MainMenuScene" },
-            { GameplaySceneIndex, "GameplayScene" },
             { LobbySceneIndex, "Lobby" },
             { CoopSceneIndex, "Coop" },
             { TrainSceneIndex, "Train" },
@@ -42,7 +40,6 @@ namespace App.ScenesLoading
         BootstrapScene = ScenesConfig.BootstrapSceneIndex,
         ScenesLoadingScene = ScenesConfig.ScenesLoadingSceneIndex,
         MainMenuScene = ScenesConfig.MainMenuSceneIndex,
-        GameplayScene = ScenesConfig.GameplaySceneIndex,
         Lobby = ScenesConfig.LobbySceneIndex,
         Coop = ScenesConfig.CoopSceneIndex,
         Train = ScenesConfig.TrainSceneIndex,
