@@ -1,21 +1,21 @@
-using App.Coop.Gameplay;
 using App.Entities.Player;
+using App.Missions.SessionData;
 using App.Players;
 using App.Players.Repository;
 using Fusion;
 using UnityEngine;
 using Zenject;
 
-namespace App.Coop
+namespace App.Missions
 {
-    public class NetPlayerSpawner : NetworkBehaviour
+    public class NetPlayerEntitySpawner : NetworkBehaviour
     {
         [SerializeField] private PlayerSpawnPointsProvider playerSpawnPointsProvider;
         [SerializeField] private PlayerFactory playerFactory;
         [SerializeField] private NetPlayersReady playersReady;
 
         [Inject] private readonly IReadOnlyPlayersRepository _playersRepository;
-        [Inject] private readonly CoopSessionDataRepository _coopSessionDataRepository;
+        [Inject] private readonly MissionSessionDataRepository _missionSessionDataRepository;
         [Inject] private readonly PlayersEntitiesRepository _playersEntitiesRepository;
 
         private bool _gameIsInitialized;
@@ -54,8 +54,8 @@ namespace App.Coop
         
         private void SpawnPlayer(PlayerRef playerRef)
         {
-            var weaponId = _coopSessionDataRepository.GetData(playerRef).SelectedWeapon;
-            var armorLevel = _coopSessionDataRepository.GetData(playerRef).EquippedArmorLevel;
+            var weaponId = _missionSessionDataRepository.GetData(playerRef).SelectedWeapon;
+            var armorLevel = _missionSessionDataRepository.GetData(playerRef).EquippedArmorLevel;
             playerFactory.Spawn(playerRef, playerSpawnPointsProvider.SpawnPoints[playerRef.PlayerId - 1], armorLevel, weaponId);
         }
     }

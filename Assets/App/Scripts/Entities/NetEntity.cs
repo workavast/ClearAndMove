@@ -2,7 +2,7 @@ using System;
 using App.Armor;
 using App.Dissolving;
 using App.Doors;
-using App.Health;
+using App.Entities.Health;
 using App.Interaction;
 using App.Weapons;
 using Avastrad.EventBusFramework;

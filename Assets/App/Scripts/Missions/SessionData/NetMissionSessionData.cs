@@ -4,15 +4,15 @@ using App.Weapons;
 using Fusion;
 using Zenject;
 
-namespace App.Coop.Gameplay
+namespace App.Missions.SessionData
 {
-    public class NetCoopSessionData : NetworkBehaviour
+    public class NetMissionSessionData : NetworkBehaviour
     {
         [Networked] [field: ReadOnly] public bool Initialized { get; private set; }
         [Networked] [field: ReadOnly] public WeaponId SelectedWeapon { get; private set; }
         [Networked] [field: ReadOnly] public int EquippedArmorLevel { get; private set; }
 
-        [Inject] private CoopSessionDataRepository _playersSessionDataRepository;
+        [Inject] private MissionSessionDataRepository _playersSessionDataRepository;
         
         public PlayerRef PlayerRef => Object.InputAuthority;
         

@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
-using App.Coop;
 using App.Localization;
 using App.NetworkRunning;
 using App.NetworkRunning.Shutdowners;
 using App.NetworkRunning.Shutdowners.LocalShutdowners;
+using App.Players;
 using App.Session.Creation;
 using App.Session.Visibility;
 using Avastrad.ScenesLoading;
@@ -11,13 +11,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace App.Bootstraps
+namespace App.Missions
 {
-    public class GameplayBootstrap : MonoBehaviour
+    public class MissionBootstrap : MonoBehaviour
     {
         [SerializeField] private NetPlayersReady netPlayersReady;
-        [SerializeField] private StringTablesPreloader localizationPreloader;
-  
+        [SerializeField] private StringTablesPreloader stringTablesPreloader;
+
         [Inject] private readonly ISceneLoader _sceneLoader;
         [Inject] private readonly NetworkRunnerProvider _runnerProvider;
         [Inject] private readonly SessionCreator _sessionCreator;
@@ -28,25 +28,25 @@ namespace App.Bootstraps
         {
             if (!_runnerProvider.TryGetNetworkRunner(out _))
                 await _sessionCreator.CreateSinglePlayer(SceneManager.GetActiveScene().buildIndex, true);
-
-            _sessionVisibilityManager.SetHardVisibility(false);
+            
             _shutdownerProvider.SetLocalShutdownProvider(new DefaultShutdowner(_sceneLoader));
+            _sessionVisibilityManager.SetHardVisibility(false);
 
-            await localizationPreloader.Preload();
+            await stringTablesPreloader.Preload();
             
             if (netPlayersReady.AllPlayersIsReady)
                 OnAllPlayersReady();
             else
                 netPlayersReady.OnAllPlayersIsReady += OnAllPlayersReady;
         }
-        
+
         private void OnDestroy() 
-            => localizationPreloader.Release();
+            => stringTablesPreloader.Release();
 
         private async void OnAllPlayersReady()
         {
             netPlayersReady.OnAllPlayersIsReady -= OnAllPlayersReady;
-
+        
             await Task.Delay(250);
             _sceneLoader.HideLoadScreen(false);
         }

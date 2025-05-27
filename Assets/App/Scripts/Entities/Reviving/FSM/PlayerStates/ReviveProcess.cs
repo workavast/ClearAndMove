@@ -1,6 +1,6 @@
 using System;
+using App.Entities.Health;
 using App.Entities.Player;
-using App.Health;
 using Fusion;
 
 namespace App.Entities.Reviving.FSM.PlayerStates

@@ -1,4 +1,4 @@
-using App.Health;
+using App.Entities.Health;
 using UnityEngine;
 
 namespace App.Entities.Reviving.FSM.EnemiesStates

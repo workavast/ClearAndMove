@@ -1,7 +1,6 @@
 using System;
-using App.Entities;
 
-namespace App.Health.FSM.SpecificStates
+namespace App.Entities.Health.FSM.SpecificStates
 {
     public class Knockout : HealthState
     {

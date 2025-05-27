@@ -1,8 +1,8 @@
 using System.Collections.Generic;
+using App.Entities.Health;
 using App.Entities.Player;
 using App.Entities.Reviving.FSM;
 using App.Entities.Reviving.FSM.PlayerStates;
-using App.Health;
 using Fusion.Addons.FSM;
 using UnityEngine;
 using Zenject;
