@@ -1,25 +1,23 @@
 using System;
 using System.Threading.Tasks;
-using App.InstantiateProviding;
 using Fusion;
 using UnityEngine;
 using Zenject;
+using Object = UnityEngine.Object;
 
 namespace App.NetworkRunning
 {
     public class NetworkRunnerProvider
     {
-        private readonly IInstantiateProvider _instantiateProvider;
         private readonly NetworkRunner _networkRunnerPrefab;
         private readonly DiContainer _diContainer;
 
         private bool _isStartInvoked;
         private NetworkRunner _networkRunner;
 
-        public NetworkRunnerProvider(IInstantiateProvider instantiateProvider, NetworkRunner networkRunnerPrefab, 
+        public NetworkRunnerProvider(NetworkRunner networkRunnerPrefab, 
             DiContainer diContainer)
         {
-            _instantiateProvider = instantiateProvider;
             _networkRunnerPrefab = networkRunnerPrefab;
             _diContainer = diContainer;
         }
@@ -67,7 +65,7 @@ namespace App.NetworkRunning
             }
             
             _isStartInvoked = false;
-            _networkRunner = _instantiateProvider.Instantiate(_networkRunnerPrefab);
+            _networkRunner = Object.Instantiate(_networkRunnerPrefab);
             _diContainer.InjectGameObject(_networkRunner.gameObject);
         }
     }
