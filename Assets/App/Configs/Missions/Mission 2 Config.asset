@@ -22,7 +22,7 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   <Scene>k__BackingField: {fileID: 102900000, guid: 97d8b72ead7f94142b1f92e842196b15, type: 3}
-  <SceneName>k__BackingField: Coop
+  <SceneName>k__BackingField: Mission_2
   references:
     version: 2
     RefIds: []

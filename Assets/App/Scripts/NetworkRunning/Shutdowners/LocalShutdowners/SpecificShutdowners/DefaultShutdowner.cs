@@ -17,13 +17,13 @@ namespace App.NetworkRunning.Shutdowners.LocalShutdowners
         
         public override void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
         {
-            if (SceneManager.GetActiveScene().buildIndex == ScenesConfig.MainMenuSceneIndex)
+            if (SceneManager.GetActiveScene().buildIndex == ScenesConfig.MainMenu)
             {
                 Debug.LogWarning("You are trying return in the menu when you already in the menu");
                 return;
             }
 
-            _sceneLoader.LoadScene(ScenesConfig.MainMenuSceneIndex, true);
+            _sceneLoader.LoadScene(ScenesConfig.MainMenu, true);
         }
     }
 }

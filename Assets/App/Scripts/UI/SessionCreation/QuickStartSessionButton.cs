@@ -20,6 +20,6 @@ namespace App.UI.SessionCreation
         }
 
         private void QuickStart() 
-            => _sessionCreator.QuickStart(ScenesConfig.LobbySceneIndex, true);
+            => _sessionCreator.QuickStart(ScenesConfig.Lobby, true);
     }
 }
