@@ -2,23 +2,21 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-public class ReplaceMaterialsInChildren : EditorWindow
+public class MaterialsInChildrenReplace : EditorWindow
 {
-    [SerializeField]
-    private List<GameObject> targetObjects = new List<GameObject>();
-    [SerializeField]
-    private Material newMaterial;
+    [SerializeField] private List<GameObject> targetObjects = new List<GameObject>();
+    [SerializeField] private Material newMaterial;
 
     SerializedObject serializedObject;
 
-    [MenuItem("Tools/Replace Materials In Children")]
-    static void ShowWindow()
+    [MenuItem("Tools/Materials In Children Replacer")]
+    private static void ShowWindow()
     {
-        var window = GetWindow<ReplaceMaterialsInChildren>("Replace Materials");
+        var window = GetWindow<MaterialsInChildrenReplace>("Replace Materials");
         window.serializedObject = new SerializedObject(window);
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         if (serializedObject == null)
         {
@@ -29,10 +27,10 @@ public class ReplaceMaterialsInChildren : EditorWindow
 
         EditorGUILayout.LabelField("Target Objects or Prefabs", EditorStyles.boldLabel);
 
-        SerializedProperty targetsProperty = serializedObject.FindProperty("targetObjects");
+        var targetsProperty = serializedObject.FindProperty("targetObjects");
         EditorGUILayout.PropertyField(targetsProperty, new GUIContent("Targets"), true);
 
-        SerializedProperty materialProperty = serializedObject.FindProperty("newMaterial");
+        var materialProperty = serializedObject.FindProperty("newMaterial");
         EditorGUILayout.PropertyField(materialProperty, new GUIContent("New Material"));
 
         if (GUILayout.Button("Replace Materials"))
@@ -51,22 +49,22 @@ public class ReplaceMaterialsInChildren : EditorWindow
         serializedObject.ApplyModifiedProperties();
     }
 
-    void ReplaceMaterials()
+    private void ReplaceMaterials()
     {
-        int totalCount = 0;
+        var totalCount = 0;
 
         foreach (var target in targetObjects)
         {
             if (target == null) continue;
 
-            int count = 0;
+            var count = 0;
             var renderers = target.GetComponentsInChildren<Renderer>(true);
             foreach (var renderer in renderers)
             {
                 Undo.RecordObject(renderer, "Replace Materials");
 
-                Material[] newMats = new Material[renderer.sharedMaterials.Length];
-                for (int i = 0; i < newMats.Length; i++)
+                var newMats = new Material[renderer.sharedMaterials.Length];
+                for (var i = 0; i < newMats.Length; i++)
                 {
                     newMats[i] = newMaterial;
                 }

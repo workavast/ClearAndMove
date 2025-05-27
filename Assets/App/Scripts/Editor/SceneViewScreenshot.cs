@@ -12,10 +12,8 @@ namespace App.Scripts.Editor
         string fileName = "SceneViewScreenshot";
 
         [MenuItem("Tools/Scene View Screenshot Window")]
-        public static void ShowWindow()
-        {
-            GetWindow<SceneViewScreenshotWindow>("Scene View Screenshot");
-        }
+        public static void ShowWindow() 
+            => GetWindow<SceneViewScreenshotWindow>("Scene View Screenshot");
 
         private void OnGUI()
         {
@@ -27,10 +25,8 @@ namespace App.Scripts.Editor
 
             GUILayout.Space(10);
 
-            if (GUILayout.Button("Take Screenshot"))
-            {
+            if (GUILayout.Button("Take Screenshot")) 
                 TakeScreenshot();
-            }
         }
 
         private void TakeScreenshot()
@@ -62,13 +58,11 @@ namespace App.Scripts.Editor
             RenderTexture.active = null;
             DestroyImmediate(rt);
 
-            string directory = Path.Combine(Application.dataPath, saveFolder);
-            if (!Directory.Exists(directory))
-            {
+            var directory = Path.Combine(Application.dataPath, saveFolder);
+            if (!Directory.Exists(directory)) 
                 Directory.CreateDirectory(directory);
-            }
 
-            string filePath = Path.Combine(directory, fileName + ".png");
+            var filePath = Path.Combine(directory, fileName + ".png");
             File.WriteAllBytes(filePath, screenShot.EncodeToPNG());
 
             Debug.Log($"Screenshot saved to: {filePath}");
