@@ -18,8 +18,8 @@ public class SetStaticShadowCasterOnPrefabs : EditorWindow
     private void OnGUI()
     {
         EditorGUILayout.LabelField("Prefabs to Process", EditorStyles.boldLabel);
-        SerializedObject so = new SerializedObject(this);
-        SerializedProperty prefabsProperty = so.FindProperty("prefabsToProcess");
+        var so = new SerializedObject(this);
+        var prefabsProperty = so.FindProperty("prefabsToProcess");
 
         EditorGUILayout.PropertyField(prefabsProperty, true);
         so.ApplyModifiedProperties();
@@ -42,22 +42,22 @@ public class SetStaticShadowCasterOnPrefabs : EditorWindow
                 continue;
             }
 
-            string prefabPath = AssetDatabase.GetAssetPath(prefab);
+            var prefabPath = AssetDatabase.GetAssetPath(prefab);
             if (string.IsNullOrEmpty(prefabPath))
             {
                 Debug.LogError($"Prefab '{prefab.name}' is not a valid asset.");
                 continue;
             }
 
-            GameObject prefabRoot = PrefabUtility.LoadPrefabContents(prefabPath);
+            var prefabRoot = PrefabUtility.LoadPrefabContents(prefabPath);
             if (prefabRoot == null)
             {
                 Debug.LogError($"Failed to load prefab at path: {prefabPath}");
                 continue;
             }
 
-            MeshRenderer[] renderers = prefabRoot.GetComponentsInChildren<MeshRenderer>(true);
-            int modifiedCount = 0;
+            var renderers = prefabRoot.GetComponentsInChildren<MeshRenderer>(true);
+            var modifiedCount = 0;
 
             foreach (var renderer in renderers)
             {
