@@ -14,7 +14,7 @@ namespace App.Missions.MissionState.ClearMission
     {
         [SerializeField] private Mission mission;
         [SerializeField] private NetMissionGenerator netMissionGenerator;
-        [SerializeField] private DeathChecker deathChecker;
+        [SerializeField] private PlayerEntitiesDeathChecker deathChecker;
 
         [Inject] private readonly CompletedMissionsModel _completedMissionsModel;
         [Inject] private readonly ScreensController _screensController;

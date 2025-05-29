@@ -7,10 +7,10 @@ namespace App.Missions.MissionState.ClearMission.States
 {
     public class ClearMissionIsRunning : IsRunning
     {
-        private readonly DeathChecker _deathChecker;
+        private readonly PlayerEntitiesDeathChecker _deathChecker;
         private readonly Mission _mission;
         
-        public ClearMissionIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, DeathChecker deathChecker, Mission mission)
+        public ClearMissionIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, PlayerEntitiesDeathChecker deathChecker, Mission mission)
             : base(networkBehaviour, eventBus)
         {
             _deathChecker = deathChecker;

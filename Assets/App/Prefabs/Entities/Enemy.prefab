@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e62b031fa8a40c6a7324acd77e157a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solderView: {fileID: 7333342798360998660}
+  entityView: {fileID: 7333342798360998660}
   animator: {fileID: 8382039045626483665}
   weaponViewHolder: {fileID: 190664987957330581}
   deathClip: {fileID: 7400000, guid: 33ec14e8e222f664cb4936b2301e3cd0, type: 2}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: ecdd91516da6a7f49871630af16c313b, type: 2}
-  solderView: {fileID: 7333342798360998660}
+  entityView: {fileID: 7333342798360998660}
   health: {fileID: -2531509198763203047}
   hitbox: {fileID: 8192084059082422202}
   characterController: {fileID: -658295760547561401}
