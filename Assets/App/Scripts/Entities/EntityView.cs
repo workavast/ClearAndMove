@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace App.Entities
 {
-    public class SolderView : MonoBehaviour
+    public class EntityView : MonoBehaviour
     {
         [field:SerializeField] public bool IsAlive { get; private set; }
         public Vector2 AnimationVelocity { get; private set; }

@@ -15,7 +15,7 @@ namespace App.Entities
     public abstract class NetEntity : NetworkBehaviour, IEntity, IInteractor
     {
         [SerializeField] private EntityConfig config;
-        [SerializeField] private SolderView solderView;
+        [SerializeField] private EntityView entityView;
         [SerializeField] private NetHealth health;
         [SerializeField] private Hitbox hitbox;
         [SerializeField] private CharacterController characterController;
@@ -96,8 +96,8 @@ namespace App.Entities
 
         public override void Render()
         {
-            solderView.MoveView(NetVelocity, SprintSpeed);
-            solderView.SetAliveState(IsAlive);
+            entityView.MoveView(NetVelocity, SprintSpeed);
+            entityView.SetAliveState(IsAlive);
         }
 
         public void TakeDamage(float damage, IEntity killer) 
@@ -148,11 +148,11 @@ namespace App.Entities
             
             Vector3 lookPoint;
             if (lookDirection == default || lookDirection == Vector2.zero)
-                lookPoint = solderView.transform.position + solderView.transform.forward;
+                lookPoint = entityView.transform.position + entityView.transform.forward;
             else
-                lookPoint = solderView.transform.position + lookDirection.X0Y();
+                lookPoint = entityView.transform.position + lookDirection.X0Y();
                 
-            solderView.SetLookPoint(lookPoint);
+            entityView.SetLookPoint(lookPoint);
         }
         
         public void CalculateVelocity(float horizontalInput, float verticalInput, bool isSprint)

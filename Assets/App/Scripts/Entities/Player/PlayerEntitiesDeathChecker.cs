@@ -6,7 +6,7 @@ using Zenject;
 
 namespace App.DeathChecking
 {
-    public class DeathChecker : MonoBehaviour, IEventReceiver<OnPlayerKnockout>, IEventReceiver<OnPlayerDeath>
+    public class PlayerEntitiesDeathChecker : MonoBehaviour, IEventReceiver<OnPlayerKnockout>, IEventReceiver<OnPlayerDeath>
     {
         [Inject] private readonly PlayersEntitiesRepository _playersEntitiesRepository;
         [Inject] private readonly IEventBus _eventBus;

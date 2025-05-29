@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace App.Entities
 {
-    public class AnimController : MonoBehaviour
+    public class EntityAnimController : MonoBehaviour
     {
-        [SerializeField] private SolderView solderView;
+        [SerializeField] private EntityView entityView;
         [SerializeField] private Animator animator;
         [SerializeField] private WeaponViewHolder weaponViewHolder;
         [SerializeField] private AnimationClip deathClip;
@@ -21,26 +21,26 @@ namespace App.Entities
         private static readonly int IsAlive = Animator.StringToHash("IsAlive");
 
         private void Awake() 
-            => solderView.OnAliveStateChanged += SetAliveState;
+            => entityView.OnAliveStateChanged += SetAliveState;
 
         private void LateUpdate()
         {
             if (useDebug)
             {
-                solderView.SetAliveState(debugIsAlive);
+                entityView.SetAliveState(debugIsAlive);
                 animator.SetFloat(VelocityX, debugVelocityX);
                 animator.SetFloat(VelocityY, debugVelocityY);   
             }
             else
             {
-                animator.SetFloat(VelocityX, solderView.AnimationVelocity.x);
-                animator.SetFloat(VelocityY, solderView.AnimationVelocity.y);
+                animator.SetFloat(VelocityX, entityView.AnimationVelocity.x);
+                animator.SetFloat(VelocityY, entityView.AnimationVelocity.y);
             }
         }
 
         private void SetAliveState(bool isAlive)
         {
-            animator.SetBool(IsAlive, solderView.IsAlive);
+            animator.SetBool(IsAlive, entityView.IsAlive);
                 
             if (isAlive)
             {

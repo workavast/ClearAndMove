@@ -11,7 +11,7 @@ namespace App.Missions.MissionState.EvacuationMission
 {
     public class NetEvacuationMissionState : NetMissionState
     {
-        [SerializeField] private DeathChecker deathChecker;
+        [SerializeField] private PlayerEntitiesDeathChecker deathChecker;
         [SerializeField] private Mission mission;
         
         [Inject] private readonly CompletedMissionsModel _completedMissionsModel;

@@ -7,9 +7,9 @@ namespace App.Missions.MissionState.EvacuationMission.States
 {
     public class EvacuationMissionIsRunning : IsRunning
     {
-        private readonly DeathChecker _deathChecker;
+        private readonly PlayerEntitiesDeathChecker _deathChecker;
 
-        public EvacuationMissionIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, DeathChecker deathChecker) 
+        public EvacuationMissionIsRunning(NetworkBehaviour networkBehaviour, IEventBus eventBus, PlayerEntitiesDeathChecker deathChecker) 
             : base(networkBehaviour, eventBus)
         {
             _deathChecker = deathChecker;
