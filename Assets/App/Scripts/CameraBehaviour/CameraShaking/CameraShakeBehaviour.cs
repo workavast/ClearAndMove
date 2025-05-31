@@ -4,14 +4,15 @@ using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
 
-namespace App.CameraBehaviour
+namespace App.CameraBehaviour.CameraShaking
 {
-    public class CameraNoiseBehaviour : MonoBehaviour
+    public class CameraShakeBehaviour : MonoBehaviour
     {
         [SerializeField] private CinemachineBasicMultiChannelPerlin perlin;
         [SerializeField] private NoiseConfig shotConfig;
-        
-        [Inject] private SelectedPlayerEntityProvider _selectedPlayerEntityProvider;
+
+        [Inject] private readonly CameraShakeProvider _shakeProvider;
+        [Inject] private readonly SelectedPlayerEntityProvider _selectedPlayerEntityProvider;
 
         private readonly Timer _noiseTimer = new(1, 1);
 
@@ -29,7 +30,7 @@ namespace App.CameraBehaviour
                 return;
 
             _noiseTimer.Tick(Time.deltaTime);
-            perlin.AmplitudeGain = 1 - _noiseTimer.CurrentTime / _noiseTimer.MaxTime;
+            perlin.AmplitudeGain = _shakeProvider.ShakePower * (1 - _noiseTimer.CurrentTime / _noiseTimer.MaxTime);
         }
 
         private void ShotShake()

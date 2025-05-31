@@ -66,6 +66,10 @@ MonoBehaviour:
     m_Localized: Settings
     m_Metadata:
       m_Items: []
+  - m_Id: 10861324072583168
+    m_Localized: Camera Shake Power
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
