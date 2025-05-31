@@ -112,7 +112,13 @@ namespace Avastrad.DictionaryInspector
         {
             _dictionary.Clear();
             foreach (var cell in cells)
+            {
+                if (cell.key == null)
+                    throw new NullReferenceException($"Key is null, maybe you try use unserializable type for the keys?" +
+                                                     $"\nkey type:[{typeof(TKey)}] value type:[{typeof(TValue)}]");
+
                 _dictionary.Add(cell.key, cell.value);
+            }
         }
 
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
