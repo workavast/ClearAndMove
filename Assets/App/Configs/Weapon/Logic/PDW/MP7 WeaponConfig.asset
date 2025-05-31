@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MP7 WeaponConfig
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 120
+  <ViewPrefab>k__BackingField: {fileID: 3403419408561428251, guid: 88f4f66d9cd1c07458107bac3f59df3e, type: 3}
   <Name>k__BackingField: MP7
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 17

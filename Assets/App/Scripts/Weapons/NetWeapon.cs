@@ -108,7 +108,7 @@ namespace App.Weapons
             netWeaponModel.NetMagazine = WeaponConfig.MagazineSize;
             netWeaponModel.NetFullAmmoSize = WeaponConfig.NetFullAmmoSize - WeaponConfig.MagazineSize;
             
-            weaponViewHolder.SetWeaponView(weaponId);
+            weaponViewHolder.SetWeaponView(WeaponConfig.ViewPrefab);
         }
 
         public bool TryShoot() 

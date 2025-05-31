@@ -10,21 +10,20 @@ namespace App.Weapons.View
         [field: SerializeField] public Transform RightHandPoint { get; private set; }
         [field: SerializeField] public Transform LeftHandPoint { get; private set; }
         
-        [SerializeField] private WeaponViewConfig config;
         [SerializeField] private Transform barrelPoint;
-        [SerializeField] private AudioSourceHolderPoolable shotSfxPrefab;
+        [SerializeField] private WeaponViewConfig config;
 
-        [Inject] private AudioFactory _audioFactory;
+        [Inject] private readonly AudioFactory _audioFactory;
 
         public void ShotVfx()
         {
-            Instantiate(config.ShotSmoke, barrelPoint);
+            Instantiate(config.ShotSmokePrefab, barrelPoint);
         }
 
         public void ShotSfx()
         {
             var pitch = Random.Range(config.MinPitch, config.MaxPitch);
-            _audioFactory.Create(shotSfxPrefab, barrelPoint.position, pitch);
+            _audioFactory.Create(config.ShotSfxPrefab, barrelPoint.position, pitch);
         }
     }
 }
