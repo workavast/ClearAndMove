@@ -27,7 +27,7 @@ namespace App.Settings.Template
         }
 
         private void UpdateView() 
-            => slider.SetValueWithoutNotify(0);
+            => slider.SetValueWithoutNotify(viewModel.Value);
 
         private void SetValue(float value) 
             => viewModel.SetValue(value, false);
