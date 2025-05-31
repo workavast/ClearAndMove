@@ -89,11 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2207a55940643718db663b923b4ca7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsConfig: {fileID: 11400000, guid: f6a7fc4c7ae2b1842a8ee048398d3a4c, type: 2}
-  screenModeConfig: {fileID: 11400000, guid: 600512915456d1041af4adb79ee5ad68, type: 2}
-  resolutionConfig: {fileID: 11400000, guid: c67c2ac0098efaf439a7f37df8506b0f, type: 2}
-  volumeConfig: {fileID: 11400000, guid: bde5611f41e2d4046bc33140a1c5976f, type: 2}
-  localizationConfig: {fileID: 11400000, guid: a2fc44ca6346f93458849a0b45d654ab, type: 2}
+  settingsConfigsRepository: {fileID: 11400000, guid: 6d098fd9d1ab277498f40c5be3798511, type: 2}
 --- !u!1 &1957965332485814001
 GameObject:
   m_ObjectHideFlags: 0
