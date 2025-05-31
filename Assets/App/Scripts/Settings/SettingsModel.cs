@@ -21,15 +21,13 @@ namespace App.Settings
         private readonly ISettingsModel[] _allSettings;
 
         [Inject]
-        public SettingsModel(FpsConfig fpsConfig, ScreenModeConfig screenModeConfig, 
-            ResolutionSettingsConfig resolutionConfig, VolumeSettingsConfig volumeConfig, 
-            LocalizationConfig localizationConfig)
+        public SettingsModel(SettingsConfigsRepository configsRepository)
         {
-            FpsSettingsModel = new FpsSettingsModel(fpsConfig);
-            ScreenModeSettingsModel = new ScreenModeSettingsModel(screenModeConfig);
-            ResolutionSettingsModel = new ResolutionSettingsModel(resolutionConfig);
-            VolumeSettingsModel = new VolumeSettingsModel(volumeConfig);
-            LocalizationSettingsModel = new LocalizationSettingsModel(localizationConfig);
+            FpsSettingsModel = new FpsSettingsModel(configsRepository.GetConfig<FpsConfig>());
+            ScreenModeSettingsModel = new ScreenModeSettingsModel(configsRepository.GetConfig<ScreenModeConfig>());
+            ResolutionSettingsModel = new ResolutionSettingsModel(configsRepository.GetConfig<ResolutionSettingsConfig>());
+            VolumeSettingsModel = new VolumeSettingsModel(configsRepository.GetConfig<VolumeSettingsConfig>());
+            LocalizationSettingsModel = new LocalizationSettingsModel(configsRepository.GetConfig<LocalizationConfig>());
 
             _allSettings = new ISettingsModel[]
             {
@@ -37,7 +35,7 @@ namespace App.Settings
                 ScreenModeSettingsModel,
                 ResolutionSettingsModel,
                 VolumeSettingsModel,
-                LocalizationSettingsModel
+                LocalizationSettingsModel,
             };
             Array.Sort(_allSettings, (x, y) => -x.Priority.CompareTo(y.Priority));
         }
@@ -48,6 +46,7 @@ namespace App.Settings
             ScreenModeSettingsModel.Load(model.ScreenModeSettingsModel);
             ResolutionSettingsModel.Load(model.ResolutionSettingsModel);
             VolumeSettingsModel.Load(model.VolumeSettingsModel);
+            LocalizationSettingsModel.Load(model.LocalizationSettingsModel);
         }
 
         public void Save()

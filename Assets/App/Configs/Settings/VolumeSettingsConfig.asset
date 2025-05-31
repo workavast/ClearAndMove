@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed94b2900414dafa93c49671fb6c618, type: 3}
   m_Name: VolumeSettingsConfig
   m_EditorClassIdentifier: 
+  <Priority>k__BackingField: 0
   audioMixer: {fileID: 24100000, guid: ee94b9b3484eac7448fa129bf85393cc, type: 2}
   masterParam: MasterVolume
   effectsParam: EffectsVolume
