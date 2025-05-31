@@ -1,4 +1,5 @@
 using App.Audio.Sources;
+using App.Particles;
 using UnityEngine;
 using Zenject;
 
@@ -14,10 +15,11 @@ namespace App.Weapons.View
         [SerializeField] private WeaponViewConfig config;
 
         [Inject] private readonly AudioFactory _audioFactory;
+        [Inject] private readonly ParticleFactory _particleFactory;
 
         public void ShotVfx()
         {
-            Instantiate(config.ShotSmokePrefab, barrelPoint);
+            _particleFactory.Create(config.ShotSmokePrefab, barrelPoint.position, barrelPoint.rotation);
         }
 
         public void ShotSfx()

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d3fe5704934c49bd29663bf6c82313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletCollisionParticle: {fileID: 9015723437469084149, guid: 8e0bdc37d17b83b41a206c6ddaa2da73, type: 3}
 --- !u!1 &964556513745290307
 GameObject:
   m_ObjectHideFlags: 0
