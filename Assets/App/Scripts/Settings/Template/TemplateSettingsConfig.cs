@@ -1,0 +1,12 @@
+using UnityEngine;
+using UnityEngine.Audio;
+
+namespace App.Settings.Template
+{
+    [CreateAssetMenu(fileName = nameof(TemplateSettingsConfig),
+        menuName = Consts.ConfigsPath + "Settings/" + nameof(TemplateSettingsConfig))]
+    public class TemplateSettingsConfig : SettingsConfig
+    {
+        [field: SerializeField] public float DefaultValue { get; private set; }
+    }
+}
