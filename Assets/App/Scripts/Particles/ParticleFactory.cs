@@ -1,52 +1,57 @@
+using System;
 using System.Collections.Generic;
-using Avastrad.DictionaryInspector;
-using Avastrad.EnumValuesLibrary;
 using Avastrad.PoolSystem;
 using UnityEngine;
+using Zenject;
 
 namespace App.Particles
 {
-    public class ParticleFactory : MonoBehaviour
+    public class ParticleFactory
     {
-        [SerializeField] private SerializableDictionary<ParticleType, ParticleHolder> particleHolderPrefabs;
-
-        private Pool<ParticleHolder, ParticleType> _pool;
+        private readonly Transform _mainParent;
+        private readonly DiContainer _diContainer;
+        private readonly Dictionary<string, Transform> _parents = new();
+        private readonly Dictionary<string, Pool<ParticleHolder>> _pools = new();
         
-        private readonly Dictionary<ParticleType, Transform> _parents = new();
-        
-        private void Awake()
+        public ParticleFactory(DiContainer diContainer)
         {
-            _pool = new Pool<ParticleHolder, ParticleType>(Instantiate);
-            
-            var particleTypes = EnumValuesTool.GetValues<ParticleType>();
-            foreach (var particleType in particleTypes)
+            _diContainer = diContainer;
+            _mainParent = new GameObject { transform = { name = "Particles" } }.transform;
+        }
+
+        public ParticleHolder Create(ParticleHolder prefab, Vector3 position, Vector3 normal) 
+            => Create(prefab, position, Quaternion.LookRotation(normal));
+
+        public ParticleHolder Create(ParticleHolder prefab, Transform transform) 
+            => Create(prefab, transform.position, transform.rotation);
+        
+        public ParticleHolder Create(ParticleHolder prefab, Vector3 position, Quaternion rotation) 
+        {
+            var key = prefab.gameObject.name;
+            return Create(key, prefab, position, rotation);
+        }
+
+        private ParticleHolder Create(string key, ParticleHolder prefab, Vector3 position, Quaternion rotation)
+        {
+            if (!_pools.ContainsKey(key))
             {
-                var parent = new GameObject()
-                {
-                    transform =
-                    {
-                        name = particleType.ToString(),
-                        parent = transform
-                    }
-                };
-                _parents.Add(particleType, parent.transform); 
+                _pools.Add(key, new Pool<ParticleHolder>(null));
+
+                var parent = new GameObject { transform = { name = key , parent = _mainParent} }.transform;
+                _parents.Add(key, parent);
             }
+            
+            Func<ParticleHolder> delegat = () => InstantiateEntity(prefab, key);
+            _pools[key].ExtractElement(out var element, delegat);
+            element.transform.SetPositionAndRotation(position, rotation);
+
+            return element;
         }
 
-        public ParticleHolder Create(ParticleType particleType, Vector3 point, Vector3 normal) 
-            => Create(particleType, point, Quaternion.LookRotation(normal));
-
-        public ParticleHolder Create(ParticleType particleType, Vector3 position, Quaternion rotation)
+        private ParticleHolder InstantiateEntity(ParticleHolder prefab, string key)
         {
-            _pool.ExtractElement(particleType, out var particleHolder);
-            particleHolder.transform.SetPositionAndRotation(position, rotation);
-            return particleHolder;
-        }
-
-        private ParticleHolder Instantiate(ParticleType particleType)
-        {
-            var particleHolder = Instantiate(particleHolderPrefabs[particleType], _parents[particleType]);
-            return particleHolder;
+            var instance = _diContainer.InstantiatePrefab(prefab, _parents[key]).GetComponent<ParticleHolder>();
+            return instance;
         }
     }
 }

@@ -33,8 +33,8 @@ namespace App.Audio.Sources
             audioSource.SetPitch(pitch);
             return audioSource;
         }
-        
-        public AudioSourceHolderPoolable Create(string key, AudioSourceHolderPoolable prefab, Vector3 position)
+
+        private AudioSourceHolderPoolable Create(string key, AudioSourceHolderPoolable prefab, Vector3 position)
         {
             if (!_pools.ContainsKey(key))
             {

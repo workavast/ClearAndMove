@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8e115d88fc49c189ab37b9ce3aa2b0, type: 3}
   m_Name: Scar ViewConfig
   m_EditorClassIdentifier: 
-  <ShotSmokePrefab>k__BackingField: {fileID: 2570227586978580661, guid: e20106f7ee159654ab8f0f33b43852a5, type: 3}
+  <ShotSmokePrefab>k__BackingField: {fileID: 2935067023035394157, guid: e20106f7ee159654ab8f0f33b43852a5, type: 3}
   <ShotSfxPrefab>k__BackingField: {fileID: 4236612034539855752, guid: 829fef1f09eba144fa4d40dd9e5f684e, type: 3}
   <MinPitch>k__BackingField: 0.9
   <MaxPitch>k__BackingField: 1.1

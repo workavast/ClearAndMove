@@ -6,7 +6,7 @@ namespace App.Particles
     {
         public override void InstallBindings()
         {
-            Container.Bind<ParticleFactory>().FromInstance(FindAnyObjectByType<ParticleFactory>()).AsSingle();
+            Container.Bind<ParticleFactory>().FromNew().AsSingle();
         }
     }
 }

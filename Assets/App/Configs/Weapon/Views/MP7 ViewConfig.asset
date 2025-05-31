@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8e115d88fc49c189ab37b9ce3aa2b0, type: 3}
   m_Name: MP7 ViewConfig
   m_EditorClassIdentifier: 
-  <ShotSmokePrefab>k__BackingField: {fileID: 3471856961636910350, guid: c7495c2265f9e1044ba24b5662dd1a95, type: 3}
+  <ShotSmokePrefab>k__BackingField: {fileID: 4269052031469987286, guid: c7495c2265f9e1044ba24b5662dd1a95, type: 3}
   <ShotSfxPrefab>k__BackingField: {fileID: 4236612034539855752, guid: e3aa4a3b45898294cb5c1c09e06850eb, type: 3}
   <MinPitch>k__BackingField: 0.9
   <MaxPitch>k__BackingField: 1.1

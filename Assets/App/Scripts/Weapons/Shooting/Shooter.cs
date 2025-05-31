@@ -12,18 +12,20 @@ namespace App.Weapons.Shooting
         private Transform _shootPoint;
         private WeaponConfig _config;
         private readonly ParticleFactory _particlesFactory;
+        private readonly ParticleHolder _bulletCollisionParticlePrefab;
         private readonly IDamageApplicator _damageApplicator;
         private readonly IEntity _entity;
         
         private NetworkRunner Runner => _entity.Runner;
         private PlayerRef InputAuthority => _entity.Object.InputAuthority;
 
-        public Shooter(IEntity entity, IDamageApplicator damageApplicator, 
-            ParticleFactory particlesFactory)
+        public Shooter(IEntity entity, IDamageApplicator damageApplicator, ParticleFactory particlesFactory, 
+            ParticleHolder bulletCollisionParticlePrefab)
         {
             _entity = entity;
             _damageApplicator = damageApplicator;
             _particlesFactory = particlesFactory;
+            _bulletCollisionParticlePrefab = bulletCollisionParticlePrefab;
         }
 
         public void SetData(Transform shootPoint, WeaponConfig config)
@@ -68,7 +70,7 @@ namespace App.Weapons.Shooting
         }
         
         private void SpawnHitEffect(Vector3 hitPoint, Vector3 normal) 
-            => _particlesFactory.Create(ParticleType.BulletCollision, hitPoint, normal);
+            => _particlesFactory.Create(_bulletCollisionParticlePrefab, hitPoint, normal);
 
         private static Vector3 GetSpreadDirection(Vector3 forward, float maxSpreadAngle, int tick)
         {
