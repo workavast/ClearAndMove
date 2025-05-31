@@ -1,3 +1,4 @@
+using App.Weapons.View;
 using UnityEngine;
 
 namespace App.Weapons
@@ -6,6 +7,7 @@ namespace App.Weapons
     public class WeaponConfig : ScriptableObject
     {
         [field: SerializeField] public WeaponId Id { get; private set; }
+        [field: SerializeField] public WeaponView ViewPrefab { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField, Min(0)] public int BulletsPerShoot { get; private set; } = 1;
         [field: SerializeField, Min(0)] public float DamagePerBullet { get; private set; } = 10;

@@ -12,24 +12,20 @@ namespace App.Weapons.View
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSourceHolderPoolable reloadStartSfxPrefab;
         [SerializeField] private AudioSourceHolderPoolable reloadEndSfxPrefab;
+        [SerializeField] private Transform weaponsParent;
         [SerializeField] private HandsConstraint handsConstraint;
         
         [Inject] private readonly AudioFactory _audioFactory;
-        [Inject] private DiContainer _container;
+        [Inject] private readonly DiContainer _container;
 
-        [SerializeField] private WeaponViewsConfig weaponViewsConfig;
-        [SerializeField] private Transform weaponsParent;
-
-        private string DefaultState = "Default";
-        private string ReloadingState = "Reloading";
-        private string DeathState = "Death";
+        private const string DefaultState = "Default";
+        private const string ReloadingState = "Reloading";
+        private const string DeathState = "Death";
         
         private WeaponView _weaponView;
 
-        public void SetWeaponView(WeaponId weaponId)
+        public void SetWeaponView(WeaponView prefab)
         {
-            var prefab = weaponViewsConfig.Views[weaponId];
-            
             if (_weaponView != null)
             {
                 if (_weaponView.name == prefab.name)

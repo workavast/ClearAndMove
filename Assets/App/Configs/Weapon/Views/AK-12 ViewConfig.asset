@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8e115d88fc49c189ab37b9ce3aa2b0, type: 3}
   m_Name: AK-12 ViewConfig
   m_EditorClassIdentifier: 
-  <ShotSmoke>k__BackingField: {fileID: 2570227586978580661, guid: e20106f7ee159654ab8f0f33b43852a5, type: 3}
-  <MaxPitchOffset>k__BackingField: 0.1
+  <ShotSmokePrefab>k__BackingField: {fileID: 2570227586978580661, guid: e20106f7ee159654ab8f0f33b43852a5, type: 3}
+  <ShotSfxPrefab>k__BackingField: {fileID: 4236612034539855752, guid: d8f91587733f5694586fbdb135073e9d, type: 3}
+  <MinPitch>k__BackingField: 0.9
+  <MaxPitch>k__BackingField: 1.1

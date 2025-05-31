@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Scar Enemy Config
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 211
-  <Name>k__BackingField: 
+  <ViewPrefab>k__BackingField: {fileID: 3930404731918758516, guid: 8a9991f8abf033940aee5f78a4446fc7, type: 3}
+  <Name>k__BackingField: Scar
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 2.5
   <FireRate>k__BackingField: 600
