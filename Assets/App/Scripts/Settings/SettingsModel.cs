@@ -1,4 +1,5 @@
 using System;
+using App.Settings.CameraShakePower;
 using App.Settings.Fps;
 using App.Settings.Localization;
 using App.Settings.Resolution;
@@ -17,6 +18,7 @@ namespace App.Settings
         [field: SerializeField] public ResolutionSettingsModel ResolutionSettingsModel { get; private set; }
         [field: SerializeField] public VolumeSettingsModel VolumeSettingsModel { get; private set; }
         [field: SerializeField] public LocalizationSettingsModel LocalizationSettingsModel { get; private set; }
+        [field: SerializeField] public CameraShakePowerSettingsModel CameraShakePowerSettingsModel { get; private set; }
 
         private readonly ISettingsModel[] _allSettings;
 
@@ -28,6 +30,7 @@ namespace App.Settings
             ResolutionSettingsModel = new ResolutionSettingsModel(configsRepository.GetConfig<ResolutionSettingsConfig>());
             VolumeSettingsModel = new VolumeSettingsModel(configsRepository.GetConfig<VolumeSettingsConfig>());
             LocalizationSettingsModel = new LocalizationSettingsModel(configsRepository.GetConfig<LocalizationConfig>());
+            CameraShakePowerSettingsModel = new CameraShakePowerSettingsModel(configsRepository.GetConfig<CameraShakePowerSettingsConfig>());
 
             _allSettings = new ISettingsModel[]
             {
@@ -36,6 +39,7 @@ namespace App.Settings
                 ResolutionSettingsModel,
                 VolumeSettingsModel,
                 LocalizationSettingsModel,
+                CameraShakePowerSettingsModel
             };
             Array.Sort(_allSettings, (x, y) => -x.Priority.CompareTo(y.Priority));
         }
@@ -47,6 +51,7 @@ namespace App.Settings
             ResolutionSettingsModel.Load(model.ResolutionSettingsModel);
             VolumeSettingsModel.Load(model.VolumeSettingsModel);
             LocalizationSettingsModel.Load(model.LocalizationSettingsModel);
+            CameraShakePowerSettingsModel.Load(model.CameraShakePowerSettingsModel);
         }
 
         public void Save()
