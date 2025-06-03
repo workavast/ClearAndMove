@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96fa326185b4c2f930e33f68c73b3df, type: 3}
   m_Name: MissionsConfig
   m_EditorClassIdentifier: 
+  configsRepositoryCell:
+    autoFill: 0
+    configs:
+    - {fileID: 11400000, guid: a5379e1e899cc374c8ce03a8a12e65d8, type: 2}
+    - {fileID: 11400000, guid: 75466abcb6aa1464da14607fc71b5fa2, type: 2}
+    - {fileID: 11400000, guid: ef0fd75039ef223479dd0a261204cff7, type: 2}
   missions:
   - {fileID: 11400000, guid: a5379e1e899cc374c8ce03a8a12e65d8, type: 2}
   - {fileID: 11400000, guid: 75466abcb6aa1464da14607fc71b5fa2, type: 2}
