@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3a015f3cea4ca189a9dc2a4edc46e5, type: 3}
   m_Name: SettingsConfigsRepository
   m_EditorClassIdentifier: 
-  configs:
-  - {fileID: 11400000, guid: 566a3d25077f7d342bcc3891be83689a, type: 2}
-  - {fileID: 11400000, guid: c67c2ac0098efaf439a7f37df8506b0f, type: 2}
-  - {fileID: 11400000, guid: a2fc44ca6346f93458849a0b45d654ab, type: 2}
-  - {fileID: 11400000, guid: f6a7fc4c7ae2b1842a8ee048398d3a4c, type: 2}
-  - {fileID: 11400000, guid: 600512915456d1041af4adb79ee5ad68, type: 2}
-  - {fileID: 11400000, guid: 85dd1b7d01650204a934c528a399edaf, type: 2}
+  configsRepositoryCell:
+    autoFill: 1
+    configs:
+    - {fileID: 11400000, guid: c67c2ac0098efaf439a7f37df8506b0f, type: 2}
+    - {fileID: 11400000, guid: a2fc44ca6346f93458849a0b45d654ab, type: 2}
+    - {fileID: 11400000, guid: f6a7fc4c7ae2b1842a8ee048398d3a4c, type: 2}
+    - {fileID: 11400000, guid: 85dd1b7d01650204a934c528a399edaf, type: 2}
+    - {fileID: 11400000, guid: 566a3d25077f7d342bcc3891be83689a, type: 2}
+    - {fileID: 11400000, guid: 600512915456d1041af4adb79ee5ad68, type: 2}
