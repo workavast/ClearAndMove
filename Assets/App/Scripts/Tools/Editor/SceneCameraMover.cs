@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace App.Scripts.Editor
+namespace App.Tools.Editor
 {
     public class SceneCameraMover : EditorWindow
     {
