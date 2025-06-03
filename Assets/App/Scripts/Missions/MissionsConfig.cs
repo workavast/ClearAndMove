@@ -1,16 +1,15 @@
 using System.Collections.Generic;
+using App.Tools.ConfigsRepositories;
 using UnityEngine;
 
 namespace App.Missions
 {
     [CreateAssetMenu(fileName = nameof(MissionsConfig), menuName = Consts.AppName + "/Configs/Missions/" + nameof(MissionsConfig))]
-    public class MissionsConfig : ScriptableObject
+    public class MissionsConfig : ConfigsRepository<MissionConfig>
     {
-        [SerializeField] private List<MissionConfig> missions;
-
-        public IReadOnlyList<MissionConfig> Missions => missions;
+        public IReadOnlyList<MissionConfig> Missions => Configs;
 
         public int GetIndex(MissionConfig config) 
-            => missions.IndexOf(config);
+            => Configs.IndexOf(config);
     }
 }

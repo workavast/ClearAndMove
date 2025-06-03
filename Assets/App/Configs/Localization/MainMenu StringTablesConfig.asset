@@ -16,7 +16,9 @@ MonoBehaviour:
   - m_TableCollectionName: MainMenu
   - m_TableCollectionName: Settings
   - m_TableCollectionName: ConnectionScreen
+  - m_TableCollectionName: NetworkErrorScreen
   tables:
   - {fileID: 11400000, guid: f656a15897d9cfe4ea971b0d8f5b408d, type: 2}
   - {fileID: 11400000, guid: a188667a5aca57d44baa50f221545fce, type: 2}
   - {fileID: 11400000, guid: ef271743f341ea44c8413bd3208847e6, type: 2}
+  - {fileID: 11400000, guid: 0784ac2177dee61468c96df26ca0cf1f, type: 2}

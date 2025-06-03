@@ -1,14 +1,13 @@
 using System.Collections.Generic;
+using App.Tools.ConfigsRepositories;
 using UnityEngine;
 
 namespace App.Armor
 {
     [CreateAssetMenu(fileName = nameof(ArmorsConfig), menuName = Consts.AppName + "/Configs/Armor/" + nameof(ArmorsConfig))]
-    public class ArmorsConfig : ScriptableObject
+    public class ArmorsConfig : ConfigsRepository<ArmorConfig>
     {
-        [SerializeField] private List<ArmorConfig> armorConfigs;
-
-        public int MaxArmorLevel => armorConfigs.Capacity;
+        public int MaxArmorLevel => Configs.Capacity;
         
         public ArmorConfig GetArmor(int armorLevel)
         {
@@ -18,13 +17,13 @@ namespace App.Armor
                 armorLevel = 0;
             }
 
-            if (armorLevel >= armorConfigs.Count)
+            if (armorLevel >= Configs.Count)
             {
-                Debug.LogError($"Armor level equal or higher then max armor level: [{armorLevel}] [{armorConfigs.Count}]");
-                armorLevel = armorConfigs.Count - 1;
+                Debug.LogError($"Armor level equal or higher then max armor level: [{armorLevel}] [{Configs.Count}]");
+                armorLevel = Configs.Count - 1;
             }
             
-            return armorConfigs[armorLevel];
+            return Configs[armorLevel];
         }
     }
 }
