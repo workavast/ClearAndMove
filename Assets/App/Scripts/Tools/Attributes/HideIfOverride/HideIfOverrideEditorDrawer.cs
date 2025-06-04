@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -44,3 +46,4 @@ namespace App.Tools.Attributes.HideIfOverride
         }
     }
 }
+#endif
