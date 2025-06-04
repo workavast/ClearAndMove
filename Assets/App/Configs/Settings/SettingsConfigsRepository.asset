@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3a015f3cea4ca189a9dc2a4edc46e5, type: 3}
   m_Name: SettingsConfigsRepository
   m_EditorClassIdentifier: 
+  comparePattern: 
   configsRepositoryCell:
     autoFill: 1
     configs:

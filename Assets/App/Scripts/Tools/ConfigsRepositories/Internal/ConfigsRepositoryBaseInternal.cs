@@ -13,6 +13,8 @@ namespace App.Tools.ConfigsRepositories
         internal abstract void RefreshRepository();
         [Button]
         internal abstract void ClearNulls();
+        [Button]
+        internal abstract void Sort();
 #endif
     }
 }

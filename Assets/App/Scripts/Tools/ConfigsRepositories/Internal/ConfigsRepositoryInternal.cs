@@ -22,6 +22,8 @@ namespace App.Tools.ConfigsRepositories
                 else
                     Debug.LogWarning($"Duplicate of the config: [{config.GetType()}]");
             }
+
+            Sort();
         }
 
         internal sealed override void ClearNulls()
@@ -41,6 +43,9 @@ namespace App.Tools.ConfigsRepositories
             if (hasNull)
                 UnityEditor.EditorUtility.SetDirty(this);
         }
+        
+        internal override void Sort() 
+            => Configs.Sort(Comparison);
 #endif
     }
 }
