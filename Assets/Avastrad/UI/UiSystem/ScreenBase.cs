@@ -53,6 +53,5 @@ namespace Avastrad.UI.UiSystem
                 }
             }
         }
-
     }
 }

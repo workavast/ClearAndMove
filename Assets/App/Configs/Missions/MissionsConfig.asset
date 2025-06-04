@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: MissionsConfig
   m_EditorClassIdentifier: 
   configsRepositoryCell:
-    autoFill: 0
+    autoFill: 1
     configs:
     - {fileID: 11400000, guid: a5379e1e899cc374c8ce03a8a12e65d8, type: 2}
     - {fileID: 11400000, guid: 75466abcb6aa1464da14607fc71b5fa2, type: 2}
     - {fileID: 11400000, guid: ef0fd75039ef223479dd0a261204cff7, type: 2}
-  missions:
-  - {fileID: 11400000, guid: a5379e1e899cc374c8ce03a8a12e65d8, type: 2}
-  - {fileID: 11400000, guid: 75466abcb6aa1464da14607fc71b5fa2, type: 2}
-  - {fileID: 11400000, guid: ef0fd75039ef223479dd0a261204cff7, type: 2}
+  comparePattern: Mission {x}

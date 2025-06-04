@@ -15,7 +15,6 @@ namespace App.Tools.ConfigsRepositories.Editor
             string[] movedAssets,
             string[] movedFromAssetPaths)
         {
-
             if (!importedAssets.Any(IsAsset) && !deletedAssets.Any(IsAsset))
                 return;
             

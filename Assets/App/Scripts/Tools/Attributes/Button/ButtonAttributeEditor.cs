@@ -1,19 +1,14 @@
-//from https://gist.github.com/mashlol/92e66afb616ee2f1c66158cf0c2c8280
+#if UNITY_EDITOR
 
-using System;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.Tools.Attributes
+namespace App.Tools.Attributes.Button
 {
-    [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class ButtonAttribute : Attribute {}
-
-#if UNITY_EDITOR
     [CustomEditor(typeof(UnityEngine.Object), true)]
     [CanEditMultipleObjects]
-    public class BetterObjectEditor : Editor {
+    public class ButtonAttributeEditor : Editor {
         public override void OnInspectorGUI() {
             DrawDefaultInspector();
 
@@ -33,6 +28,5 @@ namespace App.Tools.Attributes
             }
         }
     }
-#endif
 }
-
+#endif

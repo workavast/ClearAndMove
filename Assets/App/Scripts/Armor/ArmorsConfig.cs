@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using App.Tools.ConfigsRepositories;
 using UnityEngine;
 
