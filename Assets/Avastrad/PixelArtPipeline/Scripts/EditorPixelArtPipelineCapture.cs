@@ -1,15 +1,17 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+
+using System.Collections;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace PixelArtPipeline.Editor
+namespace Avastrad.PixelArtPipeline
 {
     /// <summary>
     /// Custom editor for the AnimationCaptureHelper.
     /// </summary>
     [CustomEditor(typeof(PixelArtPipelineCapture))]
-    public class PixelArtPipelineEditor : UnityEditor.Editor
+    internal class EditorPixelArtPipelineCapture : UnityEditor.Editor
     {
         /// <summary>
         /// A message displayed when the target and source clip aren't assigned yet.
@@ -52,7 +54,7 @@ namespace PixelArtPipeline.Editor
 
                 var captureCameraProp = serializedObject.FindProperty("captureCamera");
                 EditorGUILayout.ObjectField(captureCameraProp, typeof(Camera));
-
+                
                 if (captureCameraProp.objectReferenceValue == null)
                 {
                     EditorGUILayout.HelpBox(ASSIGN_CAMERA_INFO, MessageType.Info);
@@ -62,7 +64,13 @@ namespace PixelArtPipeline.Editor
 
                 var resolutionProp = serializedObject.FindProperty("cellSize");
                 EditorGUILayout.PropertyField(resolutionProp);
-            
+                
+                var showDeadZoneProp = serializedObject.FindProperty("showDeadZone");
+                EditorGUILayout.PropertyField(showDeadZoneProp);
+                
+                var createNormalMapProp = serializedObject.FindProperty("createNormalMap");
+                EditorGUILayout.PropertyField(createNormalMapProp);
+                
                 if (GUILayout.Button("Capture Screen"))
                     RunRoutine(helper.CaptureFrame(SaveCapture));
             
@@ -162,10 +170,13 @@ namespace PixelArtPipeline.Editor
 
             var fileName = Path.GetFileNameWithoutExtension(diffusePath);
             var directory = Path.GetDirectoryName(diffusePath);
-            var normalPath = $"{directory}/{fileName}NormalMap.png";
 
             File.WriteAllBytes(diffusePath, diffuseMap.EncodeToPNG());
-            File.WriteAllBytes(normalPath, normalMap.EncodeToPNG());
+            if (normalMap != null)
+            {
+                var normalPath = $"{directory}/{fileName}NormalMap.png";
+                File.WriteAllBytes(normalPath, normalMap.EncodeToPNG());
+            }
 
             AssetDatabase.Refresh();
         }
@@ -192,3 +203,4 @@ namespace PixelArtPipeline.Editor
         }
     }
 }
+#endif
