@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5191046a0bb14cc19c1491773602d9c3, type: 3}
   m_Name: 0 ArmorConfig
   m_EditorClassIdentifier: 
+  <LobbyPrefabVariant>k__BackingField: {fileID: 1379824497173754258, guid: 71d6489b0b47caf4e9debb6cd67c2c16, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: eab9e6a1c8faaa5428820ceca5fa4c22, type: 3}
   <DamageScale>k__BackingField: 1
   <WalkSpeedDecrease>k__BackingField: 0
   <SprintSpeedDecrease>k__BackingField: 0

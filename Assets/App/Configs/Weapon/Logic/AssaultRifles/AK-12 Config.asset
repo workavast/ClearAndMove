@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 220
   <ViewPrefab>k__BackingField: {fileID: 3403419408561428251, guid: db2ab73b17cc67945a68631e865b1c03, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 7c2cd37709fb47548bc359c8be3ea923, type: 3}
+  <LobbyPrefabVariant>k__BackingField: {fileID: 3401457106288599121, guid: 6a133848487da974c8af43a6b844101e, type: 3}
   <Name>k__BackingField: AK-12
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 20

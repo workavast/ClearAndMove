@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 210
   <ViewPrefab>k__BackingField: {fileID: 3930404731918758516, guid: 8a9991f8abf033940aee5f78a4446fc7, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: f84f54e0e2d696c4885461b702e1ad36, type: 3}
+  <LobbyPrefabVariant>k__BackingField: {fileID: 1315906005322214927, guid: bd709b03c7e54f149938f35d3658d74a, type: 3}
   <Name>k__BackingField: Scar
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 20

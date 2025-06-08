@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882817487839384567, guid: 508e05478e0869245861a662b7849af5, type: 3}
       propertyPath: m_fontSize
-      value: 50.2
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 5685485200251895919, guid: 508e05478e0869245861a662b7849af5, type: 3}
       propertyPath: m_Name
@@ -125,7 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c2817c08a44b5aa473fe2ec419bbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectMarker: {fileID: 0}
   tmpText: {fileID: 3102849382117599982}
+  icon: {fileID: 0}
 --- !u!114 &3102849382117599982 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4882817487839384567, guid: 508e05478e0869245861a662b7849af5, type: 3}

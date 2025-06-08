@@ -8,6 +8,8 @@ namespace App.Weapons
     {
         [field: SerializeField] public WeaponId Id { get; private set; }
         [field: SerializeField] public WeaponView ViewPrefab { get; private set; }
+        [field: SerializeField] public Sprite Icon { get; private set; }
+        [field: SerializeField] public GameObject LobbyPrefabVariant { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField, Min(0)] public int BulletsPerShoot { get; private set; } = 1;
         [field: SerializeField, Min(0)] public float DamagePerBullet { get; private set; } = 10;
