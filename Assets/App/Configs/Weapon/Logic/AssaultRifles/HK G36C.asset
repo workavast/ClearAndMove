@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 230
   <ViewPrefab>k__BackingField: {fileID: 3403419408561428251, guid: 7045e21c41c5ad04cbb52bd0df5f7f5b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: d5a09a36c27824f41aab0c938804d372, type: 3}
+  <LobbyPrefabVariant>k__BackingField: {fileID: 3401457106288599121, guid: c2446b0e5de5f584595106e73c9eca26, type: 3}
   <Name>k__BackingField: HK G36C
   <BulletsPerShoot>k__BackingField: 1
   <DamagePerBullet>k__BackingField: 18

@@ -7,7 +7,10 @@ namespace App.Weapons
     public class WeaponSelector
     {
         [Inject] private readonly WeaponsConfigs _weaponsConfigs;
-        
+
+        public WeaponId GetSelectedWeapon() 
+            => PlayerData.SelectedWeapon;
+
         public void SelectWeapon(WeaponId weaponId) 
             => PlayerData.SetWeapon(weaponId);
 

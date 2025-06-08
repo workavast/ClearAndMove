@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace App.UI.WeaponSelection
+namespace App.Lobby.Weapon
 {
     public class SelectedWeaponView : MonoBehaviour
     {

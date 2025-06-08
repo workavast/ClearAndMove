@@ -4,9 +4,9 @@ using App.Weapons;
 using UnityEngine;
 using Zenject;
 
-namespace App.UI.WeaponSelection
+namespace App.Lobby.Weapon
 {
-    public class WeaponSelector : Selector<WeaponId>
+    public class WeaponSelector : Selector<WeaponId, WeaponSelectBtn>
     {
         [SerializeField] private WeaponsConfigs weaponsConfigs;
         
@@ -24,7 +24,21 @@ namespace App.UI.WeaponSelection
         protected override string GetName(WeaponId id) 
             => weaponsConfigs.WeaponConfigs[id].Name;
 
-        protected override void Select(WeaponId id)
-            => _weaponSelector.SelectWeapon(id);
+        protected override bool Is(WeaponId a, WeaponId b) 
+            => a == b;
+
+        protected override WeaponId GetCurrentActiveId() 
+            => _weaponSelector.GetSelectedWeapon();
+
+        protected override void OnSelect(WeaponId id)
+        {
+            _weaponSelector.SelectWeapon(id);
+        }
+
+        protected override void UpdateBtn(WeaponId weaponId, WeaponSelectBtn button)
+        {
+            button.SetData(weaponId, GetName(weaponId));
+            button.SetIcon(weaponsConfigs.WeaponConfigs[weaponId].Icon);
+        }
     }
 }
