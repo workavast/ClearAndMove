@@ -24,5 +24,8 @@ namespace App.Armor
             
             return Configs[armorLevel];
         }
+
+        public Sprite GetIcon(int armorLevel) 
+            => GetArmor(armorLevel).Icon;
     }
 }

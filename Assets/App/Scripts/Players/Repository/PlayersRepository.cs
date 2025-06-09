@@ -10,6 +10,8 @@ namespace App.Players.Repository
         public IReadOnlyList<PlayerRef> Players => _players;
 
         private readonly List<PlayerRef> _players = new(4);
+
+        private readonly List<IPlayersRepositoryCallBack> callBacks = new(4);
         
         public event Action<PlayerRef> OnPlayerJoined;
         public event Action<PlayerRef> OnPlayerLeft;
@@ -28,6 +30,12 @@ namespace App.Players.Repository
             Debug.Log($"Player {playerRef} joined");
             OnPlayerJoined?.Invoke(playerRef);
             OnPlayerChanged?.Invoke();
+
+            foreach (var callBack in callBacks)
+            {
+                callBack.OnPlayerJoined(playerRef);
+                callBack.OnPlayerChanged();
+            }
         }
 
         public void PlayerLeft(PlayerRef playerRef)
@@ -38,6 +46,24 @@ namespace App.Players.Repository
             Debug.Log($"Player {playerRef} left");
             OnPlayerLeft?.Invoke(playerRef);
             OnPlayerChanged?.Invoke();
+            
+            foreach (var callBack in callBacks)
+            {
+                callBack.OnPlayerLeft(playerRef);
+                callBack.OnPlayerChanged();
+            }
+        }
+
+        public void AddCallback(IPlayersRepositoryCallBack callBack)
+        {
+            callBacks.Add(callBack);
+            callBacks.Sort(IPlayersRepositoryCallBack.Composer);
+        }
+        
+        public void RemoveCallback(IPlayersRepositoryCallBack callBack)
+        {
+            callBacks.Remove(callBack);
+            callBacks.Sort(IPlayersRepositoryCallBack.Composer);
         }
     }
 
@@ -48,5 +74,8 @@ namespace App.Players.Repository
         public event Action<PlayerRef> OnPlayerJoined;
         public event Action<PlayerRef> OnPlayerLeft;
         public event Action OnPlayerChanged;
+
+        public void AddCallback(IPlayersRepositoryCallBack callBack);
+        public void RemoveCallback(IPlayersRepositoryCallBack callBack);
     }
 }

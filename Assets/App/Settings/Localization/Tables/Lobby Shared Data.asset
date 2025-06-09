@@ -87,6 +87,10 @@ MonoBehaviour:
     m_Key: DropMagazine
     m_Metadata:
       m_Items: []
+  - m_Id: 14170247567441920
+    m_Key: MissionStarts
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

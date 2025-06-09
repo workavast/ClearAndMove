@@ -7,7 +7,7 @@ namespace App.UI.Screens
     public class LobbyScreen : ScreenBase
     {
         [Inject] private readonly CursorVisibilityBehaviour _cursorVisibilityBehaviour;
-        
+
         private void OnEnable()
         {
             _cursorVisibilityBehaviour.Show();
@@ -16,6 +16,6 @@ namespace App.UI.Screens
         private void OnDisable()
         {
             _cursorVisibilityBehaviour.Hide();
-        }   
+        }
     }
 }

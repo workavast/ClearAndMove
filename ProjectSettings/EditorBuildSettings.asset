@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 4d3d76769a9d583459e3a9bf5b86e908
   - enabled: 1
     path: Assets/App/Scenes/Lobby.unity
-    guid: 89d524a8b3a98b44992a6cffee79fe0b
+    guid: 0e709d37dee370c44b8c50df189eee7b
   - enabled: 1
     path: Assets/App/Scenes/Train.unity
     guid: 45878dc8abeaf304f8ef11f9be42fbb4
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/App/Scenes/Mission_2.unity
     guid: 97d8b72ead7f94142b1f92e842196b15
+  - enabled: 0
+    path: Assets/App/Scenes/Lobby Legacy.unity
+    guid: 89d524a8b3a98b44992a6cffee79fe0b
   - enabled: 0
     path: Assets/Photon/FusionDemos/IntroSample/Sample/Scenes/FusionDemoMenu.unity
     guid: c3ffe7353c670464cbfd03781bc51365

@@ -1,3 +1,4 @@
+using App.Lobby.PlayersView;
 using App.Lobby.SessionData;
 using App.Players.Nicknames;
 using App.Players.SessionData.Global;
@@ -27,7 +28,7 @@ namespace App.Lobby
             var playerReadyView = Instantiate(playerReadyViewPrefab, holder);
             playerReadyView.SetSessionData(netLobbySessionData);
             
-            playerReadyView.GetComponent<NickNameView>().SetSessionData(_nicknamesProvider, _globalSessionDataRepository.GetData(playerRef));
+            playerReadyView.GetComponent<NickNameView>().Initialize(_nicknamesProvider, _globalSessionDataRepository.GetData(playerRef));
         }
     }
 }
