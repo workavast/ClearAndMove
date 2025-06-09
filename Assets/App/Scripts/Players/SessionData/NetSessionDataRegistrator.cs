@@ -5,13 +5,15 @@ using Zenject;
 
 namespace App.Players.SessionData
 {
-    public abstract class NetSessionDataRegistrator<T> : NetworkBehaviour
+    public abstract class NetSessionDataRegistrator<T> : NetworkBehaviour, IPlayersRepositoryCallBack
         where T : NetworkBehaviour
     {
         [SerializeField] private T globalSessionDataPrefab;
 
         [Inject] private readonly IPlayersSessionDataRepository<T> _playersSessionDataRepository;
         [Inject] private readonly IReadOnlyPlayersRepository _playersRepository;
+
+        public abstract int Priority { get; }
 
         public override void Spawned()
         {
@@ -24,15 +26,21 @@ namespace App.Players.SessionData
                     CreateSessionData(activePlayer);
             }
 
-            _playersRepository.OnPlayerJoined += CreateSessionData;
-            _playersRepository.OnPlayerLeft += DeleteSessionData;
+            _playersRepository.AddCallback(this);
         }
         
         public override void Despawned(NetworkRunner runner, bool hasState)
         {
-            _playersRepository.OnPlayerJoined -= CreateSessionData;
-            _playersRepository.OnPlayerLeft -= DeleteSessionData;
+            _playersRepository.AddCallback(this);
         }
+        
+        public void OnPlayerJoined(PlayerRef playerRef) 
+            => CreateSessionData(playerRef);
+
+        public void OnPlayerLeft(PlayerRef playerRef) 
+            => DeleteSessionData(playerRef);
+
+        public void OnPlayerChanged() { }
 
         private void CreateSessionData(PlayerRef playerRef)
         {

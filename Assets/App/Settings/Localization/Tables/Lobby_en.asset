@@ -90,6 +90,10 @@ MonoBehaviour:
     m_Localized: Drop Magazine On Reloading
     m_Metadata:
       m_Items: []
+  - m_Id: 14170247567441920
+    m_Localized: 'Mission Starts:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

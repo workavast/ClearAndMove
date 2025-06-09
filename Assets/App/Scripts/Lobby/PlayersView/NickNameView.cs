@@ -3,9 +3,8 @@ using App.Players.Nicknames;
 using App.Players.SessionData.Global;
 using TMPro;
 using UnityEngine;
-using Zenject;
 
-namespace App.UI
+namespace App.Lobby.PlayersView
 {
     public class NickNameView : MonoBehaviour, IDisposable
     {
@@ -14,7 +13,7 @@ namespace App.UI
         private NicknamesProvider _nicknamesProvider;
         private NetGlobalSessionData _globalSessionData;
 
-        public void SetSessionData(NicknamesProvider nicknamesProvider, NetGlobalSessionData globalSessionData)
+        public void Initialize(NicknamesProvider nicknamesProvider, NetGlobalSessionData globalSessionData)
         {
             _nicknamesProvider = nicknamesProvider;
             

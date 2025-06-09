@@ -4,16 +4,16 @@ using Zenject;
 
 namespace App.Players
 {
-    public class NetPlayersJoinLeftProvider : NetworkBehaviour, IPlayerJoined, IPlayerLeft
+    public class NetPlayersJoinLeftProvider : NetworkBehaviour, IAfterSpawned, IPlayerJoined, IPlayerLeft
     {
         [Inject] private readonly PlayersRepository _playersRepository;
 
-        public override void Spawned()
+        public void AfterSpawned()
         {
             foreach (var activePlayer in Runner.ActivePlayers) 
                 PlayerJoined(activePlayer);
         }
-
+        
         public void PlayerJoined(PlayerRef playerRef) 
             => _playersRepository.PlayerJoined(playerRef);
 

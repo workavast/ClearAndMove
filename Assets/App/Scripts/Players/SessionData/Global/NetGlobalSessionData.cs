@@ -27,7 +27,6 @@ namespace App.Players.SessionData.Global
 
         public override void Despawned(NetworkRunner runner, bool hasState)
         {
-            
             _globalSessionDataRepository.TryRemove(PlayerRef);
             OnDespawned?.Invoke();
         }

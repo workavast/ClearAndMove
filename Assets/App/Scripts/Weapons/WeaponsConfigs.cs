@@ -40,5 +40,8 @@ namespace App.Weapons
             _isInitialized = true;
             Debug.Log("Initialized");
         }
+
+        public Sprite GetIcon(WeaponId weaponId) 
+            => _weaponConfigs[weaponId].Icon;
     }
 }
