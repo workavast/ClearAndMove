@@ -15,6 +15,7 @@ namespace App.Lobby.Missions.Map
 
         public int SelectedMissionIndex => _mapModel.SelectedMissionIndex;
 
+        public event Action OnInitialized;
         public event Action<int> OnActiveMissionIndexChanged;
         public event Action<MissionConfig> OnActiveMissionChanged;
 
@@ -22,6 +23,7 @@ namespace App.Lobby.Missions.Map
         {
             if (NetSelectedMissionIndex != 0)
                 ActiveMissionIndexChanged();
+            OnInitialized?.Invoke();
         }
 
         public MissionConfig GetActiveMission()

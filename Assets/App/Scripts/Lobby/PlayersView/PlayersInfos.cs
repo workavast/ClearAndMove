@@ -3,6 +3,7 @@ using App.Lobby.SessionData;
 using App.Players.Nicknames;
 using App.Players.SessionData.Global;
 using App.Weapons;
+using Avastrad.Extensions;
 using Fusion;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,8 @@ namespace App.Lobby.PlayersView
     {
         [SerializeField] private PlayerInfo playerInfoPrefab;
         [SerializeField] private Transform holder;
+        [SerializeField] private Vector2 minOffset;
+        [SerializeField] private Vector2 maxOffset;
         
         [Inject] private readonly LobbySessionDataRepository _lobbySessionDataRepository;
         [Inject] private readonly GlobalSessionDataRepository _globalSessionDataRepository;
@@ -29,8 +32,13 @@ namespace App.Lobby.PlayersView
         {
             var globalSessionData = _globalSessionDataRepository.GetData(playerRef);
 
+            for (int i = 0; i < 4; i++)
+            {
             var playerInfo = Instantiate(playerInfoPrefab, holder);
             playerInfo.Initialize(globalSessionData, lobbySessionData, _nicknamesProvider, _weaponsConfigs, _armorsConfig);
+                
+            }
+            
         }
     }
 }
