@@ -23,7 +23,9 @@ namespace App.Lobby.Missions.MissionModifiers
         
         private void OnEnable()
         {
-            viewBlocker.SetState(!viewModel.HasStateAuthority);
+            viewModel.OnInitialized += UpdateViewBlocker;
+            UpdateViewBlocker();
+            
             viewModel.OnDataChanged += UpdateView;
             UpdateView();
         }
@@ -41,8 +43,12 @@ namespace App.Lobby.Missions.MissionModifiers
 
         private void OnDisable()
         {
+            viewModel.OnInitialized -= UpdateViewBlocker;
             viewModel.OnDataChanged -= UpdateView;
         }
+
+        private void UpdateViewBlocker() 
+            => viewBlocker.SetState(!viewModel.HasStateAuthority);
 
         private void UpdateView()
         {

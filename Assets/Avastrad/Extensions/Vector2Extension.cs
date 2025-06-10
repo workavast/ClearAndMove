@@ -46,8 +46,8 @@ namespace Avastrad.Extensions
         
         public static Vector2 GetRandom(Vector2 min, Vector2 max)
         {
-            float xRandom = Random.Range(min.x, max.x + 1);
-            float yRandom = Random.Range(min.y, max.y + 1);
+            float xRandom = Random.Range(min.x, max.x);
+            float yRandom = Random.Range(min.y, max.y);
 
             return new Vector2(xRandom, yRandom);
         }

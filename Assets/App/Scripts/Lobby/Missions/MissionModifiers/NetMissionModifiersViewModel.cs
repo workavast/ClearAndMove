@@ -23,6 +23,7 @@ namespace App.Lobby.Missions.MissionModifiers
         public bool EnemiesFriendlyFire => model.EnemiesFriendlyFire;
         public float EnemiesDamageScale => model.EnemiesDamageScale;
         
+        public event Action OnInitialized;
         public event Action OnDataChanged;
 
         public override void Spawned()
@@ -38,6 +39,7 @@ namespace App.Lobby.Missions.MissionModifiers
                 NetEnemiesDamageScale = EnemiesDamageScale;
             }
 
+            OnInitialized?.Invoke();
             OnDataChanged?.Invoke();
         }
 

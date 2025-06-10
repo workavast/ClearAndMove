@@ -30,17 +30,24 @@ namespace App.Lobby.Missions.Map
                 missionMarkers[i].SetInteractableState(missionIsAvailable);
                 missionMarkers[i].OnClicked += Select;
             }
+
         }
 
         private void OnEnable()
         {
+            netMapViewModel.OnInitialized += UpdateViewBlocker;
+            UpdateViewBlocker();
+            
             netMapViewModel.OnActiveMissionChanged += UpdateActiveMarker;
             UpdateActiveMarker(netMapViewModel.GetActiveMission());
-            viewBlocker.SetState(!netMapViewModel.HasStateAuthority);
         }
+
+        private void UpdateViewBlocker() 
+            => viewBlocker.SetState(!netMapViewModel.HasStateAuthority);
 
         private void OnDisable()
         {
+            netMapViewModel.OnInitialized -= UpdateViewBlocker;
             netMapViewModel.OnActiveMissionChanged -= UpdateActiveMarker;
         }
 
