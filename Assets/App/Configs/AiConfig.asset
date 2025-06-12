@@ -15,14 +15,14 @@ MonoBehaviour:
   <PlayerLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 8
-  <ViewRadius>k__BackingField: 5
+  <ViewRadius>k__BackingField: 7
   <AttackDistance>k__BackingField: 15
   <MoveTolerance>k__BackingField: 0.05
   <CombatConfig>k__BackingField:
     <StayMinDuration>k__BackingField: 0.5
     <StayMaxDuration>k__BackingField: 2
-    <WaitMinDuration>k__BackingField: 1
-    <WaitMaxDuration>k__BackingField: 2
+    <WaitMinDuration>k__BackingField: 0.5
+    <WaitMaxDuration>k__BackingField: 1.5
     <MoveMinDistance>k__BackingField: 1.5
     <MoveMaxDistance>k__BackingField: 3
     <PauseMinDuration>k__BackingField: 0.4
