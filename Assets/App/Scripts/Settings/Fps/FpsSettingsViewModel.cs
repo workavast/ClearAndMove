@@ -12,7 +12,7 @@ namespace App.Settings.Fps
         public int SelectedOptionIndex { get; private set; }
         public IReadOnlyList<int> FpsOptions => Model.FpsOptions;
         public int DefaultOptionIndex => Model.DefaultOptionIndex;
-        public bool IsChanged => Model.SelectedOption != SelectedOptionIndex;
+        public bool IsChanged => Model.SelectedOptionIndex != SelectedOptionIndex;
 
         private FpsSettingsModel Model => _settingsModel.FpsSettingsModel;
 
