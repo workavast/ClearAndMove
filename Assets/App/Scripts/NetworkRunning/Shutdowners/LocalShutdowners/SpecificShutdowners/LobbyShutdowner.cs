@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace App.NetworkRunning.Shutdowners.LocalShutdowners
 {
-    public class LobbyShutdowner:LocalShutdowner
+    public class LobbyShutdowner : LocalShutdowner
     {
         private readonly ISceneLoader _sceneLoader;
 
@@ -14,7 +14,7 @@ namespace App.NetworkRunning.Shutdowners.LocalShutdowners
         {
             _sceneLoader = sceneLoader;
         }
-        
+
         public override void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
         {
             if (SceneManager.GetActiveScene().buildIndex == ScenesConfig.MainMenu)

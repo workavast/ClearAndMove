@@ -33,7 +33,7 @@ namespace App.Bootstraps
             if (!_runnerProvider.TryGetNetworkRunner(out _))
                 await _sessionCreator.CreateSinglePlayer(SceneManager.GetActiveScene().buildIndex, true);
 
-            _shutdownerProvider.SetLocalShutdownProvider(new LobbyShutdowner(_sceneLoader));
+            _shutdownerProvider.SetLocalShutdownProvider(new DefaultShutdowner(_sceneLoader));
             _sessionVisibilityManager.SetHardVisibility(true);
             
             if (_runnerProvider.TryGetNetworkRunner(out var runner) && runner.IsServer)
@@ -41,7 +41,7 @@ namespace App.Bootstraps
 
             await localizationPreloader.Preload();
 
-            _sceneLoader.HideLoadScreen(true);
+            _sceneLoader.HideLoadScreen(false);
         }
         
         private void OnDestroy() 

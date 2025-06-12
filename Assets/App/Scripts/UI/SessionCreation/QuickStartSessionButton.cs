@@ -9,6 +9,7 @@ namespace App.UI.SessionCreation
     [RequireComponent(typeof(Button))]
     public class QuickStartSessionButton : MonoBehaviour
     {
+        [SerializeField] private bool skipLoadingScreen;
         [Inject] private SessionCreator _sessionCreator;
 
         private Button _button;
@@ -20,6 +21,6 @@ namespace App.UI.SessionCreation
         }
 
         private void QuickStart() 
-            => _sessionCreator.QuickStart(ScenesConfig.Lobby, true);
+            => _sessionCreator.QuickStart(ScenesConfig.Lobby, skipLoadingScreen);
     }
 }

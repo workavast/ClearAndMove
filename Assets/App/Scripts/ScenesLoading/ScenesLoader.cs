@@ -2,7 +2,6 @@ using System;
 using App.NetworkRunning;
 using Avastrad.ScenesLoading;
 using Fusion;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace App.ScenesLoading

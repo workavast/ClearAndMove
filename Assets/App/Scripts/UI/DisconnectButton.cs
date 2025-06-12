@@ -8,7 +8,7 @@ namespace App.UI
     [RequireComponent(typeof(Button))]
     public class DisconnectButton : MonoBehaviour
     {
-        [Inject] private IDisconnectInvoker _disconnectInvoker;
+        [Inject] private readonly IDisconnectInvoker _disconnectInvoker;
 
         private Button _button;
 
