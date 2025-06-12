@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableReferences:
   - m_TableCollectionName: Lobby
+  - m_TableCollectionName: LobbyDiegeticTargets
   - m_TableCollectionName: ConnectionScreen
   - m_TableCollectionName: ArmorConfig
+  - m_TableCollectionName: WeaponParams
   - m_TableCollectionName: NetworkErrorScreen
   tables:
   - {fileID: 11400000, guid: 04d67d3a956f8524aba05c226f437384, type: 2}
+  - {fileID: 11400000, guid: 5b432c2728898704fbbd2bd8932c113c, type: 2}
   - {fileID: 11400000, guid: ef271743f341ea44c8413bd3208847e6, type: 2}
   - {fileID: 11400000, guid: a59f0f2b28adbc1458e433d228b60433, type: 2}
+  - {fileID: 11400000, guid: 59553c565ece25940a690f0b1527ce89, type: 2}
   - {fileID: 11400000, guid: 0784ac2177dee61468c96df26ca0cf1f, type: 2}

@@ -10,7 +10,6 @@ namespace App.Lobby.PlayersView
         
         private void Start()
         {
-            Debug.Log("Start");
             var activeMaterials = meshRenderer.materials;
             activeMaterials[0] = GetRandomMaterial();
             meshRenderer.materials = activeMaterials;
@@ -19,7 +18,6 @@ namespace App.Lobby.PlayersView
         private Material GetRandomMaterial()
         {
             var materialIndex = Random.Range(0, materials.Length);
-            Debug.Log("materialIndex: " + materialIndex);
             return materials[materialIndex];
         }
     }
