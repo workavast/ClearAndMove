@@ -1,7 +1,6 @@
 using System;
 using App.Armor;
 using App.Dissolving;
-using App.Doors;
 using App.Entities.Health;
 using App.Interaction;
 using App.Weapons;
@@ -98,6 +97,10 @@ namespace App.Entities
         {
             entityView.MoveView(NetVelocity, SprintSpeed);
             entityView.SetAliveState(IsAlive);
+            
+            hitbox.HitboxActive = 
+                characterController.enabled = 
+                    netCharacterController.enabled = health.IsAlive;
         }
 
         public void TakeDamage(float damage, IEntity killer) 
