@@ -17,24 +17,27 @@ namespace App.Interaction
         {
             _isVisible = isVisible;
         }
-        
+
         public void TtyInteract(IInteractor interactor, bool interact)
         {
             if (!HasStateAuthority && !HasInputAuthority)
                 return;
 
-            IInteractiveZone zone = null;
-            _collisions = Runner.GetPhysicsScene().OverlapSphere(transform.position, radius, _collidersBuffer, 
+            _collisions = Runner.GetPhysicsScene().OverlapSphere(transform.position, radius, _collidersBuffer,
                 layerMask, QueryTriggerInteraction.Ignore);
+
+            if (!interact)
+                return;
+
             for (int i = 0; i < _collisions; i++)
             {
-                zone = _collidersBuffer[i].GetComponent<IInteractiveZone>();
+                var zone = _collidersBuffer[i].GetComponent<IInteractiveZone>();
                 if (zone != null && zone.IsInteractable)
-                    break;
+                {
+                    zone?.Interact(interactor);
+                    return;
+                }
             }
-
-            if (interact && zone != null) 
-                zone.Interact(interactor);
         }
 
         public override void Render()
