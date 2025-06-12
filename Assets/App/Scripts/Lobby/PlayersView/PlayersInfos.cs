@@ -32,13 +32,8 @@ namespace App.Lobby.PlayersView
         {
             var globalSessionData = _globalSessionDataRepository.GetData(playerRef);
 
-            for (int i = 0; i < 4; i++)
-            {
             var playerInfo = Instantiate(playerInfoPrefab, holder);
             playerInfo.Initialize(globalSessionData, lobbySessionData, _nicknamesProvider, _weaponsConfigs, _armorsConfig);
-                
-            }
-            
         }
     }
 }

@@ -76,6 +76,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1b1d76fd30b09c4d9c6b2ae03917553
+    m_Address: Assets/App/Settings/Localization/Tables/LobbyDiegeticTargets Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edfeb5d90e82d2a428479a2d085c41ac
     m_Address: Assets/App/Settings/Localization/Tables/WeaponParams Shared Data.asset
     m_ReadOnly: 1

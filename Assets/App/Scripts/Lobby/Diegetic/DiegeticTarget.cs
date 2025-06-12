@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace App.Lobby.Diegetic
 {
@@ -8,6 +9,7 @@ namespace App.Lobby.Diegetic
         [SerializeField] private CinemachineCamera cinemachineCamera;
         [SerializeField] private DiegeticTarget nextDiegeticTarget;
         [SerializeField] private DiegeticTarget prevDiegeticTarget;
+        [SerializeField] private LocalizedString localizedName;
         
         public void Activate()
         {
@@ -19,16 +21,19 @@ namespace App.Lobby.Diegetic
             cinemachineCamera.Priority = 0;
         }
 
-        public bool TryGetNextTable(out DiegeticTarget diegeticTarget)
+        public bool TryGetNextTarget(out DiegeticTarget diegeticTarget)
         {
             diegeticTarget = nextDiegeticTarget;
             return diegeticTarget != null;
         }
         
-        public bool TryGetPrevTable(out DiegeticTarget diegeticTarget)
+        public bool TryGetPrevTarget(out DiegeticTarget diegeticTarget)
         {
             diegeticTarget = prevDiegeticTarget;
             return diegeticTarget != null;
         }
+
+        public string GetLocalizedName() 
+            => localizedName.GetLocalizedString();
     }
 }
