@@ -8,11 +8,11 @@ namespace App.Lobby.SessionData
 {
     public class NetLobbySessionData : NetworkBehaviour
     {
-        [Networked] [field: ReadOnly] [OnChangedRender(nameof(ReadyStateChanged))] public bool IsReady { get; private set; }
-        [Networked] [field: ReadOnly] [OnChangedRender(nameof(SelectedWeaponChanged))] public WeaponId SelectedWeapon { get; private set; }
-        [Networked] [field: ReadOnly] [OnChangedRender(nameof(SelectedArmorChanged))] public int SelectedArmor { get; private set; }
+        [Networked, OnChangedRender(nameof(ReadyStateChanged))] [field: ReadOnly] public bool IsReady { get; private set; }
+        [Networked, OnChangedRender(nameof(SelectedArmorChanged))] [field: ReadOnly] public int SelectedArmor { get; private set; }
+        [Networked, OnChangedRender(nameof(SelectedWeaponChanged))] [field: ReadOnly] public WeaponId SelectedWeapon { get; private set; } = WeaponId.Scar;
 
-        [Inject] private LobbySessionDataRepository _playersSessionDataRepository;
+        [Inject] private readonly LobbySessionDataRepository _playersSessionDataRepository;
         
         public PlayerRef PlayerRef => Object.InputAuthority;
         

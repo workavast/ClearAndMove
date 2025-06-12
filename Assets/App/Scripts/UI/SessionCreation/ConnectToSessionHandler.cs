@@ -13,7 +13,8 @@ namespace App.UI.SessionCreation
     {
         [SerializeField] private Button button;
         [SerializeField] private TMP_InputField serverNameInput;
-        
+        [SerializeField] private bool skipLoadingScreen;
+
         [Inject] private SessionCreator _sessionCreator;
         
         private void Awake()
@@ -26,7 +27,7 @@ namespace App.UI.SessionCreation
             if (serverNameInput.text.IsNullOrEmpty())
                 return;
             
-            _sessionCreator.ConnectToSession(serverNameInput.text, ScenesConfig.Lobby, true);
+            _sessionCreator.ConnectToSession(serverNameInput.text, ScenesConfig.Lobby, skipLoadingScreen);
         }
     }
 }

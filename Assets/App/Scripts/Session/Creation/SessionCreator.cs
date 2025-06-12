@@ -82,11 +82,9 @@ namespace App.Session.Creation
             // Let the Fusion Runner know that we will be providing user input
             NetworkRunner.ProvideInput = true;
             
-            if (_waitScreen != null)
+            if (startGameArgs.GameMode != GameMode.Single && _waitScreen != null)
                 _waitScreen.Show();
             var result = await NetworkRunner.StartGame(startGameArgs);
-            if (_waitScreen != null)
-                _waitScreen.Hide();
             
             if (result.Ok)
             {
@@ -101,6 +99,8 @@ namespace App.Session.Creation
             }
             else
             {
+                if (_waitScreen != null)
+                    _waitScreen.Hide();
                 Debug.LogError($"{result.ErrorMessage} {result.ShutdownReason}");
                 failCallback?.Invoke(result.ShutdownReason);
             }
