@@ -18,12 +18,17 @@ namespace App.Particles
 
         public void OnElementExtractFromPool()
         {
+#if UNITY_EDITOR
+            gameObject.SetActive(true);
+#endif
             particleProvider.Play();
         }
 
         public void OnElementReturnInPool()
         {
-            
+#if UNITY_EDITOR
+            gameObject.SetActive(false);
+#endif
         }
 
         private void OnDestroy() 
