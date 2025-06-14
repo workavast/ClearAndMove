@@ -51,7 +51,7 @@ namespace App.Entities
         public bool IsKnockoutOrDead => IsSpawned && (health.IsKnockout || health.IsDead);
         
         protected abstract IEventBus EventBus { get; set; }
-        protected abstract ArmorsConfig ArmorsConfig { get; set; }
+        protected abstract ArmorConfigsRep ArmorConfigsRep { get; set; }
         protected NetWeapon NetWeapon;
 
         private ArmorConfig _armor;
@@ -73,7 +73,7 @@ namespace App.Entities
         public override void Spawned()
         {
             IsSpawned = true;
-            _armor = ArmorsConfig.GetArmor(0);
+            _armor = ArmorConfigsRep.GetArmor(0);
             hitbox.HitboxActive = 
                 characterController.enabled = 
                 netCharacterController.enabled = true;
@@ -194,6 +194,6 @@ namespace App.Entities
         }
         
         private void UpdateArmorConfig() 
-            => _armor = ArmorsConfig.GetArmor(NetArmorLevel);
+            => _armor = ArmorConfigsRep.GetArmor(NetArmorLevel);
     }
 }

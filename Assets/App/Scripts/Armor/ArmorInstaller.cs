@@ -5,11 +5,11 @@ namespace App.Armor
 {
     public class ArmorInstaller : MonoInstaller
     {
-        [SerializeField] private ArmorsConfig armorsConfig;
+        [SerializeField] private ArmorConfigsRep armorConfigsRep;
         
         public override void InstallBindings()
         {
-            Container.Bind<ArmorsConfig>().FromInstance(armorsConfig).AsSingle();
+            Container.Bind<ArmorConfigsRep>().FromInstance(armorConfigsRep).AsSingle();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace App.Lobby.Armor
     {
         [SerializeField] private LocalizedString localizedString;
         
-        [Inject] private readonly ArmorsConfig _configs;
+        [Inject] private readonly ArmorConfigsRep _configs;
 
         private void OnEnable()
         {

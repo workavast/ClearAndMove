@@ -19,19 +19,19 @@ namespace App.Entities.Player
         public override EntityType EntityType => EntityType.Player;
 
         protected override IEventBus EventBus { get; set; }
-        protected override ArmorsConfig ArmorsConfig { get; set; }
+        protected override ArmorConfigsRep ArmorConfigsRep { get; set; }
 
         private PlayersEntitiesRepository _playersEntitiesRepository;
         private NicknamesProvider _nicknamesProvider;
         
         [Inject]
         public void Construct(PlayersEntitiesRepository playersEntitiesRepository, NicknamesProvider nicknamesProvider, 
-            IEventBus eventBus, ArmorsConfig armorsConfig)
+            IEventBus eventBus, ArmorConfigsRep armorConfigsRep)
         {
             _playersEntitiesRepository = playersEntitiesRepository;
             _nicknamesProvider = nicknamesProvider;
             EventBus = eventBus;
-            ArmorsConfig = armorsConfig;
+            ArmorConfigsRep = armorConfigsRep;
             
             OnKnockout += () => EventBus.Invoke(new OnPlayerKnockout());
             OnDeath += () => EventBus.Invoke(new OnPlayerDeath(PlayerRef));

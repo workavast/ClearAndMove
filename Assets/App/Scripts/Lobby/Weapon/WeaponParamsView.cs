@@ -2,19 +2,21 @@ using App.Players;
 using App.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace App.Lobby.Weapon
 {
     public class WeaponParamsView : MonoBehaviour
     {
         [SerializeField] private WeaponParamsViewConfig weaponParamsViewConfig;
-        [SerializeField] private WeaponsConfigs weaponsConfigs;
         [Space]
         [SerializeField] private Slider damageView;
         [SerializeField] private Slider fireRateView;
         [SerializeField] private Slider reloadTimeView;
         [SerializeField] private Slider spreadAngleView;
         [SerializeField] private Slider magazineSizeView;
+        
+        [Inject] private readonly WeaponConfigsRep _weaponConfigsRep;
         
         private void Awake()
         {
@@ -45,7 +47,7 @@ namespace App.Lobby.Weapon
 
         private void UpdateView()
         {
-            var weaponConfig = weaponsConfigs.WeaponConfigs[PlayerData.SelectedWeapon];
+            var weaponConfig = _weaponConfigsRep.WeaponConfigs[PlayerData.SelectedWeapon];
             damageView.value = weaponConfig.DamagePerBullet;
             fireRateView.value = weaponConfig.FireRate;
             reloadTimeView.value = weaponConfig.ReloadTime;

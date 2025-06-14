@@ -19,13 +19,13 @@ namespace App.Weapons
         [SerializeField] private Transform shootPoint;
         [SerializeField] private WeaponViewHolder weaponViewHolder;
         
-        [Inject] private readonly WeaponsConfigs _weaponsConfigs;
+        [Inject] private readonly WeaponConfigsRep _weaponConfigsRep;
         [Inject] private readonly ShooterFactory _shooterFactory;
         
         public bool CanShot => netWeaponModel.NetMagazine > 0;
         public bool CanReload => _reloadingState.CanReload;
         public bool RequiredReload => netWeaponModel.NetMagazine <= 0 && CanReload;
-        public WeaponId NetEquippedWeapon => netWeaponModel.NetEquippedWeapon;
+        public WeaponId NetEquippedWeapon => netWeaponModel.EquippedWeapon;
 
         public int MaxMagazineAmmo => WeaponConfig.MagazineSize;
         public int CurrentMagazineAmmo => netWeaponModel.NetMagazine;
@@ -58,9 +58,9 @@ namespace App.Weapons
         {
             netWeaponModel.Shooter = _shooterFactory.CreateShoot(GetComponent<IEntity>());
 
-            SetWeapon(NetEquippedWeapon, true);
+            ApplyWeapon(NetEquippedWeapon);
             
-            netWeaponModel.OnEquippedWeaponChanged += SetWeapon;
+            netWeaponModel.OnEquippedWeaponChanged += ApplyWeapon;
 
             _visibleFireCount = netWeaponModel.NetFireCount;
         }
@@ -88,19 +88,11 @@ namespace App.Weapons
         }
 
         public void SetWeapon(WeaponId weaponId) 
-            => SetWeapon(weaponId, false);
+            => netWeaponModel.SetWeapon(weaponId);
 
-        private void SetWeapon(WeaponId weaponId, bool force)
+        private void ApplyWeapon(WeaponId weaponId)
         {
-            if (!force && netWeaponModel.NetEquippedWeapon == weaponId)
-            {
-                Debug.LogWarning($"You try set weapon that already setted: [{netWeaponModel.NetEquippedWeapon}] [{weaponId}]");
-                return;
-            }
-                
-            netWeaponModel.NetEquippedWeapon = weaponId;
-         
-            netWeaponModel.WeaponConfig = _weaponsConfigs.WeaponConfigs[weaponId];
+            netWeaponModel.WeaponConfig = _weaponConfigsRep.WeaponConfigs[weaponId];
             Shooter.SetData(shootPoint, netWeaponModel.WeaponConfig);
             
             netWeaponModel.NetFireRatePause = TickTimer.CreateFromSeconds(Runner, 0);

@@ -6,7 +6,7 @@ namespace App.Weapons
 {
     public class WeaponSelector
     {
-        [Inject] private readonly WeaponsConfigs _weaponsConfigs;
+        [Inject] private readonly WeaponConfigsRep _weaponConfigsRep;
 
         public WeaponId GetSelectedWeapon() 
             => PlayerData.SelectedWeapon;
@@ -15,6 +15,6 @@ namespace App.Weapons
             => PlayerData.SetWeapon(weaponId);
 
         public IReadOnlyList<WeaponId> GetAllWeapon() 
-            => _weaponsConfigs.WeaponIds;
+            => _weaponConfigsRep.WeaponIds;
     }
 }

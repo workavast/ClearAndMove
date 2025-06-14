@@ -441,7 +441,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.5
+  m_fontSize: 31.75
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityConfig: {fileID: 11400000, guid: 2e235d0bd95dfe34f95a57e634acc985, type: 2}
-  armorsConfig: {fileID: 11400000, guid: 0d2eb2ae446271e4698aebdc08217944, type: 2}
+  armorConfigsRep: {fileID: 0}
   walkSpeedView: {fileID: 7066833860108022820}
   sprintSpeedView: {fileID: 4811043507275863343}
   damageScaleView: {fileID: 197795397330757221}
@@ -3808,7 +3808,7 @@ MonoBehaviour:
   <Id>k__BackingField: Weapon
   weaponSelectBtnPrefab: {fileID: -7490630125886373366, guid: 71dbdf1fd91ab5e408f5c6d82d7a4e80, type: 3}
   holder: {fileID: 2499445074450262947}
-  weaponsConfigs: {fileID: 11400000, guid: cd678194435b0064d94f6ece203a27cc, type: 2}
+  selectableWeaponConfigsRep: {fileID: 11400000, guid: cd678194435b0064d94f6ece203a27cc, type: 2}
 --- !u!1 &6181705140622734507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4944,7 +4944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponParamsViewConfig: {fileID: 11400000, guid: 8c9f4ff11fe584546a24b15391f872ef, type: 2}
-  weaponsConfigs: {fileID: 11400000, guid: 84fce0ef8c682a64fa91a8022466205b, type: 2}
   damageView: {fileID: 7044326232079769464}
   fireRateView: {fileID: 1116240281017710425}
   reloadTimeView: {fileID: 1181538745793136539}
@@ -5169,7 +5168,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.5
+  m_fontSize: 31.75
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5473,7 +5472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSize
-      value: 31.95
+      value: 27.8
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSizeMax
@@ -5607,7 +5606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSize
-      value: 31.95
+      value: 27.8
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSizeMax
@@ -5649,7 +5648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSizeMax
@@ -6515,7 +6514,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSizeMax
@@ -6968,7 +6967,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSizeMax
@@ -7381,7 +7380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSize
-      value: 31.95
+      value: 27.8
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSizeMax
@@ -8826,7 +8825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSize
-      value: 31.95
+      value: 27.8
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSizeMax
@@ -9378,7 +9377,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSizeMax
@@ -10039,7 +10038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSize
-      value: 31.95
+      value: 27.8
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSizeMax
@@ -10718,7 +10717,6 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  weaponsConfigs: {fileID: 11400000, guid: cd678194435b0064d94f6ece203a27cc, type: 2}
   references:
     version: 2
     RefIds: []
@@ -10762,7 +10760,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSizeMax
@@ -11201,7 +11199,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 859507644178270942, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11624,7 +11622,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSizeMax
@@ -12175,7 +12173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSize
-      value: 31.95
+      value: 27.8
       objectReference: {fileID: 0}
     - target: {fileID: 6533547252728635137, guid: 8e3f1f9f1d286854f96adb085f659162, type: 3}
       propertyPath: m_fontSizeMax
@@ -12575,7 +12573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 151146378731339615, guid: b064bffb23644ea469f2f30805db6b34, type: 3}
       propertyPath: m_fontSizeMax
