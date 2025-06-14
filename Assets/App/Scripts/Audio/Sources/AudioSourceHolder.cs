@@ -21,18 +21,12 @@ namespace App.Audio.Sources
         public void SetPitch(float newPitch) 
             => _audioSource.pitch = newPitch;
 
-        public virtual void SetClip(AudioClip audioClip, bool play = true)
+        public void SetClip(AudioClip audioClip, bool play = true)
         {
             _audioSource.clip = audioClip;
 
             if (play)
                 _audioSource.Play();
         }
-        
-        private void Pause() 
-            => _audioSource.Pause();
-
-        private void Continue() 
-            => _audioSource.Play();
     }
 }
