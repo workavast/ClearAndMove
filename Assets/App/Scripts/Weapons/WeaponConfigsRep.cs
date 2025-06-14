@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using App.Tools.ConfigsRepositories;
+using App.Utils.ConfigsRepositories;
 using UnityEngine;
 
 namespace App.Weapons
