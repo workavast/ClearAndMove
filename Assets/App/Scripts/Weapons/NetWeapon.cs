@@ -90,6 +90,15 @@ namespace App.Weapons
         public void SetWeapon(WeaponId weaponId) 
             => netWeaponModel.SetWeapon(weaponId);
 
+        public bool TryShoot() 
+            => _fsm.ActiveState.TryShot();
+
+        public void TryReload() 
+            => _fsm.TryActivateState(_reloadingState);
+
+        public void OnDrawGizmos() 
+            => Shooter?.OnDrawGizmos();
+        
         private void ApplyWeapon(WeaponId weaponId)
         {
             netWeaponModel.WeaponConfig = _weaponConfigsRep.WeaponConfigs[weaponId];
@@ -102,14 +111,5 @@ namespace App.Weapons
             
             weaponViewHolder.SetWeaponView(WeaponConfig.ViewPrefab);
         }
-
-        public bool TryShoot() 
-            => _fsm.ActiveState.TryShot();
-
-        public void TryReload() 
-            => _fsm.TryActivateState(_reloadingState);
-
-        public void OnDrawGizmos() 
-            => Shooter?.OnDrawGizmos();
     }
 }
