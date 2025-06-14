@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace App.Weapons
 {
-    [CreateAssetMenu(fileName = nameof(WeaponsConfigs), menuName = Consts.WeaponConfigsPath + nameof(WeaponsConfigs))]
-    public class WeaponsConfigs : ConfigsRepository<WeaponConfig>
+    [CreateAssetMenu(fileName = nameof(WeaponConfigsRep), menuName = Consts.WeaponConfigsPath + nameof(WeaponConfigsRep))]
+    public class WeaponConfigsRep : ConfigsRepository<WeaponConfig>
     {
         private readonly List<WeaponId> _weaponIds = new();
         private readonly Dictionary<WeaponId, WeaponConfig> _weaponConfigs = new();

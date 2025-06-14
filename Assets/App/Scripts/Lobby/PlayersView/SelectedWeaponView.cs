@@ -9,15 +9,15 @@ namespace App.Lobby.PlayersView
     {
         [SerializeField] private Image iconImage;
         
-        private WeaponsConfigs _weaponsConfigs;
+        private WeaponConfigsRep _weaponConfigsRep;
         private NetLobbySessionData _lobbySessionData;
 
-        public void Initialize(NetLobbySessionData lobbySessionData, WeaponsConfigs weaponsConfigs)
+        public void Initialize(NetLobbySessionData lobbySessionData, WeaponConfigsRep weaponConfigsRep)
         {
             if (_lobbySessionData != null) 
                 _lobbySessionData.OnSelectedWeaponChanged -= UpdateView;
 
-            _weaponsConfigs = weaponsConfigs;
+            _weaponConfigsRep = weaponConfigsRep;
             _lobbySessionData = lobbySessionData;
             _lobbySessionData.OnSelectedWeaponChanged += UpdateView;
 
@@ -31,6 +31,6 @@ namespace App.Lobby.PlayersView
         }
 
         private void UpdateView() 
-            => iconImage.sprite = _weaponsConfigs.GetIcon(_lobbySessionData.SelectedWeapon);
+            => iconImage.sprite = _weaponConfigsRep.GetIcon(_lobbySessionData.SelectedWeapon);
     }
 }

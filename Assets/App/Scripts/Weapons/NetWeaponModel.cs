@@ -10,7 +10,7 @@ namespace App.Weapons
         [field: SerializeField] public LayerMask HitLayers { get; set; }
 
         [OnChangedRender(nameof(OnNetEquippedWeaponChanged))]
-        [Networked] [field: SerializeField, ReadOnly] public WeaponId NetEquippedWeapon { get; set; } = WeaponId.Scar;
+        [Networked] [field: SerializeField, ReadOnly] private WeaponId NetEquippedWeapon { get; set; } = WeaponId.Scar;
         [Networked] [field: SerializeField, ReadOnly] public int NetMagazine { get; set; }
         [Networked] [field: SerializeField, ReadOnly] public int NetFullAmmoSize { get; set; }
         [Networked] [field: SerializeField, ReadOnly] public int NetFireCount { get; set; }
@@ -21,6 +21,8 @@ namespace App.Weapons
         [Networked, Capacity(32)] public NetworkArray<ProjectileData> NetProjectileData { get; }
 
         [field: SerializeField, ReadOnly] public WeaponConfig WeaponConfig { get; set; }
+
+        public WeaponId EquippedWeapon => NetEquippedWeapon;
         
         public Shooter Shooter { get; set; }
         
@@ -33,6 +35,17 @@ namespace App.Weapons
 
             var spreadChangeRate = WeaponConfig.SpreadRateDecreasePerSecond * Runner.DeltaTime;
             CurrentSpreadRatio = Mathf.Clamp(CurrentSpreadRatio - spreadChangeRate, 0, 1);
+        }
+
+        public void SetWeapon(WeaponId weaponId)
+        {
+            if (NetEquippedWeapon == weaponId)
+            {
+                Debug.LogWarning($"You try set weapon that already setted: [{NetEquippedWeapon}] [{weaponId}]");
+                return;
+            }
+            
+            NetEquippedWeapon = weaponId;
         }
 
         private void OnNetEquippedWeaponChanged() 

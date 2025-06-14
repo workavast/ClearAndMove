@@ -20,8 +20,8 @@ namespace App.Lobby.PlayersView
         [Inject] private readonly LobbySessionDataRepository _lobbySessionDataRepository;
         [Inject] private readonly GlobalSessionDataRepository _globalSessionDataRepository;
         [Inject] private readonly NicknamesProvider _nicknamesProvider;
-        [Inject] private readonly WeaponsConfigs _weaponsConfigs;
-        [Inject] private readonly ArmorsConfig _armorsConfig;
+        [Inject] private readonly WeaponConfigsRep _weaponConfigsRep;
+        [Inject] private readonly ArmorConfigsRep _armorConfigsRep;
 
         private void Awake()
         {
@@ -33,7 +33,7 @@ namespace App.Lobby.PlayersView
             var globalSessionData = _globalSessionDataRepository.GetData(playerRef);
 
             var playerInfo = Instantiate(playerInfoPrefab, holder);
-            playerInfo.Initialize(globalSessionData, lobbySessionData, _nicknamesProvider, _weaponsConfigs, _armorsConfig);
+            playerInfo.Initialize(globalSessionData, lobbySessionData, _nicknamesProvider, _weaponConfigsRep, _armorConfigsRep);
         }
     }
 }

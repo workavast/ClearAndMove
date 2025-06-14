@@ -22,7 +22,7 @@ namespace App.Lobby.PlayersView
         private NetGlobalSessionData _globalSessionData;
 
         public void Initialize(NetGlobalSessionData globalSessionData, NetLobbySessionData lobbySessionData,
-            NicknamesProvider nicknamesProvider, WeaponsConfigs weaponsConfigs, ArmorsConfig armorsConfig)
+            NicknamesProvider nicknamesProvider, WeaponConfigsRep weaponConfigsRep, ArmorConfigsRep armorConfigsRep)
         {
             if (_globalSessionData != null) 
                 _globalSessionData.OnDespawned -= DestroySelf;
@@ -33,8 +33,8 @@ namespace App.Lobby.PlayersView
             holder.localPosition += Vector2.zero.GetPointOnCircle(minOffset, maxOffset).XY0();
             
             readyView.Initialize(lobbySessionData);
-            selectedWeaponView.Initialize(lobbySessionData, weaponsConfigs);
-            selectedArmorView.Initialize(lobbySessionData, armorsConfig);
+            selectedWeaponView.Initialize(lobbySessionData, weaponConfigsRep);
+            selectedArmorView.Initialize(lobbySessionData, armorConfigsRep);
             nickNameView.Initialize(nicknamesProvider, globalSessionData);
         }
 

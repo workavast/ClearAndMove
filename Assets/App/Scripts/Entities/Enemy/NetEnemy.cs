@@ -10,16 +10,16 @@ namespace App.Entities.Enemy
         public override EntityType EntityType => EntityType.Default;
         
         protected override IEventBus EventBus { get; set; }
-        protected override ArmorsConfig ArmorsConfig { get; set; }
+        protected override ArmorConfigsRep ArmorConfigsRep { get; set; }
 
         private EnemiesRepository _enemiesRepository;
 
         [Inject]
-        public void Construct(EnemiesRepository enemiesRepository, IEventBus eventBus, ArmorsConfig armorsConfig)
+        public void Construct(EnemiesRepository enemiesRepository, IEventBus eventBus, ArmorConfigsRep armorConfigsRep)
         {
             _enemiesRepository = enemiesRepository;
             EventBus = eventBus;
-            ArmorsConfig = armorsConfig;
+            ArmorConfigsRep = armorConfigsRep;
         }
         
         public override void Spawned()

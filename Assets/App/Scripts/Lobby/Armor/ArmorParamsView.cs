@@ -3,17 +3,19 @@ using App.Entities;
 using App.Players;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace App.Lobby.Armor
 {
     public class ArmorParamsView : MonoBehaviour
     {
         [SerializeField] private EntityConfig entityConfig;
-        [SerializeField] private ArmorsConfig armorsConfig;
-
+        [Space]
         [SerializeField] private Slider walkSpeedView;
         [SerializeField] private Slider sprintSpeedView;
         [SerializeField] private Slider damageScaleView;
+        
+        [Inject] private readonly ArmorConfigsRep _armorConfigsRep;
         
         private void Awake()
         {
@@ -24,7 +26,7 @@ namespace App.Lobby.Armor
             sprintSpeedView.minValue = 0;
             sprintSpeedView.maxValue = entityConfig.SprintSpeed;
             damageScaleView.minValue = 0;
-            damageScaleView.maxValue = armorsConfig.GetArmor(0).DamageScale;
+            damageScaleView.maxValue = _armorConfigsRep.GetArmor(0).DamageScale;
             UpdateView();
         }
 
@@ -35,9 +37,9 @@ namespace App.Lobby.Armor
 
         private void UpdateView()
         {
-            var walkSpeed = entityConfig.WalkSpeed - armorsConfig.GetArmor(PlayerData.EquippedArmorLevel).WalkSpeedDecrease;
-            var sprintSpeed = entityConfig.SprintSpeed - armorsConfig.GetArmor(PlayerData.EquippedArmorLevel).SprintSpeedDecrease;
-            var damageScale = armorsConfig.GetArmor(PlayerData.EquippedArmorLevel).DamageScale;
+            var walkSpeed = entityConfig.WalkSpeed - _armorConfigsRep.GetArmor(PlayerData.EquippedArmorLevel).WalkSpeedDecrease;
+            var sprintSpeed = entityConfig.SprintSpeed - _armorConfigsRep.GetArmor(PlayerData.EquippedArmorLevel).SprintSpeedDecrease;
+            var damageScale = _armorConfigsRep.GetArmor(PlayerData.EquippedArmorLevel).DamageScale;
             
             walkSpeedView.value = walkSpeed;
             sprintSpeedView.value = sprintSpeed;

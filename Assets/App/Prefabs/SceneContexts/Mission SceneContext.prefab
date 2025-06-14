@@ -45,51 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCollisionParticle: {fileID: 9015723437469084149, guid: 8e0bdc37d17b83b41a206c6ddaa2da73, type: 3}
---- !u!1 &964556513745290307
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8563278294597203527}
-  - component: {fileID: 389222741618106678}
-  m_Layer: 0
-  m_Name: Weapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8563278294597203527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964556513745290307}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 494754862601191684}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &389222741618106678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964556513745290307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eb26325d794427998616fe7f5bc5d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponsConfigs: {fileID: 11400000, guid: 84fce0ef8c682a64fa91a8022466205b, type: 2}
 --- !u!1 &1152813142535325803
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,18 +789,17 @@ Transform:
   - {fileID: 2086929539737207148}
   - {fileID: 4175100632907576302}
   - {fileID: 3863646041886288025}
+  - {fileID: 6903827599990334302}
   - {fileID: 4671318087465485819}
-  - {fileID: 8563278294597203527}
   - {fileID: 2545991492283631496}
   - {fileID: 7616988061635601828}
   - {fileID: 3755163877266494303}
+  - {fileID: 8922525033649630100}
   - {fileID: 3989415071427694989}
-  - {fileID: 6903827599990334302}
   - {fileID: 4624924858513925065}
   - {fileID: 1091466773726054870}
   - {fileID: 3453926653424845667}
   - {fileID: 2833952181767368045}
-  - {fileID: 8922525033649630100}
   - {fileID: 7473463902245787695}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -871,7 +825,6 @@ MonoBehaviour:
   - {fileID: 7688462020419070219}
   - {fileID: 88283225859896657}
   - {fileID: 2645773976138639809}
-  - {fileID: 389222741618106678}
   - {fileID: 6105024570449095074}
   - {fileID: 4356893275736351121}
   - {fileID: 835804709288592355}

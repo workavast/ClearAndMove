@@ -3,6 +3,7 @@ using App.Weapons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
+using Zenject;
 
 namespace App.Lobby.Weapon
 {
@@ -10,7 +11,8 @@ namespace App.Lobby.Weapon
     {
         [SerializeField] private TMP_Text tmpText;
         [SerializeField] private LocalizedString localizedString;
-        [SerializeField] private WeaponsConfigs weaponsConfigs;
+        
+        [Inject] private readonly WeaponConfigsRep _weaponConfigsRep;
         
         private void Awake()
         {
@@ -32,7 +34,7 @@ namespace App.Lobby.Weapon
 
         private void UpdateData()
         {
-            localizedString.Arguments[0] = weaponsConfigs.WeaponConfigs[PlayerData.SelectedWeapon].Name;
+            localizedString.Arguments[0] = _weaponConfigsRep.WeaponConfigs[PlayerData.SelectedWeapon].Name;
             localizedString.RefreshString();
         }
         

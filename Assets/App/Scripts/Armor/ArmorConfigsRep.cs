@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace App.Armor
 {
-    [CreateAssetMenu(fileName = nameof(ArmorsConfig), menuName = Consts.AppName + "/Configs/Armor/" + nameof(ArmorsConfig))]
-    public class ArmorsConfig : ConfigsRepository<ArmorConfig>
+    [CreateAssetMenu(fileName = nameof(ArmorConfigsRep), menuName = Consts.AppName + "/Configs/Armor/" + nameof(ArmorConfigsRep))]
+    public class ArmorConfigsRep : ConfigsRepository<ArmorConfig>
     {
         public int MaxArmorLevel => Configs.Capacity;
         

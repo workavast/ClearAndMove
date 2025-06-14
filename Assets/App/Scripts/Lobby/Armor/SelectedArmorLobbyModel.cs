@@ -1,13 +1,15 @@
 using App.Armor;
 using App.Players;
 using UnityEngine;
+using Zenject;
 
 namespace App.Lobby.Armor
 {
     public class SelectedArmorLobbyModel : MonoBehaviour
     {
         [SerializeField] private Transform holder;
-        [SerializeField] private ArmorsConfig armorsConfig;
+        
+        [Inject] private readonly ArmorConfigsRep _armorConfigsRep;
         
         private void OnEnable()
         {
@@ -26,7 +28,7 @@ namespace App.Lobby.Armor
             for (int i = 0; i < childCount; i++) 
                 Destroy(holder.GetChild(i).gameObject);
 
-            Instantiate(armorsConfig.GetArmor(PlayerData.EquippedArmorLevel).LobbyPrefabVariant, holder);
+            Instantiate(_armorConfigsRep.GetArmor(PlayerData.EquippedArmorLevel).LobbyPrefabVariant, holder);
         }
     }
 }

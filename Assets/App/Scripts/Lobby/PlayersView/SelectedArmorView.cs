@@ -10,15 +10,15 @@ namespace App.Lobby.PlayersView
     {
         [SerializeField] private Image iconImage;
         
-        private ArmorsConfig _configs;
+        private ArmorConfigsRep _configs;
         private NetLobbySessionData _lobbySessionData;
 
-        public void Initialize(NetLobbySessionData lobbySessionData, ArmorsConfig armorsConfig)
+        public void Initialize(NetLobbySessionData lobbySessionData, ArmorConfigsRep armorConfigsRep)
         {
             if (_lobbySessionData != null) 
                 _lobbySessionData.OnSelectedArmorChanged -= UpdateView;
 
-            _configs = armorsConfig;
+            _configs = armorConfigsRep;
             _lobbySessionData = lobbySessionData;
             _lobbySessionData.OnSelectedArmorChanged += UpdateView;
 

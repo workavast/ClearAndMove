@@ -8,21 +8,21 @@ namespace App.Lobby.Weapon
 {
     public class WeaponSelector : Selector<WeaponId, WeaponSelectBtn>
     {
-        [SerializeField] private WeaponsConfigs weaponsConfigs;
+        [SerializeField] private WeaponConfigsRep selectableWeaponConfigsRep;
         
         [Inject] private readonly Weapons.WeaponSelector _weaponSelector;
 
         protected override void Initialize()
         {
-            weaponsConfigs.Initialize(true);
+            selectableWeaponConfigsRep.Initialize(true);
             base.Initialize();
         }
 
         protected override IReadOnlyList<WeaponId> GetIds() 
-            => weaponsConfigs.WeaponIds;
+            => selectableWeaponConfigsRep.WeaponIds;
 
         protected override string GetName(WeaponId id) 
-            => weaponsConfigs.WeaponConfigs[id].Name;
+            => selectableWeaponConfigsRep.WeaponConfigs[id].Name;
 
         protected override bool Is(WeaponId a, WeaponId b) 
             => a == b;
@@ -38,7 +38,7 @@ namespace App.Lobby.Weapon
         protected override void UpdateBtn(WeaponId weaponId, WeaponSelectBtn button)
         {
             button.SetData(weaponId, GetName(weaponId));
-            button.SetIcon(weaponsConfigs.WeaponConfigs[weaponId].Icon);
+            button.SetIcon(selectableWeaponConfigsRep.WeaponConfigs[weaponId].Icon);
         }
     }
 }
