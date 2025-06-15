@@ -71,6 +71,14 @@ MonoBehaviour:
     m_Key: Brightness
     m_Metadata:
       m_Items: []
+  - m_Id: 16270740398530560
+    m_Key: AntiAliasing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16272995377995776
+    m_Key: AntiAliasingNoneMode
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

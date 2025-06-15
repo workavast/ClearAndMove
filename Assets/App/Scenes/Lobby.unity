@@ -20685,7 +20685,7 @@ MonoBehaviour:
   m_Version: 2
   m_TaaSettings:
     m_Quality: 3
-    m_FrameInfluence: 0.1
+    m_FrameInfluence: 0.100000024
     m_JitterScale: 1
     m_MipBias: 0
     m_VarianceClampScale: 0.9
@@ -21296,11 +21296,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6481495177060629499}
+  - component: {fileID: 9168401464598032181}
   - component: {fileID: 9168401464598032180}
   - component: {fileID: 7448598401628618517}
   - component: {fileID: 6906321059965837895}
   - component: {fileID: 5836027075679157127}
-  - component: {fileID: 9168401464598032181}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21785,22 +21785,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7895603110558589657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4624308ea11c4b3ab8d7c36a836e6d94, type: 3}
+  m_Script: {fileID: 11500000, guid: dc0b41645e5242aca26790658ce246f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinemachineCamera: {fileID: 0}
-  composer: {fileID: 0}
-  follow: {fileID: 0}
-  rotationDamping:
-    minPercentageToReduceDamping: 0
-    scale: 0
-    minScale: 0.1
-    damping: {x: 0, y: 0, z: 0}
-  positionDamping:
-    minPercentageToReduceDamping: 0
-    scale: 0
-    minScale: 0.1
-    damping: {x: 0, y: 0, z: 0}
 --- !u!222 &9206010400042060859
 CanvasRenderer:
   m_ObjectHideFlags: 0
