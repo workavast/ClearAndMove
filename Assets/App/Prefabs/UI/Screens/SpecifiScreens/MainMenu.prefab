@@ -832,7 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 8083085590303067737}
   serverNameInput: {fileID: 4877826719049255870}
-  skipLoadingScene: 1
+  skipLoadingScene: 0
 --- !u!114 &4420591642483267847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2162,6 +2162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 4755523175465979688}
   serverNameInput: {fileID: 8661518867669638961}
+  skipLoadingScreen: 0
 --- !u!114 &9107436671603157925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3060,6 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150ba1add45d467295eb9cd726e9a727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipLoadingScreen: 0
 --- !u!1001 &4062859730232309029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3418,7 +3420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 4
-  skipLoadingScene: 1
+  skipLoadingScene: 0
 --- !u!224 &5957373643350000445 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3825028119770394636, guid: 3586e5dedf1a09b4fbd430248fdaceaa, type: 3}

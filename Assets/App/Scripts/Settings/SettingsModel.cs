@@ -1,4 +1,5 @@
 using System;
+using App.Settings.Brightness;
 using App.Settings.CameraShakePower;
 using App.Settings.Fps;
 using App.Settings.Localization;
@@ -21,6 +22,7 @@ namespace App.Settings
         [field: SerializeField] public LocalizationSettingsModel LocalizationSettingsModel { get; private set; }
         [field: SerializeField] public CameraShakePowerSettingsModel CameraShakePowerSettingsModel { get; private set; }
         [field: SerializeField] public VSyncSettingsModel VSyncSettingsModel { get; private set; }
+        [field: SerializeField] public BrightnessSettingsModel BrightnessSettingsModel { get; private set; }
 
         private readonly ISettingsModel[] _allSettings;
 
@@ -34,6 +36,7 @@ namespace App.Settings
             LocalizationSettingsModel = new LocalizationSettingsModel(configsRepository.GetConfig<LocalizationConfig>());
             CameraShakePowerSettingsModel = new CameraShakePowerSettingsModel(configsRepository.GetConfig<CameraShakePowerSettingsConfig>());
             VSyncSettingsModel = new VSyncSettingsModel(configsRepository.GetConfig<VSyncSettingsConfig>());
+            BrightnessSettingsModel = new BrightnessSettingsModel(configsRepository.GetConfig<BrightnessSettingsConfig>());
             
             _allSettings = new ISettingsModel[]
             {
@@ -43,7 +46,8 @@ namespace App.Settings
                 VolumeSettingsModel,
                 LocalizationSettingsModel,
                 CameraShakePowerSettingsModel,
-                VSyncSettingsModel
+                VSyncSettingsModel,
+                BrightnessSettingsModel
             };
             Array.Sort(_allSettings, (x, y) => -x.Priority.CompareTo(y.Priority));
         }
@@ -57,6 +61,7 @@ namespace App.Settings
             LocalizationSettingsModel.Load(model.LocalizationSettingsModel);
             CameraShakePowerSettingsModel.Load(model.CameraShakePowerSettingsModel);
             VSyncSettingsModel.Load(model.VSyncSettingsModel);
+            BrightnessSettingsModel.Load(model.BrightnessSettingsModel);
         }
 
         public void Save()

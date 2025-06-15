@@ -67,6 +67,10 @@ MonoBehaviour:
     m_Key: CameraShakePower
     m_Metadata:
       m_Items: []
+  - m_Id: 16237003979874304
+    m_Key: Brightness
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
