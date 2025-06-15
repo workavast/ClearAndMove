@@ -37,6 +37,7 @@ namespace App.Settings.Volume
             EffectsVolume = Model.EffectsVolume;
             MusicVolume = Model.MusicVolume;
             ApplySettings();
+            Model.Apply();
             
             OnChanged?.Invoke();
         }

@@ -31,6 +31,16 @@ namespace App.UI.SliderExt
                 OnValueViewChanged?.Invoke(value);
             }
         }
+
+        public void SetMinValue(float minValue)
+        {
+            slider.minValue = minValue / step;
+        }
+        
+        public void SetMaxValue(float maxValue)
+        {
+            slider.maxValue = maxValue / step;
+        }
         
         private void OnSlideValueChanged(float value)
         {

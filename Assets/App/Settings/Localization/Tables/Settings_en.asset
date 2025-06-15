@@ -70,6 +70,10 @@ MonoBehaviour:
     m_Localized: Camera Shake Power
     m_Metadata:
       m_Items: []
+  - m_Id: 16237003979874304
+    m_Localized: Brightness
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
