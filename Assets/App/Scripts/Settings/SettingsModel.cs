@@ -1,4 +1,5 @@
 using System;
+using App.Settings.AntiAliasing;
 using App.Settings.Brightness;
 using App.Settings.CameraShakePower;
 using App.Settings.Fps;
@@ -23,6 +24,7 @@ namespace App.Settings
         [field: SerializeField] public CameraShakePowerSettingsModel CameraShakePowerSettingsModel { get; private set; }
         [field: SerializeField] public VSyncSettingsModel VSyncSettingsModel { get; private set; }
         [field: SerializeField] public BrightnessSettingsModel BrightnessSettingsModel { get; private set; }
+        [field: SerializeField] public AntiAliasingSettingsModel AntiAliasingSettingsModel { get; private set; }
 
         private readonly ISettingsModel[] _allSettings;
 
@@ -37,6 +39,7 @@ namespace App.Settings
             CameraShakePowerSettingsModel = new CameraShakePowerSettingsModel(configsRepository.GetConfig<CameraShakePowerSettingsConfig>());
             VSyncSettingsModel = new VSyncSettingsModel(configsRepository.GetConfig<VSyncSettingsConfig>());
             BrightnessSettingsModel = new BrightnessSettingsModel(configsRepository.GetConfig<BrightnessSettingsConfig>());
+            AntiAliasingSettingsModel = new AntiAliasingSettingsModel(configsRepository.GetConfig<AntiAliasingSettingsConfig>());
             
             _allSettings = new ISettingsModel[]
             {
@@ -47,7 +50,8 @@ namespace App.Settings
                 LocalizationSettingsModel,
                 CameraShakePowerSettingsModel,
                 VSyncSettingsModel,
-                BrightnessSettingsModel
+                BrightnessSettingsModel,
+                AntiAliasingSettingsModel
             };
             Array.Sort(_allSettings, (x, y) => -x.Priority.CompareTo(y.Priority));
         }
@@ -62,6 +66,7 @@ namespace App.Settings
             CameraShakePowerSettingsModel.Load(model.CameraShakePowerSettingsModel);
             VSyncSettingsModel.Load(model.VSyncSettingsModel);
             BrightnessSettingsModel.Load(model.BrightnessSettingsModel);
+            AntiAliasingSettingsModel.Load(model.AntiAliasingSettingsModel);
         }
 
         public void Save()
